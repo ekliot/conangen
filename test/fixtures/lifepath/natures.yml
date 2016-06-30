@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  attribute: MyString
+  skill_mandatory1: MyString
+  skill_mandatory2: MyString
+  skill_mandatory3: MyString
+  skill_elective1: MyString
+  skill_elective2: MyString
+  skill_elective3: MyString
+
+two:
+  name: MyString
+  attribute: MyString
+  skill_mandatory1: MyString
+  skill_mandatory2: MyString
+  skill_mandatory3: MyString
+  skill_elective1: MyString
+  skill_elective2: MyString
+  skill_elective3: MyString

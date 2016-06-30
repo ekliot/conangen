@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
   validates :password,  length: { minimum: 6, maximum: 32 },
                         format: { with: VALID_PASSW_REGEX },
                         presence: true
+
+  has_many :characters
 end

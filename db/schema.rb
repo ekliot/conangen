@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628203123) do
+ActiveRecord::Schema.define(version: 20160630013450) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -19,14 +19,7 @@ ActiveRecord::Schema.define(version: 20160628203123) do
     t.string   "gender"
     t.text     "appearance"
     t.text     "personality"
-    t.string   "homeland"
-    t.string   "caste"
-    t.string   "caste_story"
     t.string   "trait"
-    t.string   "archetype"
-    t.string   "nature"
-    t.string   "education"
-    t.string   "warstory"
     t.integer  "exp_total"
     t.integer  "exp_spent"
     t.integer  "fortune_max"
@@ -58,14 +51,90 @@ ActiveRecord::Schema.define(version: 20160628203123) do
     t.integer  "resolve_current"
     t.integer  "wounds_current"
     t.integer  "trauma_current"
-    t.string   "talent_homeland"
-    t.string   "talent_caste1"
-    t.string   "talent_caste2"
     t.text     "contacts"
     t.text     "background"
     t.string   "languages"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "lifepath_archetypes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "skill_career"
+    t.string   "skill_mandatory1"
+    t.string   "skill_mandatory2"
+    t.string   "skill_mandatory3"
+    t.string   "skill_mandatory4"
+    t.string   "skill_elective1"
+    t.string   "skill_elective2"
+    t.string   "skill_elective3"
+    t.text     "equipment"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "lifepath_castes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "skill"
+    t.integer  "social_standing"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "lifepath_educations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "skill_mandatory1"
+    t.string   "skill_mandatory2"
+    t.string   "skill_mandatory3"
+    t.string   "skill_elective1"
+    t.string   "skill_elective2"
+    t.string   "skill_elective3"
+    t.text     "equipment"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "lifepath_homelands", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lifepath_natures", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attribute"
+    t.string   "skill_mandatory1"
+    t.string   "skill_mandatory2"
+    t.string   "skill_mandatory3"
+    t.string   "skill_elective1"
+    t.string   "skill_elective2"
+    t.string   "skill_elective3"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "lifepath_story_castes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "trait"
+    t.string   "caste"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "lifepath_story_wars", force: :cascade do |t|
+    t.string   "name"
+    t.string   "skill1"
+    t.string   "skill2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lifepaths", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skill_sets", force: :cascade do |t|
