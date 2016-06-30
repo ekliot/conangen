@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630013450) do
+ActiveRecord::Schema.define(version: 20160630030804) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -54,9 +54,15 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.text     "contacts"
     t.text     "background"
     t.string   "languages"
+    t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  add_index "characters", ["name"], name: "index_characters_on_name"
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
+  add_index "characters", [nil], name: "index_characters_on_created_on"
+  add_index "characters", [nil], name: "index_characters_on_updated_on"
 
   create_table "lifepath_archetypes", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.string   "skill_elective2"
     t.string   "skill_elective3"
     t.text     "equipment"
+    t.integer  "talents_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -91,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.string   "skill_elective2"
     t.string   "skill_elective3"
     t.text     "equipment"
+    t.integer  "talent_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -98,6 +106,7 @@ ActiveRecord::Schema.define(version: 20160630013450) do
   create_table "lifepath_homelands", force: :cascade do |t|
     t.string   "name"
     t.string   "language"
+    t.integer  "talent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.string   "skill_elective1"
     t.string   "skill_elective2"
     t.string   "skill_elective3"
+    t.integer  "talent_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -119,10 +129,12 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.string   "name"
     t.text     "description"
     t.string   "trait"
-    t.string   "caste"
+    t.integer  "castes_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "lifepath_story_castes", [nil], name: "index_lifepath_story_castes_on_caste_id"
 
   create_table "lifepath_story_wars", force: :cascade do |t|
     t.string   "name"
@@ -133,9 +145,26 @@ ActiveRecord::Schema.define(version: 20160630013450) do
   end
 
   create_table "lifepaths", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "mod_agility"
+    t.integer  "mod_awareness"
+    t.integer  "mod_brawn"
+    t.integer  "mod_coordination"
+    t.integer  "mod_intelligence"
+    t.integer  "mod_personality"
+    t.integer  "mod_willpower"
+    t.integer  "character_id"
+    t.integer  "homeland_id"
+    t.integer  "caste_id"
+    t.integer  "story_caste_id"
+    t.integer  "archetype_id"
+    t.integer  "nature_id"
+    t.integer  "education_id"
+    t.integer  "story_war_id"
   end
+
+  add_index "lifepaths", [nil], name: "index_lifepaths_on_user_id"
 
   create_table "skill_sets", force: :cascade do |t|
     t.integer  "acrobatics_exp"
@@ -187,9 +216,23 @@ ActiveRecord::Schema.define(version: 20160630013450) do
     t.integer  "survival_foc"
     t.integer  "thievery_exp"
     t.integer  "thievery_foc"
+    t.integer  "character_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "skill_sets", ["character_id"], name: "index_skill_sets_on_character_id"
+  add_index "skill_sets", ["created_at"], name: "index_skill_sets_on_created_at"
+  add_index "skill_sets", ["updated_at"], name: "index_skill_sets_on_updated_at"
+  add_index "skill_sets", [nil], name: "index_skill_sets_on_name"
+
+  create_table "talent_sets", force: :cascade do |t|
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "talent_sets", [nil], name: "index_talent_sets_on_user_id"
 
   create_table "talents", force: :cascade do |t|
     t.string   "name"
@@ -208,5 +251,6 @@ ActiveRecord::Schema.define(version: 20160630013450) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
 
 end

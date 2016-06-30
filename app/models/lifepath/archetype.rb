@@ -1,3 +1,3 @@
-class Archetype < ActiveRecord::Base
+class Lifepath::Archetype < ActiveRecord::Base
   belongs_to :talent
 end

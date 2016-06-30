@@ -52,7 +52,14 @@ class CreateSkillSets < ActiveRecord::Migration
       t.integer :thievery_exp
       t.integer :thievery_foc
 
+      t.references :character
+
       t.timestamps null: false
     end
+
+    add_index :skill_sets, :character_id
+    add_index :skill_sets, :created_at
+    add_index :skill_sets, :updated_at
+    add_index :skill_sets, :name
   end
 end

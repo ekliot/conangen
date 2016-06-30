@@ -4,6 +4,8 @@ class CreateLifepathHomelands < ActiveRecord::Migration
       t.string :name
       t.string :language
 
+      t.references :talent
+
       t.timestamps null: false
     end
   end

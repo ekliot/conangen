@@ -1,0 +1,27 @@
+Each Character has a Lifepath, a talent set, and a Skill Set
+
+Each Talent Set has many Talents
+
+Each Skill Set has two colums per skill (expertise, focus)
+
+Each Lifepath has a modifier for each attribute
+Each Lifepath belongs to a Homeland
+Each Lifepath belongs to a Caste
+Each Lifepath belongs to a Caste Story
+Each Lifepath belongs to a Archetype
+Each Lifepath belongs to a Education
+Each Lifepath belongs to a Nature
+Each Lifepath belongs to a War Story
+
+Each Homeland belongs to a Talent
+
+Each Caste belongs to a Talent1
+Each Caste belongs to a Talent2
+
+Each Caste Story belongs to a Caste
+
+Each Archetype belongs to a Talent
+
+Every Education belongs to a Talent
+
+Every Nature belongs to a Talent

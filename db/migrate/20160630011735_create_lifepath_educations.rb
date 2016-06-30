@@ -10,6 +10,8 @@ class CreateLifepathEducations < ActiveRecord::Migration
       t.string :skill_elective3
       t.text :equipment
 
+      t.references :talent
+
       t.timestamps null: false
     end
   end

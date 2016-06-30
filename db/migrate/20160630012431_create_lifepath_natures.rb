@@ -10,6 +10,8 @@ class CreateLifepathNatures < ActiveRecord::Migration
       t.string :skill_elective2
       t.string :skill_elective3
 
+      t.references :talent
+
       t.timestamps null: false
     end
   end

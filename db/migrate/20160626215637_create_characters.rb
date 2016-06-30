@@ -6,14 +6,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string :gender
       t.text :appearance
       t.text :personality
-      t.string :homeland
-      t.string :caste
-      t.string :caste_story
       t.string :trait
-      t.string :archetype
-      t.string :nature
-      t.string :education
-      t.string :warstory
       t.integer :exp_total
       t.integer :exp_spent
       t.integer :fortune_max
@@ -45,14 +38,18 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer :resolve_current
       t.integer :wounds_current
       t.integer :trauma_current
-      t.string :talent_homeland
-      t.string :talent_caste1
-      t.string :talent_caste2
       t.text :contacts
       t.text :background
       t.string :languages
 
+      t.references :user
+
       t.timestamps null: false
     end
+
+    add_index :characters, :user_id
+    add_index :characters, :created_on
+    add_index :characters, :updated_on
+    add_index :characters, :name
   end
 end

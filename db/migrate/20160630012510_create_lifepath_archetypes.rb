@@ -12,6 +12,8 @@ class CreateLifepathArchetypes < ActiveRecord::Migration
       t.string :skill_elective3
       t.text :equipment
 
+      t.references :talents
+
       t.timestamps null: false
     end
   end

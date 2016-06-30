@@ -1,2 +1,3 @@
-class Homeland < ActiveRecord::Base
+class Lifepath::Homeland < ActiveRecord::Base
+  belongs_to :talent
 end
