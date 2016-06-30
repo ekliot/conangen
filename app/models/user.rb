@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
 
   has_secure_password
+  # password must have one uppercase, one lowercase, one digit, and can have any ASCII character between hex [20, 7E]
   VALID_PASSW_REGEX = /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\x20-\x7E]+\z/
   validates :password,  length: { minimum: 6, maximum: 32 },
                         format: { with: VALID_PASSW_REGEX },

@@ -1,0 +1,30 @@
+<h1>Sign up</h1>
+
+<div class="ui container">
+    <%= form_for( @user, html: { class: 'ui form' } ) do |f| %>
+
+      <h4 class="ui dividing header">User Information</h4>
+
+      <div class="two fields">
+        <div class="required field">
+          <%= f.text_field :name, placeholder: 'Username' %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, placeholder: 'Email' %>
+        </div>
+      </div>
+
+      <h4 class="ui dividing header">Password</h4>
+
+      <div class="two fields">
+        <div class="field">
+          <%= f.password_field :password, placeholder: 'Password' %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %>
+        </div>
+      </div>
+
+      <%= f.submit "Create my account", class: "ui button" %>
+    <% end %>
+</div>
