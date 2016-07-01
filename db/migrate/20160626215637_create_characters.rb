@@ -48,8 +48,8 @@ class CreateCharacters < ActiveRecord::Migration
     end
 
     add_index :characters, :user_id
-    add_index :characters, :created_on
-    add_index :characters, :updated_on
+    add_index :characters, :created_at
+    add_index :characters, :updated_at
     add_index :characters, :name
   end
 end
