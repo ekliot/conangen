@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630030804) do
+ActiveRecord::Schema.define(version: 20160630225818) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -63,6 +63,20 @@ ActiveRecord::Schema.define(version: 20160630030804) do
   add_index "characters", ["user_id"], name: "index_characters_on_user_id"
   add_index "characters", [nil], name: "index_characters_on_created_on"
   add_index "characters", [nil], name: "index_characters_on_updated_on"
+
+  create_table "equipment_weapons", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "cost"
+    t.string   "reach"
+    t.string   "size"
+    t.string   "qualities"
+    t.integer  "damage"
+    t.integer  "availability"
+    t.integer  "encumbrance"
+    t.string   "type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "lifepath_archetypes", force: :cascade do |t|
     t.string   "name"
