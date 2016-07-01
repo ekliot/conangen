@@ -5,7 +5,7 @@ class CreateLifepathStoryCastes < ActiveRecord::Migration
       t.text :description
       t.string :trait
 
-      t.references :castes
+      t.references :caste
 
       t.timestamps null: false
     end
