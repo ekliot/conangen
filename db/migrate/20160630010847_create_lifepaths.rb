@@ -21,6 +21,6 @@ class CreateLifepaths < ActiveRecord::Migration
       t.references :story_war
     end
 
-    add_index :lifepaths, [:user_id]
+    add_index :lifepaths, [:character_id]
   end
 end
