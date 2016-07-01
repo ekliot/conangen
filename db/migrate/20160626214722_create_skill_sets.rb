@@ -60,6 +60,5 @@ class CreateSkillSets < ActiveRecord::Migration
     add_index :skill_sets, :character_id
     add_index :skill_sets, :created_at
     add_index :skill_sets, :updated_at
-    add_index :skill_sets, :name
   end
 end
