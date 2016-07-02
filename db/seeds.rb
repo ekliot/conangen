@@ -1151,113 +1151,140 @@ castes = [
 ]
 
 caste_stories = [
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
+    ]
+  },
 
-  { name: "", trait: "", description: ""  },
+  { caste: "", stories:
+    [ { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  },
+      { name: "", trait: "", description: ""  },
 
-  { name: "", trait: "", description: ""  }
+      { name: "", trait: "", description: ""  },
+    ]
+  }
 ]
 
 archetypes = [
@@ -1352,31 +1379,31 @@ natures = [
   { name: "Curious", attribute: "agility",
     skill_mandatory1: "athletics", skill_mandatory2: "observation", skill_mandatory3: "stealth",
     skill_elective1: "alchemy", skill_elective2: "lore", skill_elective3: "thievery",
-    description: "The world is a fascinating place, with many mysteries yet to be discovered. You are always trying to find out what is unknown, or what is being concealed from you. "
+    description: "The world is a fascinating place, with many mysteries yet to be discovered. You are always trying to find out what is unknown, or what is being concealed from you."
   },
 
   { name: "Inspirational", attribute: "personality",
     skill_mandatory1: "counsel", skill_mandatory2: "observation", skill_mandatory3: "persuasion",
     skill_elective1: "command", skill_elective2: "healing", skill_elective3: "society",
-    description: "The world is a difficult place, and you take it upon yourself to provide a good example to those around you. Maybe you learned this from a prior command, or it seems the right thing to do. "
+    description: "The world is a difficult place, and you take it upon yourself to provide a good example to those around you. Maybe you learned this from a prior command, or it seems the right thing to do."
   },
 
   { name: "Learned", attribute: "intelligence",
     skill_mandatory1: "animal_handling", skill_mandatory2: "craft", skill_mandatory3: "lore",
     skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "observation",
-    description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you. "
+    description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you."
   },
 
   { name: "Practical", attribute: "coordination",
     skill_mandatory1: "discipline", skill_mandatory2: "craft", skill_mandatory3: "healing",
     skill_elective1: "alchemy", skill_elective2: "animal_handling", skill_elective3: "observation",
-    description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals. "
+    description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals."
   },
 
   { name: "Scheming",attribute: "intelligence",
     skill_mandatory1: "command", skill_mandatory2: "counsel", skill_mandatory3: "discipline",
     skill_elective1: "acrobatics", skill_elective2: "lore", skill_elective3: "parry",
-    description: "There’s always an easier way to do things, one that does not involve as much risk or effort on your behalf. Furthermore, you always keep your options open, and always have a secondary plan of action. "
+    description: "There’s always an easier way to do things, one that does not involve as much risk or effort on your behalf. Furthermore, you always keep your options open, and always have a secondary plan of action."
   },
 
   { name: "Sneaky", attribute: "awareness",
@@ -1388,19 +1415,19 @@ natures = [
   { name: "Stoic", attribute: "willpower",
     skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "resistance",
     skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "parry",
-    description: "There is little in life that cannot be withstood, and no hardship — physical, mental, or even social — is so great that you cannot overcome it. "
+    description: "There is little in life that cannot be withstood, and no hardship — physical, mental, or even social — is so great that you cannot overcome it."
   },
 
   { name: "Supportive", attribute: "personality",
     skill_mandatory1: "counsel", skill_mandatory2: "healing", skill_mandatory3: "persuasion",
     skill_elective1: "animal_handling", skill_elective2: "discipline", skill_elective3: "resistance",
-    description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you. "
+    description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you."
   },
 
   { name: "Wrathful",attribute: "brawn",
     skill_mandatory1: "melee", skill_mandatory2: "ranged", skill_mandatory3: "resistance",
     skill_elective1: "acrobatics", skill_elective2: "discipline", skill_elective3: "parry",
-    description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality"
+    description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality."
   }
 ]
 
