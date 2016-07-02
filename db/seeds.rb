@@ -1261,12 +1261,12 @@ caste_stories = [
 ]
 
 archetypes = [
-  { name: "Archer", talent: "", skill_career: "",
-    skill_mandatory1: "", skill_mandatory2: "",
-    skill_mandatory2: "", skill_mandatory4: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: "",
-    equipment: "",
+  { name: "Archer", talent: "Accurate", skill_career: "ranged",
+    skill_mandatory1: "animal_handling", skill_mandatory2: "observation",
+    skill_mandatory2: "stealth", skill_mandatory4: "survival",
+    skill_elective1: "acrobatics", skill_elective2: "athletics", skill_elective3: "melee",
+    description: "Whether trained alongside the legendary Bossonian archers, within one of the militaries of the great middle kingdoms, or even skilled in Hyrkanian horse archery, you are now a practiced archer, capable of sending iron-tipped shafts across great distances with accuracy.",
+    equipment: "Bow and reloads (2);[A padded gambeson and trousers (Armor 1: Torso/Arms/Legs);A brigandine vest and trousers (Armor 2: Torso/Legs);A mail vest (Armor 3: Torso; Noisy)];Helmet (Armor 3: Head; Heavy);Melee weapon of choice;A riding horse or donkey",
   },
 
   { name: "Barbarian", talent: "", skill_career: "",
@@ -1293,7 +1293,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Nomad", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
@@ -1301,7 +1301,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Pirate", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
@@ -1309,7 +1309,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Priest/Priestess", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
@@ -1317,7 +1317,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Scholar", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
@@ -1325,7 +1325,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Scoundrel", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
@@ -1333,7 +1333,7 @@ archetypes = [
     equipment: "",
   },
 
-  { name: "", talent: "", skill_career: "",
+  { name: "Witch/Shaman", talent: "", skill_career: "",
     skill_mandatory1: "", skill_mandatory2: "",
     skill_mandatory2: "", skill_mandatory4: "",
     skill_elective1: "", skill_elective2: "", skill_elective3: "",
