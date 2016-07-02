@@ -1538,35 +1538,191 @@ war_stories = [
 weapons = {
   melee: {
     sword: [
-      { name: "",
-        damage: , reach: "", size: "",
-        encumbrance: "", availability: , cost: ,
-        qualities: ""
+      { name: "Broadsword",
+        damage: 5, reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Parrying"
+      },
+      { name: "Cutlass",
+        damage: 4, reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Vicious 1"
+      },
+      { name: "Scimitar",
+        damage: 3, reach: "2", size: "1H",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Calvary 1, Parrying"
+      },
+      { name: "Saber",
+        damage: 3, reach: "2", size: "1H",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Calvary 1,Parrying"
+      },
+      { name: "Shortsword",
+        damage: 4, reach: "1", size: "1H",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Parrying"
+      },
+      { name: "Sword",
+        damage: 4, reach: "2", size: "1H",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Parrying"
+      },
+      { name: "Tuwar",
+        damage: 4, reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 1 , cost: 5,
+        qualities: "Calvary1, Parrying"
+      },
+      { name: "Two-handed Sword",
+        damage: 5, reach: "3", size: "2H",
+        encumbrance: "2", availability: 1 , cost: 8,
+        qualities: "Vicious 1"
       },
     ],
 
     knife: [
-      { name: "",
-        damage: , reach: "", size: "",
-        encumbrance: "", availability: , cost: ,
-        qualities: ""
+      { name: "Dagger",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
-    ],
-
-    axe: [
-      { name: "",
-        damage: , reach: "", size: "",
-        encumbrance: "", availability: , cost: ,
-        qualities: ""
+      { name: "Dirk",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
+      { name: "Poniard",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
+      },
+      { name: "Stilleto",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
+      },
+      { name: "Ghanata Knife",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:2 , cost: 4,
+        qualities: "Hidden 1, Vicious 1"
+      },
+      { name: "Knife",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 2,
+        qualities: "Hidden 1, Improvised, Unforgiving 1"
+      },
+      { name: "Yuetshi Knife",
+        damage:3 , reach: "1", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Intense 1"
+      },
+      { name: "Zhaibar Knife",
+        damage:4 , reach: "2", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Unforgiving 2"
+      },
+      { name: "Throwing Knife",
+        damage:3 , reach: "c", size: "1H",
+        encumbrance: "-", availability:1 , cost: 5,
+        qualities: "Hidden 1, Volley"
+      }
     ],
 
     club: [
-      { name: "",
-        damage: , reach: "", size: "",
-        encumbrance: "", availability: , cost: ,
-        qualities: ""
+      { name: "Club",
+        damage: 3 , reach: "2", size: "1H",
+        encumbrance: "1", availability: 0 , cost:2 ,
+        qualities: "Stun, Knockdown"
       },
+      { name: "Flail,Farming",
+        damage: 4 , reach: "2", size: "2H",
+        encumbrance: "1", availability: 1 , cost:2 ,
+        qualities: "Improvised, Knockdown,Piec 1"
+      },
+      { name: "Flail,Military",
+        damage: 4 , reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 1 , cost:5 ,
+        qualities: "Knockdown, Piercing 1"
+      },
+      { name: "Great Hammer",
+        damage: 4 , reach: "2", size: "2H",
+        encumbrance: "2", availability: 1 , cost:2 ,
+        qualities: "Improvised, Knockdown, Stun"
+      },
+      { name: "Mace",
+        damage: 3 , reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 1 , cost:5 ,
+        qualities: "Piercing 1, Vicious"
+      },
+      { name: "Maul",
+        damage: 5 , reach: "2", size: "2H",
+        encumbrance: "2", availability: 1 , cost:5 ,
+        qualities: "Knockdown, Stun"
+      },
+      { name: "Morning Star",
+        damage: 3 , reach: "2", size: "1H",
+        encumbrance: "2", availability: 1 , cost:4 ,
+        qualities: "Knockdown, Persistent 1, Stun"
+      },
+      { name: "Pick,Horseman's",
+        damage: 3 , reach: "2", size: "1H",
+        encumbrance: "1", availability: 2 , cost:6 ,
+        qualities: "Vicious 1"
+      },
+      { name: "Pickaxe",
+        damage: 5 , reach: "2", size: "2H",
+        encumbrance: "2", availability: 1 , cost:4 ,
+        qualities: "Improvised, Vicious 1"
+      },
+      { name: "Sap",
+        damage: 3, reach: "1", size: "1H",
+        encumbrance: "-", availability: 0 , cost:0 ,
+        qualities: "Hidden 1, Stun, Unforgiving 1"
+      },
+      { name: "Staff",
+        damage: 4 , reach: "2 or 3", size: "2H",
+        encumbrance: "1", availability: 0 , cost:3 ,
+        qualities: "Knockdown"
+      },
+      { name: "WarHammer",
+        damage: 4 , reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability: 2 , cost:5 ,
+        qualities: "Knockdown, Vicious 1"
+      }
+
+    ],
+
+    axe: [
+      { name: "Axe,Throwing",
+        damage: 3, reach: "2", size: "1H",
+        encumbrance: "1", availability:1 , cost:5 ,
+        qualities: "Throw, Vicious 1"
+      },
+      { name: "Axe,Wood",
+        damage: 4, reach: "2", size: "2H",
+        encumbrance: "1", availability:1 , cost:4 ,
+        qualities: "Intense, Vicious 1"
+      },
+      { name: "Battleaxe",
+        damage: 4, reach: "2", size: "Unbalanced",
+        encumbrance: "1", availability:1 , cost:5 ,
+        qualities: "Intense, Vicious 1"
+      },
+      { name: "Hatchet",
+        damage: 4, reach: "2", size: "1H",
+        encumbrance: "1", availability:1 , cost:5 ,
+        qualities: "Vicious 1"
+      },
+      { name: "Halberd",
+        damage: 4 reach: "3", size: "2H",
+        encumbrance: "2", availability:2 , cost:6 ,
+        qualities: "Intense, Piercing 1, Vicious 1"
+      },
+      { name: "Poleaxe",
+        damage: 4 reach: "3", size: "2H",
+        encumbrance: "2", availability:2 , cost:6 ,
+        qualities: "Intense, Piercing 1, Vicious 1"
+      }
     ],
 
     polearm: [
@@ -1578,10 +1734,20 @@ weapons = {
     ],
 
     flexible: [
-      { name: "",
-        damage: , reach: "", size: "",
-        encumbrance: "", availability: , cost: ,
-        qualities: ""
+      { name: "Chain",
+        damage: 3 , reach: "3", size: "Unbalanced",
+        encumbrance: "1", availability: 1, cost: 5,
+        qualities: "Grapple, Improvised, Knockdown, Vicious 1"
+      },
+      { name: "Net",
+        damage: 3 , reach: "2", size: "1H",
+        encumbrance: "-", availability: 1, cost: 5,
+        qualities: "Grapple, Non-Lethal, Parrying, Thrown"
+      },
+      { name: "Whip",
+        damage: 3 , reach: "3", size: "1H",
+        encumbrance: "-", availability: 1, cost: 5,
+        qualities: "Fearsome 2, Vicious 1"
       },
     ]
   },
