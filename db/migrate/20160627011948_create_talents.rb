@@ -8,10 +8,8 @@ class CreateTalents < ActiveRecord::Migration
 
       t.string :pre_skills
       t.string :pre_talents
-      
-      t.boolean :pre_talent_opt, default: true
 
-      t.timestamps null: false
+      t.boolean :pre_talent_opt, default: true
     end
 
     add_index :talents, :name

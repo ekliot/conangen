@@ -49,12 +49,12 @@ talents = {
     { name: "Dabbler",
       pre_skills: "",             pre_talents: "Alchemist 1",
       description: "Having studied many alchemical formulas, you are comfortable with making your own discoveries through experimentation. You are not restricted as to which petty enchantments you would make but doing so is very expensive. You must spend three times the number of reagents needed before making any alchemy test to build a petty enchantment for which you do not have the Master of Formulae talent."
-    }
+    },
 
     { name: "Master of Formulae",
       pre_skills: "",             pre_talents: "Alchemist 1;Sorcerer 1",
       description: "Most alchemists work extensively with a specific formula, which becomes second nature. More exacting measures become the standard. When selecting this talent, you must also select a specific type of petty enchantment: blasting powder, lotus pollen, etc. When using this petty enchantment, you may attempt higher Difficulty tests to increase the power of the particular enchantment."
-    }
+    },
 
     { name: "Master Alchemist",
       pre_skills: "",             pre_talents: "Master_of_Formulae 1",
@@ -273,7 +273,7 @@ talents = {
       description: "You have repeatedly observed and suffered cruelties, and have built up a tolerance to mental suffering. Increase your maximum Resolve by one for each rank of Jaded."
     },
 
-    { name: "Wary", max_ranks: ,
+    { name: "Wary",
       pre_skills: "",               pre_talents: "Jaded 1",
       description: "You have seen countless attempts at manipulation, and no longer trust easily. Whenever you are the target of a Persuade or Command action by another character or non-player character, any Momentum spent (or points added to Doom) to add bonus d20s to the Willpower test adds two dice instead of one, though the normal limit of three bonus d20s still applies. Further, if you resist the manipulation attempt, any other characters who have been convinced may each spend 1 Momentum (Immediate) to see through the manipulation, inspired by your example."
     }
@@ -343,7 +343,7 @@ talents = {
     },
 
     { name: "Smell Out Sorcery",
-      pre_skills: "",               pre_talents: "Rescue_the_Innocents 1;Sorcerer 1",
+      pre_skills: "",               pre_talents: "Rescue_the_Innocents 1;Sorcerer 1", pre_talent_opt: false,
       description: "Instead of using the ability from Witch prior to combat, you can attempt a Challenging (D2) Insight test to sense any sorcery, whether a sorcerer, summoned creature, ruin or artifact within medium range. However, this test is highly inaccurate and its consequences may target innocent victims."
     },
 
@@ -534,7 +534,7 @@ talents = {
   ],
 
   persuade: [
-    { name: "Force of Presence",  max_ranks: ,
+    { name: "Force of Presence",
       pre_skills: "",             pre_talents: "",
       description: "Your damage bonus on mental attacks is increased by +1[CD]."
     },
@@ -725,7 +725,7 @@ talents = {
     },
 
     { name: "Ear of the King",
-      pre_skills: "", pre_talents: "Wealthy 3; Reputation 2",
+      pre_skills: "", pre_talents: "Wealthy 3; Reputation 2", pre_talent_opt: false,
       description: "You know the best way to raise awareness of an issue with the proper authorities. When attempting to spread a message across a large group of people, or even a region, you can substitute your Society skill for Command. In addition, the Difficulty for all skill tests dealing with civic figures is reduced by one step, so a minimum of Simple (D0)."
     },
 
@@ -916,7 +916,7 @@ talents = {
       pre_skills: "", pre_talents: "Master_Thief 1",
       description: "Committing a crime is easy: getting away with it is harder. Through practice, you have learned how to avoid notice by blending in with the crowd. You may substitute your Thievery skill for Stealth when attempting any criminal act."
     }
-  ]
+  ],
 
   fortune: [
     { name: "Better Lucky than Dead",
@@ -938,51 +938,565 @@ talents = {
       pre_skills: "", pre_talents: "",
       description: "You have little care for the vagaries of luck, and create your own advantages in life, whatever the cost or risk. You may spend 3 Momentum (Immediate) to gain the benefits of 1 Fortune point. Remember that Immediate Momentum spends can be paid for by adding to Doom instead of spending Momentum."
     }
-  ]
+  ],
 
   homeland: [
-    { name:
+    { name: "Cosmopolitan",
       pre_skills: "", pre_talents: "",
-      description: ""
+      description: "Your homeland has many visitors and people dwelling within it, all with different customs and tongues. When speaking with a non-player character that also has the Cosmopolitan talent, it is assumed that you each possess enough of each other’s languages in common that you are considered fluent when speaking with one other."
     },
-  ]
+
+    { name: "Desert-born",
+      pre_skills: "", pre_talents: "",
+      description: "Your homeland is a vicious and arid one, harsh and indifferent to its inhabitants. When in the desert, the number of successes required for any Survival test you attempt is reduced by 1. This can even reduce tests to a Difficulty of Simple (D0), usually an automatic success. However, when attempting Survival tests in areas offering the Winter-born talent, you must achieve 1 additional level of success."
+    },
+
+    { name: "Gilded",
+      pre_skills: "", pre_talents: "",
+      description: "In a land where gold is commonplace, you have learned to spot those pretending to have wealth. In every scene, you can attempt to make a free Average (D2) Thievery or Craft test to gain a general feel for the wealth of a particular non-player character, or even the relative worth of an environment."
+    },
+
+    { name: "Honest Corruption",
+      pre_skills: "", pre_talents: "",
+      description: "In a land of corrupt merchants and honest thieves, you have gained a sixth sense about those who are likely to betray you. When interacting with a non-player character for the first time, you can make a free Average (D2) Thievery or Counsel test to gain a general feel for the trustworthiness of the non-player character."
+    },
+
+    { name: "Hunter",
+      pre_skills: "", pre_talents: "",
+      description: "You’ve lived with the wild as a constant neighbor, and know how to take from that environment what is necessary for survival. When in the rural parts of their homeland, the number of successes required for any Survival tests you attempt is reduced by 1, even if this reduces the Difficulty of the test to Simple (D0)."
+    },
+
+    { name: "Of Saddle and Bow",
+      pre_skills: "", pre_talents: "",
+      description: "Hyrkanian riders are renowned for their facility while on horseback, with stories of these horse archers reaching far and wide. As one of these riders, you count as having the Hunter talent so long as you have a horse and bow ready for use. You can also reduce the Difficulty of any Animal Handling test by 1, even if this reduces the Difficulty of the test to Simple (D0)."
+    },
+
+    { name: "Savage Court",
+      pre_skills: "", pre_talents: "",
+      description: "With civility being a new addition to your homeland, it is difficult to know when the old ways will rise to the surface. In any scene within your homeland, you can make a free Challenging (D2) Lore test. Each point of Momentum gives you a general idea as to how easily it would be to overturn the civility of the moment and cause savage old emotions to rule the day."
+    },
+
+    { name: "Sea Raider",
+      pre_skills: "", pre_talents: "",
+      description: "The Difficulty of all Sailing tests made in your homeland’s waters are reduced by 1. This can reduce tests to a Difficulty of Simple (D0). Additionally, the Difficulties of any Athletics tests relating to swimming are similarly reduced."
+    },
+
+    { name: "Strife",
+      pre_skills: "", pre_talents: "",
+      description: "With fractious nobles and near constant civil war, it pays to be attentive. Each day when in your homeland, you can make a free Simple (D0) Lore test. Each point of Momentum gives you a general idea as to whether there will be a major disturbance that day. While matters can take a turn at any point (and this doesn’t account for the actions of you or your allies) this test should provide accurate — if nonspecific — information about the general feel of the region."
+    },
+
+    { name: "Winter-born",
+      pre_skills: "", pre_talents: "",
+      description: "Born in a place of deep winter and intense cold, often spanning the entire year, you are accustomed to frigid climes. When in wintry environments, the number of successes required for any Survival test you attempt is reduced by 1. This can even reduce tests to a Difficulty of Simple (D0). However, you must achieve 1 additional level of success when attempting Survival tests in areas offering the Desert-born talent."
+    }
+  ],
 
   caste: [
-    { name:
+    { name: "Embittered",
       pre_skills: "", pre_talents: "",
-      description: ""
+      description: "You have long since given up fealty to your lord. You avoid taxes and play fast-and-loose with the law. Within the borders of your homeland, your Social Standing is 0, and your Renown is reduced by 2 (to a minimum of -2). If you draw the attention of the authorities for any reason, all Command, Persuade, and Society tests increase in Difficulty by two steps. Whenever you spend Gold to Cultivate Renown during Carousing, you must spend two additional Gold, which don’t contribute [CD] to the attempt."
     },
+
+    { name: "Homesteader",
+      pre_skills: "", pre_talents: "",
+      description: "You’ll take the wide vistas of crops and fields over the cramped, stinking confines of a city any day. So long as you are in your homeland, you reduce the Difficulty of Survival tests by one. This may reduce tests to Simple (D0)."
+    },
+
+    { name: "Priest",
+      pre_skills: "", pre_talents: "",
+      description: "You are an ordained priest in one of the land’s many cults. Wherever in a town or city your faith has a presence, you may spend time amidst the faithful before travelling again. When Carousing, if you do not have sufficient Gold to pay your Upkeep, you may turn to your order for support. If you do so, you are required to donate all remaining Gold you have. If you attempt to cheat your order out of any of the Gold they are owed, you are expelled from the order and lose access to this talent until restitution or some sort of penance has been made (at the gamemaster’s discretion)."
+    },
+
+    { name: "Sentry",
+      pre_skills: "", pre_talents: "",
+      description: "You learned at a young age that the watchful eye subsists on little rest. So long as you have had a total of four hours of sleep within the last two days (either one four-hour stretch or multiple short rests), you suffer no penalties for sleep deprivation when making Observation tests."
+    },
+
+    { name: "Sheltered",
+      pre_skills: "", pre_talents: "",
+      description: "You led a remarkably sheltered existence, buffered by family and servants against the rigors and dangers of the outside world. The prestige of your family means that you find many willing to pay for your room and board, so long as you are suitably grateful upon future visits. Whenever you enter a new town or city, you may seek out shelter from those willing to support you; these people pay your Upkeep. However, they are liable to ask for further compensation — either in Gold, or in the form of a favor — at some later juncture."
+    },
+
+    { name: "Subject",
+      pre_skills: "", pre_talents: "",
+      description: "You are a subject in good standing to a lord or king. While subject to their laws, the taxes you face are much less than the more expensive taxes others experience. Whenever you pay Upkeep within your homeland, you can reduce the amount of Gold the Upkeep costs by one."
+    },
+
+    { name: "Survivor",
+      pre_skills: "", pre_talents: "",
+      description: "Deprivation has been all-too-common in your life. When you are deprived of obvious sources of food and water, you reduce the Difficulty of Survival tests by one. This may reduce tests to Simple (D0)."
+    },
+
+    { name: "Tradesman",
+      pre_skills: "", pre_talents: "",
+      description: "You have passed apprenticeship with a tradesman or within a guild. While your talent may be mediocre or worse, at least you have a fallback plan. When Carousing, if you do not have sufficient Gold to pay your Upkeep, you may offer your services to a tradesman or to a guild in order to cover your Upkeep. However, you may not take any other actions during that period of Carousing."
+    },
+
+    { name: "Vagabond",
+      pre_skills: "", pre_talents: "",
+      description: "The road is more home to you than any town or city ever has been. Whether a nomad by choice or necessity, you can reduce the Difficulty of Survival tests by one, so long as you are on a maintained road. This may reduce the Difficulty of tests to Simple (D0)."
+    }
   ]
 
 }
 
-homelands = {
-  land: { talent: , language: },
-}
+homelands = [
+  { name: "Hyperborea", talent: "Savage Court", language: "Hyperborean" },
 
-castes = {
+  { name: "Border Kingdom", talent: "Strife", language: "Nemedian;Hyperborean" },
 
-}
+  { name: "Nordheim (Asgard or Vanaheim)", talent: "Winter-born", language: "Nordheimer" },
 
-caste_stories = {
+  { name: "Cimmeria", talent: "Hunter", language: "Cimmerian" },
 
-}
+  { name: "Bossonian Marches", talent: "Hunter", language: "Aquilonian" },
 
-archetypes = {
+  { name: "Gunderland", talent: "Hunter", language: "Aquilonian" },
 
-}
+  { name: "Aquilonia", talent: "Cosmopolitan", language: "Aquilonian" },
 
-educations = {
+  { name: "Koth", talent: "Strife", language: "Kothic" },
 
-}
+  { name: "Nemedia", talent: "Cosmopolitan", language: "Nemedian" },
 
-natures = {
+  { name: "Ophir", talent: "Gilded", language: "Ophirian" },
 
-}
+  { name: "Brythunia", talent: "Cosmopolitan", language: "Byrthunian" },
 
-war_stories = {
+  { name: "Argos", talent: "Sea Raider", language: "Argosian" },
 
-}
+  { name: "Zamora", talent: "Honest Corruption", language: "Zamorian" },
+
+  { name: "Shem", talent: "Strife", language: "Shemitish" },
+
+  { name: "Stygia", talent: "Desert-born", language: "Stygian" },
+
+  { name: "Corinthia", talent: "Strife", language: "Corinthian" },
+
+  { name: "Zingara", talent: "Sea Raider", language: "Zingaran" },
+
+  { name: "Khojara", talent: "Cosmopolitan", language: "Shemitish;Kothic" },
+
+  { name: "Khauran", talent: "Cosmopolitan", language: "Shemitish;Kothic" },
+
+  { name: "Kush", talent: "Strife", language: "Kushite" },
+
+  { name: "Darfar", talent: "Savage Court", language: "Darfari" },
+
+  { name: "Keshan", talent: "Savage Court", language: "Keshani" },
+
+  { name: "Punt", talent: "Gilded", language: "Punt" },
+
+  { name: "Zembabwei", talent: "Desert-born", language: "Zembabwein" },
+
+  { name: "The Black Kingdoms", talent: "Strife", language: "Kushite;Darfari;Keshani;Punt,Darfari" },
+
+  { name: "Turan", talent: "Guilded", language: "Turanian" },
+
+  { name: "Iranistan", talent: "Desert-born", language: "Iranistani" },
+
+  { name: "Hyrkania", talent: "Of Saddle and Bow", language: "Hyrkanian" },
+
+  { name: "Khitai", talent: "Savage Court", language: "Khitan" },
+
+  { name: "Vendhya", talent: "Gilded", language: "Vendhyan" }
+]
+
+castes = [
+  { name: "Crafter", skill: "craft", social_standing: 0,
+    talents: "Subject;Tradesman",
+    description: "There is an honesty in the way hammer hits metal, or how the awl bites into the wood. You’ve learned to trust in the objects you make, far more than those who might use them. When war-drums beckon, your purse swells with gold, and in peace-time it is sometimes difficult to make ends meet. Perhaps it’s time you packed up your tools and went looking for a new war."
+  },
+
+  { name: "Escaped Serf/Slave", skill: "survival", social_standing: 0,
+    talents: "Embittered;Vagabond",
+    description: "Whether from an open field or within the confines of the deepest mine, you were caught and forced into labor, a fate you despised. One day an opportunity presented itself, and you set yourself free. Now you look back only to see if your former masters are searching for you."
+  },
+
+  { name: "Farmer", skill: "animal_handling", social_standing: 1,
+    talents: "Homesteader;Subject",
+    description: "Born to the field, you learned your parents’ lessons well. One day, though, the time came when you had to face the open road. Perhaps your farm was razed to the ground, or suffered blight, or you simply sought a life other than that of a farmer. Whether your memory is filled with regrets or swimming with excitement, you feel a connection to the soil and to those who work to reap its bounty."
+  },
+
+  { name: "Herder", skill: "animal_handling", social_standing: 1,
+    talents: "Sentry;Subject",
+    description: "There are wolves at the edge of every land. Some walk on four feet, others on two. Regardless of where these predators come from, they inevitably seek to steal from your flock. It is up to you to stop them. Even though you’ve taken to a different life and your original flock is long gone, this basic fact hasn’t changed, and you remain ever-vigilant."
+  },
+
+  { name: "Merchant", skill: "persuade", social_standing: 1,
+    talents: "Tradesman;Vagabond",
+    description: "In vast families joined by convention and marriage there is little room for the youngest child to thrive. Still, whether you managed your uncle’s stalls, sold jewels found by thieves in the Maul, or supervised caravans between mighty cities, you know there is profit in providing the rare to the wealthy. Perhaps in this there is room enough for you to make your mark."
+  },
+
+  { name: "Outcast", skill: "thievery", social_standing: 1,
+    talents: "Embittered;Survivor",
+    description: "Met with disgusted eyes from even the slaves, outcasts are the beggars and petty thieves that skulk in alleys, sifting through rubbish for something to sell. While each nation treats outcasts differently, none treat them well, and you are used to hostility, or indifference at best, wherever you go."
+  },
+
+  { name: "Petty Nobility", skill: "command", social_standing: 1,
+    talents: "Sheltered;Subject",
+    description: "Your family has little need for you, as you were born far outside the line of succession. Your father sent you away with parting words telling you to “find your own sort of glory, or fail and be forgotten” seared into your mind. You have unlimited opportunities to find your own way, but you may find trouble should your family’s enemies learn of your forays."
+  },
+
+  { name: "Priesthood", skill: "lore", social_standing: 2,
+    talents: "Priest;Subject",
+    description: "The gods are real and active in the world around you, a fact you know for certain. They require sacrifice and dedication, and are not as merciful as we would hope. Whether your worship is from love, fear, ambition, or tradition, you have the certainty needed to navigate their most complicated rites and to ensure they do not inflict curses upon those you would protect."
+  },
+
+  { name: "Warrior", skill: "parry", social_standing: 2,
+    talents: "Sentry;Subject",
+    description: "One of your parents fought and died in battle. Your grandparent died guarding a city wall, having seen nothing more than the occasional tavern brawl. There was never a choice as to whether you’d pick up the blade as a calling, only the question as to how you’d turn profit from it."
+  }
+]
+
+caste_stories = [
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  },
+
+  { name: "", trait: "", description: ""  }
+]
+
+archetypes = [
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  },
+
+  { name: "", talent: "", skill_career: "",
+    skill_mandatory1: "", skill_mandatory2: "",
+    skill_mandatory2: "", skill_mandatory4: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: "",
+  }
+]
+
+natures = [
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  },
+
+  { name: "", talent: "", attribute: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: ""
+  }
+]
+
+educations = [
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  },
+
+  { name: "", talent: "",
+    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
+    skill_elective1: "", skill_elective2: "", skill_elective3: "",
+    description: "",
+    equipment: ""
+  }
+]
+
+war_stories = [
+  { name: "Defeated a Savage Beast", skill1: "animal_handling", skill2: "melee" },
+
+  { name: "Dispossessed", skill1: "resistance", skill2: "survival" },
+
+  { name: "Gained (and Lost) a Great Treasure", skill1: "observation", skill2: "society" },
+
+  { name: "Gained the Favor of a Local Noble", skill1: "persuasion", skill2: "society" },
+
+  { name: "Prevented a Disaster", skill1: "craft", skill2: "survival" },
+
+  { name: "Shipwrecked", skill1: "athletics", skill2: "sailing" },
+
+  { name: "Survived a Duel", skill1: "parry", skill2: "resistance" },
+
+  { name: "Survived a Massacre", skill1: "stealth", skill2: "survival" },
+
+  { name: "Survived a Stint at Court", skill1: "stealth", skill2: "survival" },
+
+  { name: "Survived Witchcraft or Sorcery", skill1: "discipline", skill2: "sorcery" }
+]
 
 weapons = {
 
