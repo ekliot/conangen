@@ -1343,64 +1343,64 @@ archetypes = [
 ]
 
 natures = [
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Catious", attribute: "willpower",
+    skill_mandatory1: "lore", skill_mandatory2: "parry", skill_mandatory3: "stealth",
+    skill_elective1: "animal_handling", skill_elective2: "athletics", skill_elective3: "sailing",
+    description: "You do your best to avoid trouble, whether through innate self-preservation or from hard-learned experience."
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Curious", attribute: "agility",
+    skill_mandatory1: "athletics", skill_mandatory2: "observation", skill_mandatory3: "stealth",
+    skill_elective1: "alchemy", skill_elective2: "lore", skill_elective3: "thievery",
+    description: "The world is a fascinating place, with many mysteries yet to be discovered. You are always trying to find out what is unknown, or what is being concealed from you. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Inspirational", attribute: "personality",
+    skill_mandatory1: "counsel", skill_mandatory2: "observation", skill_mandatory3: "persuasion",
+    skill_elective1: "command", skill_elective2: "healing", skill_elective3: "society",
+    description: "The world is a difficult place, and you take it upon yourself to provide a good example to those around you. Maybe you learned this from a prior command, or it seems the right thing to do. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Learned", attribute: "intelligence",
+    skill_mandatory1: "animal_handling", skill_mandatory2: "craft", skill_mandatory3: "lore",
+    skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "observation",
+    description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Practical", attribute: "coordination",
+    skill_mandatory1: "discipline", skill_mandatory2: "craft", skill_mandatory3: "healing",
+    skill_elective1: "alchemy", skill_elective2: "animal_handling", skill_elective3: "observation",
+    description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Scheming",attribute: "intelligence",
+    skill_mandatory1: "command", skill_mandatory2: "counsel", skill_mandatory3: "discipline",
+    skill_elective1: "acrobatics", skill_elective2: "lore", skill_elective3: "parry",
+    description: "There’s always an easier way to do things, one that does not involve as much risk or effort on your behalf. Furthermore, you always keep your options open, and always have a secondary plan of action. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Sneaky", attribute: "awareness",
+    skill_mandatory1: "observation", skill_mandatory2: "stealth", skill_mandatory3: "thievery",
+    skill_elective1: "acrobatics", skill_elective2: "athletics", skill_elective3: "survival",
+    description: "Information is power, and it is best to keep others in the dark when it comes to you. You have learned to move quietly, speak softly, and keep your true motives to yourself."
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Stoic", attribute: "willpower",
+    skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "resistance",
+    skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "parry",
+    description: "There is little in life that cannot be withstood, and no hardship — physical, mental, or even social — is so great that you cannot overcome it. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Supportive", attribute: "personality",
+    skill_mandatory1: "counsel", skill_mandatory2: "healing", skill_mandatory3: "persuasion",
+    skill_elective1: "animal_handling", skill_elective2: "discipline", skill_elective3: "resistance",
+    description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you. "
   },
 
-  { name: "", talent: "", attribute: "",
-    skill_mandatory1: "", skill_mandatory2: "", skill_mandatory3: "",
-    skill_elective1: "", skill_elective2: "", skill_elective3: "",
-    description: ""
+  { name: "Wrathful",attribute: "brawn",
+    skill_mandatory1: "melee", skill_mandatory2: "ranged", skill_mandatory3: "resistance",
+    skill_elective1: "acrobatics", skill_elective2: "discipline", skill_elective3: "parry",
+    description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality"
   }
 ]
 
