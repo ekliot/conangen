@@ -1371,160 +1371,174 @@ archetypes = [
 
 natures = [
   { name: "Catious", attribute: "willpower",
-    skill_mandatory1: "lore", skill_mandatory2: "parry", skill_mandatory3: "stealth",
+    skill_mandatory1: "lore",           skill_mandatory2: "parry",    skill_mandatory3: "stealth",
     skill_elective1: "animal_handling", skill_elective2: "athletics", skill_elective3: "sailing",
     description: "You do your best to avoid trouble, whether through innate self-preservation or from hard-learned experience."
   },
 
   { name: "Curious", attribute: "agility",
-    skill_mandatory1: "athletics", skill_mandatory2: "observation", skill_mandatory3: "stealth",
-    skill_elective1: "alchemy", skill_elective2: "lore", skill_elective3: "thievery",
+    skill_mandatory1: "athletics",  skill_mandatory2: "observation",  skill_mandatory3: "stealth",
+    skill_elective1: "alchemy",     skill_elective2: "lore",          skill_elective3: "thievery",
     description: "The world is a fascinating place, with many mysteries yet to be discovered. You are always trying to find out what is unknown, or what is being concealed from you."
   },
 
   { name: "Inspirational", attribute: "personality",
-    skill_mandatory1: "counsel", skill_mandatory2: "observation", skill_mandatory3: "persuade",
-    skill_elective1: "command", skill_elective2: "healing", skill_elective3: "society",
+    skill_mandatory1: "counsel",  skill_mandatory2: "observation",  skill_mandatory3: "persuade",
+    skill_elective1: "command",   skill_elective2: "healing",       skill_elective3: "society",
     description: "The world is a difficult place, and you take it upon yourself to provide a good example to those around you. Maybe you learned this from a prior command, or it seems the right thing to do."
   },
 
   { name: "Learned", attribute: "intelligence",
-    skill_mandatory1: "animal_handling", skill_mandatory2: "craft", skill_mandatory3: "lore",
-    skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "observation",
+    skill_mandatory1: "animal_handling",  skill_mandatory2: "craft",  skill_mandatory3: "lore",
+    skill_elective1: "counsel",           skill_elective2: "healing", skill_elective3: "observation",
     description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you."
   },
 
   { name: "Practical", attribute: "coordination",
-    skill_mandatory1: "discipline", skill_mandatory2: "craft", skill_mandatory3: "healing",
-    skill_elective1: "alchemy", skill_elective2: "animal_handling", skill_elective3: "observation",
+    skill_mandatory1: "discipline", skill_mandatory2: "craft",          skill_mandatory3: "healing",
+    skill_elective1: "alchemy",     skill_elective2: "animal_handling", skill_elective3: "observation",
     description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals."
   },
 
   { name: "Scheming",attribute: "intelligence",
-    skill_mandatory1: "command", skill_mandatory2: "counsel", skill_mandatory3: "discipline",
-    skill_elective1: "acrobatics", skill_elective2: "lore", skill_elective3: "parry",
+    skill_mandatory1: "command",    skill_mandatory2: "counsel",  skill_mandatory3: "discipline",
+    skill_elective1: "acrobatics",  skill_elective2: "lore",      skill_elective3: "parry",
     description: "There’s always an easier way to do things, one that does not involve as much risk or effort on your behalf. Furthermore, you always keep your options open, and always have a secondary plan of action."
   },
 
   { name: "Sneaky", attribute: "awareness",
-    skill_mandatory1: "observation", skill_mandatory2: "stealth", skill_mandatory3: "thievery",
-    skill_elective1: "acrobatics", skill_elective2: "athletics", skill_elective3: "survival",
+    skill_mandatory1: "observation",  skill_mandatory2: "stealth",  skill_mandatory3: "thievery",
+    skill_elective1: "acrobatics",    skill_elective2: "athletics", skill_elective3: "survival",
     description: "Information is power, and it is best to keep others in the dark when it comes to you. You have learned to move quietly, speak softly, and keep your true motives to yourself."
   },
 
   { name: "Stoic", attribute: "willpower",
-    skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "resistance",
-    skill_elective1: "counsel", skill_elective2: "healing", skill_elective3: "parry",
+    skill_mandatory1: "discipline", skill_mandatory2: "lore",   skill_mandatory3: "resistance",
+    skill_elective1: "counsel",     skill_elective2: "healing", skill_elective3: "parry",
     description: "There is little in life that cannot be withstood, and no hardship — physical, mental, or even social — is so great that you cannot overcome it."
   },
 
   { name: "Supportive", attribute: "personality",
-    skill_mandatory1: "counsel", skill_mandatory2: "healing", skill_mandatory3: "persuade",
-    skill_elective1: "animal_handling", skill_elective2: "discipline", skill_elective3: "resistance",
+    skill_mandatory1: "counsel",        skill_mandatory2: "healing",    skill_mandatory3: "persuade",
+    skill_elective1: "animal_handling", skill_elective2: "discipline",  skill_elective3: "resistance",
     description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you."
   },
 
   { name: "Wrathful",attribute: "brawn",
-    skill_mandatory1: "melee", skill_mandatory2: "ranged", skill_mandatory3: "resistance",
-    skill_elective1: "acrobatics", skill_elective2: "discipline", skill_elective3: "parry",
+    skill_mandatory1: "melee",      skill_mandatory2: "ranged",     skill_mandatory3: "resistance",
+    skill_elective1: "acrobatics",  skill_elective2: "discipline",  skill_elective3: "parry",
     description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality."
   }
 ]
 
 educations = [
   { name: "Against Your Parents' Will",
-    skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "stealth",
+    skill_mandatory1: "discipline",     skill_mandatory2: "lore",   skill_mandatory3: "stealth",
     skill_elective1: "animal_handling", skill_elective2: "sailing", skill_elective3: "survival",
     description: "You sought out your own education, defying your parent’s wishes. Though they tried to guide you in a particular direction, you practiced secretly. Perhaps it was the path followed by one of your parents, a close relative, or some figure significant to you.",
     equipment: "A broken family heirloom"
   },
 
   { name: "Apprenticed Abroad",
-    skill_mandatory1: "lore", skill_mandatory2: "career", skill_mandatory3: "random",
-    skill_elective1: "animal_handling", skill_elective2: "craft", skill_elective3: "sailing",
+    skill_mandatory1: "lore",           skill_mandatory2: "career", skill_mandatory3: "random",
+    skill_elective1: "animal_handling", skill_elective2: "craft",   skill_elective3: "sailing",
     description: "As a child, you were sent (or taken) from your home and educated in another land, amidst strangers. You adapted to your home as you learned ways that were strange to you, picking up the rudiments of skills that you scarcely cared about, until you began to grasp their usefulness.",
     equipment: "A selection of useful maps of the Hyborian kingdoms"
   },
 
   { name: "Educated on the Battlefield",
-    skill_mandatory1: "acrobatics", skill_mandatory2: "healing", skill_mandatory3: "survival",
-    skill_elective1: "melee", skill_elective2: "parry", skill_elective3: "ranged",
+    skill_mandatory1: "acrobatics", skill_mandatory2: "healing",  skill_mandatory3: "survival",
+    skill_elective1: "melee",       skill_elective2: "parry",     skill_elective3: "ranged",
     description: "Your education was a harsh one, your school-yard strewn with the dead and dying, the clash and clamor of combat were your lessons. For whatever reason, as a child you were thrust into battle, forced to fight for your survival with your enemies as the strictest of taskmasters.",
     equipment: "A melee weapon of choice and a helmet (Armor 3: Head);A battlefield honor"
   },
 
   { name: "Educated by Masterful Tutors",
-    skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "career",
-    skill_elective1: "resistance", skill_elective2: "survival", skill_elective3: "career",
+    skill_mandatory1: "discipline", skill_mandatory2: "lore",     skill_mandatory3: "career",
+    skill_elective1: "resistance",  skill_elective2: "survival",  skill_elective3: "career",
     description: "Fortunate was your apprenticeship, and you found yourself able to learn under the tutelage of a true master. Whether sitting on the rough ground beside your teacher, educated in the high halls of nobility, or in a well-appointed workshop, you learned from the very best.",
     equipment: "Letter of praise and introduction from your tutor"
   },
 
   { name: "Elder Mentor",
-    skill_mandatory1: "discipline", skill_mandatory2: "lore", skill_mandatory3: "random_career",
+    skill_mandatory1: "discipline",     skill_mandatory2: "lore",       skill_mandatory3: "random_career",
     skill_elective1: "animal_handling", skill_elective2: "observation", skill_elective3: "parry",
     description: "Your mentor was venerable, well-known and respected by peers and associates, but was one whose heyday had passed. It was time for you to pick up your belongings and continue on your mentor’s path, continuing that great and respected tradition.",
     equipment: "A piece of equipment from your mentor’s archetype"
   },
 
   { name: "Family Footsteps",
-    skill_mandatory1: "discipline", skill_mandatory2: "resistance", skill_mandatory3: "career",
-    skill_elective1: "animal_handling", skill_elective2: "society", skill_elective3: "survival",
+    skill_mandatory1: "discipline",     skill_mandatory2: "resistance", skill_mandatory3: "career",
+    skill_elective1: "animal_handling", skill_elective2: "society",     skill_elective3: "survival",
     description: "You learned your career directly from one of your family-members: whether a parent, grandparent, uncle or aunt, brother or sister. This meant that you received additional attention, but also meant that the lessons were longer and the standards were much higher.",
     equipment: "A family heirloom of little more than sentimental value"
   },
 
   { name: "Largely Absent",
-    skill_mandatory1: "athletics", skill_mandatory2: "persuade", skill_mandatory3: "career",
-    skill_elective1: "acrobatics", skill_elective2: "observation", skill_elective3: "resistance",
+    skill_mandatory1: "athletics", skill_mandatory2: "persuade",    skill_mandatory3: "career",
+    skill_elective1: "acrobatics", skill_elective2: "observation",  skill_elective3: "resistance",
     description: "Left to fend for yourself, you had to learn on your own. Perhaps it was through negligence or necessity, or it was tragedy that kept you alone. The end result was the same: hours and even days spent with little to do but study or train, to repeat tasks until you had mastered them.",
     equipment: ""
   },
 
   { name: "On Your Own Terms",
-    skill_mandatory1: "acrobatics", skill_mandatory2: "athletics", skill_mandatory3: "stealth",
-    skill_elective1: "craft", skill_elective2: "lore", skill_elective3: "survival",
+    skill_mandatory1: "acrobatics", skill_mandatory2: "athletics",  skill_mandatory3: "stealth",
+    skill_elective1: "craft",       skill_elective2: "lore",        skill_elective3: "survival",
     description: "You always knew what you wanted, and sought out your own education when it was clear it would not be offered you. Driven, you chose your teachers carefully, and found other means of learning when there were none to instruct you. Even now, you follow your own path to enlightenment.",
     equipment: ""
   },
 
   { name: "Traditional",
-    skill_mandatory1: "animal_handling", skill_mandatory2: "craft", skill_mandatory3: "career",
-    skill_elective1: "melee", skill_elective2: "parry", skill_elective3: "random_career",
+    skill_mandatory1: "animal_handling",  skill_mandatory2: "craft",  skill_mandatory3: "career",
+    skill_elective1: "melee",             skill_elective2: "parry",   skill_elective3: "random_career",
     description: "Yours was an unremarkable education, perhaps thankfully. You were either trained in the family trade, apprenticed to a (mostly) benevolent master, or tutored without overmuch drama. As such, your education was well-rounded, if not the most inspired. Looking back, you feel blessed.",
     equipment: "A heavy cape (Armor 1: Torso/Legs);Crafting tools;A melee weapon of choice"
   },
 
   { name: "Under Duress",
-    skill_mandatory1: "lore", skill_mandatory2: "resistance", skill_mandatory3: "career",
-    skill_elective1: "animal_handling", skill_elective2: "society", skill_elective3: "survival",
+    skill_mandatory1: "lore",           skill_mandatory2: "resistance", skill_mandatory3: "career",
+    skill_elective1: "animal_handling", skill_elective2: "society",     skill_elective3: "survival",
     description: "Whether you were enslaved, apprenticed cruelly, or were simply a reluctant student, your education was a hard-fought battle that you stubbornly resisted, only learning when it became absolutely necessary (and sometimes even barely so). Others look to these years with fondness: you do not.",
     equipment: "A broken family heirloom"
   }
 ]
 
 war_stories = [
-  { name: "Defeated a Savage Beast", skill1: "animal_handling", skill2: "melee" },
+  { name: "Defeated a Savage Beast",
+    skill1: "animal_handling",  skill2: "melee" },
 
-  { name: "Dispossessed", skill1: "resistance", skill2: "survival" },
+  { name: "Dispossessed",
+    skill1: "resistance",       skill2: "survival" },
 
-  { name: "Gained (and Lost) a Great Treasure", skill1: "observation", skill2: "society" },
+  { name: "Gained (and Lost) a Great Treasure",
+    skill1: "observation",      skill2: "society" },
 
-  { name: "Gained the Favor of a Local Noble", skill1: "persuade", skill2: "society" },
+  { name: "Gained the Favor of a Local Noble",
+    skill1: "persuade",         skill2: "society" },
 
-  { name: "Prevented a Disaster", skill1: "craft", skill2: "survival" },
+  { name: "Prevented a Disaster",
+    skill1: "craft",            skill2: "survival" },
 
-  { name: "Shipwrecked", skill1: "athletics", skill2: "sailing" },
+  { name: "Shipwrecked",
+    skill1: "athletics",        skill2: "sailing" },
 
-  { name: "Survived a Duel", skill1: "parry", skill2: "resistance" },
+  { name: "Survived a Duel",
+    skill1: "parry",            skill2: "resistance" },
 
-  { name: "Survived a Massacre", skill1: "stealth", skill2: "survival" },
+  { name: "Survived a Massacre",
+    skill1: "stealth",          skill2: "survival" },
 
-  { name: "Survived a Stint at Court", skill1: "stealth", skill2: "survival" },
+  { name: "Survived a Stint at Court",
+    skill1: "stealth",          skill2: "survival" },
 
-  { name: "Survived Witchcraft or Sorcery", skill1: "discipline", skill2: "sorcery" }
+  { name: "Survived Witchcraft or Sorcery",
+    skill1: "discipline",       skill2: "sorcery" }
 ]
 
 weapons = {
-
+  { name: "", category: "", type: "",
+    damage: , reach: "", size: "",
+    encumbrance: "", availability: , cost: ,
+    qualities: ""
+  },
 }
