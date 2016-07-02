@@ -1315,7 +1315,7 @@ archetypes = [
   { name: "Noble Warrior",          talent: "A Modicum of Comfort",       skill_career: "society",
     skill_mandatory1: "acrobatics", skill_mandatory2: "animal_handling",
     skill_mandatory2: "parry",      skill_mandatory4: "resistance",
-    skill_elective1: "melee",       skill_elective2: "persuade",        skill_elective3: "ranged",
+    skill_elective1: "melee",       skill_elective2: "persuade",          skill_elective3: "ranged",
     description: "You may be a knighted noble from one of the civilized Hyborian kingdoms such as Aquilonia, Nemedia, Zingara, Brythunia, or elsewhere. Whether you hold to a code of chivalry or are merely a well-trained and equipped warrior, you fight primarily for yourself and for causes you choose.",
     equipment: "heavy hauberk&&helmet&&shield&&weapon&&weapon&&suit of fine clothing&&traveling clothes&&horse,war&&light barding",
   },
@@ -1536,9 +1536,79 @@ war_stories = [
 ]
 
 weapons = {
-  { name: "", category: "", type: "",
-    damage: , reach: "", size: "",
-    encumbrance: "", availability: , cost: ,
-    qualities: ""
+  melee: {
+    sword: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    knife: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    axe: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    club: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    polearm: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    flexible: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ]
   },
+
+  ranged: {
+    bow: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    crossbow: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ],
+
+    throwing: [
+      { name: "",
+        damage: , reach: "", size: "",
+        encumbrance: "", availability: , cost: ,
+        qualities: ""
+      },
+    ]
+  }
 }
