@@ -1284,7 +1284,7 @@ archetypes = [
     skill_mandatory3: "stealth",          skill_mandatory4: "survival",
     skill_elective1: "acrobatics",        skill_elective2: "athletics",   skill_elective3: "melee",
     description: "Whether trained alongside the legendary Bossonian archers, within one of the militaries of the great middle kingdoms, or even skilled in Hyrkanian horse archery, you are now a practiced archer, capable of sending iron-tipped shafts across great distances with accuracy.",
-    equipment: "bow&&reload&&reload&&[[padded gambeson&&trousers]||[brigandine vest&&brigandine trousers]||mail vest]&&helmet&&melee weapon&&[riding horse||riding donkey]",
+    equipment: "" # equipment: "bow&&reload&&reload&&[[padded gambeson&&trousers]||[brigandine vest&&brigandine trousers]||mail vest]&&helmet&&melee weapon&&[riding horse||riding donkey]",
   },
 
   { name: "Barbarian",              talent: "No Mercy",                   skill_career: "melee",
@@ -1292,7 +1292,7 @@ archetypes = [
     skill_mandatory3: "athletics",  skill_mandatory4: "survival",
     skill_elective1: "acrobatics",  skill_elective2: "healing",           skill_elective3: "parry",
     description: "You hail from one of the untamed lands bordering civilization, whether to the far north, the east, the south, or some other uncharted territory. Your ways are as strange to civilized folk as their customs are inscrutable to you.",
-    equipment: "[[brigandine long coat]||[mail vest&&helmet]||ragged furs]&&melee weapon&&melee weapon",
+    equipment: "" # equipment: "[[brigandine long coat]||[mail vest&&helmet]||ragged furs]&&melee weapon&&melee weapon",
   },
 
   { name: "Mercenary",                  talent: "Strong Back",      skill_career: "athletics",
@@ -1300,7 +1300,7 @@ archetypes = [
     skill_mandatory3: "parry",          skill_mandatory4: "ranged",
     skill_elective1: "animal_handling", skill_elective2: "healing", skill_elective3: "stealth",
     description: "",
-    equipment: "[mail, full||[brigandine long coat&&helmet]]&&polearm&&melee weapon&&sling&&reload&&mule, pack&&horse, riding",
+    equipment: "" # equipment: "[mail, full||[brigandine long coat&&helmet]]&&polearm&&melee weapon&&sling&&reload&&mule, pack&&horse, riding",
   },
 
   { name: "Noble Warrior",          talent: "A Modicum of Comfort",       skill_career: "society",
@@ -1308,7 +1308,7 @@ archetypes = [
     skill_mandatory3: "parry",      skill_mandatory4: "resistance",
     skill_elective1: "melee",       skill_elective2: "persuade",          skill_elective3: "ranged",
     description: "You may be a knighted noble from one of the civilized Hyborian kingdoms such as Aquilonia, Nemedia, Zingara, Brythunia, or elsewhere. Whether you hold to a code of chivalry or are merely a well-trained and equipped warrior, you fight primarily for yourself and for causes you choose.",
-    equipment: "heavy hauberk&&helmet&&shield&&weapon&&weapon&&suit of fine clothing&&traveling clothes&&horse,war&&light barding",
+    equipment: "" # equipment: "heavy hauberk&&helmet&&shield&&weapon&&weapon&&suit of fine clothing&&traveling clothes&&horse,war&&light barding",
   },
 
   { name: "Nomad",                  talent: "Born in the Saddle",   skill_career: "animal_handling",
@@ -1316,7 +1316,7 @@ archetypes = [
     skill_mandatory3: "parry",      skill_mandatory4: "survival",
     skill_elective1: "melee",       skill_elective2: "ranged",      skill_elective3: "stealth",
     description: "To the east and south, the Hyborian kingdoms are surrounded by deserts, steppes, tundra, and wastelands — inhospitable to civilized folk but home to you and your people. You know how to survive in these places, to find food and water and to make shelter, and to navigate to safety. Life is hard in your homeland, perhaps the reason you left.",
-    equipment: "[[weapon||reload]&&[weapon||reload]&&[weapon||reload]]&&[[heavy clothing]||mail vest]&&horse&&mule&&handler's kit&&rewards&&rewards&&rewards",
+    equipment: "" # equipment: "[[weapon||reload]&&[weapon||reload]&&[weapon||reload]]&&[[heavy clothing]||mail vest]&&horse&&mule&&handler's kit&&rewards&&rewards&&rewards",
   },
 
   { name: "Priest/Priestess",       talent: "Quiet Wisdom",       skill_career: "counsel",
@@ -1324,7 +1324,7 @@ archetypes = [
     skill_mandatory3: "persuade",   skill_mandatory4: "society",
     skill_elective1: "alchemy",     skill_elective2: "healing",   skill_elective3: "sorcery",
     description: "Born into the faith or a late convert, you feel the calling of one of the many gods of the Hyborian Age: from holy Mitra, accursed Set, Ishtar, Bori, Asura, Ibis, the living Tarim, Erlik, Bel, Derketo, or even those who are not overly worshipped, like Crom, Ymir, or the Zamoran spider-god. You are either associated with a particular temple or you are itinerant, wandering the land and converting the unfaithful by any means you can, be it through example, with convincing speech, or by the sword.",
-    equipment: "melee weapon&&a single copy of a scroll or book containing your faith’s precepts and holy words&&travelling clothes&&priestly vestments&&oils, herbs, and religious accoutrements&&mule&&kit for elective skill&&kit for elective skill",
+    equipment: "" # equipment: "{melee}&&A single copy of a scroll or book containing your faith’s precepts and holy words&&travelling clothes&&priestly vestments&&oils, herbs, and religious accoutrements&&mule&&kit for elective skill&&kit for elective skill",
   },
 
   { name: "Pirate",                 talent: "Sharp Senses",       skill_career: "observation",
@@ -1332,7 +1332,7 @@ archetypes = [
     skill_mandatory3: "resistance", skill_mandatory4: "survival",
     skill_elective1: "sailing",     skill_elective2: "stealth",   skill_elective3: "thievery",
     description: "You may once have been a sailor, a merchant, or even the member of one of the great navies, but eventually you turned your hand towards piracy. More at home on the open water than on land, you are nonetheless willing to seek your fortune wherever fate guides you.",
-    equipment: "melee weapon&&padded jerkin&&a share in a small water craft, or the proceeds that may come from its activities",
+    equipment: "" # equipment: "{melee}&&Padded jerkin&&[A share in a small water craft||The proceeds that may come from its activities]",
   },
 
   { name: "Scholar",                      talent: "Scribe",                 skill_career: "lore",
@@ -1340,7 +1340,7 @@ archetypes = [
     skill_mandatory3: "persuade",         skill_mandatory4: "society",
     skill_elective1: "alchemy",           skill_elective2: "healing",       skill_elective3: "sorcery",
     description: "You have explored the breadth of history and human knowledge from the vantage point of a chair, spending hours poring over thick tomes of lore. Your interest may be specific to a particular field of study, or you may have broad expertise in a variety of subjects. Despite your inclination towards scholarship, you have ventured into the world outside your studies, to experience the world firsthand.",
-    equipment: "[melee weapon||ranged weapon]&&several sets of plain travelling clothes&&a suit of courtly clothing&&a plethora of writing materials&&horse&&pack mule&&item mandatory skill&&item mandatory skill&&item mandatory skill&&item mandatory skill&&item elective skill&&item elective skill&&library, personal&&library, reference",
+    equipment: "" # equipment: "[{melee}||{ranged}]&&Several sets of plain travelling clothes&&A suit of courtly clothing&&A plethora of writing materials&&Horse&&{mount::Baggage mule}&&{item::tool::mandatory_skill}&&{item::tool::mandatory_skill}&&{item::tool::mandatory_skill}&&{tool::mandatory_skill}&&{tool::elective_skill}&&{tool::elective_skill}&&{library, personal}",
   },
 
   { name: "Scoundrel",                  talent: "Agile",            skill_career: "acrobatics",
@@ -1348,7 +1348,7 @@ archetypes = [
     skill_mandatory3: "persuade",       skill_mandatory4: "society",
     skill_elective1: "animal_handling", skill_elective2: "melee",   skill_elective3: "thievery",
     description: "You make a living exploiting the weaknesses of others, whether gambling, theft, or outright banditry. Survival by wits is the only life you have ever known, and you have gotten quite good at it, trusting in your wits, reflexes, and lack of scruples to get you out of danger, though by one means or another you readily find yourself back in the thick of it.",
-    equipment: "melee weapon&&[brigandine jacket||heavy clothing]&&[shield||none]&&a small chest of counterfeit goods",
+    equipment: "" # equipment: "{weapon::melee}&&[{armor::light::Brigandine jacket}||{armor::heavy_clothing::Heavy clothing}]&&[{weapon::melee::shield}||{nothing}]&&A small chest of counterfeit goods",
   },
 
   { name: "Witch/Shaman",               talent: "Force of Presence",  skill_career: "persuade",
@@ -1356,7 +1356,7 @@ archetypes = [
     skill_mandatory3: "healing",        skill_mandatory4: "lore",
     skill_elective1: "animal_handling", skill_elective2: "sorcery",   skill_elective3: "thievery",
     description: "You have made pacts with powers that are not of this world, sought knowledge forbidden to, and feared by, most, and for this daring you have been granted power and insights beyond those of mortal men and women. Even if you are unable to use sorcery outright, you know much secret lore as well as the secrets of the natural world. It is up to you whether you practice your gifts to assist others, or for your own desires.",
-    equipment: "dagger&&toughened leather jacket&&kit healing&&kit alchemy&&library, personal&&[riding horse||riding donkey]",
+    equipment: "" # equipment: "{weapon::melee::knife::Dagger}&&{armor::light::Toughened leather jacket}&&{item::kit::healing}&&{item::kit::alchemy}&&{item::kit::library::personal::any}&&[{mount::Riding horse}||{mount::Donkey}]",
   }
 ]
 
