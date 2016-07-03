@@ -1,2 +1,2 @@
-class Lifepath::StoryWar < ActiveRecord::Base
+class Lifepath::StoryWar < ApplicationRecord
 end

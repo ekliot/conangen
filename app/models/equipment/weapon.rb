@@ -1,2 +1,2 @@
-class Equipment::Weapon < ActiveRecord::Base
+class Equipment::Weapon < ApplicationRecord
 end

@@ -1,4 +1,4 @@
-class Lifepath::Lifepath < ActiveRecord::Base
+class Lifepath::Lifepath < ApplicationRecord
   belongs_to :character
 
   belongs_to :homeland

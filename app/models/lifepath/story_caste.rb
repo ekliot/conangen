@@ -1,3 +1,3 @@
-class Lifepath::StoryCaste < ActiveRecord::Base
+class Lifepath::StoryCaste < ApplicationRecord
   belongs_to :caste
 end

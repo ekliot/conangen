@@ -1,3 +1,3 @@
-class Lifepath::Caste < ActiveRecord::Base
+class Lifepath::Caste < ApplicationRecord
   has_many :talents
 end

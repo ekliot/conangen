@@ -1,3 +1,3 @@
-class SkillSet < ActiveRecord::Base
+class SkillSet < ApplicationRecord
   belongs_to :character
 end

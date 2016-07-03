@@ -2,7 +2,7 @@
 #   skills  :: "skill exp foc;...;ski­ll exp foc"  << AND >>
 #   talents :: "talen­t rank;...;tal­ent rank"      << OR  >> (except 'Smell Out Sorcery', 'Ear of the King')
 
-class Talent < ActiveRecord::Base
+class Talent < ApplicationRecord
 
   def skill_prereq
     skill_hash = {}

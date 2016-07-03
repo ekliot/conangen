@@ -1,4 +1,4 @@
-class Character < ActiveRecord::Base
+class Character < ApplicationRecord
   belongs_to :user
 
   has_one :skill_set, dependent: :destroy, validate: true

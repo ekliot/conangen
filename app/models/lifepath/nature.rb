@@ -1,3 +1,3 @@
-class Lifepath::Nature < ActiveRecord::Base
+class Lifepath::Nature < ApplicationRecord
   belongs_to :talent
 end

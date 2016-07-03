@@ -1,4 +1,4 @@
-class Lifepath::Homeland < ActiveRecord::Base
+class Lifepath::Homeland < ApplicationRecord
   belongs_to :talent
 end
 
