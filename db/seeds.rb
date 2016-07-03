@@ -1160,128 +1160,128 @@ caste_stories = {
 
     { name: "Pressed for War", trait: "Envious Peers", description: "Your apprenticeship came to you as siege engines fired over the bulwarks of your city and shattered the walls and roofs within. The blacksmiths made weapons and armor constantly, and often enough you were handed a box of scrap metal and told “get to it.” After ten days, you’d done more work than most journeymen and produced some quality work, despite the pressures outside. What was your greatest creation from that time? What came of it?"},
 
-    { name: "Too Many Closed Mines", trait: "Criminal Past", description: "You passed your apprenticeship, but only barely so. Ore was rare and mines were largely worked out. You had to scavenge with some of your fellow apprentices to try and find enough ore to work with. When you finally found some, a gang or prospectors tried to steal it from you. What happened? Did you get enough metal to achieve the journeyman rank, or did you have to look elsewhere?"  },
+    { name: "Too Many Closed Mines", trait: "Criminal Past", description: "You passed your apprenticeship, but only barely so. Ore was rare and mines were largely worked out. You had to scavenge with some of your fellow apprentices to try and find enough ore to work with. When you finally found some, a gang or prospectors tried to steal it from you. What happened? Did you get enough metal to achieve the journeyman rank, or did you have to look elsewhere?" },
 
-    { name: "Sundered Mark", trait: "Cast Aside", description: "You have caused dire offense to the guild of your home town, and now your family’s mark has been stricken from memory. Where it once hung, the mark has been scraped clean, filled in, and painted over. Very few examples of your craft remain, and folk will only buy your wares at a significant discount. While you can still earn your way performing your craft, it is only because of what few friends will still stand by you. How did you earn the ire of the guild, and who can you still count on?"  },
+    { name: "Sundered Mark", trait: "Cast Aside", description: "You have caused dire offense to the guild of your home town, and now your family’s mark has been stricken from memory. Where it once hung, the mark has been scraped clean, filled in, and painted over. Very few examples of your craft remain, and folk will only buy your wares at a significant discount. While you can still earn your way performing your craft, it is only because of what few friends will still stand by you. How did you earn the ire of the guild, and who can you still count on?" }
   ],
 
   "Escaped Serf/Slave" => [
-    { name: "A Band of Brothers, Living Free", trait: "Regrets", description: "Whether by your own hand or the will of another, you were freed, alone in the world. You found others like yourself, and formed a band. Through scavenging, work, and even theft, you supported one another, hidden within a ruined building on the fringe of society. Then something brought it to an end. Who betrayed your band? What, or who, were the guards looking for? Why do your former friends mistrust you?"  },
+    { name: "A Band of Brothers, Living Free", trait: "Regrets", description: "Whether by your own hand or the will of another, you were freed, alone in the world. You found others like yourself, and formed a band. Through scavenging, work, and even theft, you supported one another, hidden within a ruined building on the fringe of society. Then something brought it to an end. Who betrayed your band? What, or who, were the guards looking for? Why do your former friends mistrust you?" },
 
-    { name: "Hidden Far from Noble Site", trait: "Fond Memories", description: "Suddenly they died and you were alone. You could go anywhere, do anything. You took their money and spent every penny, constantly on the move. Then you found it: a perfect home, far from suspicious eyes. That home is gone now, just a memory that makes you smile. Where was that home, and what made it so special?"  },
+    { name: "Hidden Far from Noble Site", trait: "Fond Memories", description: "Suddenly they died and you were alone. You could go anywhere, do anything. You took their money and spent every penny, constantly on the move. Then you found it: a perfect home, far from suspicious eyes. That home is gone now, just a memory that makes you smile. Where was that home, and what made it so special?" },
 
-    { name: "One of the Multitudes", trait: "Marked by the Pit", description: "Thousands of laborers toiled in the site as your master brought forth his vision. Conditions were cruel and many times you tasted the lash. As if a miracle, the call came. As the uprising spread through the camp, with dozens of others you won your escape. Did you fight your oppressors valiantly, or did you slink away like a cur?"  },
+    { name: "One of the Multitudes", trait: "Marked by the Pit", description: "Thousands of laborers toiled in the site as your master brought forth his vision. Conditions were cruel and many times you tasted the lash. As if a miracle, the call came. As the uprising spread through the camp, with dozens of others you won your escape. Did you fight your oppressors valiantly, or did you slink away like a cur?" },
 
-    { name: "Under the Eyes of the Masters", trait: "Stalked like Prey", description: "They know you have escaped and they know where you have run. Perhaps they bide their time, or perhaps you are not worth the cost of retrieval. Still you know the strange one from the blackened tower has spies that watch your every step. Why is the strange one so interested in you?"  },
+    { name: "Under the Eyes of the Masters", trait: "Stalked like Prey", description: "They know you have escaped and they know where you have run. Perhaps they bide their time, or perhaps you are not worth the cost of retrieval. Still you know the strange one from the blackened tower has spies that watch your every step. Why is the strange one so interested in you?" },
 
-    { name: "Hunted by Your Master", trait: "Nemesis", description: "Your former master never forgot the indignity of your escape. Now with estate in ruins, she lives only for vengeance. Who is she and why does she hate you so much?"  },
+    { name: "Hunted by Your Master", trait: "Nemesis", description: "Your former master never forgot the indignity of your escape. Now with estate in ruins, she lives only for vengeance. Who is she and why does she hate you so much?" },
 
-    { name: "Hunted by the Law", trait: "Hunted!", description: "They’re on your track, crashing through taverns and looking in the alleys. Perhaps you committed the crime and it was worth it. Perhaps you are unjustly tormented. Either way a trail of suffering follows in your wake. Whose suffering do you regret the most and what will you do to put them at ease?"  },
+    { name: "Hunted by the Law", trait: "Hunted!", description: "They’re on your track, crashing through taverns and looking in the alleys. Perhaps you committed the crime and it was worth it. Perhaps you are unjustly tormented. Either way a trail of suffering follows in your wake. Whose suffering do you regret the most and what will you do to put them at ease?" }
   ],
 
   "Farmer" => [
-    { name: "Blessed Harvests", trait: "Family", description: "You remember fondly how hard work made the ground spill its bounty and how the seasons seemed to be fair. You remember the fellowship of your loved ones. Where are they now?"  },
+    { name: "Blessed Harvests", trait: "Family", description: "You remember fondly how hard work made the ground spill its bounty and how the seasons seemed to be fair. You remember the fellowship of your loved ones. Where are they now?" },
 
-    { name: "Ample for Winter", trait: "Lost Love", description: "Every day brought a small hardship that made you strong. The ground was hard in summer and slush in winter, yet when the stores had to be opened there was always enough barley for a strong drink and plenty of food. Looking back, you scarcely remember the people of your village. Should you return, they would scarce remember you. Perhaps there is someone there worth returning to see. Do you even remember that person’s name?"  },
+    { name: "Ample for Winter", trait: "Lost Love", description: "Every day brought a small hardship that made you strong. The ground was hard in summer and slush in winter, yet when the stores had to be opened there was always enough barley for a strong drink and plenty of food. Looking back, you scarcely remember the people of your village. Should you return, they would scarce remember you. Perhaps there is someone there worth returning to see. Do you even remember that person’s name?" },
 
-    { name: "Winter in the Balance", trait: "Vengeance", description: "It was a struggle every year. The lord took plenty for his knights, leaving little for the common folk. Sometimes you ate, while other times you simply drank snow water and slept as the wolves howled. You remember no beauty in that bleak place — only the torments of the thieving knights. One knight in particular took pleasure in the hardship he inflicted. If you meet him again, will you take revenge? Why?"  },
+    { name: "Winter in the Balance", trait: "Vengeance", description: "It was a struggle every year. The lord took plenty for his knights, leaving little for the common folk. Sometimes you ate, while other times you simply drank snow water and slept as the wolves howled. You remember no beauty in that bleak place — only the torments of the thieving knights. One knight in particular took pleasure in the hardship he inflicted. If you meet him again, will you take revenge? Why?" },
 
-    { name: "Meager Soup and Angry Eyes", trait: "Traitor", description: "Even the protectors of your village went hungry, and when they did, everyone suffered. Raids were planned on other villages, but you never saw any of the food they brought back. The only way to survive was by poaching, but the game was scarce and you had to keep your kills to yourself. Eventually, you were found out and the angry eyes of the villagers were terrible to behold. Were you punished, and did you ever redeem yourself?"  },
+    { name: "Meager Soup and Angry Eyes", trait: "Traitor", description: "Even the protectors of your village went hungry, and when they did, everyone suffered. Raids were planned on other villages, but you never saw any of the food they brought back. The only way to survive was by poaching, but the game was scarce and you had to keep your kills to yourself. Eventually, you were found out and the angry eyes of the villagers were terrible to behold. Were you punished, and did you ever redeem yourself?" },
 
-    { name: "Not a Spare Bean", trait: "Trusted of Traitor", description: "You remember seeing the warrior die. He simply stopped and fell, his armor clattering on the stony ground. He had come to take taxes for the fifth time, but there was no food or other wealth to be had. When he learned he could take nothing from you and your kin, he just stopped, as if his soul had given up, onwards to some other place of plenitude. The horse was short work for the butcher and you were sent south to find someone to buy the man’s sword. Did you find a buyer? Did you take the profits home? "  },
+    { name: "Not a Spare Bean", trait: "Trusted of Traitor", description: "You remember seeing the warrior die. He simply stopped and fell, his armor clattering on the stony ground. He had come to take taxes for the fifth time, but there was no food or other wealth to be had. When he learned he could take nothing from you and your kin, he just stopped, as if his soul had given up, onwards to some other place of plenitude. The horse was short work for the butcher and you were sent south to find someone to buy the man’s sword. Did you find a buyer? Did you take the profits home? " },
 
-    { name: "Famine", trait: "Cannibal", description: "When the crops were gone, you ate the beasts of the forest. Then you killed and shared the beasts that worked your fields. As water became a luxury, some in your village looked at the soft flesh of the masters and contemplated a different type of prey. As the knife sunk deep into the land-owner’s agent rain began to fall. You looked on in horror, as desperation revealed its ugliest side. You were forced to ask yourself the hardest question. How hungry were you?"  },
+    { name: "Famine", trait: "Cannibal", description: "When the crops were gone, you ate the beasts of the forest. Then you killed and shared the beasts that worked your fields. As water became a luxury, some in your village looked at the soft flesh of the masters and contemplated a different type of prey. As the knife sunk deep into the land-owner’s agent rain began to fall. You looked on in horror, as desperation revealed its ugliest side. You were forced to ask yourself the hardest question. How hungry were you?" }
   ],
 
   "Herder" => [
-    { name: "A Heavy Lambing Season", trait: "Exotic tastes", description: "You scarcely remember the work, but you’ll never forget the noise. An endless chorus of bleats, swearing, and the wet sounds of butchery. When the season was over, you were rich enough to afford comforts your forbearers had never indulged in. What did you get a taste for, and does it tempt you still?"  },
+    { name: "A Heavy Lambing Season", trait: "Exotic tastes", description: "You scarcely remember the work, but you’ll never forget the noise. An endless chorus of bleats, swearing, and the wet sounds of butchery. When the season was over, you were rich enough to afford comforts your forbearers had never indulged in. What did you get a taste for, and does it tempt you still?" },
 
-    { name: "Nights of Sweet Silence", trait: "Hedonist", description: "You remember the hills where you rested, sandwiched between the grasses and scented herbs of the wild. The days were tender and the nights were long. You spent more time at play than at work, and gained memories that still lighten your heart, even in leaner years. Of these, what is your fondest memory?"  },
+    { name: "Nights of Sweet Silence", trait: "Hedonist", description: "You remember the hills where you rested, sandwiched between the grasses and scented herbs of the wild. The days were tender and the nights were long. You spent more time at play than at work, and gained memories that still lighten your heart, even in leaner years. Of these, what is your fondest memory?" },
 
-    { name: "Howls in the Night", trait: "Nightmares", description: "Wolves were only an occasional threat, but tell that to your aunt. She was determined to make you a masterful wolf hunter, even if she had to beat the lessons into you. Despite all the training, you only remember hearing howls once. Your aunt woke you quietly and with you went into the forest, brandishing fire and steel. When you emerged into daylight, she seemed a hundred years older and you never slept properly again. What dreams haunt you still?"  },
+    { name: "Howls in the Night", trait: "Nightmares", description: "Wolves were only an occasional threat, but tell that to your aunt. She was determined to make you a masterful wolf hunter, even if she had to beat the lessons into you. Despite all the training, you only remember hearing howls once. Your aunt woke you quietly and with you went into the forest, brandishing fire and steel. When you emerged into daylight, she seemed a hundred years older and you never slept properly again. What dreams haunt you still?" },
 
-    { name: "A Decimated Herd", trait: "Survivor", description: "The illness left many dead in its wake. Superstition had its way, and even more of the herd were sacrificed to save the healthy. When the plague had passed, only one in five lived. The herd was doomed. Your cattle master drove the remainder to town, where they were slaughtered and the money divided amongst you. In the morning, you found him hanged with a lock of his wife’s hair still woven around his fingers. Just the night before he had seemed so wise. What was the last thing he said to you?"  },
+    { name: "A Decimated Herd", trait: "Survivor", description: "The illness left many dead in its wake. Superstition had its way, and even more of the herd were sacrificed to save the healthy. When the plague had passed, only one in five lived. The herd was doomed. Your cattle master drove the remainder to town, where they were slaughtered and the money divided amongst you. In the morning, you found him hanged with a lock of his wife’s hair still woven around his fingers. Just the night before he had seemed so wise. What was the last thing he said to you?" },
 
-    { name: "Wolves Amongst the Flock", trait: "Compassionate", description: "It was only natural in the hard winter that the wolves would find you. At first, they were the nuisance they had always been, but as the snows grew deeper the tracks got larger. Somewhere in the forest, a great wolf was gathering a pack larger than any seen before. Foresters would go in gangs to gather firewood, but you quickly found yourself lost. In the snow while carrying a bundle of wet branches, you saw it and looked into its eyes. To this day those eyes haunt you. What did you see and why did it let you live?"  },
+    { name: "Wolves Amongst the Flock", trait: "Compassionate", description: "It was only natural in the hard winter that the wolves would find you. At first, they were the nuisance they had always been, but as the snows grew deeper the tracks got larger. Somewhere in the forest, a great wolf was gathering a pack larger than any seen before. Foresters would go in gangs to gather firewood, but you quickly found yourself lost. In the snow while carrying a bundle of wet branches, you saw it and looked into its eyes. To this day those eyes haunt you. What did you see and why did it let you live?" },
 
-    { name: "Raiders", trait: "Vengeful", description: "First there was nothing but thin trails of smoke, off in the distance. Soon there was the report of laughter, carried as if on the wind. In hushed tones, the old men of your village whispered a word that carried with it a weight of dread… “Raiders!” The fences were surrounded with traps and the able-bodied in your village were set as guards. On the third night the raiders struck. Half the herd was stolen and fifteen were placed upon the pyre. Finally, it was time for the young to speak and your voice joined many. What did you do, and what was the cost?"  },
+    { name: "Raiders", trait: "Vengeful", description: "First there was nothing but thin trails of smoke, off in the distance. Soon there was the report of laughter, carried as if on the wind. In hushed tones, the old men of your village whispered a word that carried with it a weight of dread… “Raiders!” The fences were surrounded with traps and the able-bodied in your village were set as guards. On the third night the raiders struck. Half the herd was stolen and fifteen were placed upon the pyre. Finally, it was time for the young to speak and your voice joined many. What did you do, and what was the cost?" }
   ],
 
   "Merchant" => [
-    { name: "Extravagant Profits", trait: "Ostentatious", description: "There was only ever celebration in your grandfather’s house. Granted a monopoly long ago, he sold his goods for a handsome price, and his competitors had no recourse when his soldiers confiscated or taxed their goods on the road to town. You were a noble in all but name, but it did not last. Now the old man is dead and the monopolies returned to the prince who increases the taxation on your properties, to ruinous amounts. While he was alive, the old man had a motto that governed all his business dealings. What was that motto, and do you agree with it?"  },
+    { name: "Extravagant Profits", trait: "Ostentatious", description: "There was only ever celebration in your grandfather’s house. Granted a monopoly long ago, he sold his goods for a handsome price, and his competitors had no recourse when his soldiers confiscated or taxed their goods on the road to town. You were a noble in all but name, but it did not last. Now the old man is dead and the monopolies returned to the prince who increases the taxation on your properties, to ruinous amounts. While he was alive, the old man had a motto that governed all his business dealings. What was that motto, and do you agree with it?" },
 
-    { name: "Profits from the Town", trait: "Spy", description: "While working in your aunt’s home you got to see many wealthy visitors stop by and broker purchases. You were young enough that they didn’t pay you much mind unless you were serving wine. Consequently, you learned a great deal that the visitors didn’t want your aunt to know. A generous woman, she always made sure you were rewarded whenever a significant deal was brokered. What was your biggest score, and did the customer ever find out?"  },
+    { name: "Profits from the Town", trait: "Spy", description: "While working in your aunt’s home you got to see many wealthy visitors stop by and broker purchases. You were young enough that they didn’t pay you much mind unless you were serving wine. Consequently, you learned a great deal that the visitors didn’t want your aunt to know. A generous woman, she always made sure you were rewarded whenever a significant deal was brokered. What was your biggest score, and did the customer ever find out?" },
 
-    { name: "Profits from the Road", trait: "Well-traveled", description: "It seemed like you were always on the move. Taking goods from one town, trading them for goods in the next, pocketing some coin along the way. Spending the coin on some cheap wine, and then moving on. It was easy to become embittered about your cousins, living it up in the city while you plied your way through the expanses on dangerous caravan routes. Still, it’s not like you didn’t have adventures or see amazing sights. What was the most amazing thing you have ever seen?"  },
+    { name: "Profits from the Road", trait: "Well-traveled", description: "It seemed like you were always on the move. Taking goods from one town, trading them for goods in the next, pocketing some coin along the way. Spending the coin on some cheap wine, and then moving on. It was easy to become embittered about your cousins, living it up in the city while you plied your way through the expanses on dangerous caravan routes. Still, it’s not like you didn’t have adventures or see amazing sights. What was the most amazing thing you have ever seen?" },
 
-    { name: "The Lash of Taxation", trait: "Witness to Brutality", description: "Your local lord had grandiose dreams and a mind to have the merchants within his lands pay for them. You learned that sometimes a merchant needs to be have two cargoes: one to be seen, and one to pay for the trip. You also witnessed firsthand what happens to smugglers. Who did you see suffering at the hands of the lord’s soldiers?"  },
+    { name: "The Lash of Taxation", trait: "Witness to Brutality", description: "Your local lord had grandiose dreams and a mind to have the merchants within his lands pay for them. You learned that sometimes a merchant needs to be have two cargoes: one to be seen, and one to pay for the trip. You also witnessed firsthand what happens to smugglers. Who did you see suffering at the hands of the lord’s soldiers?" },
 
-    { name: "Hard-won Profits", trait: "Divided Family", description: "When you were young, a bandit lord took to plundering your family’s caravans. At first, mercenaries were hired, but they deserted and joined the bandits in their plunder. Then, soldiers were borrowed from the king but the taxes on that service were exorbitant. You spoke up and offered a plan that made half your family revile you and the rest love you. What was your plan, and why was it so effective?"  },
+    { name: "Hard-won Profits", trait: "Divided Family", description: "When you were young, a bandit lord took to plundering your family’s caravans. At first, mercenaries were hired, but they deserted and joined the bandits in their plunder. Then, soldiers were borrowed from the king but the taxes on that service were exorbitant. You spoke up and offered a plan that made half your family revile you and the rest love you. What was your plan, and why was it so effective?" },
 
-    { name: "Ruin", trait: "Vengeful", description: "Your family had been making profits and living well. You were not one of the most powerful families but you had enough long-lasting ties that your future seemed secure. Over the course of one banquet, all this changed. Your uncle offended one of the more powerful courtiers, and the courtier made it his mission to destroy your family. By the time the courtier was done, your family’s name was in ruin. The king granted your rivals monopolies that blocked your goods from entry to the larger cities, and bandits harassed your caravans. When the fire took your family’s estate, you were left thoroughly dispossessed. Now that you’ve started to rise, you must consider your options. What vengeance, if any, will you take upon the courtier? How will you escape his wrath?"  },
+    { name: "Ruin", trait: "Vengeful", description: "Your family had been making profits and living well. You were not one of the most powerful families but you had enough long-lasting ties that your future seemed secure. Over the course of one banquet, all this changed. Your uncle offended one of the more powerful courtiers, and the courtier made it his mission to destroy your family. By the time the courtier was done, your family’s name was in ruin. The king granted your rivals monopolies that blocked your goods from entry to the larger cities, and bandits harassed your caravans. When the fire took your family’s estate, you were left thoroughly dispossessed. Now that you’ve started to rise, you must consider your options. What vengeance, if any, will you take upon the courtier? How will you escape his wrath?" }
   ],
 
   "Outcast" => [
-    { name: "The Charity of Honest Men", trait: "Honor Debt", description: "While you might not be the most pathetic of the beggars, in a time of need a charitable man of means gave food and shelter enough to survive. What had enfeebled you, and who was your benefactor?"  },
+    { name: "The Charity of Honest Men", trait: "Honor Debt", description: "While you might not be the most pathetic of the beggars, in a time of need a charitable man of means gave food and shelter enough to survive. What had enfeebled you, and who was your benefactor?" },
 
-    { name: "The Charity of Pompous Priests", trait: "Theif!", description: "As a display of piety, a priest took you in and read to you boring sermons, hour after hour. While you stayed with the priest, you saw many treasures and ate scraps that at any other table would be the height of dining. Did you take anything from the priest’s home, and is your theft known?"  },
+    { name: "The Charity of Pompous Priests", trait: "Theif!", description: "As a display of piety, a priest took you in and read to you boring sermons, hour after hour. While you stayed with the priest, you saw many treasures and ate scraps that at any other table would be the height of dining. Did you take anything from the priest’s home, and is your theft known?" },
 
-    { name: "Food and Rough Liqour", trait: "Fond Regrets", description: "The rabble of your shanty might not have had much, but it was shared with cheer and many fond (if humble) memories were made. Now this shanty is no more. What befell its inhabitants? Did any survive?"  },
+    { name: "Food and Rough Liqour", trait: "Fond Regrets", description: "The rabble of your shanty might not have had much, but it was shared with cheer and many fond (if humble) memories were made. Now this shanty is no more. What befell its inhabitants? Did any survive?" },
 
-    { name: "One of the Rabble", trait: "Betrayed", description: "There were hundreds squabbling over food in the shadows of the lord’s fealty. Betrayal was a part of life, but you never expected it from your fellow outcasts. Who betrayed you, and why do you still feel the sting of the betrayal?"  },
+    { name: "One of the Rabble", trait: "Betrayed", description: "There were hundreds squabbling over food in the shadows of the lord’s fealty. Betrayal was a part of life, but you never expected it from your fellow outcasts. Who betrayed you, and why do you still feel the sting of the betrayal?" },
 
-    { name: "Shunned Even by Lepers", trait: "Cursed", description: "There was a time you were doing well for one of the ragged, but then something happened. You barely remember how or why it happened, but it marked you as surely as if it were branded upon your face. Why do the beggars spit at your shadow? Are there any that remember you with kindness?"  },
+    { name: "Shunned Even by Lepers", trait: "Cursed", description: "There was a time you were doing well for one of the ragged, but then something happened. You barely remember how or why it happened, but it marked you as surely as if it were branded upon your face. Why do the beggars spit at your shadow? Are there any that remember you with kindness?" },
 
-    { name: "Hunted by the Law", trait: "Hunted!", description: "They’re on your track, crashing through taverns and looking in the alleys you used to haunt. Perhaps you committed the crime and it was worth it. Perhaps you are unjustly persecuted. Either way, a trail of suffering follows in your wake. Whose suffering do you regret the most and what will you do to put them at ease?"  },
+    { name: "Hunted by the Law", trait: "Hunted!", description: "They’re on your track, crashing through taverns and looking in the alleys you used to haunt. Perhaps you committed the crime and it was worth it. Perhaps you are unjustly persecuted. Either way, a trail of suffering follows in your wake. Whose suffering do you regret the most and what will you do to put them at ease?" }
   ],
 
   "Petty Noble" =>[
-    { name: "Guest of a Greater Name", trait: "Chosen", description: "At a young age, you piqued the attentions of one of the great nobles within your land. Their expectations were impossible to meet, but the training they offered you was second to none. While much of the training was typical, some of it was bizarre, to say the least. What strange knowledge did this notable personage seek to impart to you?"  },
+    { name: "Guest of a Greater Name", trait: "Chosen", description: "At a young age, you piqued the attentions of one of the great nobles within your land. Their expectations were impossible to meet, but the training they offered you was second to none. While much of the training was typical, some of it was bizarre, to say the least. What strange knowledge did this notable personage seek to impart to you?" },
 
-    { name: "Guests of a Rival", trait: "Conspiracy", description: "You spent your childhood in the care of a political rival. You wanted for nothing, but there was an air of constant threat that made it hard for you to relax and thrive. One night, you wandered the halls and witnessed three warriors speaking in hushed tones about your host, your family’s rival. What did you hear, and what did you do about it?"  },
+    { name: "Guests of a Rival", trait: "Conspiracy", description: "You spent your childhood in the care of a political rival. You wanted for nothing, but there was an air of constant threat that made it hard for you to relax and thrive. One night, you wandered the halls and witnessed three warriors speaking in hushed tones about your host, your family’s rival. What did you hear, and what did you do about it?" },
 
-    { name: "Left to Your Own Devices", trait: "Adventurous", description: "Your home was a dull one, where little was expected of you. You could come and go as you saw fit. While others in your family suffered the responsibilities of your caste, you were free to pursue talents that a proper tutor might have deemed unsuitable. What did you get up to when no one was watching?"  },
+    { name: "Left to Your Own Devices", trait: "Adventurous", description: "Your home was a dull one, where little was expected of you. You could come and go as you saw fit. While others in your family suffered the responsibilities of your caste, you were free to pursue talents that a proper tutor might have deemed unsuitable. What did you get up to when no one was watching?" },
 
-    { name: "Exile to the Estates", trait: "Cast Aside", description: "You didn’t think it would happen, but your parents decided that enough was enough, and sent you from the estate and holdings you had been raised within. Banished from civilization to miserable estates, you spent many years impoverished, abandoned by your family. What, if anything, did you do to provoke this banishment? Was it just? Did you ever make amends?"  },
+    { name: "Exile to the Estates", trait: "Cast Aside", description: "You didn’t think it would happen, but your parents decided that enough was enough, and sent you from the estate and holdings you had been raised within. Banished from civilization to miserable estates, you spent many years impoverished, abandoned by your family. What, if anything, did you do to provoke this banishment? Was it just? Did you ever make amends?" },
 
-    { name: "Scandal" trait: "Mocking Peers", description: "Had they caught you in time you might have escaped with mere banishment. Instead, intervention came too late, and you brought scandal down upon your family, besmirching their good name to all within your sphere. Bribes were paid, and the offense was put behind you, but other nobles know what happened, and often speak ill of you behind your back. What was the scandal?"  },
+    { name: "Scandal", trait: "Mocking Peers", description: "Had they caught you in time you might have escaped with mere banishment. Instead, intervention came too late, and you brought scandal down upon your family, besmirching their good name to all within your sphere. Bribes were paid, and the offense was put behind you, but other nobles know what happened, and often speak ill of you behind your back. What was the scandal?" },
 
-    { name: "Blood Feud", trait: "Feud", description: "The insult is deep. So deep that blood may not settle the debt it has incurred. Though the one who gave offense was banished, theirs was merely the most egregious of the insults and accusations heaped upon you and yours. There is only one solution: a blood feud. It matters not whether it was called by your enemies or your allies. The only things that matter are who your enemies are, and who will survive?"  },
+    { name: "Blood Feud", trait: "Feud", description: "The insult is deep. So deep that blood may not settle the debt it has incurred. Though the one who gave offense was banished, theirs was merely the most egregious of the insults and accusations heaped upon you and yours. There is only one solution: a blood feud. It matters not whether it was called by your enemies or your allies. The only things that matter are who your enemies are, and who will survive?" }
   ],
 
   "Priesthood" => [
-    { name: "A Time of Feasting and Merriment", trait: "Patronage", description: "Your time as a novice has been quite unremarkable, but for you it’s been a time of exposure to wise sages, great scholars, peace, and prosperity. Simply being in the presence of the gifted has taught you many things. Primary amongst these is that even the gifted have moments of doubt or disgrace. You have even come to the aid of one of your land’s more gifted artists. What aid did they require, and how did you help? Have they repaid the favor?"  },
+    { name: "A Time of Feasting and Merriment", trait: "Patronage", description: "Your time as a novice has been quite unremarkable, but for you it’s been a time of exposure to wise sages, great scholars, peace, and prosperity. Simply being in the presence of the gifted has taught you many things. Primary amongst these is that even the gifted have moments of doubt or disgrace. You have even come to the aid of one of your land’s more gifted artists. What aid did they require, and how did you help? Have they repaid the favor?" },
 
-    { name: "Beneficial Omens", trait: "Demanding Peers", description: "Your birth was marked by strange omens, and your induction was conducted at a time when the stars were at their peak. Members of your order speak about you in hushed tones, worried about the meaning of so many omens surrounding your entry into their ranks. Occasionally, members of your order will come to you with strange tests and tasks, seeking answers to questions they will not share with you. What was your strangest task? Did you complete it, and were there any notable omens during its completion?"  },
+    { name: "Beneficial Omens", trait: "Demanding Peers", description: "Your birth was marked by strange omens, and your induction was conducted at a time when the stars were at their peak. Members of your order speak about you in hushed tones, worried about the meaning of so many omens surrounding your entry into their ranks. Occasionally, members of your order will come to you with strange tests and tasks, seeking answers to questions they will not share with you. What was your strangest task? Did you complete it, and were there any notable omens during its completion?" },
 
-    { name: "A Place in Need of Guidance", trait: "Shrine of Guardian", description: "You rode into town with your master and two others, to bring the teachings of your god to the disbelievers. Your reception was met with indifference, but over time you established a small shrine and some of the curious became worshipers. As offerings became more frequent, you drew the attention of a local noble, who threatened your shrine should he not be paid off. Your master refused to pay, and the consequences were dire. What happened to your shrine? What happened to the noble who set into motion its downfall?"  },
+    { name: "A Place in Need of Guidance", trait: "Shrine of Guardian", description: "You rode into town with your master and two others, to bring the teachings of your god to the disbelievers. Your reception was met with indifference, but over time you established a small shrine and some of the curious became worshipers. As offerings became more frequent, you drew the attention of a local noble, who threatened your shrine should he not be paid off. Your master refused to pay, and the consequences were dire. What happened to your shrine? What happened to the noble who set into motion its downfall?" },
 
-    { name: "Intolerant Potentates", trait: "Righteous Disobedience", description: "You didn’t join your faith with battle in mind, but your potentates were wrathful in the extreme and soon all your order wore blades. Your battlefield was in the streets, and many fell to your blade. You tried to be merciful when you could afford it, and deep within the home of one of your faith’s enemies, you found someone who could be brought to your faith. Did you help this person escape, or were you prevented somehow? What became of this potential follower?"  },
+    { name: "Intolerant Potentates", trait: "Righteous Disobedience", description: "You didn’t join your faith with battle in mind, but your potentates were wrathful in the extreme and soon all your order wore blades. Your battlefield was in the streets, and many fell to your blade. You tried to be merciful when you could afford it, and deep within the home of one of your faith’s enemies, you found someone who could be brought to your faith. Did you help this person escape, or were you prevented somehow? What became of this potential follower?" },
 
-    { name: "Ill Omens", trait: "Cursed", description: "Your birth was marked by strange omens, and immediately after your induction into the priesthood, the high priest died in his sleep, without any prior illness. Members of your order mutter that you are the last survivor of the ceremony, and that ill fortune follows in your wake. Occasionally, members of your order will come to you, sending you miles away on seemingly needless, sometimes dangerous errands. What was your most perilous task? Did you complete it, and how many died during its completion?"  },
+    { name: "Ill Omens", trait: "Cursed", description: "Your birth was marked by strange omens, and immediately after your induction into the priesthood, the high priest died in his sleep, without any prior illness. Members of your order mutter that you are the last survivor of the ceremony, and that ill fortune follows in your wake. Occasionally, members of your order will come to you, sending you miles away on seemingly needless, sometimes dangerous errands. What was your most perilous task? Did you complete it, and how many died during its completion?" },
 
-    { name: "Forced Penance", trait: "Criminal Past", description: "Whatever offense was committed, you didn’t do it. Somehow you were blamed, and another bore witness against you, falsely. You tried to explain this when you were accused, but the high priest did not care. Your penance was brief, but unduly harsh. What were you accused of? What was the penance? Do you know who incriminated you? Do you plot revenge?"  },
+    { name: "Forced Penance", trait: "Criminal Past", description: "Whatever offense was committed, you didn’t do it. Somehow you were blamed, and another bore witness against you, falsely. You tried to explain this when you were accused, but the high priest did not care. Your penance was brief, but unduly harsh. What were you accused of? What was the penance? Do you know who incriminated you? Do you plot revenge?" }
   ],
 
   "Warrior" => [
-    { name: "Descisive Victory", trait: "Valorous", description: "The war saw you fight in many battles, gaining glory as you survived. Then the final clash came. You leapt to the front, proud of your place in the vanguard. Horses cried in pain as arrows rained down, and through the blood and smoke of the field you saw your opportunity. The charge was long and the fight short but when you presented your captains with the banner you had claimed, they proclaimed you one of the day’s chosen champions. You were cared for by your lord’s own servants and presented to him at the feast afterward. What valor had you accomplished? What words did he have for you?"  },
+    { name: "Descisive Victory", trait: "Valorous", description: "The war saw you fight in many battles, gaining glory as you survived. Then the final clash came. You leapt to the front, proud of your place in the vanguard. Horses cried in pain as arrows rained down, and through the blood and smoke of the field you saw your opportunity. The charge was long and the fight short but when you presented your captains with the banner you had claimed, they proclaimed you one of the day’s chosen champions. You were cared for by your lord’s own servants and presented to him at the feast afterward. What valor had you accomplished? What words did he have for you?" },
 
-    { name: "Glorious Battle", trait: "Veteran", description: "The battle began with your numbers few. The bulk of your force was a day away and would be tired from the march. You knew yourselves dead, but you had to hold out so that the warriors would stand an even chance against the horde. The fight was brutal. The corpses of horses, soldiers, and other makeshift barricades piled up in front of your line, turning the fight from massed battle to deadly skirmish. Fully half of your number was slain, but you gave better than you got and it was them that routed. When the rest of your army emerged from the forest road, they found boys turned into veterans. Your company was promoted to guard the sunrise flank and those who survived became strong friends. How do you mark your membership in this august company?"  },
+    { name: "Glorious Battle", trait: "Veteran", description: "The battle began with your numbers few. The bulk of your force was a day away and would be tired from the march. You knew yourselves dead, but you had to hold out so that the warriors would stand an even chance against the horde. The fight was brutal. The corpses of horses, soldiers, and other makeshift barricades piled up in front of your line, turning the fight from massed battle to deadly skirmish. Fully half of your number was slain, but you gave better than you got and it was them that routed. When the rest of your army emerged from the forest road, they found boys turned into veterans. Your company was promoted to guard the sunrise flank and those who survived became strong friends. How do you mark your membership in this august company?" },
 
-    { name: "Idle Hours Guarding Open Gates", trait: "Cursed", description: "Your gate was the main gate for your settlement. You saw all who would come through. While there was little trouble, you saw many strange and varied travelers. One day you saw three riders come close to the settlement gates. They halted, spat at the ground, and rode back the way they came. Do you remember anything about these strangers? Did you find out why they did not enter?"  },
+    { name: "Idle Hours Guarding Open Gates", trait: "Cursed", description: "Your gate was the main gate for your settlement. You saw all who would come through. While there was little trouble, you saw many strange and varied travelers. One day you saw three riders come close to the settlement gates. They halted, spat at the ground, and rode back the way they came. Do you remember anything about these strangers? Did you find out why they did not enter?" },
 
-    { name: "Idle Hours Guarding Cold Walls", trait: "Hedonist", description: "Your home was less-than-inviting to strangers. Most were greeted with spear-points and sling-stones. Soon the word spread and few travelers made the journey. You spent many hours drinking swill and rolling dice for petty coin. Eventually even these pursuits grew stale and you were forced to find your own entertainments. How did you survive the boredom? What pursuits did you engage in?"  },
+    { name: "Idle Hours Guarding Cold Walls", trait: "Hedonist", description: "Your home was less-than-inviting to strangers. Most were greeted with spear-points and sling-stones. Soon the word spread and few travelers made the journey. You spent many hours drinking swill and rolling dice for petty coin. Eventually even these pursuits grew stale and you were forced to find your own entertainments. How did you survive the boredom? What pursuits did you engage in?" },
 
-    { name: "Blood-soaked Endeavor", trait: "Greed", description: "While the vanguard gained the glories, you were treading the ground they swept, preventing the enemy from encirclement, stomping the injured into the mud. As the day turned to evening and the light began to shift, the scope of the massacre became clear. Your army had swept through the enemy and carved deep into their encampment. The bodies of servants and children littered the ground. Seeking to profit from the battle, you searched the nearby tents and left, knowing the enemy would never truly recover. What loot did you gather and whose hand did you prize it from?"  },
+    { name: "Blood-soaked Endeavor", trait: "Greed", description: "While the vanguard gained the glories, you were treading the ground they swept, preventing the enemy from encirclement, stomping the injured into the mud. As the day turned to evening and the light began to shift, the scope of the massacre became clear. Your army had swept through the enemy and carved deep into their encampment. The bodies of servants and children littered the ground. Seeking to profit from the battle, you searched the nearby tents and left, knowing the enemy would never truly recover. What loot did you gather and whose hand did you prize it from?" },
 
-    { name: "Disatrous Battle", trait: "Coward", description: "Your armies were evenly matched and the battle a stalemate ‘til the third hour, when the heavens opened with torrential rainfall, centered upon your forces. The ground turned to a thick black swamp and their archers, outside the rain’s course, could fire unmolested. The wind carried their arrows into your ranks and soon there wasn’t a soldier left unmarked. Only a very few limped away from the battle, and none made it home. How did you escape?"  },
+    { name: "Disatrous Battle", trait: "Coward", description: "Your armies were evenly matched and the battle a stalemate ‘til the third hour, when the heavens opened with torrential rainfall, centered upon your forces. The ground turned to a thick black swamp and their archers, outside the rain’s course, could fire unmolested. The wind carried their arrows into your ranks and soon there wasn’t a soldier left unmarked. Only a very few limped away from the battle, and none made it home. How did you escape?" }
   ]
 }
 
 archetypes = [
   { name: "Archer",                       talent: "Accurate",             skill_career: "ranged",
     skill_mandatory1: "animal_handling",  skill_mandatory2: "observation",
-    skill_mandatory2: "stealth",          skill_mandatory4: "survival",
+    skill_mandatory3: "stealth",          skill_mandatory4: "survival",
     skill_elective1: "acrobatics",        skill_elective2: "athletics",   skill_elective3: "melee",
     description: "Whether trained alongside the legendary Bossonian archers, within one of the militaries of the great middle kingdoms, or even skilled in Hyrkanian horse archery, you are now a practiced archer, capable of sending iron-tipped shafts across great distances with accuracy.",
     equipment: "bow&&reload&&reload&&[[padded gambeson&&trousers]||[brigandine vest&&brigandine trousers]||mail vest]&&helmet&&melee weapon&&[riding horse||riding donkey]",
@@ -1289,7 +1289,7 @@ archetypes = [
 
   { name: "Barbarian",              talent: "No Mercy",                   skill_career: "melee",
     skill_mandatory1: "acrobatics", skill_mandatory2: "animal_handling",
-    skill_mandatory2: "athletics",  skill_mandatory4: "survival",
+    skill_mandatory3: "athletics",  skill_mandatory4: "survival",
     skill_elective1: "acrobatics",  skill_elective2: "healing",           skill_elective3: "parry",
     description: "You hail from one of the untamed lands bordering civilization, whether to the far north, the east, the south, or some other uncharted territory. Your ways are as strange to civilized folk as their customs are inscrutable to you.",
     equipment: "[[brigandine long coat]||[mail vest&&helmet]||ragged furs]&&melee weapon&&melee weapon",
@@ -1297,7 +1297,7 @@ archetypes = [
 
   { name: "Mercenary",                  talent: "Strong Back",      skill_career: "athletics",
     skill_mandatory1: "acrobatics",     skill_mandatory2: "melee",
-    skill_mandatory2: "parry",          skill_mandatory4: "ranged",
+    skill_mandatory3: "parry",          skill_mandatory4: "ranged",
     skill_elective1: "animal_handling", skill_elective2: "healing", skill_elective3: "stealth",
     description: "",
     equipment: "[mail, full||[brigandine long coat&&helmet]]&&polearm&&melee weapon&&sling&&reload&&mule, pack&&horse, riding",
@@ -1305,7 +1305,7 @@ archetypes = [
 
   { name: "Noble Warrior",          talent: "A Modicum of Comfort",       skill_career: "society",
     skill_mandatory1: "acrobatics", skill_mandatory2: "animal_handling",
-    skill_mandatory2: "parry",      skill_mandatory4: "resistance",
+    skill_mandatory3: "parry",      skill_mandatory4: "resistance",
     skill_elective1: "melee",       skill_elective2: "persuade",          skill_elective3: "ranged",
     description: "You may be a knighted noble from one of the civilized Hyborian kingdoms such as Aquilonia, Nemedia, Zingara, Brythunia, or elsewhere. Whether you hold to a code of chivalry or are merely a well-trained and equipped warrior, you fight primarily for yourself and for causes you choose.",
     equipment: "heavy hauberk&&helmet&&shield&&weapon&&weapon&&suit of fine clothing&&traveling clothes&&horse,war&&light barding",
@@ -1313,7 +1313,7 @@ archetypes = [
 
   { name: "Nomad",                  talent: "Born in the Saddle",   skill_career: "animal_handling",
     skill_mandatory1: "acrobatics", skill_mandatory2: "athletics",
-    skill_mandatory2: "parry",      skill_mandatory4: "survival",
+    skill_mandatory3: "parry",      skill_mandatory4: "survival",
     skill_elective1: "melee",       skill_elective2: "ranged",      skill_elective3: "stealth",
     description: "To the east and south, the Hyborian kingdoms are surrounded by deserts, steppes, tundra, and wastelands — inhospitable to civilized folk but home to you and your people. You know how to survive in these places, to find food and water and to make shelter, and to navigate to safety. Life is hard in your homeland, perhaps the reason you left.",
     equipment: "[[weapon||reload]&&[weapon||reload]&&[weapon||reload]]&&[[heavy clothing]||mail vest]&&horse&&mule&&handler's kit&&rewards&&rewards&&rewards",
@@ -1321,7 +1321,7 @@ archetypes = [
 
   { name: "Priest/Priestess",       talent: "Quiet Wisdom",       skill_career: "counsel",
     skill_mandatory1: "insight",    skill_mandatory2: "lore",
-    skill_mandatory2: "persuade",   skill_mandatory4: "society",
+    skill_mandatory3: "persuade",   skill_mandatory4: "society",
     skill_elective1: "alchemy",     skill_elective2: "healing",   skill_elective3: "sorcery",
     description: "Born into the faith or a late convert, you feel the calling of one of the many gods of the Hyborian Age: from holy Mitra, accursed Set, Ishtar, Bori, Asura, Ibis, the living Tarim, Erlik, Bel, Derketo, or even those who are not overly worshipped, like Crom, Ymir, or the Zamoran spider-god. You are either associated with a particular temple or you are itinerant, wandering the land and converting the unfaithful by any means you can, be it through example, with convincing speech, or by the sword.",
     equipment: "melee weapon&&a single copy of a scroll or book containing your faith’s precepts and holy words&&travelling clothes&&priestly vestments&&oils, herbs, and religious accoutrements&&mule&&kit for elective skill&&kit for elective skill",
@@ -1329,7 +1329,7 @@ archetypes = [
 
   { name: "Pirate",                 talent: "Sharp Senses",       skill_career: "observation",
     skill_mandatory1: "melee",      skill_mandatory2: "parry",
-    skill_mandatory2: "resistance", skill_mandatory4: "survival",
+    skill_mandatory3: "resistance", skill_mandatory4: "survival",
     skill_elective1: "sailing",     skill_elective2: "stealth",   skill_elective3: "thievery",
     description: "You may once have been a sailor, a merchant, or even the member of one of the great navies, but eventually you turned your hand towards piracy. More at home on the open water than on land, you are nonetheless willing to seek your fortune wherever fate guides you.",
     equipment: "melee weapon&&padded jerkin&&a share in a small water craft, or the proceeds that may come from its activities",
@@ -1337,7 +1337,7 @@ archetypes = [
 
   { name: "Scholar",                      talent: "Scribe",                 skill_career: "lore",
     skill_mandatory1: "animal_handling",  skill_mandatory2: "languages",
-    skill_mandatory2: "persuade",         skill_mandatory4: "society",
+    skill_mandatory3: "persuade",         skill_mandatory4: "society",
     skill_elective1: "alchemy",           skill_elective2: "healing",       skill_elective3: "sorcery",
     description: "You have explored the breadth of history and human knowledge from the vantage point of a chair, spending hours poring over thick tomes of lore. Your interest may be specific to a particular field of study, or you may have broad expertise in a variety of subjects. Despite your inclination towards scholarship, you have ventured into the world outside your studies, to experience the world firsthand.",
     equipment: "[melee weapon||ranged weapon]&&several sets of plain travelling clothes&&a suit of courtly clothing&&a plethora of writing materials&&horse&&pack mule&&item mandatory skill&&item mandatory skill&&item mandatory skill&&item mandatory skill&&item elective skill&&item elective skill&&library, personal&&library, reference",
@@ -1345,7 +1345,7 @@ archetypes = [
 
   { name: "Scoundrel",                  talent: "Agile",            skill_career: "acrobatics",
     skill_mandatory1: "athletics",      skill_mandatory2: "parry",
-    skill_mandatory2: "persuade",       skill_mandatory4: "society",
+    skill_mandatory3: "persuade",       skill_mandatory4: "society",
     skill_elective1: "animal_handling", skill_elective2: "melee",   skill_elective3: "thievery",
     description: "You make a living exploiting the weaknesses of others, whether gambling, theft, or outright banditry. Survival by wits is the only life you have ever known, and you have gotten quite good at it, trusting in your wits, reflexes, and lack of scruples to get you out of danger, though by one means or another you readily find yourself back in the thick of it.",
     equipment: "melee weapon&&[brigandine jacket||heavy clothing]&&[shield||none]&&a small chest of counterfeit goods",
@@ -1353,7 +1353,7 @@ archetypes = [
 
   { name: "Witch/Shaman",               talent: "Force of Presence",  skill_career: "persuade",
     skill_mandatory1: "alchemy",        skill_mandatory2: "counsel",
-    skill_mandatory2: "healing",        skill_mandatory4: "lore",
+    skill_mandatory3: "healing",        skill_mandatory4: "lore",
     skill_elective1: "animal_handling", skill_elective2: "sorcery",   skill_elective3: "thievery",
     description: "You have made pacts with powers that are not of this world, sought knowledge forbidden to, and feared by, most, and for this daring you have been granted power and insights beyond those of mortal men and women. Even if you are unable to use sorcery outright, you know much secret lore as well as the secrets of the natural world. It is up to you whether you practice your gifts to assist others, or for your own desires.",
     equipment: "dagger&&toughened leather jacket&&kit healing&&kit alchemy&&library, personal&&[riding horse||riding donkey]",
@@ -1705,12 +1705,12 @@ weapons = {
         qualities: "Vicious 1"
       },
       { name: "Halberd",
-        damage: 4 reach: "3", size: "2H",
+        damage: 4, reach: "3", size: "2H",
         encumbrance: 2, availability:2 , cost:6 ,
         qualities: "Intense, Piercing 1, Vicious 1"
       },
       { name: "Poleaxe",
-        damage: 4 reach: "3", size: "2H",
+        damage: 4, reach: "3", size: "2H",
         encumbrance: 2, availability:2 , cost:6 ,
         qualities: "Intense, Piercing 1, Vicious 1"
       }
@@ -1809,7 +1809,7 @@ weapons = {
         damage: 3, reach: "C", size: "2H",
         encumbrance: 2, availability: 2, cost: 6,
         qualities: "Volley"
-      },
+      }
     ],
 
     crossbow: [
@@ -1822,7 +1822,7 @@ weapons = {
         damage: 3, reach: "M", size: "Unbalanced",
         encumbrance: 2, availability: 1, cost: 6,
         qualities: "Unforgiving 1, Volley"
-      },
+      }
     ],
 
     other: [
@@ -1830,7 +1830,7 @@ weapons = {
         damage: 3, reach: "M", size: "1H",
         encumbrance: 1, availability: 1, cost: 1,
         qualities: "Stun, Volley"
-      },
+      }
     ]
   }
 }
