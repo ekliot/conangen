@@ -1534,36 +1534,43 @@ weapons = {
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Parrying"
       },
+
       { name: "Cutlass",
         damage: 4, reach: "2", size: "Unbalanced",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Vicious 1"
       },
+
       { name: "Scimitar",
         damage: 3, reach: "2", size: "1H",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Calvary 1, Parrying"
       },
+
       { name: "Saber",
         damage: 3, reach: "2", size: "1H",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Calvary 1,Parrying"
       },
+
       { name: "Shortsword",
         damage: 4, reach: "1", size: "1H",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Parrying"
       },
+
       { name: "Sword",
         damage: 4, reach: "2", size: "1H",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Parrying"
       },
+
       { name: "Tuwar",
         damage: 4, reach: "2", size: "Unbalanced",
         encumbrance: 1, availability: 1 , cost: 5,
         qualities: "Calvary 1, Parrying"
       },
+
       { name: "Two-handed Sword",
         damage: 5, reach: "3", size: "2H",
         encumbrance: 2, availability: 1 , cost: 8,
@@ -1577,46 +1584,54 @@ weapons = {
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
+
       { name: "Dirk",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
+
       { name: "Poniard",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
+
       { name: "Stilleto",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Parrying, Thrown, Unforgiving 1"
       },
+
       { name: "Ghanata Knife",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:2 , cost: 4,
         qualities: "Hidden 1, Vicious 1"
       },
+
       { name: "Knife",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:1 , cost: 2,
         qualities: "Hidden 1, Improvised, Unforgiving 1"
       },
+
       { name: "Yuetshi Knife",
         damage:3 , reach: "1", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Intense 1"
       },
+
       { name: "Zhaibar Knife",
         damage:4 , reach: "2", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Unforgiving 2"
       },
+
       { name: "Throwing Knife",
         damage:3 , reach: "c", size: "1H",
         encumbrance: 0, availability:1 , cost: 5,
         qualities: "Hidden 1, Volley"
-      }
+      },
     ],
 
     club: [
@@ -1625,62 +1640,72 @@ weapons = {
         encumbrance: 1, availability: 0 , cost:2 ,
         qualities: "Stun, Knockdown"
       },
+
       { name: "Flail,Farming",
         damage: 4 , reach: "2", size: "2H",
         encumbrance: 1, availability: 1 , cost:2 ,
         qualities: "Improvised, Knockdown,Piec 1"
       },
+
       { name: "Flail,Military",
         damage: 4 , reach: "2", size: "Unbalanced",
         encumbrance: 1, availability: 1 , cost:5 ,
         qualities: "Knockdown, Piercing 1"
       },
+
       { name: "Great Hammer",
         damage: 4 , reach: "2", size: "2H",
         encumbrance: 2, availability: 1 , cost:2 ,
         qualities: "Improvised, Knockdown, Stun"
       },
+
       { name: "Mace",
         damage: 3 , reach: "2", size: "Unbalanced",
         encumbrance: 1, availability: 1 , cost:5 ,
         qualities: "Piercing 1, Vicious"
       },
+
       { name: "Maul",
         damage: 5 , reach: "2", size: "2H",
         encumbrance: 2, availability: 1 , cost:5 ,
         qualities: "Knockdown, Stun"
       },
+
       { name: "Morning Star",
         damage: 3 , reach: "2", size: "1H",
         encumbrance: 2, availability: 1 , cost:4 ,
         qualities: "Knockdown, Persistent 1, Stun"
       },
+
       { name: "Pick,Horseman's",
         damage: 3 , reach: "2", size: "1H",
         encumbrance: 1, availability: 2 , cost:6 ,
         qualities: "Vicious 1"
       },
+
       { name: "Pickaxe",
         damage: 5 , reach: "2", size: "2H",
         encumbrance: 2, availability: 1 , cost:4 ,
         qualities: "Improvised, Vicious 1"
       },
+
       { name: "Sap",
         damage: 3, reach: "1", size: "1H",
         encumbrance: 0, availability: 0 , cost:0 ,
         qualities: "Hidden 1, Stun, Unforgiving 1"
       },
+
       { name: "Staff",
         damage: 4 , reach: "2 or 3", size: "2H",
         encumbrance: 1, availability: 0 , cost:3 ,
         qualities: "Knockdown"
       },
-      { name: "WarHammer",
+
+      { name: "Warhammer",
         damage: 4 , reach: "2", size: "Unbalanced",
         encumbrance: 1, availability: 2 , cost:5 ,
         qualities: "Knockdown, Vicious 1"
-      }
-
+      },
     ],
 
     axe: [
@@ -1689,31 +1714,36 @@ weapons = {
         encumbrance: 1, availability:1 , cost:5 ,
         qualities: "Throw, Vicious 1"
       },
+
       { name: "Axe,Wood",
         damage: 4, reach: "2", size: "2H",
         encumbrance: 1, availability:1 , cost:4 ,
         qualities: "Intense, Vicious 1"
       },
+
       { name: "Battleaxe",
         damage: 4, reach: "2", size: "Unbalanced",
         encumbrance: 1, availability:1 , cost:5 ,
         qualities: "Intense, Vicious 1"
       },
+
       { name: "Hatchet",
         damage: 4, reach: "2", size: "1H",
         encumbrance: 1, availability:1 , cost:5 ,
         qualities: "Vicious 1"
       },
+
       { name: "Halberd",
         damage: 4, reach: "3", size: "2H",
         encumbrance: 2, availability:2 , cost:6 ,
         qualities: "Intense, Piercing 1, Vicious 1"
       },
+
       { name: "Poleaxe",
         damage: 4, reach: "3", size: "2H",
         encumbrance: 2, availability:2 , cost:6 ,
         qualities: "Intense, Piercing 1, Vicious 1"
-      }
+      },
     ],
 
     polearm: [
@@ -1722,21 +1752,25 @@ weapons = {
         encumbrance: -1, availability: 1, cost: 5,
         qualities: "Piercing 1"
       },
+
       { name: "Javelin",
         damage: 3, reach: "2", size: "1H",
         encumbrance: -1, availability: 1, cost: 3,
         qualities: "Fragile, Piercing 1, Thrown(Medium)"
       },
+
       { name: "Lance",
         damage: 4, reach: "3", size: "Unbalanced",
         encumbrance: -1, availability: 2, cost: 7,
         qualities: "Calvary 2, Fragile"
       },
+
       { name: "Pike",
         damage: 4, reach: "4", size: "Unwiedly",
         encumbrance: -1, availability: 2, cost: 6,
         qualities: "Piercing 2"
       },
+
       { name: "Polearm",
         damage: 4, reach: "3", size: "2H",
         encumbrance: -1, availability: 1, cost: 5,
@@ -1750,11 +1784,13 @@ weapons = {
         encumbrance: 1, availability: 1, cost: 5,
         qualities: "Grapple, Improvised, Knockdown, Vicious 1"
       },
+
       { name: "Net",
         damage: 3 , reach: "2", size: "1H",
         encumbrance: 0, availability: 1, cost: 5,
         qualities: "Grapple, Non-Lethal, Parrying, Thrown"
       },
+
       { name: "Whip",
         damage: 3 , reach: "3", size: "1H",
         encumbrance: 0, availability: 1, cost: 5,
@@ -1768,19 +1804,19 @@ weapons = {
         encumbrance: 1, availability: 1, cost: 4,
         qualities: "Parrying, Stun"
       },
+
       { name: "Shield",
         damage: 2 , reach: "2", size: "1H",
         encumbrance: 2, availability: 1, cost: 5,
         qualities: "Knockdown, Shield 2"
       },
+
       { name: "Shield,Tower",
         damage: 2 , reach: "2", size: "Unbalanced",
         encumbrance: 2, availability: 2, cost: 6,
         qualities: "Knockdown, Shield 4"
       },
-    ]
-
-
+    ],
   },
 
   ranged: {
@@ -1790,26 +1826,30 @@ weapons = {
         encumbrance: 2, availability: 1, cost: 6,
         qualities: "Volley"
       },
+
       { name: "Bow,Hyrkanian Horse",
         damage: 3, reach: "C", size: "2H",
         encumbrance: 2, availability: 3, cost: 6,
         qualities: "Volley"
       },
+
       { name: "Bow,Shemite",
         damage: 3, reach: "L", size: "2H",
         encumbrance: 2, availability: 2, cost: 7,
         qualities: "Piercing 1, Volley"
       },
+
       { name: "Longbow,Bossonian",
         damage: 5, reach: "M", size: "2H",
         encumbrance: 2, availability: 4, cost: 8,
         qualities: "Piercing 1, Volley"
       },
+
       { name: "Shortbow,Stygian",
         damage: 3, reach: "C", size: "2H",
         encumbrance: 2, availability: 2, cost: 6,
         qualities: "Volley"
-      }
+      },
     ],
 
     crossbow: [
@@ -1818,11 +1858,12 @@ weapons = {
         encumbrance: 3, availability: 2, cost: 10,
         qualities: "Unforgiving 1, Vicious 1"
       },
+
       { name: "Crossbow",
         damage: 3, reach: "M", size: "Unbalanced",
         encumbrance: 2, availability: 1, cost: 6,
         qualities: "Unforgiving 1, Volley"
-      }
+      },
     ],
 
     other: [
@@ -1830,51 +1871,60 @@ weapons = {
         damage: 3, reach: "M", size: "1H",
         encumbrance: 1, availability: 1, cost: 1,
         qualities: "Stun, Volley"
-      }
-    ]
-  }
+      },
+    ],
+  },
 }
 
-talents.each do |skill|
-  skill.each do |talent|
-    Talent.create()
+talents.each do |skill, skills|
+  skills.each do |talent|
+    # Talent.create()
+    puts talent
   end
 end
 
 homelands.each do |homeland|
-  Homeland.create()
+  # Homeland.create()
+  puts homeland
 end
 
 castes.each do |caste|
-  Caste.create()
+  # Caste.create()
+  puts caste
 end
 
-caste_stories.each do |caste|
-  caste.each do |story|
-    StoryCaste.create()
+caste_stories.each do |caste, stories|
+  stories.each do |story|
+    # StoryCaste.create()
+    puts story
   end
 end
 
 archetypes.each do |arch|
-  Archetype.create()
+  # Archetype.create()
+  puts arch
 end
 
 natures.each do |nature|
-  Nature.create()
+  # Nature.create()
+  puts nature
 end
 
 educations.each do |edu|
-  Education.create()
+  # Education.create()
+  puts edu
 end
 
 war_stories.each do |story|
-  StoryWar.create()
+  # StoryWar.create()
+  puts story
 end
 
-weapons.each do |category|
-  category.each do |type|
-    type.each do |weapon|
-      Weapon.create()
+weapons.each do |category, types|
+  types.each do |type, tweapons|
+    tweapons.each do |weapon|
+      # Weapon.create()
+      puts weapon
     end
   end
 end
