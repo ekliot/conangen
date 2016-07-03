@@ -11,10 +11,11 @@ class CreateLifepathArchetypes < ActiveRecord::Migration
       t.string :skill_elective2
       t.string :skill_elective3
       t.text :equipment
+      t.text :description
 
       t.references :talents
-
-      t.timestamps null: false
     end
+
+    add_index :lifepath_archetypes, :name
   end
 end

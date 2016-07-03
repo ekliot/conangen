@@ -6,6 +6,6 @@ class CreateTalentSets < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :talent_sets, [:user_id]
+    add_index :talent_sets, [:character_id]
   end
 end

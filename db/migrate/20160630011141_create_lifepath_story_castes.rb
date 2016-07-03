@@ -5,11 +5,10 @@ class CreateLifepathStoryCastes < ActiveRecord::Migration
       t.text :description
       t.string :trait
 
-      t.references :castes
-
-      t.timestamps null: false
+      t.references :caste
     end
 
+    add_index :lifepath_story_castes, :name
     add_index :lifepath_story_castes, :caste_id
   end
 end

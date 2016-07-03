@@ -2,10 +2,17 @@ class CreateTalents < ActiveRecord::Migration
   def change
     create_table :talents do |t|
       t.string :name
-      t.integer :max_ranks
+      t.string :skill
+      t.integer :max_ranks, default: 1
       t.text :description
 
-      t.timestamps null: false
+      t.string :pre_skills
+      t.string :pre_talents
+
+      t.boolean :pre_talent_opt, default: true
     end
+
+    add_index :talents, :name
+    add_index :talents, :skill
   end
 end

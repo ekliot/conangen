@@ -4,8 +4,8 @@ class CreateLifepathStoryWars < ActiveRecord::Migration
       t.string :name
       t.string :skill1
       t.string :skill2
-
-      t.timestamps null: false
     end
+
+    add_index :lifepath_story_wars, :name
   end
 end

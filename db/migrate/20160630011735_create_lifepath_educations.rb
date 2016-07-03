@@ -11,8 +11,8 @@ class CreateLifepathEducations < ActiveRecord::Migration
       t.text :equipment
 
       t.references :talent
-
-      t.timestamps null: false
     end
+
+    add_index :lifepath_educations, :name
   end
 end

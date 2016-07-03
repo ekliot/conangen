@@ -5,8 +5,8 @@ class CreateSkillSets < ActiveRecord::Migration
       t.integer :acrobatics_foc
       t.integer :alchemy_exp
       t.integer :alchemy_foc
-      t.integer :animalhand_exp
-      t.integer :animalhand_foc
+      t.integer :animal_handling_exp
+      t.integer :animal_handling_foc
       t.integer :athletics_exp
       t.integer :athletics_foc
       t.integer :command_exp
@@ -60,6 +60,5 @@ class CreateSkillSets < ActiveRecord::Migration
     add_index :skill_sets, :character_id
     add_index :skill_sets, :created_at
     add_index :skill_sets, :updated_at
-    add_index :skill_sets, :name
   end
 end

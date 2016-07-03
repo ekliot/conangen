@@ -5,8 +5,8 @@ class CreateLifepathHomelands < ActiveRecord::Migration
       t.string :language
 
       t.references :talent
-
-      t.timestamps null: false
     end
+
+    add_index :lifepath_homelands, :name
   end
 end

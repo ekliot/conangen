@@ -8,5 +8,7 @@ class CreateLifepathCastes < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :lifepath_castes, :name
   end
 end
