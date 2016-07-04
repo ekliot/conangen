@@ -6,10 +6,8 @@ class CreateTalents < ActiveRecord::Migration
       t.integer :max_ranks, default: 1
       t.text :description
 
-      t.string :pre_skills
-      t.string :pre_talents
-
-      t.boolean :pre_talent_opt, default: true
+      t.text :pre_skills
+      t.text :pre_talents
     end
 
     add_index :talents, :name
