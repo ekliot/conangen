@@ -27,10 +27,10 @@ class Talent < ApplicationRecord
 
     if !self.pre_talents.empty?
 
-      talent = self.pre_talent.split(';')
+      tals = self.pre_talent.split(';')
 
-      talent.each do |talent|
-        prereq = talent.split(' ')
+      tals.each do |tal|
+        prereq = tal.split(' ')
 
         talent_hash[ prereq[0].gsub( /_/, ' ' ) ] = { rank: prereq[1].to_i }
       end

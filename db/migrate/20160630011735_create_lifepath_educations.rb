@@ -9,8 +9,7 @@ class CreateLifepathEducations < ActiveRecord::Migration
       t.string :skill_elective2
       t.string :skill_elective3
       t.text :equipment
-
-      t.references :talent
+      t.text :description
     end
 
     add_index :lifepath_educations, :name
