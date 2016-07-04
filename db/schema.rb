@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -57,12 +56,11 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["created_at"], name: "index_characters_on_created_at"
+    t.index ["name"], name: "index_characters_on_name"
+    t.index ["updated_at"], name: "index_characters_on_updated_at"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
-
-  add_index "characters", ["created_at"], name: "index_characters_on_created_at"
-  add_index "characters", ["name"], name: "index_characters_on_name"
-  add_index "characters", ["updated_at"], name: "index_characters_on_updated_at"
-  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
 
   create_table "equipment_weapons", force: :cascade do |t|
     t.string  "name"
@@ -75,13 +73,12 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.integer "availability"
     t.integer "encumbrance"
     t.string  "type"
+    t.index ["availability"], name: "index_equipment_weapons_on_availability"
+    t.index ["category"], name: "index_equipment_weapons_on_category"
+    t.index ["cost"], name: "index_equipment_weapons_on_cost"
+    t.index ["name"], name: "index_equipment_weapons_on_name"
+    t.index ["type"], name: "index_equipment_weapons_on_type"
   end
-
-  add_index "equipment_weapons", ["availability"], name: "index_equipment_weapons_on_availability"
-  add_index "equipment_weapons", ["category"], name: "index_equipment_weapons_on_category"
-  add_index "equipment_weapons", ["cost"], name: "index_equipment_weapons_on_cost"
-  add_index "equipment_weapons", ["name"], name: "index_equipment_weapons_on_name"
-  add_index "equipment_weapons", ["type"], name: "index_equipment_weapons_on_type"
 
   create_table "lifepath_archetypes", force: :cascade do |t|
     t.string  "name"
@@ -95,75 +92,69 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.string  "skill_elective3"
     t.text    "equipment"
     t.text    "description"
-    t.integer "talents_id"
+    t.integer "talent_id"
+    t.index ["name"], name: "index_lifepath_archetypes_on_name"
   end
 
-  add_index "lifepath_archetypes", ["name"], name: "index_lifepath_archetypes_on_name"
+  create_table "lifepath_caste_stories", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.string  "trait"
+    t.integer "caste_id"
+    t.index ["caste_id"], name: "index_lifepath_caste_stories_on_caste_id"
+    t.index ["name"], name: "index_lifepath_caste_stories_on_name"
+  end
 
   create_table "lifepath_castes", force: :cascade do |t|
     t.string   "name"
     t.string   "skill"
     t.integer  "social_standing"
     t.text     "description"
+    t.text     "talents"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["name"], name: "index_lifepath_castes_on_name"
   end
-
-  add_index "lifepath_castes", ["name"], name: "index_lifepath_castes_on_name"
 
   create_table "lifepath_educations", force: :cascade do |t|
-    t.string  "name"
-    t.string  "skill_mandatory1"
-    t.string  "skill_mandatory2"
-    t.string  "skill_mandatory3"
-    t.string  "skill_elective1"
-    t.string  "skill_elective2"
-    t.string  "skill_elective3"
-    t.text    "equipment"
-    t.integer "talent_id"
+    t.string "name"
+    t.string "skill_mandatory1"
+    t.string "skill_mandatory2"
+    t.string "skill_mandatory3"
+    t.string "skill_elective1"
+    t.string "skill_elective2"
+    t.string "skill_elective3"
+    t.text   "equipment"
+    t.text   "description"
+    t.index ["name"], name: "index_lifepath_educations_on_name"
   end
-
-  add_index "lifepath_educations", ["name"], name: "index_lifepath_educations_on_name"
 
   create_table "lifepath_homelands", force: :cascade do |t|
     t.string  "name"
     t.string  "language"
     t.integer "talent_id"
+    t.index ["name"], name: "index_lifepath_homelands_on_name"
   end
-
-  add_index "lifepath_homelands", ["name"], name: "index_lifepath_homelands_on_name"
 
   create_table "lifepath_natures", force: :cascade do |t|
-    t.string  "name"
-    t.string  "attribute"
-    t.string  "skill_mandatory1"
-    t.string  "skill_mandatory2"
-    t.string  "skill_mandatory3"
-    t.string  "skill_elective1"
-    t.string  "skill_elective2"
-    t.string  "skill_elective3"
-    t.integer "talent_id"
+    t.string "name"
+    t.string "attr"
+    t.string "skill_mandatory1"
+    t.string "skill_mandatory2"
+    t.string "skill_mandatory3"
+    t.string "skill_elective1"
+    t.string "skill_elective2"
+    t.string "skill_elective3"
+    t.text   "description"
+    t.index ["name"], name: "index_lifepath_natures_on_name"
   end
 
-  add_index "lifepath_natures", ["name"], name: "index_lifepath_natures_on_name"
-
-  create_table "lifepath_story_castes", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
-    t.string  "trait"
-    t.integer "caste_id"
-  end
-
-  add_index "lifepath_story_castes", ["caste_id"], name: "index_lifepath_story_castes_on_caste_id"
-  add_index "lifepath_story_castes", ["name"], name: "index_lifepath_story_castes_on_name"
-
-  create_table "lifepath_story_wars", force: :cascade do |t|
+  create_table "lifepath_war_stories", force: :cascade do |t|
     t.string "name"
     t.string "skill1"
     t.string "skill2"
+    t.index ["name"], name: "index_lifepath_war_stories_on_name"
   end
-
-  add_index "lifepath_story_wars", ["name"], name: "index_lifepath_story_wars_on_name"
 
   create_table "lifepaths", force: :cascade do |t|
     t.datetime "created_at",       null: false
@@ -183,9 +174,8 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.integer  "nature_id"
     t.integer  "education_id"
     t.integer  "story_war_id"
+    t.index ["character_id"], name: "index_lifepaths_on_character_id"
   end
-
-  add_index "lifepaths", ["character_id"], name: "index_lifepaths_on_character_id"
 
   create_table "skill_sets", force: :cascade do |t|
     t.integer  "acrobatics_exp"
@@ -240,19 +230,17 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.integer  "character_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["character_id"], name: "index_skill_sets_on_character_id"
+    t.index ["created_at"], name: "index_skill_sets_on_created_at"
+    t.index ["updated_at"], name: "index_skill_sets_on_updated_at"
   end
-
-  add_index "skill_sets", ["character_id"], name: "index_skill_sets_on_character_id"
-  add_index "skill_sets", ["created_at"], name: "index_skill_sets_on_created_at"
-  add_index "skill_sets", ["updated_at"], name: "index_skill_sets_on_updated_at"
 
   create_table "talent_sets", force: :cascade do |t|
     t.integer  "character_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["character_id"], name: "index_talent_sets_on_character_id"
   end
-
-  add_index "talent_sets", ["character_id"], name: "index_talent_sets_on_character_id"
 
   create_table "talents", force: :cascade do |t|
     t.string  "name"
@@ -262,10 +250,9 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.string  "pre_skills"
     t.string  "pre_talents"
     t.boolean "pre_talent_opt", default: true
+    t.index ["name"], name: "index_talents_on_name"
+    t.index ["skill"], name: "index_talents_on_skill"
   end
-
-  add_index "talents", ["name"], name: "index_talents_on_name"
-  add_index "talents", ["skill"], name: "index_talents_on_skill"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -273,9 +260,8 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["name"], name: "index_users_on_name", unique: true
 
 end

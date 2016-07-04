@@ -6,6 +6,8 @@ class CreateLifepathCastes < ActiveRecord::Migration
       t.integer :social_standing
       t.text :description
 
+      t.text :talents
+
       t.timestamps null: false
     end
 

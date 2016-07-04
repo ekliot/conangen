@@ -53,7 +53,8 @@ talents = {
 
     { name: "Master of Formulae",
       pre_skills: "",             pre_talents: "Alchemist 1;Sorcerer 1",
-      description: "Most alchemists work extensively with a specific formula, which becomes second nature. More exacting measures become the standard. When selecting this talent, you must also select a specific type of petty enchantment: blasting powder, lotus pollen, etc. When using this petty enchantment, you may attempt higher Difficulty tests to increase the power of the particular enchantment."
+      description: "Most alchemists work extensively with a specific formula, which becomes second nature. More exacting measures become the standard. When selecting this talent, you must also select a specific type of petty enchantment: blasting powder,
+    lotus pollen, etc. When using this petty enchantment, you may attempt higher Difficulty tests to increase the power of the particular enchantment."
     },
 
     { name: "Master Alchemist",
@@ -529,7 +530,8 @@ talents = {
 
     { name: "Tutored Warrior",
       pre_skills: "",           pre_talents: "Deflection 1",
-      description: "You can study human foes to learn their weaknesses, drawing them out in combat to see how they react, and thus, learning how to exploit those moments when they are unintentionally defenseless. As a Standard Action, you may attempt a Daunting (D3) Parry test to learn one particular enemy’s patterns and weaknesses. For the remainder of the scene, you may re-roll a single d20 on every Melee or Parry skill test made against that enemy."
+      description: "You can study human foes to learn their weaknesses, drawing them out in combat to see how they react, and thus,
+    learning how to exploit those moments when they are unintentionally defenseless. As a Standard Action, you may attempt a Daunting (D3) Parry test to learn one particular enemy’s patterns and weaknesses. For the remainder of the scene, you may re-roll a single d20 on every Melee or Parry skill test made against that enemy."
     }
   ],
 
@@ -758,7 +760,8 @@ talents = {
   sorcery: [
     { name: "Delver in the Dark",
       pre_skills: "", pre_talents: "True_Understanding 1",
-      description: "You have paid attention to the votaries of Skelos and know many secrets about dark forgotten places. When exploring old ruins, you may substitute Sorcery for Insight, Lore, or Thievery. Additionally, you may add 2 to Doom in order to substitute Sorcery for Athletics."
+      description: "You have paid attention to the votaries of Skelos and know many secrets about dark forgotten places. When exploring old ruins, you may substitute Sorcery for Insight,
+    lore, or Thievery. Additionally, you may add 2 to Doom in order to substitute Sorcery for Athletics."
     },
 
     { name: "Demon Slayer",
@@ -909,7 +912,8 @@ talents = {
 
     { name: "Underworld Lore",
       pre_skills: "", pre_talents: "Thief 1",
-      description: "You have listened to your elders and know many tales of amazing scores and terrible calamities. When considering a theft of any sort, you may spend 1 Momentum (Immediate) to know the fate of the last thief who attempted a similar act, and any precautions the target is likely to have taken since. Additionally, whenever studying the activities, traditions, taboos, and histories of a region’s criminal underworld, you may substitute Thievery for Insight, Lore, or Observation."
+      description: "You have listened to your elders and know many tales of amazing scores and terrible calamities. When considering a theft of any sort, you may spend 1 Momentum (Immediate) to know the fate of the last thief who attempted a similar act, and any precautions the target is likely to have taken since. Additionally, whenever studying the activities, traditions, taboos, and histories of a region’s criminal underworld, you may substitute Thievery for Insight,
+    lore, or Observation."
     },
 
     { name: "Walk In, Walk Out",
@@ -1037,70 +1041,144 @@ talents = {
       pre_skills: "", pre_talents: "",
       description: "The road is more home to you than any town or city ever has been. Whether a nomad by choice or necessity, you can reduce the Difficulty of Survival tests by one, so long as you are on a maintained road. This may reduce the Difficulty of tests to Simple (D0)."
     }
+  ],
+
+  other: [
+    { name: "Ancient Bloodline",
+      pre_skills: "", pre_talents: "",
+      description: "Any time you fail to make a Personality test of any kind, the player must immediately pay the gamemaster 1 Doom point, and will gain an additional d20, adding its result to the test. The test is otherwise resolved in the normal fashion. If the player has already spent Doom points to gain 3d20 to modify the Personality roll, the player must pay the Doom point but does not get to roll the additional d20."
+    }
   ]
 
 }
 
+# SEED THE TALENTS
+talents.each do |skill, skills|
+  skills.each do |talent|
+    Talent.create( talent )
+  end
+end
+
 homelands = [
-  { name: "Hyperborea", talent: "Savage Court", language: "Hyperborean" },
+  { name: "Hyperborea",
+    talent_id: Talent.find_by( name: "Savage Court" ).id,
+    language: "Hyperborean" },
 
-  { name: "Border Kingdom", talent: "Strife", language: "Nemedian;Hyperborean" },
+  { name: "Border Kingdom",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Nemedian;Hyperborean" },
 
-  { name: "Nordheim (Asgard or Vanaheim)", talent: "Winter-born", language: "Nordheimer" },
+  { name: "Nordheim (Asgard or Vanaheim)",
+    talent_id: Talent.find_by( name: "Winter-born" ).id,
+    language: "Nordheimer" },
 
-  { name: "Cimmeria", talent: "Hunter", language: "Cimmerian" },
+  { name: "Cimmeria",
+    talent_id: Talent.find_by( name: "Hunter" ).id,
+    language: "Cimmerian" },
 
-  { name: "Bossonian Marches", talent: "Hunter", language: "Aquilonian" },
+  { name: "Bossonian Marches",
+    talent_id: Talent.find_by( name: "Hunter" ).id,
+    language: "Aquilonian" },
 
-  { name: "Gunderland", talent: "Hunter", language: "Aquilonian" },
+  { name: "Gunderland",
+    talent_id: Talent.find_by( name: "Hunter" ).id,
+    language: "Aquilonian" },
 
-  { name: "Aquilonia", talent: "Cosmopolitan", language: "Aquilonian" },
+  { name: "Aquilonia",
+    talent_id: Talent.find_by( name: "Cosmopolitan" ).id,
+    language: "Aquilonian" },
 
-  { name: "Koth", talent: "Strife", language: "Kothic" },
+  { name: "Koth",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Kothic" },
 
-  { name: "Nemedia", talent: "Cosmopolitan", language: "Nemedian" },
+  { name: "Nemedia",
+    talent_id: Talent.find_by( name: "Cosmopolitan" ).id,
+    language: "Nemedian" },
 
-  { name: "Ophir", talent: "Gilded", language: "Ophirian" },
+  { name: "Ophir",
+    talent_id: Talent.find_by( name: "Gilded" ).id,
+    language: "Ophirian" },
 
-  { name: "Brythunia", talent: "Cosmopolitan", language: "Byrthunian" },
+  { name: "Brythunia",
+    talent_id: Talent.find_by( name: "Cosmopolitan" ).id,
+    language: "Byrthunian" },
 
-  { name: "Argos", talent: "Sea Raider", language: "Argosian" },
+  { name: "Argos",
+    talent_id: Talent.find_by( name: "Sea Raider" ).id,
+    language: "Argosian" },
 
-  { name: "Zamora", talent: "Honest Corruption", language: "Zamorian" },
+  { name: "Zamora",
+    talent_id: Talent.find_by( name: "Honest Corruption" ).id,
+    language: "Zamorian" },
 
-  { name: "Shem", talent: "Strife", language: "Shemitish" },
+  { name: "Shem",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Shemitish" },
 
-  { name: "Stygia", talent: "Desert-born", language: "Stygian" },
+  { name: "Stygia",
+    talent_id: Talent.find_by( name: "Desert-born" ).id,
+    language: "Stygian" },
 
-  { name: "Corinthia", talent: "Strife", language: "Corinthian" },
+  { name: "Corinthia",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Corinthian" },
 
-  { name: "Zingara", talent: "Sea Raider", language: "Zingaran" },
+  { name: "Zingara",
+    talent_id: Talent.find_by( name: "Sea Raider" ).id,
+    language: "Zingaran" },
 
-  { name: "Khojara", talent: "Cosmopolitan", language: "Shemitish;Kothic" },
+  { name: "Khojara",
+    talent_id: Talent.find_by( name: "Cosmopolitan" ).id,
+    language: "Shemitish;Kothic" },
 
-  { name: "Khauran", talent: "Cosmopolitan", language: "Shemitish;Kothic" },
+  { name: "Khauran",
+    talent_id: Talent.find_by( name: "Cosmopolitan" ).id,
+    language: "Shemitish;Kothic" },
 
-  { name: "Kush", talent: "Strife", language: "Kushite" },
+  { name: "Kush",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Kushite" },
 
-  { name: "Darfar", talent: "Savage Court", language: "Darfari" },
+  { name: "Darfar",
+    talent_id: Talent.find_by( name: "Savage Court" ).id,
+    language: "Darfari" },
 
-  { name: "Keshan", talent: "Savage Court", language: "Keshani" },
+  { name: "Keshan",
+    talent_id: Talent.find_by( name: "Savage Court" ).id,
+    language: "Keshani" },
 
-  { name: "Punt", talent: "Gilded", language: "Punt" },
+  { name: "Punt",
+    talent_id: Talent.find_by( name: "Gilded" ).id,
+    language: "Punt" },
 
-  { name: "Zembabwei", talent: "Desert-born", language: "Zembabwein" },
+  { name: "Zembabwei",
+    talent_id: Talent.find_by( name: "Desert-born" ).id,
+    language: "Zembabwein" },
 
-  { name: "The Black Kingdoms", talent: "Strife", language: "Kushite;Darfari;Keshani;Punt,Darfari" },
+  { name: "The Black Kingdoms",
+    talent_id: Talent.find_by( name: "Strife" ).id,
+    language: "Kushite;Darfari;Keshani;Punt,Darfari" },
 
-  { name: "Turan", talent: "Guilded", language: "Turanian" },
+  { name: "Turan",
+    talent_id: Talent.find_by( name: "Gilded" ).id,
+    language: "Turanian" },
 
-  { name: "Iranistan", talent: "Desert-born", language: "Iranistani" },
+  { name: "Iranistan",
+    talent_id: Talent.find_by( name: "Desert-born" ).id,
+    language: "Iranistani" },
 
-  { name: "Hyrkania", talent: "Of Saddle and Bow", language: "Hyrkanian" },
+  { name: "Hyrkania",
+    talent_id: Talent.find_by( name: "Of Saddle and Bow" ).id,
+    language: "Hyrkanian" },
 
-  { name: "Khitai", talent: "Savage Court", language: "Khitan" },
+  { name: "Khitai",
+    talent_id: Talent.find_by( name: "Savage Court" ).id,
+    language: "Khitan" },
 
-  { name: "Vendhya", talent: "Gilded", language: "Vendhyan" }
+  { name: "Vendhya",
+    talent_id: Talent.find_by( name: "Gilded" ).id,
+    language: "Vendhyan" }
 ]
 
 castes = [
@@ -1166,7 +1244,8 @@ caste_stories = {
   ],
 
   "Escaped Serf/Slave" => [
-    { name: "A Band of Brothers, Living Free", trait: "Regrets", description: "Whether by your own hand or the will of another, you were freed, alone in the world. You found others like yourself, and formed a band. Through scavenging, work, and even theft, you supported one another, hidden within a ruined building on the fringe of society. Then something brought it to an end. Who betrayed your band? What, or who, were the guards looking for? Why do your former friends mistrust you?" },
+    { name: "A Band of Brothers,
+    living Free", trait: "Regrets", description: "Whether by your own hand or the will of another, you were freed, alone in the world. You found others like yourself, and formed a band. Through scavenging, work, and even theft, you supported one another, hidden within a ruined building on the fringe of society. Then something brought it to an end. Who betrayed your band? What, or who, were the guards looking for? Why do your former friends mistrust you?" },
 
     { name: "Hidden Far from Noble Site", trait: "Fond Memories", description: "Suddenly they died and you were alone. You could go anywhere, do anything. You took their money and spent every penny, constantly on the move. Then you found it: a perfect home, far from suspicious eyes. That home is gone now, just a memory that makes you smile. Where was that home, and what made it so special?" },
 
@@ -1184,7 +1263,8 @@ caste_stories = {
 
     { name: "Ample for Winter", trait: "Lost Love", description: "Every day brought a small hardship that made you strong. The ground was hard in summer and slush in winter, yet when the stores had to be opened there was always enough barley for a strong drink and plenty of food. Looking back, you scarcely remember the people of your village. Should you return, they would scarce remember you. Perhaps there is someone there worth returning to see. Do you even remember that person’s name?" },
 
-    { name: "Winter in the Balance", trait: "Vengeance", description: "It was a struggle every year. The lord took plenty for his knights, leaving little for the common folk. Sometimes you ate, while other times you simply drank snow water and slept as the wolves howled. You remember no beauty in that bleak place — only the torments of the thieving knights. One knight in particular took pleasure in the hardship he inflicted. If you meet him again, will you take revenge? Why?" },
+    { name: "Winter in the Balance", trait: "Vengeance", description: "It was a struggle every year. The lord took plenty for his knights,
+    leaving little for the common folk. Sometimes you ate, while other times you simply drank snow water and slept as the wolves howled. You remember no beauty in that bleak place — only the torments of the thieving knights. One knight in particular took pleasure in the hardship he inflicted. If you meet him again, will you take revenge? Why?" },
 
     { name: "Meager Soup and Angry Eyes", trait: "Traitor", description: "Even the protectors of your village went hungry, and when they did, everyone suffered. Raids were planned on other villages, but you never saw any of the food they brought back. The only way to survive was by poaching, but the game was scarce and you had to keep your kills to yourself. Eventually, you were found out and the angry eyes of the villagers were terrible to behold. Were you punished, and did you ever redeem yourself?" },
 
@@ -1212,7 +1292,8 @@ caste_stories = {
 
     { name: "Profits from the Town", trait: "Spy", description: "While working in your aunt’s home you got to see many wealthy visitors stop by and broker purchases. You were young enough that they didn’t pay you much mind unless you were serving wine. Consequently, you learned a great deal that the visitors didn’t want your aunt to know. A generous woman, she always made sure you were rewarded whenever a significant deal was brokered. What was your biggest score, and did the customer ever find out?" },
 
-    { name: "Profits from the Road", trait: "Well-traveled", description: "It seemed like you were always on the move. Taking goods from one town, trading them for goods in the next, pocketing some coin along the way. Spending the coin on some cheap wine, and then moving on. It was easy to become embittered about your cousins, living it up in the city while you plied your way through the expanses on dangerous caravan routes. Still, it’s not like you didn’t have adventures or see amazing sights. What was the most amazing thing you have ever seen?" },
+    { name: "Profits from the Road", trait: "Well-traveled", description: "It seemed like you were always on the move. Taking goods from one town, trading them for goods in the next, pocketing some coin along the way. Spending the coin on some cheap wine, and then moving on. It was easy to become embittered about your cousins,
+    living it up in the city while you plied your way through the expanses on dangerous caravan routes. Still, it’s not like you didn’t have adventures or see amazing sights. What was the most amazing thing you have ever seen?" },
 
     { name: "The Lash of Taxation", trait: "Witness to Brutality", description: "Your local lord had grandiose dreams and a mind to have the merchants within his lands pay for them. You learned that sometimes a merchant needs to be have two cargoes: one to be seen, and one to pay for the trip. You also witnessed firsthand what happens to smugglers. Who did you see suffering at the hands of the lord’s soldiers?" },
 
@@ -1279,7 +1360,8 @@ caste_stories = {
 }
 
 archetypes = [
-  { name: "Archer",                       talent: "Accurate",             skill_career: "ranged",
+  { name: "Archer",                       talent_id: Talent.find_by( name: "Accurate" ).id,
+    skill_career: "ranged",
     skill_mandatory1: "animal_handling",  skill_mandatory2: "observation",
     skill_mandatory3: "stealth",          skill_mandatory4: "survival",
     skill_elective1: "acrobatics",        skill_elective2: "athletics",   skill_elective3: "melee",
@@ -1287,7 +1369,8 @@ archetypes = [
     equipment: "" # equipment: "bow&&reload&&reload&&[[padded gambeson&&trousers]||[brigandine vest&&brigandine trousers]||mail vest]&&helmet&&melee weapon&&[riding horse||riding donkey]",
   },
 
-  { name: "Barbarian",              talent: "No Mercy",                   skill_career: "melee",
+  { name: "Barbarian",              talent_id: Talent.find_by( name: "No Mercy" ).id,
+    skill_career: "melee",
     skill_mandatory1: "acrobatics", skill_mandatory2: "animal_handling",
     skill_mandatory3: "athletics",  skill_mandatory4: "survival",
     skill_elective1: "acrobatics",  skill_elective2: "healing",           skill_elective3: "parry",
@@ -1295,7 +1378,8 @@ archetypes = [
     equipment: "" # equipment: "[[brigandine long coat]||[mail vest&&helmet]||ragged furs]&&melee weapon&&melee weapon",
   },
 
-  { name: "Mercenary",                  talent: "Strong Back",      skill_career: "athletics",
+  { name: "Mercenary",                  talent_id: Talent.find_by( name: "Strong Back" ).id,
+    skill_career: "athletics",
     skill_mandatory1: "acrobatics",     skill_mandatory2: "melee",
     skill_mandatory3: "parry",          skill_mandatory4: "ranged",
     skill_elective1: "animal_handling", skill_elective2: "healing", skill_elective3: "stealth",
@@ -1303,7 +1387,8 @@ archetypes = [
     equipment: "" # equipment: "[mail, full||[brigandine long coat&&helmet]]&&polearm&&melee weapon&&sling&&reload&&mule, pack&&horse, riding",
   },
 
-  { name: "Noble Warrior",          talent: "A Modicum of Comfort",       skill_career: "society",
+  { name: "Noble Warrior",          talent_id: Talent.find_by( name: "A Modicum of Comfort" ).id,
+    skill_career: "society",
     skill_mandatory1: "acrobatics", skill_mandatory2: "animal_handling",
     skill_mandatory3: "parry",      skill_mandatory4: "resistance",
     skill_elective1: "melee",       skill_elective2: "persuade",          skill_elective3: "ranged",
@@ -1311,7 +1396,8 @@ archetypes = [
     equipment: "" # equipment: "heavy hauberk&&helmet&&shield&&weapon&&weapon&&suit of fine clothing&&traveling clothes&&horse,war&&light barding",
   },
 
-  { name: "Nomad",                  talent: "Born in the Saddle",   skill_career: "animal_handling",
+  { name: "Nomad",                  talent_id: Talent.find_by( name: "Born in the Saddle" ).id,
+    skill_career: "animal_handling",
     skill_mandatory1: "acrobatics", skill_mandatory2: "athletics",
     skill_mandatory3: "parry",      skill_mandatory4: "survival",
     skill_elective1: "melee",       skill_elective2: "ranged",      skill_elective3: "stealth",
@@ -1319,15 +1405,18 @@ archetypes = [
     equipment: "" # equipment: "[[weapon||reload]&&[weapon||reload]&&[weapon||reload]]&&[[heavy clothing]||mail vest]&&horse&&mule&&handler's kit&&rewards&&rewards&&rewards",
   },
 
-  { name: "Priest/Priestess",       talent: "Quiet Wisdom",       skill_career: "counsel",
+  { name: "Priest/Priestess",       talent_id: Talent.find_by( name: "Quiet Wisdom" ).id,
+    skill_career: "counsel",
     skill_mandatory1: "insight",    skill_mandatory2: "lore",
     skill_mandatory3: "persuade",   skill_mandatory4: "society",
     skill_elective1: "alchemy",     skill_elective2: "healing",   skill_elective3: "sorcery",
-    description: "Born into the faith or a late convert, you feel the calling of one of the many gods of the Hyborian Age: from holy Mitra, accursed Set, Ishtar, Bori, Asura, Ibis, the living Tarim, Erlik, Bel, Derketo, or even those who are not overly worshipped, like Crom, Ymir, or the Zamoran spider-god. You are either associated with a particular temple or you are itinerant, wandering the land and converting the unfaithful by any means you can, be it through example, with convincing speech, or by the sword.",
+    description: "Born into the faith or a late convert, you feel the calling of one of the many gods of the Hyborian Age: from holy Mitra, accursed Set, Ishtar, Bori, Asura, Ibis, the living Tarim, Erlik, Bel, Derketo, or even those who are not overly worshipped,
+    like Crom, Ymir, or the Zamoran spider-god. You are either associated with a particular temple or you are itinerant, wandering the land and converting the unfaithful by any means you can, be it through example, with convincing speech, or by the sword.",
     equipment: "" # equipment: "{melee}&&A single copy of a scroll or book containing your faith’s precepts and holy words&&travelling clothes&&priestly vestments&&oils, herbs, and religious accoutrements&&mule&&kit for elective skill&&kit for elective skill",
   },
 
-  { name: "Pirate",                 talent: "Sharp Senses",       skill_career: "observation",
+  { name: "Pirate",                 talent_id: Talent.find_by( name: "Sharp Senses" ).id,
+    skill_career: "observation",
     skill_mandatory1: "melee",      skill_mandatory2: "parry",
     skill_mandatory3: "resistance", skill_mandatory4: "survival",
     skill_elective1: "sailing",     skill_elective2: "stealth",   skill_elective3: "thievery",
@@ -1335,7 +1424,8 @@ archetypes = [
     equipment: "" # equipment: "{melee}&&Padded jerkin&&[A share in a small water craft||The proceeds that may come from its activities]",
   },
 
-  { name: "Scholar",                      talent: "Scribe",                 skill_career: "lore",
+  { name: "Scholar",                      talent_id: Talent.find_by( name: "Scribe" ).id,
+    skill_career: "lore",
     skill_mandatory1: "animal_handling",  skill_mandatory2: "languages",
     skill_mandatory3: "persuade",         skill_mandatory4: "society",
     skill_elective1: "alchemy",           skill_elective2: "healing",       skill_elective3: "sorcery",
@@ -1343,7 +1433,8 @@ archetypes = [
     equipment: "" # equipment: "[{melee}||{ranged}]&&Several sets of plain travelling clothes&&A suit of courtly clothing&&A plethora of writing materials&&Horse&&{mount::Baggage mule}&&{item::tool::mandatory_skill}&&{item::tool::mandatory_skill}&&{item::tool::mandatory_skill}&&{tool::mandatory_skill}&&{tool::elective_skill}&&{tool::elective_skill}&&{library, personal}",
   },
 
-  { name: "Scoundrel",                  talent: "Agile",            skill_career: "acrobatics",
+  { name: "Scoundrel",                  talent_id: Talent.find_by( name: "Agile" ).id,
+    skill_career: "acrobatics",
     skill_mandatory1: "athletics",      skill_mandatory2: "parry",
     skill_mandatory3: "persuade",       skill_mandatory4: "society",
     skill_elective1: "animal_handling", skill_elective2: "melee",   skill_elective3: "thievery",
@@ -1351,7 +1442,8 @@ archetypes = [
     equipment: "" # equipment: "{weapon::melee}&&[{armor::light::Brigandine jacket}||{armor::heavy_clothing::Heavy clothing}]&&[{weapon::melee::shield}||{nothing}]&&A small chest of counterfeit goods",
   },
 
-  { name: "Witch/Shaman",               talent: "Force of Presence",  skill_career: "persuade",
+  { name: "Witch/Shaman",               talent_id: Talent.find_by( name: "Force of Presence" ).id,
+    skill_career: "persuade",
     skill_mandatory1: "alchemy",        skill_mandatory2: "counsel",
     skill_mandatory3: "healing",        skill_mandatory4: "lore",
     skill_elective1: "animal_handling", skill_elective2: "sorcery",   skill_elective3: "thievery",
@@ -1361,61 +1453,61 @@ archetypes = [
 ]
 
 natures = [
-  { name: "Catious", attribute: "willpower",
+  { name: "Catious",                    attr: "willpower",
     skill_mandatory1: "lore",           skill_mandatory2: "parry",    skill_mandatory3: "stealth",
     skill_elective1: "animal_handling", skill_elective2: "athletics", skill_elective3: "sailing",
     description: "You do your best to avoid trouble, whether through innate self-preservation or from hard-learned experience."
   },
 
-  { name: "Curious", attribute: "agility",
+  { name: "Curious",                attr: "agility",
     skill_mandatory1: "athletics",  skill_mandatory2: "observation",  skill_mandatory3: "stealth",
     skill_elective1: "alchemy",     skill_elective2: "lore",          skill_elective3: "thievery",
     description: "The world is a fascinating place, with many mysteries yet to be discovered. You are always trying to find out what is unknown, or what is being concealed from you."
   },
 
-  { name: "Inspirational", attribute: "personality",
+  { name: "Inspirational",        attr: "personality",
     skill_mandatory1: "counsel",  skill_mandatory2: "observation",  skill_mandatory3: "persuade",
     skill_elective1: "command",   skill_elective2: "healing",       skill_elective3: "society",
     description: "The world is a difficult place, and you take it upon yourself to provide a good example to those around you. Maybe you learned this from a prior command, or it seems the right thing to do."
   },
 
-  { name: "Learned", attribute: "intelligence",
+  { name: "Learned",                      attr: "intelligence",
     skill_mandatory1: "animal_handling",  skill_mandatory2: "craft",  skill_mandatory3: "lore",
     skill_elective1: "counsel",           skill_elective2: "healing", skill_elective3: "observation",
     description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you."
   },
 
-  { name: "Practical", attribute: "coordination",
+  { name: "Practical",              attr: "coordination",
     skill_mandatory1: "discipline", skill_mandatory2: "craft",          skill_mandatory3: "healing",
     skill_elective1: "alchemy",     skill_elective2: "animal_handling", skill_elective3: "observation",
     description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals."
   },
 
-  { name: "Scheming",attribute: "intelligence",
+  { name: "Scheming",               attr: "intelligence",
     skill_mandatory1: "command",    skill_mandatory2: "counsel",  skill_mandatory3: "discipline",
     skill_elective1: "acrobatics",  skill_elective2: "lore",      skill_elective3: "parry",
     description: "There’s always an easier way to do things, one that does not involve as much risk or effort on your behalf. Furthermore, you always keep your options open, and always have a secondary plan of action."
   },
 
-  { name: "Sneaky", attribute: "awareness",
+  { name: "Sneaky",                   attr: "awareness",
     skill_mandatory1: "observation",  skill_mandatory2: "stealth",  skill_mandatory3: "thievery",
     skill_elective1: "acrobatics",    skill_elective2: "athletics", skill_elective3: "survival",
     description: "Information is power, and it is best to keep others in the dark when it comes to you. You have learned to move quietly, speak softly, and keep your true motives to yourself."
   },
 
-  { name: "Stoic", attribute: "willpower",
+  { name: "Stoic",                  attr: "willpower",
     skill_mandatory1: "discipline", skill_mandatory2: "lore",   skill_mandatory3: "resistance",
     skill_elective1: "counsel",     skill_elective2: "healing", skill_elective3: "parry",
     description: "There is little in life that cannot be withstood, and no hardship — physical, mental, or even social — is so great that you cannot overcome it."
   },
 
-  { name: "Supportive", attribute: "personality",
+  { name: "Supportive",                 attr: "personality",
     skill_mandatory1: "counsel",        skill_mandatory2: "healing",    skill_mandatory3: "persuade",
     skill_elective1: "animal_handling", skill_elective2: "discipline",  skill_elective3: "resistance",
     description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you."
   },
 
-  { name: "Wrathful",attribute: "brawn",
+  { name: "Wrathful",               attr: "brawn",
     skill_mandatory1: "melee",      skill_mandatory2: "ranged",     skill_mandatory3: "resistance",
     skill_elective1: "acrobatics",  skill_elective2: "discipline",  skill_elective3: "parry",
     description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality."
@@ -1876,55 +1968,53 @@ weapons = {
   },
 }
 
-talents.each do |skill, skills|
-  skills.each do |talent|
-    # Talent.create()
-    puts talent
-  end
-end
-
+# SEED THE HOMELANDS
 homelands.each do |homeland|
-  # Homeland.create()
-  puts homeland
+  Lifepath::Homeland.create( homeland )
 end
 
+# SEED THE CASTES
 castes.each do |caste|
-  # Caste.create()
-  puts caste
+  cst = Lifepath::Caste.create( caste.except :talents )
+
+  tals = caste[:talents].split( ';' ) # .map! { |t| Talent.find_by name: t }
+  cst.talents = tals
+  cst.save
 end
 
+# SEED THE CASTE STORIES
 caste_stories.each do |caste, stories|
   stories.each do |story|
-    # StoryCaste.create()
-    puts story
+    Lifepath::CasteStory.create( story )
   end
 end
 
+# SEED THE ARCHETYPES
 archetypes.each do |arch|
-  # Archetype.create()
-  puts arch
+  Lifepath::Archetype.create( arch )
 end
 
+# SEED THE NATURES
 natures.each do |nature|
-  # Nature.create()
-  puts nature
+  Lifepath::Nature.create( nature )
 end
 
+# SEED THE EDUCATIONS
 educations.each do |edu|
-  # Education.create()
-  puts edu
+  Lifepath::Education.create( edu )
 end
 
+# SEED THE WAR STORIES
 war_stories.each do |story|
-  # StoryWar.create()
-  puts story
+  Lifepath::WarStory.create( story )
 end
 
-weapons.each do |category, types|
-  types.each do |type, tweapons|
-    tweapons.each do |weapon|
-      # Weapon.create()
-      puts weapon
-    end
-  end
-end
+# SEED THE WEAPONS
+# weapons.each do |category, types|
+#   types.each do |type, tweapons|
+#     tweapons.each do |weapon|
+#       Equipment::Weapon.create()
+#       puts weapon
+#     end
+#   end
+# end

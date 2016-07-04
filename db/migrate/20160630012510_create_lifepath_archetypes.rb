@@ -13,7 +13,7 @@ class CreateLifepathArchetypes < ActiveRecord::Migration
       t.text :equipment
       t.text :description
 
-      t.references :talents
+      t.references :talent
     end
 
     add_index :lifepath_archetypes, :name
