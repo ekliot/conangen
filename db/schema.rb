@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630225818) do
+ActiveRecord::Schema.define(version: 20160704170559) do
 
   create_table "characters", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",              default: ""
     t.integer  "age"
-    t.string   "gender"
-    t.text     "appearance"
-    t.text     "personality"
+    t.string   "gender",            default: ""
+    t.text     "appearance",        default: ""
     t.string   "trait"
     t.integer  "exp_total"
     t.integer  "exp_spent"
@@ -43,19 +42,19 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.integer  "armour_rleg"
     t.integer  "armour_lleg"
     t.integer  "armour_torso"
-    t.string   "armour_qualities"
     t.integer  "vigor_max"
     t.integer  "vigor_current"
     t.integer  "resolve_max"
     t.integer  "resolve_current"
     t.integer  "wounds_current"
     t.integer  "trauma_current"
-    t.text     "contacts"
-    t.text     "background"
-    t.string   "languages"
+    t.text     "contacts",          default: ""
+    t.text     "background",        default: ""
+    t.text     "personality",       default: ""
+    t.text     "languages",         default: ""
     t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["created_at"], name: "index_characters_on_created_at"
     t.index ["name"], name: "index_characters_on_name"
     t.index ["updated_at"], name: "index_characters_on_updated_at"
@@ -96,6 +95,15 @@ ActiveRecord::Schema.define(version: 20160630225818) do
     t.index ["name"], name: "index_lifepath_archetypes_on_name"
   end
 
+  create_table "lifepath_aspects", force: :cascade do |t|
+    t.string "name"
+    t.string "mandatory_attribute1"
+    t.string "mandatory_attribute2"
+    t.string "optional_attribute1"
+    t.string "optional_attribute2"
+    t.index ["name"], name: "index_lifepath_aspects_on_name"
+  end
+
   create_table "lifepath_caste_stories", force: :cascade do |t|
     t.string  "name"
     t.text    "description"
@@ -106,13 +114,11 @@ ActiveRecord::Schema.define(version: 20160630225818) do
   end
 
   create_table "lifepath_castes", force: :cascade do |t|
-    t.string   "name"
-    t.string   "skill"
-    t.integer  "social_standing"
-    t.text     "description"
-    t.text     "talents"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string  "name"
+    t.string  "skill"
+    t.integer "social_standing"
+    t.text    "description"
+    t.text    "talents"
     t.index ["name"], name: "index_lifepath_castes_on_name"
   end
 

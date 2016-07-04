@@ -7,8 +7,6 @@ class CreateLifepathCastes < ActiveRecord::Migration
       t.text :description
 
       t.text :talents
-
-      t.timestamps null: false
     end
 
     add_index :lifepath_castes, :name
