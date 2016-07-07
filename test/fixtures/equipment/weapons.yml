@@ -1,23 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  cost: 1
-  reach: MyString
-  size: MyString
-  qualities: MyString
-  damage: 1
-  availability: 1
-  encumbrance: 1
-  type: 
-
-two:
-  name: MyString
-  cost: 1
-  reach: MyString
-  size: MyString
-  qualities: MyString
-  damage: 1
-  availability: 1
-  encumbrance: 1
-  type: 
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+# one:
+#   name: MyString
+#   cost: 1
+#   reach: MyString
+#   size: MyString
+#   qualities: MyString
+#   damage: 1
+#   availability: 1
+#   encumbrance: 1
+#   type:
+#
+# two:
+#   name: MyString
+#   cost: 1
+#   reach: MyString
+#   size: MyString
+#   qualities: MyString
+#   damage: 1
+#   availability: 1
+#   encumbrance: 1
+#   type:
