@@ -1,0 +1,15 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="ui negative message">
+    <div class="">
+      By Crom! Your form has presented <%= pluralize(@user.errors.count, "flaw") %>!
+    </div>
+
+    <ul class="list">
+
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+
+    </ul>
+  </div>
+<% end %>

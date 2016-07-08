@@ -2,8 +2,12 @@
 #
 # one:
 #   name: MyString
-#   language: MyString
+#   description: MyText
+#   trait: MyString
+#   caste: MyString
 #
 # two:
 #   name: MyString
-#   language: MyString
+#   description: MyText
+#   trait: MyString
+#   caste: MyString

@@ -1,105 +1,105 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  age: 
-  gender: MyString
-  appearance: MyText
-  personality: MyText
-  homeland: MyString
-  caste: MyString
-  caste_story: MyString
-  trait: MyString
-  archetype: MyString
-  nature: MyString
-  education: MyString
-  warstory: MyString
-  exp_total: 
-  exp_spent: 
-  fortune_max: 
-  fortune_current: 
-  gold: 
-  renown: 
-  standing: 
-  attr_agility: 
-  attr_awareness: 
-  attr_brawn: 
-  attr_coordination: 
-  attr_intelligence: 
-  attr_personality: 
-  attr_willpower: 
-  dmg_ranged: 
-  dmg_melee: 
-  dmg_presence: 
-  courage: 
-  armour_head: 
-  armour_rarm: 
-  armour_larm: 
-  armour_rleg: 
-  armour_lleg: 
-  armour_torso: 
-  armour_qualities: MyString
-  vigor_max: 
-  vigor_current: 
-  resolve_max: 
-  resolve_current: 
-  wounds_current: 
-  trauma_current: 
-  talent_homeland: MyString
-  talent_caste1: MyString
-  talent_caste2: MyString
-  contacts: MyText
-  background: MyText
-  languages: MyString
-
-two:
-  name: MyString
-  age: 
-  gender: MyString
-  appearance: MyText
-  personality: MyText
-  homeland: MyString
-  caste: MyString
-  caste_story: MyString
-  trait: MyString
-  archetype: MyString
-  nature: MyString
-  education: MyString
-  warstory: MyString
-  exp_total: 
-  exp_spent: 
-  fortune_max: 
-  fortune_current: 
-  gold: 
-  renown: 
-  standing: 
-  attr_agility: 
-  attr_awareness: 
-  attr_brawn: 
-  attr_coordination: 
-  attr_intelligence: 
-  attr_personality: 
-  attr_willpower: 
-  dmg_ranged: 
-  dmg_melee: 
-  dmg_presence: 
-  courage: 
-  armour_head: 
-  armour_rarm: 
-  armour_larm: 
-  armour_rleg: 
-  armour_lleg: 
-  armour_torso: 
-  armour_qualities: MyString
-  vigor_max: 
-  vigor_current: 
-  resolve_max: 
-  resolve_current: 
-  wounds_current: 
-  trauma_current: 
-  talent_homeland: MyString
-  talent_caste1: MyString
-  talent_caste2: MyString
-  contacts: MyText
-  background: MyText
-  languages: MyString
+# one:
+#   name: MyString
+#   age:
+#   gender: MyString
+#   appearance: MyText
+#   personality: MyText
+#   homeland: MyString
+#   caste: MyString
+#   caste_story: MyString
+#   trait: MyString
+#   archetype: MyString
+#   nature: MyString
+#   education: MyString
+#   warstory: MyString
+#   exp_total:
+#   exp_spent:
+#   fortune_max:
+#   fortune_current:
+#   gold:
+#   renown:
+#   standing:
+#   attr_agility:
+#   attr_awareness:
+#   attr_brawn:
+#   attr_coordination:
+#   attr_intelligence:
+#   attr_personality:
+#   attr_willpower:
+#   dmg_ranged:
+#   dmg_melee:
+#   dmg_presence:
+#   courage:
+#   armour_head:
+#   armour_rarm:
+#   armour_larm:
+#   armour_rleg:
+#   armour_lleg:
+#   armour_torso:
+#   armour_qualities: MyString
+#   vigor_max:
+#   vigor_current:
+#   resolve_max:
+#   resolve_current:
+#   wounds_current:
+#   trauma_current:
+#   talent_homeland: MyString
+#   talent_caste1: MyString
+#   talent_caste2: MyString
+#   contacts: MyText
+#   background: MyText
+#   languages: MyString
+#
+# two:
+#   name: MyString
+#   age:
+#   gender: MyString
+#   appearance: MyText
+#   personality: MyText
+#   homeland: MyString
+#   caste: MyString
+#   caste_story: MyString
+#   trait: MyString
+#   archetype: MyString
+#   nature: MyString
+#   education: MyString
+#   warstory: MyString
+#   exp_total:
+#   exp_spent:
+#   fortune_max:
+#   fortune_current:
+#   gold:
+#   renown:
+#   standing:
+#   attr_agility:
+#   attr_awareness:
+#   attr_brawn:
+#   attr_coordination:
+#   attr_intelligence:
+#   attr_personality:
+#   attr_willpower:
+#   dmg_ranged:
+#   dmg_melee:
+#   dmg_presence:
+#   courage:
+#   armour_head:
+#   armour_rarm:
+#   armour_larm:
+#   armour_rleg:
+#   armour_lleg:
+#   armour_torso:
+#   armour_qualities: MyString
+#   vigor_max:
+#   vigor_current:
+#   resolve_max:
+#   resolve_current:
+#   wounds_current:
+#   trauma_current:
+#   talent_homeland: MyString
+#   talent_caste1: MyString
+#   talent_caste2: MyString
+#   contacts: MyText
+#   background: MyText
+#   languages: MyString

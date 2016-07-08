@@ -1,15 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  mandatory_attribute1: MyString
-  mandatory_attribute2: MyString
-  optional_attribute1: MyString
-  optional_attribute2: MyString
-
-two:
-  name: MyString
-  mandatory_attribute1: MyString
-  mandatory_attribute2: MyString
-  optional_attribute1: MyString
-  optional_attribute2: MyString
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+# one:
+#   name: MyString
+#   mandatory_attribute1: MyString
+#   mandatory_attribute2: MyString
+#   optional_attribute1: MyString
+#   optional_attribute2: MyString
+#
+# two:
+#   name: MyString
+#   mandatory_attribute1: MyString
+#   mandatory_attribute2: MyString
+#   optional_attribute1: MyString
+#   optional_attribute2: MyString
