@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+ruby '2.2.3'
+
 gem 'rails', '~> 5.0.0'
 gem 'railties', '~> 5.0.0'
 gem 'rails-controller-testing'
@@ -27,9 +29,6 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -62,4 +61,5 @@ end
 
 group :production do
   gem 'pg'
+  gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 end

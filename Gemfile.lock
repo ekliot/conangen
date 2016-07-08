@@ -123,6 +123,9 @@ GEM
     notiffany (0.1.0)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    passenger (5.0.29)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.4)
     pkg-config (1.1.7)
     pry (0.10.3)
@@ -220,6 +223,7 @@ DEPENDENCIES
   jquery-rails
   mini_backtrace
   minitest-reporters
+  passenger (>= 5.0.25)
   pg
   rails (~> 5.0.0)
   rails-controller-testing
