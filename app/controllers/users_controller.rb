@@ -4,12 +4,28 @@ class UsersController < ApplicationController
   end
 
   def account
+    # if session[:user_id].nil?
+    #   redirect_to '/login'
+    # else
+    #
+    # end
+  end
+
+  def login
+    @user = User.new
+    # session[:user_id] = @user.id
+    # redirect_to 'application#home'
+  end
+
+  def logout
   end
 
   def create
     @user = User.new( user_params )
     if @user.save
-      # create
+      flash[:success] = "Welcome to the Sample App!"
+      session[:user] = @user.id
+      redirect_to '/account'
     else
       render 'new'
     end

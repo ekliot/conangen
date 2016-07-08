@@ -14,6 +14,13 @@
 
     <div class="ui main container">
 
+      <% flash.each do |message_type, message| %>
+        <div class="ui <%= message_type %> message">
+          <i class="close icon"></i>
+          <%= message %>
+        </div>
+      <% end %>
+
       <%= yield %>
 
     </div>
