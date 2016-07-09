@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+# ruby '2.2.3'
+
 gem 'rails', '~> 5.0.0'
 gem 'railties', '~> 5.0.0'
 gem 'rails-controller-testing'
@@ -28,9 +30,6 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,18 +45,21 @@ group :development, :test do
 end
 
 group :test do
-  gem 'minitest-reporters', '1.0.5'
+  gem 'minitest-reporters' #, '1.0.5'
 
-  gem 'mini_backtrace',     '0.1.3'
+  gem 'mini_backtrace' #,     '0.1.3'
 
-  gem 'guard-minitest',     '2.3.1'
+  gem 'guard-minitest' #,     '2.3.1'
+
+  gem 'guard-rails'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.0'
 end
 
 group :production do
   gem 'pg'
+  gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 end
