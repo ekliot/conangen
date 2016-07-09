@@ -1332,7 +1332,7 @@ homelands = [
 
   { name: "The Black Kingdoms",
     talent_id: Talent.find_by( name: "Strife" ).id,
-    language: "Kushite;Darfari;Keshani;Punt,Darfari" },
+    language: "Kushite;Darfari;Keshani;Punt" },
 
   { name: "Turan",
     talent_id: Talent.find_by( name: "Gilded" ).id,
@@ -1885,6 +1885,8 @@ end
 war_stories.each do |story|
   Lifepath::WarStory.create( story )
 end
+
+puts Lifepath::Homeland.count
 
 # weapons = {
 #   melee: {
