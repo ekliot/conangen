@@ -1845,6 +1845,8 @@ homelands.each do |homeland|
   Lifepath::Homeland.create( homeland )
 end
 
+puts Lifepath::Homeland.count
+
 # SEED THE ASPECTS
 aspects.each do |aspect|
   Lifepath::Aspect.create( aspect )
@@ -2247,3 +2249,5 @@ puts Lifepath::Homeland.count
 #     end
 #   end
 # end
+
+puts Lifepath::Homeland.count
