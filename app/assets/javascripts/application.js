@@ -17,3 +17,7 @@
 
 // Loads all Semantic javascripts
 //= require semantic-ui
+
+$(function() {
+  $('.menu .item').tab();
+});
