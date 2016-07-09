@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    render 'layouts/characters/_creation'
+    render 'layouts/characters/creation'
   end
 
   def view
