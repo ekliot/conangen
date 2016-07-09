@@ -1,4 +1,11 @@
 class CharactersController < ApplicationController
+  def new
+  end
+
+  def create
+    render 'layouts/characters/_creation'
+  end
+
   def view
   end
 

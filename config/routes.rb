@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root                      "application#home"
   get     'about'       =>  'application#about'
 
+  get     'new'         =>  'characters#new'
+  get     'create'      =>  'characters#create'
   get     'chars'       =>  'characters#index'
   get     'view/:id'    =>  'characters#view'
   get     'edit/:id'    =>  'characters#edit'
