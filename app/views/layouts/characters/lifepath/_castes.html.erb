@@ -1,10 +1,10 @@
-<h1 class="ui divided centered header">Select a homoland</h1>
+<h1 class="ui divided centered header">Caste</h1>
 
 <% castes = Lifepath::Caste.find_each %>
 
 <div class="ui container fluid grid">
   <div class="ui four wide column">
-    <div class="ui fluid vertical tabular pointing menu" style="height:100%">
+    <div class="ui fluid vertical tabular pointing menu caste_menu" >
       <% castes.each do |caste| %>
         <a class="ui item <%= if caste.id == 1 then "active " end %>tab caste_tab" data-tab="<%=caste.id %>" ><%= caste.name %></a>
       <% end %>
@@ -15,7 +15,7 @@
 
     <% castes.each do |caste| %>
 
-    <div class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment" style = "margin-top:1rem" data-tab="<%=caste.id %>" >
+    <div class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment" data-tab="<%=caste.id %>" >
 
         <p>Name: <%= caste.name %></p>
         <p>Description: <%= caste.description %></p>
@@ -25,9 +25,9 @@
         <div class = "ui cards">
 
           <% Lifepath::CasteStory.where( caste_id: caste.id ).each do |castestory| %>
-            <button class="ui card caste_card" style = "margin-top:1rem" >
+            <button class="ui card caste_card" >
 
-              <div style = "text-align: left" class = "ui content">
+              <div class = "ui content">
 
                 <p>Name: <%= castestory.name %></p>
                 <p>Trait: <%= castestory.trait %></p>
