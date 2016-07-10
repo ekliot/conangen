@@ -1539,7 +1539,7 @@ caste_stories = {
     { name: "Hunted by the Law", trait: "Hunted!", description: "They’re on your track, crashing through taverns and looking in the alleys you used to haunt. Perhaps you committed the crime and it was worth it. Perhaps you are unjustly persecuted. Either way, a trail of suffering follows in your wake. Whose suffering do you regret the most and what will you do to put them at ease?" }
   ],
 
-  "Petty Noble" =>[
+  "Petty Nobility" =>[
     { name: "Guest of a Greater Name", trait: "Chosen", description: "At a young age, you piqued the attentions of one of the great nobles within your land. Their expectations were impossible to meet, but the training they offered you was second to none. While much of the training was typical, some of it was bizarre, to say the least. What strange knowledge did this notable personage seek to impart to you?" },
 
     { name: "Guests of a Rival", trait: "Conspiracy", description: "You spent your childhood in the care of a political rival. You wanted for nothing, but there was an air of constant threat that made it hard for you to relax and thrive. One night, you wandered the halls and witnessed three warriors speaking in hushed tones about your host, your family’s rival. What did you hear, and what did you do about it?" },
@@ -1845,8 +1845,6 @@ homelands.each do |homeland|
   Lifepath::Homeland.create( homeland )
 end
 
-puts Lifepath::Homeland.count
-
 # SEED THE ASPECTS
 aspects.each do |aspect|
   Lifepath::Aspect.create( aspect )
@@ -1863,8 +1861,11 @@ end
 
 # SEED THE CASTE STORIES
 caste_stories.each do |caste, stories|
+  caste = Lifepath::Caste.find_by name: caste
   stories.each do |story|
-    Lifepath::CasteStory.create( story )
+    cstory = Lifepath::CasteStory.create( story )
+    cstory.caste_id = caste.id
+    cstory.save
   end
 end
 

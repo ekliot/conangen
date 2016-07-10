@@ -22,6 +22,11 @@
   box-sizing:         border-box;
 }
 
+.select.ui.dropdown{
+  padding: inherit !important;
+  height: inherit !important;
+}
+
 #main-menu-items {
   padding-left: 30%;
   padding-right: 30%
