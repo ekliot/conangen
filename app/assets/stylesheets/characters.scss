@@ -2,13 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.tabs {
-  .creation {
-    // font-size: 200%;
-    font-weight: bold;
-  }
+// =============
+// GENERAL
+
+.secondary.pointing.menu.tabs.creation {
+  border-bottom: 0;
+  padding: 0 10% !important;
 }
-  
+
+.active.tab.creation {
+  border: 0 !important;
+}
+
+.tab.creation {
+  font-size: 400%;
+  padding: .1em !important;
+}
+
+.char_create_seg {
+  width: 100%;
+}
+
+// =============
+// HOMELAND
+
 .hl_card_details {
   padding: 0 !important;
 }
+
+// =============
+// ASPECTS
+
+// =============
+// CASTE
+
+// =============
+
+// =============
+
+// =============
+
+// =============

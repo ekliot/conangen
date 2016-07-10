@@ -1,1 +1,34 @@
-ASPECTS
+<h1 class="ui centered header">ASPECTS</h1>
+
+<% aspects = Lifepath::Aspect.find_each %>
+
+<div class="ui grid">
+  <div class="ui three wide column">
+    <div class="ui vertical tabular pointing menu aspect_menu_first">
+      <% aspects.each do |aspect| %>
+        <a class="ui item tab aspect" data-tab="1:<%= aspect.id %>"><%= aspect.name %></a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ui three wide column">
+    <div class="ui vertical tabular pointing menu aspect_menu_second">
+      <% aspects.each do |aspect| %>
+        <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>"><%= aspect.name %></a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ui six wide column">
+    <div class="ui one column grid">
+      <div class="ui row">
+        <h2>Mandatory Attributes</h2>
+      </div>
+
+      <div class="ui row">
+        <h2>Optional Attributes</h2>
+      </div>
+    </div>
+  </div>
+
+</div>
