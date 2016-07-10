@@ -3,32 +3,31 @@
 <% aspects = Lifepath::Aspect.find_each %>
 
 <div class="ui grid">
-  <div class="ui three wide column">
-    <div class="ui vertical tabular pointing menu aspect_menu_first">
-      <% aspects.each do |aspect| %>
-        <a class="ui item tab aspect" data-tab="1:<%= aspect.id %>"><%= aspect.name %></a>
-      <% end %>
+  <div class="ui stretched row">
+    <div class="ui three wide column">
+      <div class="ui vertical tabular pointing menu aspect_menu_first">
+        <% aspects.each do |aspect| %>
+          <a class="ui item tab aspect" data-tab="1:<%= aspect.id %>"><%= aspect.name %></a>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="ui three wide column">
-    <div class="ui vertical tabular pointing menu aspect_menu_second">
-      <% aspects.each do |aspect| %>
-        <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>"><%= aspect.name %></a>
-      <% end %>
+    <div class="ui three wide column">
+      <div class="ui vertical tabular pointing menu aspect_menu_second">
+        <% aspects.each do |aspect| %>
+          <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>"><%= aspect.name %></a>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="ui six wide column">
-    <div class="ui one column grid">
-      <div class="ui row">
+    <div class="ui ten wide column aspect_skills_col">
+      <div class="ui row aspect_mand_skills">
         <h2>Mandatory Attributes</h2>
       </div>
 
-      <div class="ui row">
+      <div class="ui row apsect_opt_skills" style="padding-left: 1em">
         <h2>Optional Attributes</h2>
       </div>
     </div>
   </div>
-
 </div>
