@@ -33,11 +33,20 @@
 // =============
 // ASPECTS
 
-.aspect_mand_skills {
+.ui.centered.dividing.header.aspect {
+  padding-top: 3 !important;
+  padding-bottom: 6 !important;
+}
+
+.aspect_menu_second {
+  margin-left: -1 !important;
+}
+
+.aspect_mand_attr {
   padding-left: 1em;
 }
 
-.aspect_opt_skills {
+.aspect_opt_attr {
   padding-left: 1em; // this doesn't work for some reason?
 }
 

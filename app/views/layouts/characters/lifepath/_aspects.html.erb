@@ -1,9 +1,14 @@
-<h1 class="ui centered header">ASPECTS</h1>
+<h1 class="ui centered header aspect" style="padding-top: 3; padding-bottom: 6">ASPECTS</h1>
+
+<div class="ui divider"></div>
 
 <% aspects = Lifepath::Aspect.find_each %>
 
 <div class="ui grid">
   <div class="ui stretched row">
+
+    <!-- =================================================================== -->
+
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu aspect_menu_first">
         <% aspects.each do |aspect| %>
@@ -12,22 +17,105 @@
       </div>
     </div>
 
+    <!-- =================================================================== -->
+
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu aspect_menu_second">
         <% aspects.each do |aspect| %>
-          <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>"><%= aspect.name %></a>
+          <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>" style="border-left: 0; border-radius: 0"><%= aspect.name %></a>
         <% end %>
       </div>
     </div>
 
-    <div class="ui ten wide column aspect_skills_col">
-      <div class="ui row aspect_mand_skills">
-        <h2>Mandatory Attributes</h2>
+    <!-- =================================================================== -->
+
+    <div class="ui ten wide column aspect_attr_col">
+
+      <div class="ui row aspect_mand_attr">
+        <h2 class="ui centered header">Mandatory Attributes</h2>
+
+        <div class="ui grid apect1_mand_attr_heads">
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column">
+            <h3 class="ui centered header">$aspect1</h3>
+          </div>
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column">
+            <h3 class="ui centered header">$aspect2</h3>
+          </div>
+
+        </div>
+
+        <!-- =============================================================== -->
+
+        <div class="ui grid aspect_mand_attr_sel">
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column apect1_mand_attr_sel">
+            <span>$aspect1</span>
+          </div>
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column apect2_mand_attr_sel">
+            <span>$aspect2</span>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="ui row apsect_opt_skills" style="padding-left: 1em">
-        <h2>Optional Attributes</h2>
+      <!-- <div class="ui divider" style="padding: 2px"></div> -->
+
+      <!-- ================================================================= -->
+
+      <div class="ui row apsect_opt_attr" style="padding-left: 1em">
+        <h2 class="ui centered header">Optional Attributes</h2>
+
+        <div class="ui grid apect1_opt_attr_heads">
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column">
+            <h3 class="ui centered header">$aspect1</h3>
+          </div>
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column">
+            <h3 class="ui centered header">$aspect2</h3>
+          </div>
+
+        </div>
+
+        <!-- =============================================================== -->
+
+        <div class="ui grid aspect_opt_attr_sel">
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column apect1_opt_attr_sel">
+            <span>$aspect1</span>
+          </div>
+
+          <!-- ============================================================= -->
+
+          <div class="ui eight wide column apect2_opt_attr_sel">
+            <span>$aspect2</span>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
+
+    <!-- =================================================================== -->
+
   </div>
 </div>

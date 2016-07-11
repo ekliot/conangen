@@ -1,1 +1,55 @@
 <h1 class="ui divided centered header">Select a nature</h1>
+
+<div class="ui divider"></div>
+
+<% natures = Lifepath::Nature.find_each %>
+
+<div class="ui grid">
+  <div class="ui three wide column">
+    <div class="ui fluid vertical tabular pointing menu nature_menu" >
+      <% natures.each do |nature| %>
+        <a class="ui item <%= if nature.id == 1 then "active " end %>tab nature_tab" data-tab="<%=nature.id %>" ><%= nature.name %></a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ui thirteen wide column">
+    <% natures.each do |nature| %>
+      <div class="ui <%= if nature.id == 1 then "active " end %>tab fluid nature_segment" data-tab="<%=nature.id %>">
+        <h2 class="ui centered header">
+          <%= nature.name %>
+          <div class="ui sub header">+1 <%= nature.attr %></div>
+        </h2>
+        <div class="ui divided grid">
+          <div class="ui five wide column nature_mand_skills">
+            <h3 class="ui centered header">
+              Mandatory skills
+              <div class="ui sub header">+1 expertise and focus to each</div>
+            </h3>
+
+            <div><%= nature.skill_mandatory1 %></div>
+            <div><%= nature.skill_mandatory2 %></div>
+            <div><%= nature.skill_mandatory3 %></div>
+          </div>
+
+          <div class="ui five wide column nature_ele_skills">
+            <h3 class="ui centered header">
+              Elective skills
+              <div class="ui sub header">+1 expertise and focus to two selected skills</div>
+            </h3>
+
+            <div class="ui fluid vertical buttons">
+              <button class="ui button"><%= nature.skill_elective1 %></button>
+              <button class="ui button"><%= nature.skill_elective2 %></button>
+              <button class="ui button"><%= nature.skill_elective3 %></button>
+            </div>
+          </div>
+
+          <div class="ui six wide column nature_mand_skills">
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
