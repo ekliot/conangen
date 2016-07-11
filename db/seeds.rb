@@ -1889,8 +1889,6 @@ war_stories.each do |story|
   Lifepath::WarStory.create( story )
 end
 
-puts Lifepath::Homeland.count
-
 # weapons = {
 #   melee: {
 #     sword: [
@@ -2250,5 +2248,3 @@ puts Lifepath::Homeland.count
 #     end
 #   end
 # end
-
-puts Lifepath::Homeland.count

@@ -4,8 +4,6 @@
 
 <% castes = Lifepath::Caste.find_each %>
 
-
-
 <div class="ui container fluid grid">
   <div class="ui four wide column">
     <div class="ui fluid vertical tabular pointing menu caste_menu" >
@@ -27,6 +25,8 @@
           <div class="ui sub header">Skill : <%= caste.skill %></div>
           <div class="ui sub header">Social Standing : <%= caste.social_standing %></div>
         </h2>
+
+        <div class="ui basic segment"><%= caste.description %></div>
 
         <div class="ui grid">
           <div class="column four wide">

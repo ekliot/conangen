@@ -5,6 +5,21 @@
 // =============
 // GENERAL
 
+// #chargen-app {
+//   position: fixed;
+//   top: 20%;
+//   bottom: 20%;
+//   left: 20%;
+//   right: 20%;
+// }
+
+#chargen-box {
+  overflow: auto;
+
+  max-height: 700px;
+}
+
+
 .secondary.pointing.menu.tabs.creation {
   border-bottom: 0;
   padding: 0 10% !important;
