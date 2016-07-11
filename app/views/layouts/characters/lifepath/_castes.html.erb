@@ -1,6 +1,10 @@
 <h1 class="ui divided centered header">Caste</h1>
 
+<div class="ui divider"></div>
+
 <% castes = Lifepath::Caste.find_each %>
+
+
 
 <div class="ui container fluid grid">
   <div class="ui four wide column">
@@ -14,33 +18,36 @@
   <div class="ui twelve wide column">
 
     <% castes.each do |caste| %>
+      <% castestories = Lifepath::CasteStory.where( caste_id: caste.id ) %>
 
-    <div class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment" data-tab="<%=caste.id %>" >
+      <div class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment" data-tab="<%=caste.id %>" >
 
-        <p>Name: <%= caste.name %></p>
-        <p>Description: <%= caste.description %></p>
-        <p>Skill: <%= caste.skill %></p>
-        <p>Social Standing: <%= caste.social_standing %></p>
+        <h2 class="ui centered header">
+          <%= caste.name %>
+          <div class="ui sub header">Skill : <%= caste.skill %></div>
+          <div class="ui sub header">Social Standing : <%= caste.social_standing %></div>
+        </h2>
 
-        <div class = "ui cards">
+        <div class="ui grid">
+          <div class="column four wide">
+            <div class="ui fluid vertical tabular pointing menu caste_story_menu" >
 
-          <% Lifepath::CasteStory.where( caste_id: caste.id ).each do |castestory| %>
-            <button class="ui card caste_card" >
+              <% castestories.each do |castestory| %>
+                <a class="ui <%= if (castestory.id%6) == 1 then "active " end %>item tab caste_tab" data-tab="<%= castestory.name %>" ><%= castestory.name %></a>
+              <% end %>
+            </div>
+          </div>
 
-              <div class = "ui content">
-
-                <p>Name: <%= castestory.name %></p>
-                <p>Trait: <%= castestory.trait %></p>
-
+          <div class = "column twelve wide">
+            <% castestories.each do |castestory| %>
+              <div class="ui <%= if (castestory.id%6) == 1 then "active " end %>tab fluid content caste_segment" data-tab="<%= castestory.name %>" >
+                <%=castestory.description %>
               </div>
-
-            </button>
-          <% end %>
-
+            <% end %>
+          </div>
         </div>
+
       </div>
-
-    <% end %>
-
-  </div>
+      <% end %>
+    </div>
 </div>
