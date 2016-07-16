@@ -16,7 +16,7 @@
   <div class="ui thirteen wide column">
     <% natures.each do |nature| %>
       <div class="ui <%= if nature.id == 1 then "active " end %>tab fluid nature_segment" data-tab="<%=nature.id %>">
-        <h2 class="ui centered header">
+        <h2 class="ui centered dividing header">
           <%= nature.name %>
           <div class="ui sub header">+1 <%= nature.attr %></div>
         </h2>
@@ -24,12 +24,32 @@
           <div class="ui five wide column nature_mand_skills">
             <h3 class="ui centered header">
               Mandatory skills
-              <div class="ui sub header">+1 expertise and focus to each</div>
+              <div class="ui sub header">+1 expertise and focus to each listed skill</div>
             </h3>
 
-            <div><%= nature.skill_mandatory1 %></div>
-            <div><%= nature.skill_mandatory2 %></div>
-            <div><%= nature.skill_mandatory3 %></div>
+            <div class="ui cards">
+              <div class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_mandatory1 %>
+                  </div>
+                </div>
+              </div>
+              <div class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_mandatory2 %>
+                  </div>
+                </div>
+              </div>
+              <div class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_mandatory3 %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="ui five wide column nature_ele_skills">
@@ -38,10 +58,28 @@
               <div class="ui sub header">+1 expertise and focus to two selected skills</div>
             </h3>
 
-            <div class="ui fluid vertical buttons">
-              <button class="ui button"><%= nature.skill_elective1 %></button>
-              <button class="ui button"><%= nature.skill_elective2 %></button>
-              <button class="ui button"><%= nature.skill_elective3 %></button>
+            <div class="ui cards">
+              <a class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_elective1 %>
+                  </div>
+                </div>
+              </a>
+              <a class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_elective2 %>
+                  </div>
+                </div>
+              </a>
+              <a class="ui card">
+                <div class="content">
+                  <div class="ui centered header">
+                    <%= CharactersHelper.format_skill nature.skill_elective3 %>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
 
