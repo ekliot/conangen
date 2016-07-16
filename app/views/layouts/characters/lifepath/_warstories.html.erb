@@ -1,40 +1,30 @@
-<h1 class="ui divided centered header">Select a war story</h1>
+<h1 class="ui fluid divided centered header">Select a war story</h1>
+<table class="ui celled structured selectable complex compact table">
+<thead class="full-width">
+  <tr><th rowspan="2" class="right aligned four wide">Story Name</th>
+    <th colspan="2" class ="six wide" >+1 to expertise and focus for these skills</th>
+  </tr>
+  <tr>
+    <th class ="three wide center aligned">Skill 1</th>
+    <th class ="three wide center aligned">Skill 2</th>
+  </tr></thead>
 
-
-<div class="ui centered cards">
+<tbody>
   <% Lifepath::WarStory.find_each do |story|  %>
+    <a>
+      <tr>
+        <td class="right aligned">
+            <%= story.name %>
+        </td>
+        <td class="center aligned">
+          <%= CharactersHelper.format_skill story.skill1 %>
+        </td>
+        <td class="center aligned">
+          <%= CharactersHelper.format_skill story.skill2 %>
+        </td>
 
-    <a class="ui card ws_card">
-      <div class ="ui top attached content">
-
-        <div class ="ui centered header ws_card_header">
-          <%= story.name %>
-          <div class="ui sub header">+1 expertise and focus to the following skills</div>
-        </div>
-
-      </div>
-
-      <div class="ui bottom attached content ws_skills">
-        <div class="ui compact cards">
-          <div class="ui card ws_card_skill1 ">
-            <div class="ui content">
-              <div class="ui centered header">
-                <%= story.skill1 %>
-              </div>
-            </div>
-          </div>
-
-          <div class="ui card fluid ws_card_skill2">
-            <div class="ui content fluid">
-              <div class="ui centered header">
-                <%= story.skill2 %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </tr>
     </a>
-
   <% end %>
-</div>
+</tbody>
+</table>
