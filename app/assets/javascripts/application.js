@@ -19,5 +19,10 @@
 //= require semantic-ui
 
 $(function() {
-  $('.menu .item.tab').tab();
+  $('.menu .item.tab')
+    .tab()
+  ;
+  $('.ui.accordion')
+    .accordion()
+  ;
 });
