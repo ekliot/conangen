@@ -83,8 +83,35 @@
             </div>
           </div>
 
-          <div class="ui six wide column nature_mand_skills">
+          <div class="ui six wide column nature_talents">
+            <h3 class="ui centered header">
+              Select a talent
+            </h3>
 
+            <% talents = nature.get_talents %>
+            <% select_tal = talents[nature.skill_mandatory1].first %>
+
+            <span><b>Selected talent:</b> <%= select_tal.name %></span>
+
+            <div class="ui styled accordion">
+              <% talents.each do |skill_cat, skill_talents| %>
+                <% if !skill_cat.empty? %>
+                  <div class="<%= "active " if skill_cat == talents.keys.first %>title">
+                    <i class="ui dropdown icon"></i>
+                    <%= CharactersHelper.format_skill skill_cat %>
+                  </div>
+                  <div class="<%= "active " if skill_cat == talents.keys.first %>content">
+                    <div class="ui two vertical buttons">
+                      <% skill_talents.each do |talent| %>
+                        <button class="ui button">
+                          <%= talent.name %>
+                        </button>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

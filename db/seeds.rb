@@ -1229,7 +1229,9 @@ talents = {
 # SEED THE TALENTS
 talents.each do |skill, skills|
   skills.each do |talent|
-    Talent.create( talent )
+    tal = Talent.create( talent )
+    tal.skill = skill
+    tal.save
   end
 end
 
