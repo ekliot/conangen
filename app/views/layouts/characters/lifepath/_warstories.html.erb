@@ -1,1 +1,40 @@
 <h1 class="ui divided centered header">Select a war story</h1>
+
+
+<div class="ui centered cards">
+  <% Lifepath::WarStory.find_each do |story|  %>
+
+    <a class="ui card ws_card">
+      <div class ="ui top attached content">
+
+        <div class ="ui centered header ws_card_header">
+          <%= story.name %>
+          <div class="ui sub header">+1 expertise and focus to the following skills</div>
+        </div>
+
+      </div>
+
+      <div class="ui bottom attached content ws_skills">
+        <div class="ui compact cards">
+          <div class="ui card ws_card_skill1 ">
+            <div class="ui content">
+              <div class="ui centered header">
+                <%= story.skill1 %>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui card fluid ws_card_skill2">
+            <div class="ui content fluid">
+              <div class="ui centered header">
+                <%= story.skill2 %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </a>
+
+  <% end %>
+</div>
