@@ -15,7 +15,7 @@ class User < ApplicationRecord
   VALID_PASSW_REGEX = /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\x20-\x7E]+\z/
   validates :password,  length: { minimum: 6, maximum: 32 },
                         format: { with: VALID_PASSW_REGEX,
-                                  message: "must have one uppercase, one lowercase, one digit, and most basic special characters" },
+                                  message: "must have one uppercase, one lowercase, one digit, and may contain most basic special characters" },
                         presence: true
 
   has_many :characters
