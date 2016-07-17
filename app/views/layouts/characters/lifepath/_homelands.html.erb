@@ -13,7 +13,7 @@
       </div>
 
       <div class="ui bottom attached content fluid two horizontal segments hl_card_details">
-        <div class="ui left attached segment hl_card_talent">
+        <div class="ui left attached basic segment hl_card_talent">
           <%= homeland.talent.name %>
         </div>
 
@@ -21,13 +21,13 @@
 
         <% if langs.count == 1 %>
 
-          <div class="ui right attached segment hl_card_lang">
+          <div class="ui right attached basic segment hl_card_lang">
             <%= langs[0] %>
           </div>
 
         <% else %>
 
-          <select style = "padding:inhert;height:inherit" class="ui right attached segment dropdown hl_card_lang">
+          <select style = "padding:inhert;height:inherit" class="ui right attached basic segment dropdown hl_card_lang">
             <% langs.each do |lang|  %>
 
               <option><%= lang %></option>

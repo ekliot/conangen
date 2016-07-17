@@ -7,102 +7,127 @@
 <div class="ui grid" id="archetype_grid">
   <div class="ui stretched row">
 
+    <!-- ARCHETYPE MENU -->
+
     <div class="ui three wide column">
-      <div class="ui fluid vertical tabular pointing menu" id="nature_menu">
+      <div class="ui fluid vertical tabular pointing menu" id="archetype_menu">
+
         <% archetypes.each do |archetype| %>
-          <a class="ui item <%= if archetype.id == 1 then "active " end %>tab archetype_tab" data-tab="<%=archetype.id %>" ><%= archetype.name %></a>
+          <a  class="ui item <%= if archetype.id == 1 then "active " end %>tab archetype_tab"
+              data-tab="archetype::<%=archetype.id %>">
+              <%= archetype.name %>
+          </a>
         <% end %>
+
       </div>
     </div>
 
+    <!-- ARCHETYPE BODY -->
+
     <div class="ui thirteen wide column">
+
       <% archetypes.each do |archetype| %>
-        <div class="ui <%= if archetype.id == 1 then "active " end %>tab fluid archetype_segment" data-tab="<%=archetype.id %>">
+        <div  class="ui <%= if archetype.id == 1 then "active " end %>tab fluid archetype_segment"
+              data-tab="archetype::<%=archetype.id %>">
           <h2 class="ui centered header">
             <%= archetype.name %>
             <div class="ui sub header"><%= if archetype.equipment.empty? then 'No Equipment' else 'Equipment: ' + archetype.equipment end %></div>
           </h2>
+
           <div class="ui secondary segment">
             <p>
               <%= archetype.description %>
             </p>
           </div>
+
           <div class="ui divider"></div>
 
           <div class="ui divided grid">
-            <div class="ui five wide column nature_mand_skills">
+
+            <!-- MANDATORY SKILLS -->
+
+            <div class="ui five wide column archetype_mand_skills">
+
               <h3 class="ui centered header">
                 Mandatory skills
                 <div class="ui sub header">+1 expertise and focus to each listed skill</div>
               </h3>
 
-              <div class="ui cards">
-                <div class="ui card">
+              <div class="ui green cards">
+
+                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory1 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory1 %>
                     </div>
                   </div>
                 </div>
-                <div class="ui card">
+
+                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory2 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory2 %>
                     </div>
                   </div>
                 </div>
-                <div class="ui card">
+
+                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory3 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory3 %>
                     </div>
                   </div>
                 </div>
+
               </div>
+
             </div>
 
-            <div class="ui five wide column nature_ele_skills">
+            <!-- OPTIONAL SKILLS -->
+
+            <div class="ui five wide column archetype_ele_skills">
               <h3 class="ui centered header">
                 Elective skills
                 <div class="ui sub header">+1 expertise and focus to two selected skills</div>
               </h3>
 
               <div class="ui cards">
-                <a class="ui card">
+
+                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective1 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective1 %>
                     </div>
                   </div>
                 </a>
-                <a class="ui card">
+
+                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective2 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective2 %>
                     </div>
                   </div>
                 </a>
-                <a class="ui card">
+
+                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective3 %>>
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective3 %>
                     </div>
                   </div>
                 </a>
+
               </div>
             </div>
 
-            <div class="ui six wide column nature_talents">
+            <!-- EQUIPMENT SELECTION -->
+
+            <div class="ui six wide column archetype_equipment">
               <h3 class="ui centered header">
-                Select a talent
+                Select equipment
               </h3>
-
-
-
-              <div class="ui styled accordion">
-
-              </div>
             </div>
+
           </div>
         </div>
       <% end %>

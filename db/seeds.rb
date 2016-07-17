@@ -1608,7 +1608,7 @@ archetypes = [
     skill_mandatory1: "acrobatics",     skill_mandatory2: "melee",
     skill_mandatory3: "parry",          skill_mandatory4: "ranged",
     skill_elective1: "animal_handling", skill_elective2: "healing", skill_elective3: "stealth",
-    description: "",
+    description: "Whether drafted into the militia as a youth or adult, or voluntarily signing on for military service, you have become a sell-sword, a paid soldier, loyal only to the hand that holds the strings to the coin-purse. You travel the Hyborian kingdoms in search of work, sometimes even fighting against your former masters.",
     equipment: "" # equipment: "[mail, full||[brigandine long coat&&helmet]]&&polearm&&melee weapon&&sling&&reload&&mule, pack&&horse, riding",
   },
 

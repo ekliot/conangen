@@ -1,30 +1,45 @@
-<h1 class="ui fluid divided centered header">Select a war story</h1>
+<h1 class="ui fluid divided centered header">
+  Select a war story
+</h1>
+
 <table class="ui celled structured selectable complex compact table">
-<thead class="full-width">
-  <tr><th rowspan="2" class="right aligned four wide">Story Name</th>
-    <th colspan="2" class ="six wide" >+1 to expertise and focus for these skills</th>
-  </tr>
-  <tr>
-    <th class ="three wide center aligned">Skill 1</th>
-    <th class ="three wide center aligned">Skill 2</th>
-  </tr></thead>
+  <thead class="full-width">
+    <tr>
+      <th rowspan="2" class="right aligned four wide">
+        Story Name
+      </th>
 
-<tbody>
-  <% Lifepath::WarStory.find_each do |story|  %>
-    <a>
-      <tr>
-        <td class="right aligned">
-            <%= story.name %>
-        </td>
-        <td class="center aligned">
-          <%= CharactersHelper.format_skill story.skill1 %>
-        </td>
-        <td class="center aligned">
-          <%= CharactersHelper.format_skill story.skill2 %>
-        </td>
+      <th colspan="2" class ="six wide center aligned">
+        +1 to expertise and focus for these skills
+      </th>
+    </tr>
+    <tr>
+      <th class ="three wide center aligned">
+        Skill 1
+      </th>
+      <th class ="three wide center aligned">
+        Skill 2
+      </th>
+    </tr>
+  </thead>
 
-      </tr>
-    </a>
-  <% end %>
-</tbody>
+  <tbody>
+    <% Lifepath::WarStory.find_each do |story|  %>
+      <a>
+        <tr>
+          <td class="right aligned">
+              <%= story.name %>
+          </td>
+
+          <td class="center aligned">
+            <%= CharactersHelper.format_skill story.skill1 %>
+          </td>
+
+          <td class="center aligned">
+            <%= CharactersHelper.format_skill story.skill2 %>
+          </td>
+        </tr>
+      </a>
+    <% end %>
+  </tbody>
 </table>
