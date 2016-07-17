@@ -4,10 +4,11 @@
 
 <% archetypes = Lifepath::Archetype.find_each %>
 
-<div class="ui grid">
+<div class="ui grid" id="archetype_grid">
   <div class="ui stretched row">
+
     <div class="ui three wide column">
-      <div class="ui fluid vertical tabular pointing menu nature_menu" >
+      <div class="ui fluid vertical tabular pointing menu" id="nature_menu">
         <% archetypes.each do |archetype| %>
           <a class="ui item <%= if archetype.id == 1 then "active " end %>tab archetype_tab" data-tab="<%=archetype.id %>" ><%= archetype.name %></a>
         <% end %>
@@ -21,7 +22,7 @@
             <%= archetype.name %>
             <div class="ui sub header"><%= if archetype.equipment.empty? then 'No Equipment' else 'Equipment: ' + archetype.equipment end %></div>
           </h2>
-          <div class = "ui secondary segment">
+          <div class="ui secondary segment">
             <p>
               <%= archetype.description %>
             </p>

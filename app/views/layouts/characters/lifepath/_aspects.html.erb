@@ -10,9 +10,9 @@
     <!-- =================================================================== -->
 
     <div class="ui three wide column">
-      <div class="ui vertical tabular pointing menu aspect_menu_first">
+      <div class="ui vertical tabular pointing menu" id="aspect_menu_first">
         <% aspects.each do |aspect| %>
-          <a class="ui item tab aspect" data-tab="1:<%= aspect.id %>"><%= aspect.name %></a>
+          <a class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect" data-tab="1:<%= aspect.id %>"><%= aspect.name %></a>
         <% end %>
       </div>
     </div>
@@ -20,16 +20,16 @@
     <!-- =================================================================== -->
 
     <div class="ui three wide column">
-      <div class="ui vertical tabular pointing menu aspect_menu_second">
+      <div class="ui vertical tabular pointing menu" id="aspect_menu_second">
         <% aspects.each do |aspect| %>
-          <a class="ui item tab aspect" data-tab="2:<%= aspect.id %>" style="border-left: 0; border-radius: 0"><%= aspect.name %></a>
+          <a class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect" data-tab="2:<%= aspect.id %>" style="border-left: 0; border-radius: 0"><%= aspect.name %></a>
         <% end %>
       </div>
     </div>
 
     <!-- =================================================================== -->
 
-    <div class="ui ten wide column aspect_attr_col">
+    <div class="ui ten wide column" id="aspect_attr_col">
 
       <div class="ui row" id="aspect_mand_attr">
         <h2 class="ui centered header">
