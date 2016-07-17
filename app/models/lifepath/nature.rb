@@ -9,8 +9,6 @@ class Lifepath::Nature < ApplicationRecord
       talents[skill] = Talent.where( skill: skill ).find_each
     end
 
-    puts talents.keys.first
-
     talents
   end
 end
