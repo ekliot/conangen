@@ -101,6 +101,15 @@ class Character < ApplicationRecord
 
     character.health = health
   end
+
+  def derive_health
+  end
+
+  def derive_soak
+  end
+
+  def derive_damage
+  end
 end
 
 class NewCharValidator < ActiveModel::Validator
