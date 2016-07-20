@@ -64,6 +64,6 @@ group :development do
 end
 
 group :production do
-  gem 'sqlite3' # gem 'pg'
+  gem 'pg'
   # gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 end
