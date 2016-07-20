@@ -80,6 +80,11 @@ class Character < ApplicationRecord
                 qualities: ""
     }
 
+    soak = {
+      courage: 0, armor: armor_loc,
+      # cover rolls?
+    }
+
     damage = { melee: 0, ranged: 0, presence: 0 }
 
     health = {
@@ -95,11 +100,15 @@ class Character < ApplicationRecord
 
     character.attr_stats = base_attr
 
-    character.armor = armor_loc
+    character.soak = soak
 
     character.damage = damage
 
     character.health = health
+
+    character.lifepath = Lifepath::Lifepath.create
+
+    character.talent_set = TalentSet.create
   end
 
   def derive_health

@@ -123,6 +123,18 @@ ActiveRecord::Schema.define(version: 20160704170559) do
     t.index ["name"], name: "index_lifepath_homelands_on_name"
   end
 
+  create_table "lifepath_lifepaths", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "homeland_id"
+    t.integer "caste_id"
+    t.integer "story_caste_id"
+    t.integer "archetype_id"
+    t.integer "nature_id"
+    t.integer "education_id"
+    t.integer "story_war_id"
+    t.index ["character_id"], name: "index_lifepath_lifepaths_on_character_id"
+  end
+
   create_table "lifepath_natures", force: :cascade do |t|
     t.string "name"
     t.string "attr"
@@ -141,27 +153,6 @@ ActiveRecord::Schema.define(version: 20160704170559) do
     t.string "skill1"
     t.string "skill2"
     t.index ["name"], name: "index_lifepath_war_stories_on_name"
-  end
-
-  create_table "lifepaths", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "mod_agility"
-    t.integer  "mod_awareness"
-    t.integer  "mod_brawn"
-    t.integer  "mod_coordination"
-    t.integer  "mod_intelligence"
-    t.integer  "mod_personality"
-    t.integer  "mod_willpower"
-    t.integer  "character_id"
-    t.integer  "homeland_id"
-    t.integer  "caste_id"
-    t.integer  "story_caste_id"
-    t.integer  "archetype_id"
-    t.integer  "nature_id"
-    t.integer  "education_id"
-    t.integer  "story_war_id"
-    t.index ["character_id"], name: "index_lifepaths_on_character_id"
   end
 
   create_table "talent_sets", force: :cascade do |t|

@@ -30,6 +30,10 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'gon'
+
+gem 'formtastic'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -60,6 +64,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
-  gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+  gem 'sqlite3' # gem 'pg'
+  # gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 end

@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   root                      "application#home"
   get     'about'       =>  'application#about'
 
-  get     'new'         =>  'characters#new'
-  get     'create'      =>  'characters#create'
+  get     'new'         =>  'characters#new'         # choose b/w random and manual generation
+  get     'create'      =>  'characters#create'      # manually create a new character
+  post    'create'      =>  'characters#create'      # save a manual character
+  get     'random'      =>  'characters#random'      # roll a random character
   get     'chars'       =>  'characters#index'
   get     'view/:id'    =>  'characters#view'
   get     'edit/:id'    =>  'characters#edit'
