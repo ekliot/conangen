@@ -13,7 +13,7 @@
 
     <%= render 'layouts/header' %>
 
-    <div <%= 'id="chargen-app"' if current_page?( controller: 'characters' ) %> class="ui main container">
+    <div id="main-container" class="ui container">
 
       <% flash.each do |message_type, message| %>
         <div class="ui <%= message_type %> message">

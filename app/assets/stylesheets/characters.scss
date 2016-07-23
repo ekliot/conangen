@@ -5,18 +5,9 @@
 // =============
 // GENERAL
 
-// #chargen-app {
-//   position: fixed;
-//   top: 20%;
-//   bottom: 20%;
-//   left: 20%;
-//   right: 20%;
-// }
-
 #chargen-box {
   overflow: auto;
-
-  max-height: 700px;
+  height: 700px;
 }
 
 
@@ -43,6 +34,19 @@
 
 .hl_card_details {
   padding: 0 !important;
+}
+
+.hl_radio_label {
+  padding: 0 1em 0;
+}
+
+input[type=radio][name=homelands] {
+  visibility: hidden;
+  display: none;
+}
+
+input[type=radio]:checked + a.hl_card {
+  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
 }
 
 // =============
