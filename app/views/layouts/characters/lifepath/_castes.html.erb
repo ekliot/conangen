@@ -4,22 +4,33 @@
 
 <% castes = Lifepath::Caste.find_each %>
 
-<div class="ui grid">
+<div class="ui grid" id="caste_grid">
   <div class="ui stretched row">
+
+    <!-- CASTE MENU -->
+
     <div class="ui four wide column">
-      <div class="ui fluid vertical tabular pointing menu caste_tabs">
+      <div class="ui fluid vertical tabular pointing menu" id="caste_tabs">
+
         <% castes.each do |caste| %>
-          <a class="ui item <%= if caste.id == 1 then "active " end %>tab caste_tab" data-tab="caste::<%=caste.id %>"><%= caste.name %></a>
+          <a  class="ui item <%= if caste.id == 1 then "active " end %>tab caste_tab"
+              data-tab="caste::<%=caste.id %>" data-caste="<%= caste.name %>">
+            <%= caste.name %>
+          </a>
         <% end %>
+
       </div>
     </div>
 
-    <div class="ui twelve wide column caste_seg">
+    <!-- CASTE BODY -->
+
+    <div class="ui twelve wide column" id="caste_seg">
 
       <% castes.each do |caste| %>
         <% castestories = Lifepath::CasteStory.where( caste_id: caste.id ) %>
 
-        <div class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment" data-tab="caste::<%=caste.id %>">
+        <div  class="ui <%= if caste.id == 1 then "active " end %>tab fluid content caste_segment"
+              data-tab="caste::<%=caste.id %>" data-caste="<%= caste.name %>">
 
           <h2 class="ui centered header">
             <%= caste.name %>
@@ -39,7 +50,7 @@
 
                   <% castestories.each do |castestory| %>
                     <a class="ui <%= if (castestory.id%6) == 1 then "active " end %>item tab caste_story_tab"
-                      data-tab="castestory::<%= castestory.name %>">
+                      data-tab="castestory::<%= castestory.id %>" data-caste-story="<%= castestory.name %>">
                       <%= castestory.name %>
                     </a>
                   <% end %>
@@ -51,7 +62,7 @@
 
                 <% castestories.each do |castestory| %>
                   <div class="ui <%= if (castestory.id%6) == 1 then "active " end %>tab fluid content caste_story_description"
-                       data-tab="castestory::<%= castestory.name %>">
+                       data-tab="castestory::<%= castestory.id %>" data-caste-story="<%= castestory.name %>">
                     <div class="ui secondary segment">
                       <p><%=castestory.description %></p>
                     </div>
@@ -64,6 +75,7 @@
 
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

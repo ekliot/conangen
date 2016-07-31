@@ -12,10 +12,12 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_first">
         <% aspects.each do |aspect| %>
-          <a  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect"
-              data-tab="1:<%= aspect.id %>" data-aspect-name="<%= aspect.name %>">
+          <input  id="aspect1::<%= aspect.id %>" name="aspects1" type="radio"></input>
+          <label  for="aspect1::<%= aspect.id %>"
+                  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
+                  data-tab="aspect1:<%= aspect.id %>" data-aspect-name="<%= aspect.name %>">
             <%= aspect.name %>
-          </a>
+          </label>
         <% end %>
       </div>
     </div>
@@ -25,11 +27,13 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_second">
         <% aspects.each do |aspect| %>
-          <a  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect"
-              data-tab="2:<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
-              style="border-left: 0; border-radius: 0">
+          <input  id="aspect2::<%= aspect.id %>" name="aspects2" type="radio"></input>
+          <label  for="aspect2::<%= aspect.id %>"
+                  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
+                  data-tab="aspect2:<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
+                  style="border-left: 0; border-radius: 0">
             <%= aspect.name %>
-          </a>
+          </label>
         <% end %>
       </div>
     </div>
@@ -38,11 +42,15 @@
 
     <div class="ui ten wide column" id="aspect_attr_col">
 
-      <%= render 'layouts/characters/lifepath/aspects_mand_attr' %>
+      <div class="ui basic segment" style="max-height:600px;overflow:auto">
 
-      <div class="ui divider" style="padding: 2px"></div>
+        <%= render 'layouts/characters/lifepath/aspects_mand_attr' %>
 
-      <%= render 'layouts/characters/lifepath/aspects_opt_attr' %>
+        <div class="ui divider" style="padding: 2px"></div>
+
+        <%= render 'layouts/characters/lifepath/aspects_opt_attr' %>
+
+      </div>
 
     </div>
 

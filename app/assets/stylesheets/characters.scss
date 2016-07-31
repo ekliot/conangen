@@ -7,7 +7,7 @@
 
 #chargen-box {
   overflow: auto;
-  height: 700px;
+  max-height: 700px;
 }
 
 
@@ -55,6 +55,21 @@ input[type=radio]:checked + a.hl_card {
 .ui.centered.dividing.header.aspect {
   padding-top: 3 !important;
   padding-bottom: 6 !important;
+}
+
+.aspect_radio_label {
+  padding: 0 1em 0;
+  cursor: pointer;
+}
+
+input[type=radio][name=aspects1] {
+  visibility: hidden;
+  display: none;
+}
+
+input[type=radio][name=aspects2] {
+  visibility: hidden;
+  display: none;
 }
 
 .aspect_menu_second {

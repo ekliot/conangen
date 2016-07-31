@@ -9,7 +9,7 @@
 
     <!-- NATURE MENU -->
 
-    <div class="ui three wide column">
+    <div class="ui three wide column nature_menu">
       <div class="ui fluid vertical tabular pointing menu nature_menu">
 
         <% natures.each do |nature| %>
@@ -24,7 +24,7 @@
 
     <!-- NATURE BODY -->
 
-    <div class="ui thirteen wide column">
+    <div class="ui thirteen wide column nature_seg">
 
       <% natures.each do |nature| %>
         <div  class="ui <%= if nature.id == 1 then "active " end %>tab fluid nature_segment"
@@ -164,6 +164,5 @@
       <% end %>
 
     </div>
-
   </div>
 </div>

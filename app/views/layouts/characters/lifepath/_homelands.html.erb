@@ -3,12 +3,12 @@
 <div class="ui divider"></div>
 
 <div class="ui centered cards">
-  <% Lifepath::Homeland.find_each do |homeland|  %>
+  <% Lifepath::Homeland.find_each do |homeland| %>
 
-    <input id="home<%= homeland.id %>" name="homelands" type="radio"></input>
+    <input id="home::<%= homeland.id %>" name="homelands" type="radio"></input>
 
     <a class="ui card hl_card">
-      <label for="home<%= homeland.id %>" class="hl_radio_label">
+      <label for="home::<%= homeland.id %>" class="hl_radio_label">
       <div class ="ui top attached content">
 
           <div class ="ui header hl_card_header">
