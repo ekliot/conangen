@@ -5,10 +5,12 @@
 <div class="ui centered cards">
   <% Lifepath::Homeland.find_each do |homeland| %>
 
-    <input id="home::<%= homeland.id %>" name="homelands" type="radio"></input>
+    <input id="radio_<%= homeland.name %>" name="homelands" type="radio"></input>
 
-    <a class="ui card hl_card">
-      <label for="home::<%= homeland.id %>" class="hl_radio_label">
+    <label  class="ui card hl_card" id="hl_card_<%= homeland.name %>"
+            data-hl-name="<%= homeland.name %>" data-hl-talent="<%= homeland.talent.name %>"
+            onclick="select_homeland( '<%= homeland.name %>', '<%= homeland.talent.name %>' )"
+            for="home::<%= homeland.id %>">
       <div class ="ui top attached content">
 
           <div class ="ui header hl_card_header">
@@ -26,16 +28,22 @@
 
         <% if langs.count == 1 %>
 
-          <div class="ui right attached basic segment hl_card_lang">
+          <div  class="ui right attached basic segment hl_card_lang"
+                id="hl_card_lang_<%= homeland.name %>" data-hl-lang="<%= langs[0] %>">
             <%= langs[0] %>
           </div>
 
         <% else %>
 
-          <select style = "padding:inhert;height:inherit" class="ui right attached basic segment dropdown hl_card_lang">
+          <select class="ui right attached basic segment dropdown hl_card_lang"
+                  style="padding:inhert;height:inherit" id="hl_card_lang_<%= homeland.name %>"
+                  onclick="event.stopPropagation()">
             <% langs.each do |lang|  %>
 
-              <option><%= lang %></option>
+              <option value="<%= lang %>"
+                      onclick="select_homeland( '<%= homeland.name %>', '<%= homeland.talent.name %>' )">
+                <%= lang %>
+              </option>
 
             <% end %>
           </select>
@@ -44,7 +52,8 @@
 
       </div>
     </label>
-    </a>
 
   <% end %>
+
+  <!-- SOME HIDDEN FORMS FOR HOMELAND NAME, TALENT, AND LANG -->
 </div>

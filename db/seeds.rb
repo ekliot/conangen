@@ -1244,7 +1244,15 @@ homelands = [
     talent_id: Talent.find_by( name: "Strife" ).id,
     language: "Nemedian;Hyperborean" },
 
-  { name: "Nordheim (Asgard or Vanaheim)",
+  # { name: "Nordheim (Asgard or Vanaheim)",
+  #   talent_id: Talent.find_by( name: "Winter-born" ).id,
+  #   language: "Nordheimer" },
+
+  { name: "Asgard",
+    talent_id: Talent.find_by( name: "Winter-born" ).id,
+    language: "Nordheimer" },
+
+  { name: "Vanaheim",
     talent_id: Talent.find_by( name: "Winter-born" ).id,
     language: "Nordheimer" },
 
