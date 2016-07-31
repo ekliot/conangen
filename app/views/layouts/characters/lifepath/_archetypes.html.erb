@@ -1,4 +1,4 @@
-<h1 class="ui centered header">Select an archtype</h1>
+<h1 class="ui centered header">Select an archetype</h1>
 
 <div class="ui divider"></div>
 
@@ -31,7 +31,7 @@
               data-tab="archetype::<%=archetype.id %>">
           <h2 class="ui centered header">
             <%= archetype.name %>
-            <div class="ui sub header"><%= if archetype.equipment.empty? then 'No Equipment' else 'Equipment: ' + archetype.equipment end %></div>
+            <div class="ui sub header"> <b>Talent: </b> <%= + archetype.talent.name %></div>
           </h2>
 
           <div class="ui secondary segment">

@@ -62,23 +62,23 @@ Items are preceded by a **[number]** out of 10 that indicates severity of expect
         - Caste
           - **[8]** Script the choices, or make it into a form
           - **[5]** Figure out a way to make the text boxes not so jumpy when tabbing b/w options
-          - **[3]** Make the subheaders more pronounced
-          - **[2]** Make the tab menu stretch to the bottom (ref. natures, educations)
+          - ~~**[3]** Make the subheaders more pronounced~~
+          - ~~**[2]** Make the tab menu stretch to the bottom (ref. natures, educations)~~
         - Archetype
           - **[8]** Script the choices, or make it into a form
           - **[7]** Implement equipment selection
           - **[5]** Figure out a way to make the text boxes not so jumpy when tabbing b/w options
-          - **[3]** Change the subheader from equipment to the talent, make it more pronounced
-          - **[2]** Make the tab menu stretch to the bottom (ref. natures, educations)
+          - ~~**[3]** Change the subheader from equipment to the talent, make it more pronounced~~
+          - ~~**[2]** Make the tab menu stretch to the bottom (ref. natures, educations)~~
         - Nature
           - **[8]** Script the choices, or make it into a form
           - **[8]** Make talent selection work, dynamic, and sensible
-          - **[3]** Make the subheaders more pronounced
+          - ~~**[3]** Make the subheaders more pronounced~~
         - Education
           - **[8]** Script the choices, or make it into a form
           - **[8]** Make talent selection work, dynamic, and sensible
           - **[6]** Make the variable skills work
-          - **[3]** Make the subheaders more pronounced
+          - ~~**[3]** Make the subheaders more pronounced~~
         - War Story
           - **[8]** Script the choices, or make it into a form
           - **[4]** Perhaps figure out a design that is more intuitive and fits into the aesthetic
