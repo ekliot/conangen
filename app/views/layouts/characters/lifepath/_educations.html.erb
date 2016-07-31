@@ -31,7 +31,11 @@
               data-tab="<%=education.id %>">
           <h2 class="ui centered header">
             <%= education.name %>
-            <div class="ui sub header"><%= if education.equipment.empty? then 'No Equipment' else 'Equipment: ' + education.equipment end %></div>
+            <div class="ui sub header">
+              <b><%= if education.equipment.empty? then 'No Equipment' else 'Equipment: 'end %></b>
+              <%= if education.equipment.empty? then '' else education.equipment end %>
+
+            </div>
           </h2>
 
           <div class="ui secondary segment">
