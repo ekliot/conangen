@@ -12,12 +12,13 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_first">
         <% aspects.each do |aspect| %>
-          <input  id="aspect1::<%= aspect.id %>" name="aspects1" type="radio"></input>
-          <label  for="aspect1::<%= aspect.id %>"
-                  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
-                  data-tab="aspect1:<%= aspect.id %>" data-aspect-name="<%= aspect.name %>">
+          <div  id="aspect1::<%= aspect.id %>" onclick="select_aspect( this )"
+                class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
+                data-tab="aspect1:<%= aspect.id %>" data-aspect-name="<%= aspect.name %>"
+                data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
+                data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>">
             <%= aspect.name %>
-          </label>
+          </div>
         <% end %>
       </div>
     </div>
@@ -27,13 +28,14 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_second">
         <% aspects.each do |aspect| %>
-          <input  id="aspect2::<%= aspect.id %>" name="aspects2" type="radio"></input>
-          <label  for="aspect2::<%= aspect.id %>"
-                  class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
-                  data-tab="aspect2:<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
-                  style="border-left: 0; border-radius: 0">
+          <div  id="aspect2::<%= aspect.id %>" onclick="select_aspect( this )"
+                class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
+                data-tab="aspect2:<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
+                data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
+                data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>"
+                style="border-left: 0; border-radius: 0">
             <%= aspect.name %>
-          </label>
+          </div>
         <% end %>
       </div>
     </div>
@@ -44,11 +46,11 @@
 
       <div class="ui basic segment" style="max-height:600px;overflow:auto">
 
-        <%= render 'layouts/characters/lifepath/aspects_mand_attr' %>
+        <%= render 'layouts/characters/lifepath/aspects_display' %>
 
         <div class="ui divider" style="padding: 2px"></div>
 
-        <%= render 'layouts/characters/lifepath/aspects_opt_attr' %>
+        <%= render 'layouts/characters/lifepath/aspects_attr_disp' %>
 
       </div>
 
