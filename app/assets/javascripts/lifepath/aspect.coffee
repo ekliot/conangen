@@ -22,6 +22,12 @@ aspect2 =
   opt1:   ""
   opt2:   ""
 
+sel_best = ""
+sel_worst = ""
+
+sel_opt1 = ""
+sel_opt2 = ""
+
 @select_aspect = ( ele ) ->
   if ele.getAttribute( "data-tab" ).indexOf( "aspect1" ) != -1
     aspect1.name  = ele.getAttribute( "data-aspect-name" )
@@ -47,3 +53,26 @@ aspect2 =
     document.getElementById( "aspect2_mand2" ).innerHTML = aspect2.mand2.toUpperCase()
     document.getElementById( "aspect2_opt1" ).innerHTML  = aspect2.opt1.toUpperCase()
     document.getElementById( "aspect2_opt2" ).innerHTML  = aspect2.opt2.toUpperCase()
+
+# @select_best  = ( attr ) ->
+#   # beep
+#
+# @select_worst = ( attr ) ->
+#   # beep
+#
+# @select_opt1  = ( asp, ) ->
+#   # beep
+
+# @confirm_aspect = () ->
+#   # fill aspect names
+#   # fill chosen best
+#   # fill chosen worst
+#   # fill chosen optional 1
+#   # fill chosen optional 2
+
+# @revert_aspect = () ->
+#   # clear aspect names
+#   # clear chosen best
+#   # clear chosen worst
+#   # clear chosen optional 1
+#   # clear chosen optional 2

@@ -5,12 +5,9 @@
 <div class="ui centered cards">
   <% Lifepath::Homeland.find_each do |homeland| %>
 
-    <input id="radio_<%= homeland.name %>" name="homelands" type="radio"></input>
-
-    <label  class="ui card hl_card" id="hl_card_<%= homeland.name %>"
-            data-hl-name="<%= homeland.name %>" data-hl-talent="<%= homeland.talent.name %>"
-            onclick="select_homeland( '<%= homeland.name %>', '<%= homeland.talent.name %>' )"
-            for="home::<%= homeland.id %>">
+    <a  class="ui card hl_card" id="hl_card_<%= homeland.name %>"
+        data-hl-name="<%= homeland.name %>" data-hl-talent="<%= homeland.talent.name %>"
+        onclick="select_homeland( this )">
       <div class ="ui top attached content">
 
           <div class ="ui header hl_card_header">
@@ -41,7 +38,7 @@
             <% langs.each do |lang|  %>
 
               <option value="<%= lang %>"
-                      onclick="select_homeland( '<%= homeland.name %>', '<%= homeland.talent.name %>' )">
+                      onclick="select_homeland( document.getElementById( 'hl_card_<%= homeland.name %>' ) )">
                 <%= lang %>
               </option>
 
@@ -51,7 +48,7 @@
         <% end %>
 
       </div>
-    </label>
+    </a>
 
   <% end %>
 

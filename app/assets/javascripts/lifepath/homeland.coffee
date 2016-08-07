@@ -3,19 +3,10 @@
 # @hl_seg           = document.getElementById( "create_hl" )
 # ========================
 
-# ========================
-# objects don't work with firefox,
-# INVESTIGATE how to get around it
-# ========================
-
-# @selected_homeland =
-#   name: ""
-#   talent: ""
-#   language: ""
-
-@sel_hl_name = ""
-@sel_hl_tal  = ""
-@sel_hl_lang = ""
+@sel_homeland =
+  name: ""
+  talent: ""
+  language: ""
 
 @toggle_green = ( hl_name ) ->
   cards = document.getElementsByClassName( "hl_card" )
@@ -26,7 +17,9 @@
   ele = document.getElementById( "hl_card_" + hl_name )
   ele.className += " green"
 
-@select_homeland = ( hl_name, hl_tal ) ->
+@select_homeland = ( ele ) ->
+  hl_name = ele.getAttribute( "data-hl-name" )
+
   toggle_green( hl_name )
 
   lang_id  = "hl_card_lang_".concat hl_name
@@ -35,12 +28,14 @@
 
   if lang_tag == "div" then hl_lang = lang_ele.getAttribute( "data-hl-lang" ) else hl_lang = lang_ele.options[lang_ele.selectedIndex].value
 
-  # @selected_homeland.name = hl_name
-  # @selected_homeland.talent = hl_tal
-  # @selected_homeland.language = hl_lang
+  selected_homeland.name      = hl_name
+  selected_homeland.talent    = ele.getAttribute( "data-hl-talent" )
+  selected_homeland.language  = hl_lang
 
-  @sel_hl_name = hl_name
-  @sel_hl_tal  = hl_tal
-  @sel_hl_lang = hl_lang
+# @confirm_homeland = () ->
+#   # fill in chosen homeland name
+#   # fill in chosen homeland lang
 
-  console.log( "Selected " + @sel_hl_name + " (" + @sel_hl_tal + ", " + @sel_hl_lang + ")" )
+# @revert_homeland = () ->
+#   # clear chosen homeland name
+#   # clear chosen homeland lang

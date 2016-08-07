@@ -14,7 +14,8 @@
 
         <% castes.each do |caste| %>
           <a  class="ui item <%= if caste.id == 1 then "active " end %>tab caste_tab"
-              data-tab="caste::<%=caste.id %>" data-caste="<%= caste.name %>">
+              data-tab="caste::<%=caste.id %>" data-caste-name="<%= caste.name %>"
+              id="caste::<%= caste.id %>" onclick="select_caste( this )">
             <%= caste.name %>
           </a>
         <% end %>
@@ -34,8 +35,8 @@
 
           <h2 class="ui centered header">
             <%= caste.name %>
-            <div class="ui sub header"> <b>Skill :</b> <%= CharactersHelper.format_skill caste.skill %></div>
-            <div class="ui sub header"> <b>Social Standing :</b> <%= caste.social_standing %></div>
+            <div class="ui sub header"><b>Skill :</b> <%= CharactersHelper.format_skill caste.skill %></div>
+            <div class="ui sub header"><b>Social Standing :</b> <%= caste.social_standing %></div>
           </h2>
 
           <div class="ui secondary segment">
@@ -45,12 +46,14 @@
           <div class="ui segment caste_story_seg" id="caste_story_seg">
             <h2 class="ui divided centered header">Select a caste story</h2>
             <div class="ui grid">
+
               <div class="column four wide">
                 <div class="ui fluid vertical tabular pointing menu caste_story_tabs">
 
                   <% castestories.each do |castestory| %>
-                    <a class="ui <%= if (castestory.id%6) == 1 then "active " end %>item tab caste_story_tab"
-                      data-tab="castestory::<%= castestory.id %>" data-caste-story="<%= castestory.name %>">
+                    <a  class="ui <%= if (castestory.id%6) == 1 then "active " end %>item tab caste_story_tab"
+                        data-tab="castestory::<%= castestory.id %>" data-caste-story-name="<%= castestory.name %>"
+                        id="castestory::<%= caste.id %>" onclick="select_caste_story( this )">
                       <%= castestory.name %>
                     </a>
                   <% end %>
@@ -70,6 +73,7 @@
                 <% end %>
 
               </div>
+
             </div>
           </div>
 
@@ -77,5 +81,6 @@
       <% end %>
 
     </div>
+
   </div>
 </div>

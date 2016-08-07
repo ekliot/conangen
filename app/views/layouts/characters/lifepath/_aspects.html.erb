@@ -12,13 +12,13 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_first">
         <% aspects.each do |aspect| %>
-          <div  id="aspect1::<%= aspect.id %>" onclick="select_aspect( this )"
-                class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
-                data-tab="aspect1:<%= aspect.id %>" data-aspect-name="<%= aspect.name %>"
-                data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
-                data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>">
+          <a  id="aspect1::<%= aspect.id %>" onclick="select_aspect( this )"
+              class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_tab"
+              data-tab="aspect1::<%= aspect.id %>" data-aspect-name="<%= aspect.name %>"
+              data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
+              data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>">
             <%= aspect.name %>
-          </div>
+          </a>
         <% end %>
       </div>
     </div>
@@ -28,14 +28,14 @@
     <div class="ui three wide column">
       <div class="ui vertical tabular pointing menu" id="aspect_menu_second">
         <% aspects.each do |aspect| %>
-          <div  id="aspect2::<%= aspect.id %>" onclick="select_aspect( this )"
-                class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_radio_label"
-                data-tab="aspect2:<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
-                data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
-                data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>"
-                style="border-left: 0; border-radius: 0">
+          <a  id="aspect2::<%= aspect.id %>" onclick="select_aspect( this )"
+              class="ui item <%= if aspect.id == 1 then "active " end %>tab aspect_tab"
+              data-tab="aspect2::<%= aspect.id %>"  data-aspect-name="<%= aspect.name %>"
+              data-mand1="<%= aspect.mandatory_attribute1 %>" data-mand2="<%= aspect.mandatory_attribute2 %>"
+              data-opt1="<%= aspect.optional_attribute1 %>" data-opt2="<%= aspect.optional_attribute2 %>"
+              style="border-left: 0; border-radius: 0">
             <%= aspect.name %>
-          </div>
+          </a>
         <% end %>
       </div>
     </div>
