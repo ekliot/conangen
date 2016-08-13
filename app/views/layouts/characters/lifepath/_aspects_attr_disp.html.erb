@@ -1,4 +1,7 @@
 <div class="ui row" id="aspect_attr_disp">
+
+  <!-- put attribute starting value modification here -->
+
   <table class="ui striped padded table attribute_selection">
     <tr>
       <th class="ui two wide"><div></div></th>
@@ -13,13 +16,13 @@
 
       <th class="ui one wide vertical_th"><div><span>INTL</span></div></th>
 
-      <th class="ui one wide vertical_th"><div><span>PRSN</span></div></th>
+      <th class="ui one wide vertical_th"><div><span>PERC</span></div></th>
 
       <th class="ui one wide vertical_th"><div><span>WILL</span></div></th>
     </tr>
 
     <tr id="aspect_best_row">
-      <th class="ui right aligned asepct_row_header">BEST</th>
+      <th class="ui right aligned aspect_row_header">BEST</th>
 
       <td class="ui aspect_cell asp_best" id="aspect_agi_best"
           onclick="select_best( 'agility' )"></td>
@@ -37,14 +40,14 @@
           onclick="select_best( 'intelligence' )"></td>
 
       <td class="ui aspect_cell asp_best" id="aspect_per_best"
-          onclick="select_best( 'perception' )"></td>
+          onclick="select_best( 'personality' )"></td>
 
       <td class="ui aspect_cell asp_best" id="aspect_wil_best"
           onclick="select_best( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_worst_row">
-      <th class="ui right aligned asepct_row_header">WORST</th>
+      <th class="ui right aligned aspect_row_header">WORST</th>
 
       <td class="ui aspect_cell asp_worst" id="aspect_agi_worst"
           onclick="select_worst( 'agility' )"></td>
@@ -62,14 +65,14 @@
           onclick="select_worst( 'intelligence' )"></td>
 
       <td class="ui aspect_cell asp_worst" id="aspect_per_worst"
-          onclick="select_worst( 'perception' )"></td>
+          onclick="select_worst( 'personality' )"></td>
 
       <td class="ui aspect_cell asp_worst" id="aspect_wil_worst"
           onclick="select_worst( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_opt1_row">
-      <th class="ui right aligned asepct_row_header">OPTIONAL 1</th>
+      <th class="ui right aligned aspect_row_header">OPTIONAL 1</th>
 
       <td class="ui aspect_cell asp_opt1" id="aspect_agi_opt1"
           onclick="select_opt1( 'agility' )"></td>
@@ -87,17 +90,17 @@
           onclick="select_opt1( 'intelligence' )"></td>
 
       <td class="ui aspect_cell asp_opt1" id="aspect_per_opt1"
-          onclick="select_opt1( 'perception' )"></td>
+          onclick="select_opt1( 'personality' )"></td>
 
       <td class="ui aspect_cell asp_opt1" id="aspect_wil_opt1"
           onclick="select_opt1( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_opt2_row">
-      <th class="ui right aligned asepct_row_header">OPTIONAL 2</th>
+      <th class="ui right aligned aspect_row_header">OPTIONAL 2</th>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_agi_opt2
-          onclick="select_opt2( 'agility' )""></td>
+      <td class="ui aspect_cell asp_opt2" id="aspect_agi_opt2"
+          onclick="select_opt2( 'agility' )"></td>
 
       <td class="ui aspect_cell asp_opt2" id="aspect_awa_opt2"
           onclick="select_opt2( 'awareness' )"></td>
@@ -112,10 +115,46 @@
           onclick="select_opt2( 'intelligence' )"></td>
 
       <td class="ui aspect_cell asp_opt2" id="aspect_per_opt2"
-          onclick="select_opt2( 'perception' )"></td>
+          onclick="select_opt2( 'personality' )"></td>
 
       <td class="ui aspect_cell asp_opt2" id="aspect_wil_opt2"
           onclick="select_opt2( 'willpower' )"></td>
+    </tr>
+
+    <tr>
+      <th class="ui right aligned aspect_row_header">BONUS</th>
+
+      <td class="ui aspect_cell attr_bon" id="attr_agi_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_awa_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_bra_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_coo_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_int_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_per_bon">+0</td>
+
+      <td class="ui aspect_cell attr_bon" id="attr_wil_bon">+0</td>
+    </tr>
+
+    <tr>
+      <th class="ui right aligned aspect_row_header">TOTAL</th>
+
+      <td class="ui aspect_cell attr_tot" id="attr_agi_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_awa_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_bra_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_coo_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_int_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_per_tot">7</td>
+
+      <td class="ui aspect_cell attr_tot" id="attr_wil_tot">7</td>
     </tr>
   </table>
 </div>
