@@ -69,6 +69,19 @@ input[type=radio][name=homelands] {
   padding-left: 1em; // this doesn't work for some reason?
 }
 
+.attr_start_seg {
+  padding: 0 !important;
+}
+
+.attr_start_counter {
+  // padding: .5em !important;
+  // margin: 0 !important;
+}
+
+.aspect_cell.selectable {
+  cursor: pointer;
+}
+
 // IT WOULD BE REALLY GOOD IF THE ATTRIBUTE SELECTION TABLE COULD GET VERTICAL HEADERS
 // BUT IT'S IMPOSSIBLE FOR SOME REASON AAAHHHHHH
 // check https://css-tricks.com/rotated-table-column-headers/

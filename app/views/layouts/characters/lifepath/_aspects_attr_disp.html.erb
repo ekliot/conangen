@@ -2,7 +2,7 @@
 
   <!-- put attribute starting value modification here -->
 
-  <table class="ui striped padded table attribute_selection">
+  <table class="ui divided padded table attribute_selection">
     <tr>
       <th class="ui two wide"><div></div></th>
 
@@ -21,140 +21,229 @@
       <th class="ui one wide vertical_th"><div><span>WILL</span></div></th>
     </tr>
 
+    <tr id="aspect_start_row">
+
+      <th class="ui right aligned aspect_row_header">STARTING ATTRIBUTE VALUES</th>
+
+      <td class="ui center aligned aspect_cell asp_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_agi_start">
+          <button class="ui top attached compact icon button" id="attr_agi_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_agi_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_agi_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_awa_start">
+          <button class="ui top attached compact icon button" id="attr_awa_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_awa_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_awa_btndn">
+            <i class="ui toggle down icon">
+            </i></button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_bra_start">
+          <button class="ui top attached compact icon button" id="attr_bra_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_bra_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_bra_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_coo_start">
+          <button class="ui top attached compact icon button" id="attr_coo_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_coo_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_coo_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_int_start">
+          <button class="ui top attached compact icon button" id="attr_int_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_int_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_int_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_per_start">
+          <button class="ui top attached compact icon button" id="attr_per_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_per_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_per_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+
+      <td class="ui center aligned aspect_cell attr_start">
+        <div class="ui basic center aligned segment attr_start_seg" id="asp_wil_start">
+          <button class="ui top attached compact icon button" id="attr_wil_btnup">
+            <i class="ui toggle up icon"></i>
+          </button>
+          <div class="ui basic compact segment attr_start_counter" id="attr_wil_counter">7</div>
+          <button class="ui bottom attached compact icon button" id="attr_wil_btndn">
+            <i class="ui toggle down icon"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+
     <tr id="aspect_best_row">
       <th class="ui right aligned aspect_row_header">BEST</th>
 
-      <td class="ui aspect_cell asp_best" id="aspect_agi_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_agi_best"
           onclick="select_best( 'agility' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_awa_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_awa_best"
           onclick="select_best( 'awareness' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_bra_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_bra_best"
           onclick="select_best( 'brawn' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_coo_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_coo_best"
           onclick="select_best( 'coordination' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_int_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_int_best"
           onclick="select_best( 'intelligence' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_per_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_per_best"
           onclick="select_best( 'personality' )"></td>
 
-      <td class="ui aspect_cell asp_best" id="aspect_wil_best"
+      <td class="ui center aligned aspect_cell asp_best" id="aspect_wil_best"
           onclick="select_best( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_worst_row">
       <th class="ui right aligned aspect_row_header">WORST</th>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_agi_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_agi_worst"
           onclick="select_worst( 'agility' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_awa_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_awa_worst"
           onclick="select_worst( 'awareness' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_bra_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_bra_worst"
           onclick="select_worst( 'brawn' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_coo_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_coo_worst"
           onclick="select_worst( 'coordination' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_int_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_int_worst"
           onclick="select_worst( 'intelligence' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_per_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_per_worst"
           onclick="select_worst( 'personality' )"></td>
 
-      <td class="ui aspect_cell asp_worst" id="aspect_wil_worst"
+      <td class="ui center aligned aspect_cell asp_worst" id="aspect_wil_worst"
           onclick="select_worst( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_opt1_row">
       <th class="ui right aligned aspect_row_header">OPTIONAL 1</th>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_agi_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_agi_opt1"
           onclick="select_opt1( 'agility' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_awa_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_awa_opt1"
           onclick="select_opt1( 'awareness' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_bra_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_bra_opt1"
           onclick="select_opt1( 'brawn' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_coo_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_coo_opt1"
           onclick="select_opt1( 'coordination' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_int_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_int_opt1"
           onclick="select_opt1( 'intelligence' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_per_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_per_opt1"
           onclick="select_opt1( 'personality' )"></td>
 
-      <td class="ui aspect_cell asp_opt1" id="aspect_wil_opt1"
+      <td class="ui center aligned aspect_cell asp_opt1" id="aspect_wil_opt1"
           onclick="select_opt1( 'willpower' )"></td>
     </tr>
 
     <tr id="aspect_opt2_row">
       <th class="ui right aligned aspect_row_header">OPTIONAL 2</th>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_agi_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_agi_opt2"
           onclick="select_opt2( 'agility' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_awa_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_awa_opt2"
           onclick="select_opt2( 'awareness' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_bra_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_bra_opt2"
           onclick="select_opt2( 'brawn' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_coo_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_coo_opt2"
           onclick="select_opt2( 'coordination' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_int_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_int_opt2"
           onclick="select_opt2( 'intelligence' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_per_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_per_opt2"
           onclick="select_opt2( 'personality' )"></td>
 
-      <td class="ui aspect_cell asp_opt2" id="aspect_wil_opt2"
+      <td class="ui center aligned aspect_cell asp_opt2" id="aspect_wil_opt2"
           onclick="select_opt2( 'willpower' )"></td>
     </tr>
 
-    <tr>
+    <tr id="aspect_bonus_row">
       <th class="ui right aligned aspect_row_header">BONUS</th>
 
-      <td class="ui aspect_cell attr_bon" id="attr_agi_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_agi_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_awa_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_awa_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_bra_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_bra_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_coo_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_coo_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_int_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_int_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_per_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_per_bon">+0</td>
 
-      <td class="ui aspect_cell attr_bon" id="attr_wil_bon">+0</td>
+      <td class="ui center aligned aspect_cell attr_bon" id="attr_wil_bon">+0</td>
     </tr>
 
-    <tr>
+    <tr id="aspect_total_row">
       <th class="ui right aligned aspect_row_header">TOTAL</th>
 
-      <td class="ui aspect_cell attr_tot" id="attr_agi_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_agi_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_awa_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_awa_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_bra_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_bra_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_coo_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_coo_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_int_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_int_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_per_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_per_tot">7</td>
 
-      <td class="ui aspect_cell attr_tot" id="attr_wil_tot">7</td>
+      <td class="ui center aligned aspect_cell attr_tot" id="attr_wil_tot">7</td>
     </tr>
   </table>
 </div>

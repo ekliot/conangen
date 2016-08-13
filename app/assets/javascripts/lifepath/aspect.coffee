@@ -1,8 +1,11 @@
 $( window ).load ->
   @select_aspect( document.getElementById( "aspect#{idx}::1" ) ) for idx in [1,2]
 
-ICON_RADIO  = '<div class="ui basic center aligned segment"><i class="ui large radio icon" style="cursor: default""></i></div>'
-ICON_CIRCLE = '<div class="ui basic center aligned segment"><i class="ui large circle icon" style="cursor: default"></i></div>'
+ICON_RADIO  = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large radio icon" style="cursor: pointer"></i></div>'
+ICON_CIRCLE = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large circle icon" style="cursor: pointer"></i></div>'
+
+ATTR_CHNG_MAX = 2
+attr_chng_pool = 0
 
 attrs =
   agility: 7
@@ -45,6 +48,52 @@ sel_opt2 = ""
 # HELPER METHODS
 # ==============
 
+increment_attr = ( attr ) ->
+  if ATTR_CHNG_MAX >= attr_chng_pool > 0
+    attr_chng_pool -= 1
+
+    seg = document.getElementById( "asp_#{ attr[0..2] }_start" )
+    btn_up  =  seg.getElementById( "attr_#{ attr[0..2] }_btnup" )
+    btn_dn  =  seg.getElementById( "attr_#{ attr[0..2] }_btndn" )
+    counter =  seg.getElementById( "attr_#{ attr[0..2] }_counter" )
+
+    switch attr
+      when "agility"
+        attrs.agility += 1
+        counter.innerHTML = "#{attrs.agility}"
+      when "awareness"
+        attrs.awareness += 1
+        counter.innerHTML = "#{attrs.awareness}"
+      when "brawn"
+        attrs.brwan += 1
+        counter.innerHTML = "#{attrs.brawn}"
+      when "coordination"
+        attrs.coordination += 1
+        counter.innerHTML = "#{attrs.coordination}"
+      when "intelligence"
+        attrs.intelligence += 1
+        counter.innerHTML = "#{attrs.intelligence}"
+      when "personality"
+        attrs.personality += 1
+        counter.innerHTML = "#{attrs.personality}"
+      when "willpower"
+        attrs.willpower += 1
+        counter.innerHTML = "#{attrs.willpower}"
+
+    btn_up.className += " disabled"
+    btn_dn.className = btn_dn.className.replace " disabled", ""
+
+    set_total( attr )
+
+decrement_attr = ( attr ) ->
+  # foo
+
+notify_ancestral = () ->
+  # beep
+
+clear_ancestral = () ->
+  # boop
+
 # check if the given attribute is in both of the selected aspects
 check_dupe = ( attr, sec ) ->
   if sec == "mand"
@@ -73,13 +122,13 @@ set_total = ( attr ) ->
   ele = document.getElementById( "attr_#{ attr[0..2] }_tot" )
 
   switch attr
-    when "agility" then ele.innerHTML = "#{attrs.agility + bonus.agility}"
-    when "awareness" then ele.innerHTML = "#{attrs.awareness + bonus.awareness}"
-    when "brawn" then ele.innerHTML = "#{attrs.brawn + bonus.brawn}"
+    when "agility"      then ele.innerHTML = "#{attrs.agility + bonus.agility}"
+    when "awareness"    then ele.innerHTML = "#{attrs.awareness + bonus.awareness}"
+    when "brawn"        then ele.innerHTML = "#{attrs.brawn + bonus.brawn}"
     when "coordination" then ele.innerHTML = "#{attrs.coordination + bonus.coordination}"
     when "intelligence" then ele.innerHTML = "#{attrs.intelligence + bonus.intelligence}"
-    when "personality" then ele.innerHTML = "#{attrs.personality + bonus.personality}"
-    when "willpower" then ele.innerHTML = "#{attrs.willpower + bonus.willpower}"
+    when "personality"  then ele.innerHTML = "#{attrs.personality + bonus.personality}"
+    when "willpower"    then ele.innerHTML = "#{attrs.willpower + bonus.willpower}"
 
 mod_bonus = ( amt, attr ) ->
   ele = document.getElementById( "attr_#{ attr[0..2] }_bon" )
