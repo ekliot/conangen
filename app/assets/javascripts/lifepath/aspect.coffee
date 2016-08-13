@@ -46,9 +46,13 @@ sel_opt2 = ""
 # ==============
 
 # check if the given attribute is in both of the selected aspects
-check_dupe = ( attr ) ->
-  asp1_check = aspect1.mand1 == attr or aspect1.mand2 == attr
-  asp2_check = aspect2.mand1 == attr or aspect2.mand2 == attr
+check_dupe = ( attr, sec ) ->
+  if sec == "mand"
+    asp1_check = aspect1.mand1 == attr or aspect1.mand2 == attr
+    asp2_check = aspect2.mand1 == attr or aspect2.mand2 == attr
+  else
+    asp1_check = aspect1.opt1 == attr or aspect1.opt2 == attr
+    asp2_check = aspect2.opt1 == attr or aspect2.opt2 == attr
   return ( asp1_check and asp2_check )
 
 reset_bonus = () ->
@@ -205,7 +209,7 @@ fill_cells = () ->
     return
 
   # deselect the selected worst attr, if this attr isn't in both aspects
-  if !check_dupe( attr ) and sel_worst == attr
+  if !check_dupe( attr, "mand" ) and sel_worst == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_worst" ) )
     # previous worst becomes not-worst/best (+2 bonus)
     mod_bonus( -1 + 2, sel_worst )
@@ -228,7 +232,7 @@ fill_cells = () ->
     return
 
   # deselect the selected best attr, if this attr isn't in both aspects
-  if !check_dupe( attr ) and sel_best == attr
+  if !check_dupe( attr, "mand" ) and sel_best == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_best" ) )
     # previous best becomes not-worst/best (+2 bonus)
     mod_bonus( -3 + 2, sel_best )
@@ -245,10 +249,50 @@ fill_cells = () ->
   mod_bonus( -2 + 1, attr )
 
 @select_opt1  = ( attr ) ->
-  # beep
-#
-# @select_opt2  = ( attr ) ->
-#   # beep
+  ele = document.getElementById( "aspect_#{ attr[0..2] }_opt1" )
+
+  if ele.className.indexOf( "selectable" ) == -1
+    return
+
+  # deselect the selected opt2 attr, if this attr isn't in both aspects
+  if !check_dupe( attr, "opt" ) and sel_opt2 == attr
+    deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_opt2" ) )
+    # previous opt2 becomes null (+0 bonus)
+    mod_bonus( -1 + 0, sel_opt2 )
+    sel_opt2 = ""
+
+  if sel_opt1 != ""
+    deselect_cell( document.getElementById( "aspect_#{ sel_opt1[0..2] }_opt1" ) )
+    # previous opt1 becomes null (+0 bonus)
+    mod_bonus( -1 + 0, sel_opt1 )
+
+  sel_opt1 = attr
+  select_cell( ele )
+  # attr becomes selected opt1 from null (+1 bonus)
+  mod_bonus( -0 + 1, attr )
+
+@select_opt2  = ( attr ) ->
+  ele = document.getElementById( "aspect_#{ attr[0..2] }_opt2" )
+
+  if ele.className.indexOf( "selectable" ) == -1
+    return
+
+  # deselect the selected opt2 attr, if this attr isn't in both aspects
+  if !check_dupe( attr, "opt" ) and sel_opt2 == attr
+    deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_opt1" ) )
+    # previous opt1 becomes null (+0 bonus)
+    mod_bonus( -1 + 0, sel_opt1 )
+    sel_opt1 = ""
+
+  if sel_opt2 != ""
+    deselect_cell( document.getElementById( "aspect_#{ sel_opt2[0..2] }_opt2" ) )
+    # previous opt2 becomes null (+0 bonus)
+    mod_bonus( -1 + 0, sel_opt2 )
+
+  sel_opt2 = attr
+  select_cell( ele )
+  # attr becomes selected opt2 from null (+1 bonus)
+  mod_bonus( -0 + 1, attr )
 
 # @confirm_aspect = () ->
 #   # fill aspect names
