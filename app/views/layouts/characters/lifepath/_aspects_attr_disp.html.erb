@@ -1,93 +1,121 @@
 <div class="ui row" id="aspect_attr_disp">
-  <table class="ui table">
+  <table class="ui striped padded table attribute_selection">
     <tr>
-      <th class="ui vertical_th"><div class="vertical_text"></div></th>
+      <th class="ui two wide"><div></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">AGILITY</div></th>
+      <th class="ui one wide vertical_th"><div><span>AGIL</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">AWARENESS</div></th>
+      <th class="ui one wide vertical_th"><div><span>AWAR</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">BRAWN</div></th>
+      <th class="ui one wide vertical_th"><div><span>BRWN</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">COORDINATION</div></th>
+      <th class="ui one wide vertical_th"><div><span>COOR</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">INTELLIGENCE</div></th>
+      <th class="ui one wide vertical_th"><div><span>INTL</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">PERSONALITY</div></th>
+      <th class="ui one wide vertical_th"><div><span>PRSN</span></div></th>
 
-      <th class="ui vertical_th"><div class="vertical_text">WILLPOWER</div></th>
+      <th class="ui one wide vertical_th"><div><span>WILL</span></div></th>
     </tr>
 
     <tr id="aspect_best_row">
-      <td>BEST</td>
+      <th class="ui right aligned asepct_row_header">BEST</th>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_agi_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_agi_best"
+          onclick="select_best( 'agility' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_awa_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_awa_best"
+          onclick="select_best( 'awareness' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_bra_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_bra_best"
+          onclick="select_best( 'brawn' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_coo_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_coo_best"
+          onclick="select_best( 'coordination' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_int_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_int_best"
+          onclick="select_best( 'intelligence' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_per_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_per_best"
+          onclick="select_best( 'perception' )"></td>
 
-      <td class="ui selectable aspect_cell_best" id="aspect_wil_best">X</td>
+      <td class="ui aspect_cell asp_best" id="aspect_wil_best"
+          onclick="select_best( 'willpower' )"></td>
     </tr>
 
-    <tr>
-      <td>WORST</td>
+    <tr id="aspect_worst_row">
+      <th class="ui right aligned asepct_row_header">WORST</th>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_agi_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_agi_worst"
+          onclick="select_worst( 'agility' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_awa_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_awa_worst"
+          onclick="select_worst( 'awareness' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_bra_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_bra_worst"
+          onclick="select_worst( 'brawn' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_coo_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_coo_worst"
+          onclick="select_worst( 'coordination' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_int_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_int_worst"
+          onclick="select_worst( 'intelligence' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_per_worst">X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_per_worst"
+          onclick="select_worst( 'perception' )"></td>
 
-      <td class="ui selectable aspect_cell_worst" id="aspect_wil_worst">X</td>
-    </tr>
-<!--
-    <tr>
-      <td>OPTIONAL 1</td>
-
-      <td>X</td>
-
-      <td>X</td>
-
-      <td>X</td>
-
-      <td>X</td>
-
-      <td>X</td>
-
-      <td>X</td>
-
-      <td>X</td>
+      <td class="ui aspect_cell asp_worst" id="aspect_wil_worst"
+          onclick="select_worst( 'willpower' )"></td>
     </tr>
 
-    <tr>
-      <td>OPTIONAL 2</td>
+    <tr id="aspect_opt1_row">
+      <th class="ui right aligned asepct_row_header">OPTIONAL 1</th>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_agi_opt1"
+          onclick="select_opt1( 'agility' )"></td>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_awa_opt1"
+          onclick="select_opt1( 'awareness' )"></td>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_bra_opt1"
+          onclick="select_opt1( 'brawn' )"></td>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_coo_opt1"
+          onclick="select_opt1( 'coordination' )"></td>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_int_opt1"
+          onclick="select_opt1( 'intelligence' )"></td>
 
-      <td>X</td>
+      <td class="ui aspect_cell asp_opt1" id="aspect_per_opt1"
+          onclick="select_opt1( 'perception' )"></td>
 
-      <td>X</td>
-    </tr> -->
+      <td class="ui aspect_cell asp_opt1" id="aspect_wil_opt1"
+          onclick="select_opt1( 'willpower' )"></td>
+    </tr>
+
+    <tr id="aspect_opt2_row">
+      <th class="ui right aligned asepct_row_header">OPTIONAL 2</th>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_agi_opt2
+          onclick="select_opt2( 'agility' )""></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_awa_opt2"
+          onclick="select_opt2( 'awareness' )"></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_bra_opt2"
+          onclick="select_opt2( 'brawn' )"></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_coo_opt2"
+          onclick="select_opt2( 'coordination' )"></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_int_opt2"
+          onclick="select_opt2( 'intelligence' )"></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_per_opt2"
+          onclick="select_opt2( 'perception' )"></td>
+
+      <td class="ui aspect_cell asp_opt2" id="aspect_wil_opt2"
+          onclick="select_opt2( 'willpower' )"></td>
+    </tr>
   </table>
 </div>
