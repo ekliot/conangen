@@ -53,7 +53,7 @@
                   <% castestories.each do |castestory| %>
                     <a  class="ui <%= if (castestory.id%6) == 1 then "active " end %>item tab caste_story_tab"
                         data-tab="castestory::<%= castestory.id %>" data-caste-story-name="<%= castestory.name %>"
-                        id="castestory::<%= caste.id %>" onclick="select_caste_story( this )">
+                        id="castestory::<%= caste.id %>::<%= castestory.id %>" onclick="select_caste_story( this )">
                       <%= castestory.name %>
                     </a>
                   <% end %>

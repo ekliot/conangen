@@ -35,6 +35,8 @@ sel_homeland =
   sel_homeland.talent    = ele.getAttribute( "data-hl-talent" )
   sel_homeland.language  = hl_lang
 
+  console.log "homeland #{hl_name} selected with language #{hl_lang} and talent #{sel_homeland.talent}"
+
 # @confirm_homeland = () ->
 #   # fill in chosen homeland name
 #   # fill in chosen homeland lang

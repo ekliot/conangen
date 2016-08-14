@@ -4,8 +4,11 @@ $( window ).load ->
 ICON_RADIO  = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large radio icon" style="cursor: pointer"></i></div>'
 ICON_CIRCLE = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large circle icon" style="cursor: pointer"></i></div>'
 
-ATTR_CHNG_MAX = 2
-attr_chng_pool = 0
+attr_dec_cnt = 0
+attr_inc_cnt = 0
+attr_changes =
+  dec: [ "", "" ]
+  inc: [ "", "" ]
 
 attrs =
   agility: 7
@@ -48,14 +51,20 @@ sel_opt2 = ""
 # HELPER METHODS
 # ==============
 
-increment_attr = ( attr ) ->
-  if ATTR_CHNG_MAX >= attr_chng_pool > 0
-    attr_chng_pool -= 1
+@increment_attr = ( attr ) ->
+  pass = true
 
-    seg = document.getElementById( "asp_#{ attr[0..2] }_start" )
-    btn_up  =  seg.getElementById( "attr_#{ attr[0..2] }_btnup" )
-    btn_dn  =  seg.getElementById( "attr_#{ attr[0..2] }_btndn" )
-    counter =  seg.getElementById( "attr_#{ attr[0..2] }_counter" )
+  if attr_changes.dec.indexOf( attr ) != -1
+    attr_changes.dec[ attr_changes.dec.indexOf( attr ) ] = ""
+    attr_dec_cnt -= 1
+  else if attr_changes.inc.indexOf( "" ) != -1
+    attr_changes.inc[ attr_changes.inc.indexOf( "" ) ] = attr
+    attr_inc_cnt += 1
+  else
+    pass = false
+
+  if pass
+    counter =  document.getElementById( "attr_#{ attr[0..2] }_counter" )
 
     switch attr
       when "agility"
@@ -65,7 +74,7 @@ increment_attr = ( attr ) ->
         attrs.awareness += 1
         counter.innerHTML = "#{attrs.awareness}"
       when "brawn"
-        attrs.brwan += 1
+        attrs.brawn += 1
         counter.innerHTML = "#{attrs.brawn}"
       when "coordination"
         attrs.coordination += 1
@@ -80,13 +89,80 @@ increment_attr = ( attr ) ->
         attrs.willpower += 1
         counter.innerHTML = "#{attrs.willpower}"
 
-    btn_up.className += " disabled"
-    btn_dn.className = btn_dn.className.replace " disabled", ""
+    console.log "attribute #{attr} incremented"
+
+    if attr_inc_cnt == attr_dec_cnt
+      for btn in document.getElementsByClassName( "attr_inc_btn" )
+        if btn.className.indexOf( "disabled" ) == -1 then btn.className += " disabled"
+
+    if attr_dec_cnt < 2
+      for btn in document.getElementsByClassName( "attr_dec_btn" )
+        btn.className = btn.className.replace " disabled", ""
+
+    if attr_dec_cnt == 2
+      inc1 = attr_changes.inc[0][0..2]
+      inc2 = attr_changes.inc[1][0..2]
+      for inc in [ inc1, inc2 ]
+        if inc != ""
+          btn = document.getElementById( "attr_#{ inc }_btndn" )
+          btn.className = btn.className.replace " disabled", ""
 
     set_total( attr )
 
-decrement_attr = ( attr ) ->
-  # foo
+@decrement_attr = ( attr ) ->
+  pass = true
+
+  if attr_changes.inc.indexOf( attr ) != -1
+    attr_changes.inc[ attr_changes.inc.indexOf( attr ) ] = ""
+    attr_inc_cnt -= 1
+  else if attr_changes.dec.indexOf( "" ) != -1
+    attr_changes.dec[ attr_changes.dec.indexOf( "" ) ] = attr
+    attr_dec_cnt += 1
+  else
+    pass = false
+
+  if pass
+    for btn in document.getElementsByClassName( "attr_inc_btn" )
+      btn.className = btn.className.replace " disabled", ""
+
+    counter = document.getElementById( "attr_#{ attr[0..2] }_counter" )
+
+    switch attr
+      when "agility"
+        attrs.agility -= 1
+        counter.innerHTML = "#{attrs.agility}"
+      when "awareness"
+        attrs.awareness -= 1
+        counter.innerHTML = "#{attrs.awareness}"
+      when "brawn"
+        attrs.brawn -= 1
+        counter.innerHTML = "#{attrs.brawn}"
+      when "coordination"
+        attrs.coordination -= 1
+        counter.innerHTML = "#{attrs.coordination}"
+      when "intelligence"
+        attrs.intelligence -= 1
+        counter.innerHTML = "#{attrs.intelligence}"
+      when "personality"
+        attrs.personality -= 1
+        counter.innerHTML = "#{attrs.personality}"
+      when "willpower"
+        attrs.willpower -= 1
+        counter.innerHTML = "#{attrs.willpower}"
+
+    console.log "attribute #{attr} decremented"
+
+    if attr_dec_cnt == 2
+      for btn in document.getElementsByClassName( "attr_dec_btn" )
+        inc1 = attr_changes.inc[0][0..2]
+        inc2 = attr_changes.inc[1][0..2]
+        check1 = ( inc1 == "" or btn.id.indexOf( inc1 ) == -1 )
+        check2 = ( inc2 == "" or btn.id.indexOf( inc2 ) == -1 )
+        if check1 and check2
+          if btn.className.indexOf( "disabled" ) == -1 then btn.className += " disabled"
+
+    set_total( attr )
+
 
 notify_ancestral = () ->
   # beep
@@ -132,8 +208,6 @@ set_total = ( attr ) ->
 
 mod_bonus = ( amt, attr ) ->
   ele = document.getElementById( "attr_#{ attr[0..2] }_bon" )
-
-  console.log "modifying #{attr} bonus by #{amt}"
 
   switch attr
     when "agility"
@@ -236,6 +310,8 @@ fill_cells = () ->
     document.getElementById( "aspect1_mand2" ).innerHTML = aspect1.mand2.toUpperCase()
     document.getElementById( "aspect1_opt1" ).innerHTML  = aspect1.opt1.toUpperCase()
     document.getElementById( "aspect1_opt2" ).innerHTML  = aspect1.opt2.toUpperCase()
+
+    console.log "first aspect #{aspect1.name} selected"
   else
     aspect2.name  = ele.getAttribute( "data-aspect-name" )
     aspect2.mand1 = ele.getAttribute( "data-mand1" )
@@ -248,6 +324,8 @@ fill_cells = () ->
     document.getElementById( "aspect2_mand2" ).innerHTML = aspect2.mand2.toUpperCase()
     document.getElementById( "aspect2_opt1" ).innerHTML  = aspect2.opt1.toUpperCase()
     document.getElementById( "aspect2_opt2" ).innerHTML  = aspect2.opt2.toUpperCase()
+
+    console.log "second aspect #{aspect2.name} selected"
 
   fill_cells()
 
@@ -274,6 +352,8 @@ fill_cells = () ->
   # attr becomes best from not-best/worst (+3 bonus)
   mod_bonus( -2 + 3, attr )
 
+  console.log "best attribute #{attr} selected"
+
 @select_worst = ( attr ) ->
   ele = document.getElementById( "aspect_#{ attr[0..2] }_worst" )
 
@@ -296,6 +376,8 @@ fill_cells = () ->
   select_cell( ele )
   # attr becomes worst from not-best/worst (+1 bonus)
   mod_bonus( -2 + 1, attr )
+
+  console.log "worst attribute #{attr} selected"
 
 @select_opt1  = ( attr ) ->
   ele = document.getElementById( "aspect_#{ attr[0..2] }_opt1" )
@@ -320,6 +402,8 @@ fill_cells = () ->
   # attr becomes selected opt1 from null (+1 bonus)
   mod_bonus( -0 + 1, attr )
 
+  console.log "first optional attribute #{attr} selected"
+
 @select_opt2  = ( attr ) ->
   ele = document.getElementById( "aspect_#{ attr[0..2] }_opt2" )
 
@@ -342,6 +426,8 @@ fill_cells = () ->
   select_cell( ele )
   # attr becomes selected opt2 from null (+1 bonus)
   mod_bonus( -0 + 1, attr )
+
+  console.log "second optional attribute #{attr} selected"
 
 # @confirm_aspect = () ->
 #   # fill aspect names

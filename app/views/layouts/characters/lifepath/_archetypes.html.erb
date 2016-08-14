@@ -14,7 +14,8 @@
 
         <% archetypes.each do |archetype| %>
           <a  class="ui item <%= if archetype.id == 1 then "active " end %>tab archetype_tab"
-              data-tab="archetype::<%=archetype.id %>">
+              data-tab="archetype::<%= archetype.id %>" data-arch-name="<%= archetype.name %>"
+              id="archetype::<%= archetype.id %>" onclick="select_archetype( this )">
               <%= archetype.name %>
           </a>
         <% end %>
@@ -27,7 +28,7 @@
     <div class="ui thirteen wide column">
 
       <% archetypes.each do |archetype| %>
-        <div  class="ui <%= if archetype.id == 1 then "active " end %>tab fluid archetype_segment"
+        <div  class="ui <%= if archetype.id == 1 then 'active ' end %>tab fluid archetype_segment"
               data-tab="archetype::<%=archetype.id %>">
           <h2 class="ui centered header">
             <%= archetype.name %>
@@ -55,7 +56,7 @@
 
               <div class="ui green cards">
 
-                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory1 %>>
+                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory1 %>">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory1 %>
@@ -63,7 +64,7 @@
                   </div>
                 </div>
 
-                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory2 %>>
+                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory2 %>">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory2 %>
@@ -71,7 +72,7 @@
                   </div>
                 </div>
 
-                <div class="ui card" data-skill-mandatory=<%= archetype.skill_mandatory3 %>>
+                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory3 %>">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_mandatory3 %>
@@ -93,7 +94,8 @@
 
               <div class="ui cards">
 
-                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective1 %>>
+                <a  class="ui red card" data-skill-elective="<%= archetype.skill_elective1 %>"
+                    onclick="select_arch_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective1 %>
@@ -101,7 +103,8 @@
                   </div>
                 </a>
 
-                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective2 %>>
+                <a  class="ui red card" data-skill-elective="<%= archetype.skill_elective2 %>"
+                    onclick="select_arch_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective2 %>
@@ -109,7 +112,8 @@
                   </div>
                 </a>
 
-                <a class="ui red card" data-skill-elective=<%= archetype.skill_elective3 %>>
+                <a  class="ui red card" data-skill-elective="<%= archetype.skill_elective3 %>"
+                    onclick="select_arch_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill archetype.skill_elective3 %>
