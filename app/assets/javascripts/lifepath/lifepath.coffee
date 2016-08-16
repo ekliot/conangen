@@ -9,6 +9,83 @@ $( window ).load ->
   @warstory_seg     = document.getElementById( "create_warstory" )
   @finish_seg       = document.getElementById( "create_finish" )
 
+skill_tally =
+  acrobatics:
+    exp: 0
+    foc: 0
+  alchemy:
+    exp: 0
+    foc: 0
+  animal_handling:
+    exp: 0
+    foc: 0
+  athletics:
+    exp: 0
+    foc: 0
+  command:
+    exp: 0
+    foc: 0
+  counsel:
+    exp: 0
+    foc: 0
+  craft:
+    exp: 0
+    foc: 0
+  discipline:
+    exp: 0
+    foc: 0
+  healing:
+    exp: 0
+    foc: 0
+  insight:
+    exp: 0
+    foc: 0
+  linguistics:
+    exp: 0
+    foc: 0
+  lore:
+    exp: 0
+    foc: 0
+  melee:
+    exp: 0
+    foc: 0
+  observation:
+    exp: 0
+    foc: 0
+  parry:
+    exp: 0
+    foc: 0
+  persuade:
+    exp: 0
+    foc: 0
+  ranged:
+    exp: 0
+    foc: 0
+  resistance:
+    exp: 0
+    foc: 0
+  sailing:
+    exp: 0
+    foc: 0
+  siegecraft:
+    exp: 0
+    foc: 0
+  society:
+    exp: 0
+    foc: 0
+  sorcery:
+    exp: 0
+    foc: 0
+  stealth:
+    exp: 0
+    foc: 0
+  survival:
+    exp: 0
+    foc: 0
+  thievery:
+    exp: 0
+    foc: 0
+
 # @next_create_tab = () ->
 #   # switch for current tab
 #
