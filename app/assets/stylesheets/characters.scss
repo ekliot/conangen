@@ -69,17 +69,35 @@ input[type=radio][name=homelands] {
   padding-left: 1em; // this doesn't work for some reason?
 }
 
-.attr_start_seg {
-  padding: 0 !important;
-}
-
 .attr_start_counter {
   // padding: .5em !important;
   // margin: 0 !important;
 }
 
-.aspect_cell.selectable {
-  cursor: pointer;
+.aspect_mand_attr, .aspect_opt_attr {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.vertical_th {
+  padding: 0 !important;
+}
+
+.aspect_cell {
+  padding: 0;
+
+  .selectable {
+    cursor: pointer;
+  }
+}
+
+.attr_inc_btn, .attr_dec_btn {
+  width: 100%;
+}
+
+.attr_start_counter {
+  width: 100%;
+  margin: 0 !important;
 }
 
 // IT WOULD BE REALLY GOOD IF THE ATTRIBUTE SELECTION TABLE COULD GET VERTICAL HEADERS
