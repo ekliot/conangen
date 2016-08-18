@@ -9,6 +9,58 @@ $( window ).load ->
   @warstory_seg     = document.getElementById( "create_warstory" )
   @finish_seg       = document.getElementById( "create_finish" )
 
+sel_homeland =
+  name: ""
+  talent: ""
+  language: ""
+
+sel_best = ""
+sel_worst = ""
+
+sel_opt1 = ""
+sel_opt2 = ""
+
+attrs =
+  agility: 7
+  awareness: 7
+  brawn: 7
+  coordination: 7
+  intelligence: 7
+  personality: 7
+  willpower: 7
+
+bonus =
+  agility: 0
+  awareness: 0
+  brawn: 0
+  coordination: 0
+  intelligence: 0
+  personality: 0
+  willpower: 0
+
+sel_caste = ""
+
+sel_caste_story = ""
+
+sel_archetype =
+  name: ""
+  talent: ""
+  career_skill: ""
+  opt_skill1: ""
+  opt_skill2: ""
+
+sel_nature =
+  name:   ""
+  talent: ""
+  opt_skill1: ""
+  opt_skill2: ""
+
+sel_edu =
+  name:   ""
+  talent: ""
+  opt_skill1: ""
+  opt_skill2: ""
+
 skill_tally =
   acrobatics:
     exp: 0

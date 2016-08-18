@@ -14,7 +14,8 @@
 
         <% natures.each do |nature| %>
           <a  class="ui item <%= if nature.id == 1 then "active " end %>tab nature_tab"
-              data-tab="nature::<%=nature.id %>">
+              data-tab="nature::<%= nature.id %>" id="nature::<%= nature.id %>"
+              data-nature-name="<%= nature.name %>" onclick="select_nature( this )">
             <%= nature.name %>
           </a>
         <% end %>
@@ -93,7 +94,8 @@
 
               <div class="ui cards">
 
-                <a class="ui red card" data-skill-elective=<%= nature.skill_elective1 %>>
+                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective1 %>"
+                    onclick="select_nat_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill nature.skill_elective1 %>
@@ -101,7 +103,8 @@
                   </div>
                 </a>
 
-                <a class="ui red card" data-skill-elective=<%= nature.skill_elective2 %>>
+                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective2 %>"
+                    onclick="select_nat_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill nature.skill_elective2 %>
@@ -109,7 +112,8 @@
                   </div>
                 </a>
 
-                <a class="ui red card" data-skill-elective=<%= nature.skill_elective3 %>>
+                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective3 %>"
+                    onclick="select_nat_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill  nature.skill_elective3 %>

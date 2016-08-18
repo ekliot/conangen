@@ -15,6 +15,8 @@
         <% archetypes.each do |archetype| %>
           <a  class="ui item <%= if archetype.id == 1 then "active " end %>tab archetype_tab"
               data-tab="archetype::<%= archetype.id %>" data-arch-name="<%= archetype.name %>"
+              data-arch-career-skill="<%= CharactersHelper.format_skill archetype.skill_career %>"
+              data-arch-talent="<%= archetype.talent.name %>"
               id="archetype::<%= archetype.id %>" onclick="select_archetype( this )">
               <%= archetype.name %>
           </a>
@@ -33,6 +35,7 @@
           <h2 class="ui centered header">
             <%= archetype.name %>
             <div class="ui sub header"> <b>Talent: </b> <%= + archetype.talent.name %></div>
+            <div class="ui sub header"> <b>Career Skill: </b> <%= + archetype.skill_career %></div>
           </h2>
 
           <div class="ui secondary segment">
@@ -56,29 +59,19 @@
 
               <div class="ui green cards">
 
-                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory1 %>">
+                <% mand_skills = [ archetype.skill_mandatory1, archetype.skill_mandatory2, archetype.skill_mandatory3 ] %>
+
+                <% for skill in mand_skills do %>
+
+                <div class="ui card" data-skill-mandatory="<%= skill %>">
                   <div class="content">
                     <div class="ui centered header">
-                      <%= CharactersHelper.format_skill archetype.skill_mandatory1 %>
+                      <%= CharactersHelper.format_skill skill %>
                     </div>
                   </div>
                 </div>
 
-                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory2 %>">
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill archetype.skill_mandatory2 %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui card" data-skill-mandatory="<%= archetype.skill_mandatory3 %>">
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill archetype.skill_mandatory3 %>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
 
               </div>
 

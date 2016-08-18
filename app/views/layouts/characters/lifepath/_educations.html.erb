@@ -14,7 +14,8 @@
 
         <% educations.each do |education| %>
           <a  class="ui item <%= if education.id == 1 then "active " end %>tab education_tab"
-              data-tab="<%=education.id %>">
+              data-tab="education::<%= education.id %>" id="education::<%= education.id %>"
+              data-edu-name="<%= education.name %>" onclick="select_edu( this )">
             <%= education.name %>
           </a>
         <% end %>
@@ -28,7 +29,7 @@
 
       <% educations.each do |education| %>
         <div  class="ui <%= if education.id == 1 then "active " end %>tab fluid education_segment"
-              data-tab="<%=education.id %>">
+              data-tab="education::<%=education.id %>">
           <h2 class="ui centered header">
             <%= education.name %>
             <div class="ui sub header">
@@ -59,29 +60,20 @@
 
               <div class="ui green cards">
 
-                <div class="ui card" data-skill-mandatory=<%= education.skill_mandatory1 %>>
+                <% mand_skills = [ education.skill_mandatory1, education.skill_mandatory2, education.skill_mandatory3 ] %>
+
+                <% for skill in mand_skills do %>
+
+                <div  class="ui card <%= 'career_skill' if skill == 'career' %>"
+                      data-skill-mandatory="<%= skill %>">
                   <div class="content">
                     <div class="ui centered header">
-                      <%= CharactersHelper.format_skill education.skill_mandatory1 %>
+                      <%= CharactersHelper.format_skill skill %>
                     </div>
                   </div>
                 </div>
 
-                <div class="ui card" data-skill-mandatory=<%= education.skill_mandatory2 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill education.skill_mandatory2 %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui card" data-skill-mandatory=<%= education.skill_mandatory3 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill education.skill_mandatory3 %>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
 
               </div>
 
@@ -97,29 +89,20 @@
 
               <div class="ui cards">
 
-                <a class="ui red card" data-skill-elective=<%= education.skill_elective1 %>>
+                <% ele_skills = [ education.skill_elective1, education.skill_elective2, education.skill_elective3 ] %>
+
+                <% for skill in ele_skills do %>
+
+                <a  class="ui red card <%= 'career_skill' if skill == 'career' %>"
+                    data-skill-elective="<%= skill %>">
                   <div class="content">
                     <div class="ui centered header">
-                      <%= CharactersHelper.format_skill education.skill_elective1 %>
+                      <%= CharactersHelper.format_skill skill %>
                     </div>
                   </div>
                 </a>
 
-                <a class="ui red card" data-skill-elective=<%= education.skill_elective2 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill education.skill_elective2 %>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="ui red card" data-skill-elective=<%= education.skill_elective3 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill  education.skill_elective3 %>
-                    </div>
-                  </div>
-                </a>
+                <% end %>
 
               </div>
             </div>

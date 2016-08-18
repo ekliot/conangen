@@ -3,11 +3,6 @@
 # @hl_seg           = document.getElementById( "create_hl" )
 # ========================
 
-sel_homeland =
-  name: ""
-  talent: ""
-  language: ""
-
 # make the only green card the one just selected
 @toggle_green = ( ele, hl_name ) ->
   cards = document.getElementsByClassName( "hl_card" )

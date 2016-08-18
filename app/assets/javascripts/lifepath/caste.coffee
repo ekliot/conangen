@@ -1,8 +1,6 @@
 $( window ).load ->
   @select_caste( document.getElementById( "caste::1" ) )
 
-sel_caste = ""
-
 @select_caste = ( ele ) ->
   sel_caste  = ele.getAttribute( "data-caste-name" )
   sel_caste_story = ""

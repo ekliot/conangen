@@ -10,24 +10,6 @@ attr_changes =
   dec: [ "", "" ]
   inc: [ "", "" ]
 
-attrs =
-  agility: 7
-  awareness: 7
-  brawn: 7
-  coordination: 7
-  intelligence: 7
-  personality: 7
-  willpower: 7
-
-bonus =
-  agility: 0
-  awareness: 0
-  brawn: 0
-  coordination: 0
-  intelligence: 0
-  personality: 0
-  willpower: 0
-
 aspect1 =
   name:   ""
   mand1:  ""
@@ -41,12 +23,6 @@ aspect2 =
   mand2:  ""
   opt1:   ""
   opt2:   ""
-
-sel_best = ""
-sel_worst = ""
-
-sel_opt1 = ""
-sel_opt2 = ""
 
 # HELPER METHODS
 # ==============
