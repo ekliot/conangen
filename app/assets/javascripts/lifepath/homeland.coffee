@@ -26,11 +26,11 @@
   else
     hl_lang = lang_ele.options[lang_ele.selectedIndex].value
 
-  sel_homeland.name      = hl_name
-  sel_homeland.talent    = ele.getAttribute( "data-hl-talent" )
-  sel_homeland.language  = hl_lang
+  @sel_homeland.name      = hl_name
+  @sel_homeland.talent    = ele.getAttribute( "data-hl-talent" )
+  @sel_homeland.language  = hl_lang
 
-  console.log "homeland #{hl_name} selected with language #{hl_lang} and talent #{sel_homeland.talent}"
+  console.log "HOMELAND #{@sel_homeland.name} selected with language #{@sel_homeland.language} and talent #{@sel_homeland.talent}"
 
 # @confirm_homeland = () ->
 #   # fill in chosen homeland name

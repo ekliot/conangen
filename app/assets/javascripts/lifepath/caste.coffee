@@ -4,7 +4,7 @@ $( window ).load ->
 @select_caste = ( ele ) ->
   sel_caste  = ele.getAttribute( "data-caste-name" )
   sel_caste_story = ""
-  console.log "caste #{sel_caste} selected"
+  console.log "CASTE #{sel_caste} selected"
 
 # @confirm_caste = () ->
 #   # fill form input with caste name

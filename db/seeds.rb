@@ -1807,7 +1807,7 @@ educations = [
     skill_mandatory1: "animal_handling",  skill_mandatory2: "craft",  skill_mandatory3: "career",
     skill_elective1: "melee",             skill_elective2: "parry",   skill_elective3: "random_career",
     description: "Yours was an unremarkable education, perhaps thankfully. You were either trained in the family trade, apprenticed to a (mostly) benevolent master, or tutored without overmuch drama. As such, your education was well-rounded, if not the most inspired. Looking back, you feel blessed.",
-    equipment: "A heavy cape (Armor 1: Torso/Legs);Crafting tools;A melee weapon of choice"
+    equipment: "A heavy cape (Armor 1: Torso/Legs) OR Crafting tools OR A melee weapon of choice"
   },
 
   { name: "Under Duress",

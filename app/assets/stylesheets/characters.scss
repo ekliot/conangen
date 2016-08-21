@@ -5,11 +5,14 @@
 // =============
 // GENERAL
 
-#chargen-box {
+#chargen_box {
   overflow: auto;
   max-height: 700px;
 }
 
+#chargen_container {
+  min-width: 1200px;
+}
 
 .secondary.pointing.menu.tabs.creation {
   border-bottom: 0;
@@ -57,8 +60,8 @@ input[type=radio][name=homelands] {
   padding-bottom: 6 !important;
 }
 
-.aspect_menu_second {
-  margin-left: -1 !important;
+#aspect_menu_second {
+  padding-left: 0 !important;
 }
 
 .aspect_mand_attr {
@@ -80,11 +83,11 @@ input[type=radio][name=homelands] {
 }
 
 .vertical_th {
-  padding: 0 !important;
+  // padding: 0 !important;
 }
 
 .aspect_cell {
-  padding: 0;
+  padding: 0 !important;
 
   .selectable {
     cursor: pointer;

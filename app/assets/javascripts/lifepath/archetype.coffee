@@ -8,7 +8,7 @@ $( window ).load ->
   sel_archetype.opt_skill1    = ""
   sel_archetype.opt_skill2    = ""
 
-  console.log "career skills are now #{ sel_archetype.career_skill }"
+  console.log "CAREER skills are now #{ sel_archetype.career_skill }"
 
   career_skills = document.getElementsByClassName( "career_skill" )
 
@@ -16,7 +16,7 @@ $( window ).load ->
     skill_head = skill.getElementsByClassName( "header" )[0]
     skill_head.innerHTML = sel_archetype.career_skill
 
-  console.log "archetype #{sel_archetype.name} has been selected"
+  console.log "ARCHETYPE #{sel_archetype.name} has been selected"
 
 @select_arch_skill = ( ele ) ->
   skill = ele.getAttribute( "data-skill-elective" )

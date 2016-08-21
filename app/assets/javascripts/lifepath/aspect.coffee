@@ -44,28 +44,28 @@ aspect2 =
 
     switch attr
       when "agility"
-        attrs.agility += 1
-        counter.innerHTML = "#{attrs.agility}"
+        @attrs.agility += 1
+        counter.innerHTML = "#{@attrs.agility}"
       when "awareness"
-        attrs.awareness += 1
-        counter.innerHTML = "#{attrs.awareness}"
+        @attrs.awareness += 1
+        counter.innerHTML = "#{@attrs.awareness}"
       when "brawn"
-        attrs.brawn += 1
-        counter.innerHTML = "#{attrs.brawn}"
+        @attrs.brawn += 1
+        counter.innerHTML = "#{@attrs.brawn}"
       when "coordination"
-        attrs.coordination += 1
-        counter.innerHTML = "#{attrs.coordination}"
+        @attrs.coordination += 1
+        counter.innerHTML = "#{@attrs.coordination}"
       when "intelligence"
-        attrs.intelligence += 1
-        counter.innerHTML = "#{attrs.intelligence}"
+        @attrs.intelligence += 1
+        counter.innerHTML = "#{@attrs.intelligence}"
       when "personality"
-        attrs.personality += 1
-        counter.innerHTML = "#{attrs.personality}"
+        @attrs.personality += 1
+        counter.innerHTML = "#{@attrs.personality}"
       when "willpower"
-        attrs.willpower += 1
-        counter.innerHTML = "#{attrs.willpower}"
+        @attrs.willpower += 1
+        counter.innerHTML = "#{@attrs.willpower}"
 
-    console.log "attribute #{attr} incremented"
+    console.log "ASPECTS::increment_attr(#{attr}) => #{attr} incremented"
 
     if attr_inc_cnt == attr_dec_cnt
       for btn in document.getElementsByClassName( "attr_inc_btn" )
@@ -84,6 +84,8 @@ aspect2 =
           btn.className = btn.className.replace " disabled", ""
 
     set_total( attr )
+  else
+    console.log "ASPECTS::increment_attr(#{attr}) => attribute #{attr} cannot be incremented"
 
 @decrement_attr = ( attr ) ->
   pass = true
@@ -105,28 +107,28 @@ aspect2 =
 
     switch attr
       when "agility"
-        attrs.agility -= 1
-        counter.innerHTML = "#{attrs.agility}"
+        @attrs.agility -= 1
+        counter.innerHTML = "#{@attrs.agility}"
       when "awareness"
-        attrs.awareness -= 1
-        counter.innerHTML = "#{attrs.awareness}"
+        @attrs.awareness -= 1
+        counter.innerHTML = "#{@attrs.awareness}"
       when "brawn"
-        attrs.brawn -= 1
-        counter.innerHTML = "#{attrs.brawn}"
+        @attrs.brawn -= 1
+        counter.innerHTML = "#{@attrs.brawn}"
       when "coordination"
-        attrs.coordination -= 1
-        counter.innerHTML = "#{attrs.coordination}"
+        @attrs.coordination -= 1
+        counter.innerHTML = "#{@attrs.coordination}"
       when "intelligence"
-        attrs.intelligence -= 1
-        counter.innerHTML = "#{attrs.intelligence}"
+        @attrs.intelligence -= 1
+        counter.innerHTML = "#{@attrs.intelligence}"
       when "personality"
-        attrs.personality -= 1
-        counter.innerHTML = "#{attrs.personality}"
+        @attrs.personality -= 1
+        counter.innerHTML = "#{@attrs.personality}"
       when "willpower"
-        attrs.willpower -= 1
-        counter.innerHTML = "#{attrs.willpower}"
+        @attrs.willpower -= 1
+        counter.innerHTML = "#{@attrs.willpower}"
 
-    console.log "attribute #{attr} decremented"
+    console.log "ASPECTS::decrement_attr(#{attr}) => attribute #{attr} decremented"
 
     if attr_dec_cnt == 2
       for btn in document.getElementsByClassName( "attr_dec_btn" )
@@ -138,15 +140,33 @@ aspect2 =
           if btn.className.indexOf( "disabled" ) == -1 then btn.className += " disabled"
 
     set_total( attr )
+  else
+    console.log "ASPECTS::decrement_attr(#{attr}) => attribute #{attr} cannot be decremented"
 
+# hide or unhide the ancient bloodline talent notification box
+notify_ancient = () ->
+  tots = [
+    @total_attrs.agility, @total_attrs.awareness, @total_attrs.brawn,
+    @total_attrs.coordination, @total_attrs.intelligence,
+    @total_attrs.personality, @total_attrs.willpower
+  ]
 
-notify_ancestral = () ->
-  # beep
+  show = false
+  for val in tots
+    if val > 12
+      show = true
+      break
 
-clear_ancestral = () ->
-  # boop
+  if show then display = "block" else display = "none"
+
+  document.getElementById( "aspects_ancient_message" ).style.display = display
+
+  @ancient_bloodline = show
 
 # check if the given attribute is in both of the selected aspects
+# args =>
+#   attr => string => which attribute to check
+#   sec  => string => which attribute category, "mand" or "opt"
 check_dupe = ( attr, sec ) ->
   if sec == "mand"
     asp1_check = aspect1.mand1 == attr or aspect1.mand2 == attr
@@ -156,14 +176,27 @@ check_dupe = ( attr, sec ) ->
     asp2_check = aspect2.opt1 == attr or aspect2.opt2 == attr
   return ( asp1_check and asp2_check )
 
+# wipes all attribute bonuses
+clear_bonus = () ->
+  document.getElementById( "attr_agi_tot" ).innerHTML = "0"
+  document.getElementById( "attr_awa_tot" ).innerHTML = "0"
+  document.getElementById( "attr_bra_tot" ).innerHTML = "0"
+  document.getElementById( "attr_coo_tot" ).innerHTML = "0"
+  document.getElementById( "attr_int_tot" ).innerHTML = "0"
+  document.getElementById( "attr_per_tot" ).innerHTML = "0"
+  document.getElementById( "attr_wil_tot" ).innerHTML = "0"
+
+  @bonus.agility = 0
+  @bonus.awareness = 0
+  @bonus.brawn = 0
+  @bonus.coordination = 0
+  @bonus.intelligence = 0
+  @bonus.personality = 0
+  @bonus.willpower = 0
+
+# reset all the bonuses back to default for currently selected attributes
 reset_bonus = () ->
-  mod_bonus( -(bonus.agility), "agility" )
-  mod_bonus( -(bonus.awareness), "awareness" )
-  mod_bonus( -(bonus.brawn), "brawn" )
-  mod_bonus( -(bonus.coordination), "coordination" )
-  mod_bonus( -(bonus.intelligence), "intelligence" )
-  mod_bonus( -(bonus.personality), "personality" )
-  mod_bonus( -(bonus.willpower), "willpower" )
+  clear_bonus()
 
   mod_bonus( 2, aspect1.mand1 )
   mod_bonus( 2, aspect1.mand2 )
@@ -174,39 +207,62 @@ set_total = ( attr ) ->
   ele = document.getElementById( "attr_#{ attr[0..2] }_tot" )
 
   switch attr
-    when "agility"      then ele.innerHTML = "#{attrs.agility + bonus.agility}"
-    when "awareness"    then ele.innerHTML = "#{attrs.awareness + bonus.awareness}"
-    when "brawn"        then ele.innerHTML = "#{attrs.brawn + bonus.brawn}"
-    when "coordination" then ele.innerHTML = "#{attrs.coordination + bonus.coordination}"
-    when "intelligence" then ele.innerHTML = "#{attrs.intelligence + bonus.intelligence}"
-    when "personality"  then ele.innerHTML = "#{attrs.personality + bonus.personality}"
-    when "willpower"    then ele.innerHTML = "#{attrs.willpower + bonus.willpower}"
+    when "agility"
+      tot = @attrs.agility + @bonus.agility
+      ele.innerHTML = "#{tot}"
+      @total_attrs.agility = tot
+    when "awareness"
+      tot = @attrs.awareness + @bonus.awareness
+      ele.innerHTML = "#{tot}"
+      @total_attrs.awareness = tot
+    when "brawn"
+      tot = @attrs.brawn + @bonus.brawn
+      ele.innerHTML = "#{tot}"
+      @total_attrs.brawn = tot
+    when "coordination"
+      tot = @attrs.coordination + @bonus.coordination
+      ele.innerHTML = "#{tot}"
+      @total_attrs.coordination = tot
+    when "intelligence"
+      tot = @attrs.intelligence + @bonus.intelligence
+      ele.innerHTML = "#{tot}"
+      @total_attrs.intelligence = tot
+    when "personality"
+      tot = @attrs.personality + @bonus.personality
+      ele.innerHTML = "#{tot}"
+      @total_attrs.personality = tot
+    when "willpower"
+      tot = @attrs.willpower + @bonus.willpower
+      ele.innerHTML = "#{tot}"
+      @total_attrs.willpower = tot
+
+  notify_ancient()
 
 mod_bonus = ( amt, attr ) ->
   ele = document.getElementById( "attr_#{ attr[0..2] }_bon" )
 
   switch attr
     when "agility"
-      bonus.agility += amt
-      ele.innerHTML = "+#{bonus.agility}"
+      @bonus.agility += amt
+      ele.innerHTML = "+#{@bonus.agility}"
     when "awareness"
-      bonus.awareness += amt
-      ele.innerHTML = "+#{bonus.awareness}"
+      @bonus.awareness += amt
+      ele.innerHTML = "+#{@bonus.awareness}"
     when "brawn"
-      bonus.brawn += amt
-      ele.innerHTML = "+#{bonus.brawn}"
+      @bonus.brawn += amt
+      ele.innerHTML = "+#{@bonus.brawn}"
     when "coordination"
-      bonus.coordination += amt
-      ele.innerHTML = "+#{bonus.coordination}"
+      @bonus.coordination += amt
+      ele.innerHTML = "+#{@bonus.coordination}"
     when "intelligence"
-      bonus.intelligence += amt
-      ele.innerHTML = "+#{bonus.intelligence}"
+      @bonus.intelligence += amt
+      ele.innerHTML = "+#{@bonus.intelligence}"
     when "personality"
-      bonus.personality += amt
-      ele.innerHTML = "+#{bonus.personality}"
+      @bonus.personality += amt
+      ele.innerHTML = "+#{@bonus.personality}"
     when "willpower"
-      bonus.willpower += amt
-      ele.innerHTML = "+#{bonus.willpower}"
+      @bonus.willpower += amt
+      ele.innerHTML = "+#{@bonus.willpower}"
 
   set_total( attr )
 
@@ -225,7 +281,6 @@ select_cell = ( ele ) ->
 # deselect the cell, but keep it available
 # this is functionally the same as available_cell(), but is semantically nicer
 deselect_cell = ( ele ) ->
-  console.log "deselecting #{ele.id}"
   available_cell( ele )
 
 # make the cell available for selection
@@ -238,10 +293,10 @@ clear_all_cells = () ->
   for cell in document.getElementsByClassName( "aspect_cell" )
     if cell.className.indexOf( "selectable" ) != -1 then clear_cell( cell )
 
-  sel_best = ""
-  sel_worst = ""
-  sel_opt1 = ""
-  sel_opt2 = ""
+  @sel_best = ""
+  @sel_worst = ""
+  @sel_opt1 = ""
+  @sel_opt2 = ""
 
 fill_cells = () ->
   clear_all_cells()
@@ -287,7 +342,7 @@ fill_cells = () ->
     document.getElementById( "aspect1_opt1" ).innerHTML  = aspect1.opt1.toUpperCase()
     document.getElementById( "aspect1_opt2" ).innerHTML  = aspect1.opt2.toUpperCase()
 
-    console.log "first aspect #{aspect1.name} selected"
+    console.log "ASPECT first ...  #{aspect1.name} selected"
   else
     aspect2.name  = ele.getAttribute( "data-aspect-name" )
     aspect2.mand1 = ele.getAttribute( "data-mand1" )
@@ -301,7 +356,7 @@ fill_cells = () ->
     document.getElementById( "aspect2_opt1" ).innerHTML  = aspect2.opt1.toUpperCase()
     document.getElementById( "aspect2_opt2" ).innerHTML  = aspect2.opt2.toUpperCase()
 
-    console.log "second aspect #{aspect2.name} selected"
+    console.log "ASPECT second ...  #{aspect2.name} selected"
 
   fill_cells()
 
@@ -312,18 +367,18 @@ fill_cells = () ->
     return
 
   # deselect the selected worst attr, if this attr isn't in both aspects
-  if !check_dupe( attr, "mand" ) and sel_worst == attr
+  if !check_dupe( attr, "mand" ) and @sel_worst == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_worst" ) )
     # previous worst becomes not-worst/best (+2 bonus)
-    mod_bonus( -1 + 2, sel_worst )
-    sel_worst = ""
+    mod_bonus( -1 + 2, @sel_worst )
+    @sel_worst = ""
 
-  if sel_best != ""
-    deselect_cell( document.getElementById( "aspect_#{ sel_best[0..2] }_best" ) )
+  if @sel_best != ""
+    deselect_cell( document.getElementById( "aspect_#{ @sel_best[0..2] }_best" ) )
     # previous best becomes not-best/worst (+2 bonus)
-    mod_bonus( -3 + 2, sel_best )
+    mod_bonus( -3 + 2, @sel_best )
 
-  sel_best = attr
+  @sel_best = attr
   select_cell( ele )
   # attr becomes best from not-best/worst (+3 bonus)
   mod_bonus( -2 + 3, attr )
@@ -337,18 +392,18 @@ fill_cells = () ->
     return
 
   # deselect the selected best attr, if this attr isn't in both aspects
-  if !check_dupe( attr, "mand" ) and sel_best == attr
+  if !check_dupe( attr, "mand" ) and @sel_best == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_best" ) )
     # previous best becomes not-worst/best (+2 bonus)
-    mod_bonus( -3 + 2, sel_best )
-    sel_best = ""
+    mod_bonus( -3 + 2, @sel_best )
+    @sel_best = ""
 
-  if sel_worst != ""
-    deselect_cell( document.getElementById( "aspect_#{ sel_worst[0..2] }_worst" ) )
+  if @sel_worst != ""
+    deselect_cell( document.getElementById( "aspect_#{ @sel_worst[0..2] }_worst" ) )
     # previous worst becomes not-best/worst (+2 bonus)
-    mod_bonus( -1 + 2, sel_worst )
+    mod_bonus( -1 + 2, @sel_worst )
 
-  sel_worst = attr
+  @sel_worst = attr
   select_cell( ele )
   # attr becomes worst from not-best/worst (+1 bonus)
   mod_bonus( -2 + 1, attr )
@@ -362,18 +417,18 @@ fill_cells = () ->
     return
 
   # deselect the selected opt2 attr, if this attr isn't in both aspects
-  if !check_dupe( attr, "opt" ) and sel_opt2 == attr
+  if !check_dupe( attr, "opt" ) and @sel_opt2 == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_opt2" ) )
     # previous opt2 becomes null (+0 bonus)
-    mod_bonus( -1 + 0, sel_opt2 )
-    sel_opt2 = ""
+    mod_bonus( -1 + 0, @sel_opt2 )
+    @sel_opt2 = ""
 
-  if sel_opt1 != ""
-    deselect_cell( document.getElementById( "aspect_#{ sel_opt1[0..2] }_opt1" ) )
+  if @sel_opt1 != ""
+    deselect_cell( document.getElementById( "aspect_#{ @sel_opt1[0..2] }_opt1" ) )
     # previous opt1 becomes null (+0 bonus)
-    mod_bonus( -1 + 0, sel_opt1 )
+    mod_bonus( -1 + 0, @sel_opt1 )
 
-  sel_opt1 = attr
+  @sel_opt1 = attr
   select_cell( ele )
   # attr becomes selected opt1 from null (+1 bonus)
   mod_bonus( -0 + 1, attr )
@@ -387,18 +442,18 @@ fill_cells = () ->
     return
 
   # deselect the selected opt2 attr, if this attr isn't in both aspects
-  if !check_dupe( attr, "opt" ) and sel_opt2 == attr
+  if !check_dupe( attr, "opt" ) and @sel_opt2 == attr
     deselect_cell( document.getElementById( "aspect_#{ attr[0..2] }_opt1" ) )
     # previous opt1 becomes null (+0 bonus)
-    mod_bonus( -1 + 0, sel_opt1 )
-    sel_opt1 = ""
+    mod_bonus( -1 + 0, @sel_opt1 )
+    @sel_opt1 = ""
 
-  if sel_opt2 != ""
-    deselect_cell( document.getElementById( "aspect_#{ sel_opt2[0..2] }_opt2" ) )
+  if @sel_opt2 != ""
+    deselect_cell( document.getElementById( "aspect_#{ @sel_opt2[0..2] }_opt2" ) )
     # previous opt2 becomes null (+0 bonus)
-    mod_bonus( -1 + 0, sel_opt2 )
+    mod_bonus( -1 + 0, @sel_opt2 )
 
-  sel_opt2 = attr
+  @sel_opt2 = attr
   select_cell( ele )
   # attr becomes selected opt2 from null (+1 bonus)
   mod_bonus( -0 + 1, attr )

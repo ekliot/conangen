@@ -94,7 +94,7 @@
                 <% for skill in ele_skills do %>
 
                 <a  class="ui red card <%= 'career_skill' if skill == 'career' %>"
-                    data-skill-elective="<%= skill %>">
+                    data-skill-elective="<%= skill %>" onclick="select_edu_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
                       <%= CharactersHelper.format_skill skill %>

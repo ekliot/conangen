@@ -54,31 +54,21 @@
                 <div class="ui sub header">+1 expertise and focus to each listed skill</div>
               </h3>
 
+              <% mand_skills = [ nature.skill_mandatory1, nature.skill_mandatory2, nature.skill_mandatory3 ] %>
+
               <div class="ui green cards">
 
-                <div class="ui card" data-skill-mandatory=<%= nature.skill_mandatory1 %>>
+                <% for skill in mand_skills do %>
+
+                <div  class="ui card" data-skill-mandatory="<%= skill %>">
                   <div class="content">
                     <div class="ui centered header">
-                      <%= CharactersHelper.format_skill nature.skill_mandatory1 %>
+                      <%= CharactersHelper.format_skill skill %>
                     </div>
                   </div>
                 </div>
 
-                <div class="ui card" data-skill-mandatory=<%= nature.skill_mandatory2 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill nature.skill_mandatory2 %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui card" data-skill-mandatory=<%= nature.skill_mandatory3 %>>
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill nature.skill_mandatory3 %>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
 
               </div>
 
@@ -94,32 +84,20 @@
 
               <div class="ui cards">
 
-                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective1 %>"
-                    onclick="select_nat_skill( this )">
+                <% ele_skills = [ nature.skill_elective1, nature.skill_elective2, nature.skill_elective3 ] %>
+
+                <% for skill in ele_skills do %>
+
+                <a  class="ui red card" data-skill-elective="<%= skill %>"
+                    onclick="select_edu_skill( this )">
                   <div class="content">
                     <div class="ui centered header">
-                      <%= CharactersHelper.format_skill nature.skill_elective1 %>
+                      <%= CharactersHelper.format_skill skill %>
                     </div>
                   </div>
                 </a>
 
-                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective2 %>"
-                    onclick="select_nat_skill( this )">
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill nature.skill_elective2 %>
-                    </div>
-                  </div>
-                </a>
-
-                <a  class="ui red card" data-skill-elective="<%= nature.skill_elective3 %>"
-                    onclick="select_nat_skill( this )">
-                  <div class="content">
-                    <div class="ui centered header">
-                      <%= CharactersHelper.format_skill  nature.skill_elective3 %>
-                    </div>
-                  </div>
-                </a>
+                <% end %>
 
               </div>
             </div>

@@ -6,7 +6,7 @@ $( window ).load ->
   sel_nature.talent = ""
   sel_nature.opt_skill1 = ""
   sel_nature.opt_skill1 = ""
-  console.log "nature #{sel_nature.name} has been selected"
+  console.log "NATURE #{sel_nature.name} has been selected"
 
 @select_nat_skill = ( ele ) ->
   skill = ele.getAttribute( "data-skill-elective" )
@@ -17,7 +17,7 @@ $( window ).load ->
       sel_nature.opt_skill1 = sel_nature.opt_skill2
     sel_nature.opt_skill2 = ""
     ele.className  = ele.className.replace "green", "red"
-    console.log "skill #{skill} for nature has been unselected"
+    console.log "NATURE skill #{skill} has been unselected"
 
   # otherwise...
   else
@@ -28,6 +28,6 @@ $( window ).load ->
       sel_nature.opt_skill2 = skill
       ele.className = ele.className.replace "red", "green"
     else
-      console.log "skill #{skill} for nature cannot be selected"
+      console.log "NATURE skill #{skill} cannot be selected"
       return
-    console.log "skill #{skill} for nature has been selected"
+    console.log "NATURE skill #{skill} has been selected"
