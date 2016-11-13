@@ -1,4 +1,4 @@
-class CreateEquipmentWeapons < ActiveRecord::Migration
+class CreateEquipmentWeapons < ActiveRecord::Migration[5.0]
   def change
     create_table :equipment_weapons do |t|
       t.string :name

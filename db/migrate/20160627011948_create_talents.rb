@@ -1,13 +1,17 @@
-class CreateTalents < ActiveRecord::Migration
+class CreateTalents < ActiveRecord::Migration[5.0]
   def change
     create_table :talents do |t|
-      t.string :name
-      t.string :skill
+      # fields
+      t.string  :name
+      t.string  :skill
       t.integer :max_ranks, default: 1
-      t.text :description
+      t.text    :description, null: true
 
+      # serialize
       t.text :pre_skills
       t.text :pre_talents
+
+      t.references :sourcebook
     end
 
     add_index :talents, :name

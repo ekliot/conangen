@@ -5,8 +5,8 @@ class Character < ApplicationRecord
 
   belongs_to :user
 
-  has_one :lifepath, dependent: :destroy
-  has_one :talent_set, dependent: :destroy, validate: true
+  has_one :lifepath, dependent: :destroy, inverse_of: :lifepath
+  has_one :talent_set, dependent: :destroy, validate: true, inverse_of: :talent_set
 
   # =============
   # SERIALIZATION
@@ -25,8 +25,8 @@ class Character < ApplicationRecord
     NewCharValidator.new( character ).validate
   end
 
-  validates :name, presence: true, format: {  with: /\A[a-zA-Z\-]+\z/,
-                                              message: "only allows letters and hyphens" }
+  validates :name, presence: true, format: {  with: /\A[a-zA-Z\-']+\z/,
+                                              message: "only allows letters, apostrephes, and hyphens" }
   validates :trait, presence: true
   validates :age, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :standing, presence: true

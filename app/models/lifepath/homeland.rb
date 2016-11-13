@@ -1,10 +1,8 @@
 class Lifepath::Homeland < ApplicationRecord
-  belongs_to :talent
 
-  def parse_languages
-    self.language.split( ";" )
-  end
+  belongs_to :talent
+  belongs_to :sourcebook
+
+  serialize :languages, Array
 
 end
-
-# PARSE LANGUAGE OPTION (Border Kingdoms, Black Kingdoms, etc.)

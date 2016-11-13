@@ -1,11 +1,9 @@
-class CreateTalentSets < ActiveRecord::Migration
+class CreateTalentSets < ActiveRecord::Migration[5.0]
   def change
     create_table :talent_sets do |t|
-      t.references :character
+      t.belongs_to :character, index: true
 
       t.timestamps null: false
     end
-
-    add_index :talent_sets, [:character_id]
   end
 end
