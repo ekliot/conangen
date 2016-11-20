@@ -8,15 +8,16 @@ Rails.application.routes.draw do
   root                      "application#home"
   get     'about'       =>  'application#about'
 
-  get     'new'         =>  'characters#new'         # choose b/w random and manual generation
-  get     'create'      =>  'characters#create'      # manually create a new character
-  post    'create'      =>  'characters#create'      # save a manual character
-  get     'random'      =>  'characters#random'      # roll a random character
-  get     'chars'       =>  'characters#index'
-  get     'view/:id'    =>  'characters#view'
-  get     'edit/:id'    =>  'characters#edit'
-  get     'delete/:id'  =>  'characters#delete'
-  get     'export/:id'  =>  'characters#export'
+  resources :characters, as: 'chars' do
+    get 'lifepath', :on => :new
+    get 'random', :on => :new
+  end
+
+  get 'characters/export/:id', to: 'characters#export', as: 'export_char'
+
+  # constraints( id: MATCH? ID-HASH ) do
+  #   resources :characters
+  # end
 
   get     'login'       =>  'users#login'
   get     'signup'      =>  'users#new'
