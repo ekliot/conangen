@@ -4,8 +4,8 @@ module CharactersHelper
     :acrobatics,  :alchemy, :animal_handling, :athletics,   :command,
     :counsel,     :craft,   :discipline,      :healing,     :insight,
     :linguistics, :lore,    :melee,           :observation, :parry,
-    :persuade,    :ranged,  :resistance,      :sailing,     :siegecraft,
-    :society,     :sorcery, :stealth,         :survival,    :thievery
+    :persuade,    :ranged,  :resistance,      :sailing,     :society,
+    :sorcery,     :stealth, :survival,        :thievery,    :warfare
   ]
 
   @@career_skills = [
@@ -17,7 +17,7 @@ module CharactersHelper
     @@skills
   end
 
-  def career_skills
+  def self.career_skills
     @@skills
   end
 
