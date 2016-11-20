@@ -5,48 +5,60 @@
 // =============
 // GENERAL
 
-#chargen_box {
-  overflow: auto;
-  max-height: 700px;
+#ChargenLifepath {
+  padding-top: 20px;
 }
 
-#chargen_container {
-  min-width: 1200px;
+.lifepath-accordion.title {
+  padding: 0 5%;
 }
 
-.secondary.pointing.menu.tabs.creation {
-  border-bottom: 0;
-  padding: 0 10% !important;
-}
+// #chargen_box {
+//   overflow: auto;
+//   max-height: 700px;
+// }
 
-.active.tab.creation {
-  border: 0 !important;
-}
+// #chargen_container {
+//   min-width: 1200px;
+// }
 
-.tab.creation {
-  font-size: 400%;
-  padding: .1em !important;
-}
+// .secondary.pointing.menu.tabs.creation {
+//   border-bottom: 0;
+//   padding: 0 10% !important;
+// }
 
-.char_create_seg {
-  width: 100%;
-}
+// .active.tab.creation {
+//   border: 0 !important;
+// }
+
+// .tab.creation {
+//   font-size: 400%;
+//   padding: .1em !important;
+// }
+
+// .char_create_seg {
+//   width: 100%;
+// }
 
 // =============
 // HOMELAND
 
-.hl_card_details {
-  padding: 0 !important;
+#ChargenHomelandDropdown {
+  min-width: 24em;
 }
 
-.hl_radio_label {
-  padding: 0 1em 0;
-}
+// .hl_card_details {
+//   padding: 0 !important;
+// }
 
-input[type=radio][name=homelands] {
-  visibility: hidden;
-  display: none;
-}
+// .hl_radio_label {
+//   padding: 0 1em 0;
+// }
+
+// input[type=radio][name=homelands] {
+//   visibility: hidden;
+//   display: none;
+// }
 
 // input[type=radio]:checked + a.hl_card {
 //   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
@@ -55,53 +67,53 @@ input[type=radio][name=homelands] {
 // =============
 // ASPECTS
 
-.ui.centered.dividing.header.aspect {
-  padding-top: 3 !important;
-  padding-bottom: 6 !important;
-}
+// .ui.centered.dividing.header.aspect {
+//   padding-top: 3 !important;
+//   padding-bottom: 6 !important;
+// }
 
-#aspect_menu_second {
-  padding-left: 0 !important;
-}
+// #aspect_menu_second {
+//   padding-left: 0 !important;
+// }
 
-.aspect_mand_attr {
-  padding-left: 1em;
-}
+// .aspect_mand_attr {
+//   padding-left: 1em;
+// }
 
-.aspect_opt_attr {
-  padding-left: 1em; // this doesn't work for some reason?
-}
+// .aspect_opt_attr {
+//   padding-left: 1em; // this doesn't work for some reason?
+// }
 
-.attr_start_counter {
-  // padding: .5em !important;
-  // margin: 0 !important;
-}
+// .attr_start_counter {
+//   // padding: .5em !important;
+//   // margin: 0 !important;
+// }
 
-.aspect_mand_attr, .aspect_opt_attr {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+// .aspect_mand_attr, .aspect_opt_attr {
+//   padding-left: 0 !important;
+//   padding-right: 0 !important;
+// }
 
-.vertical_th {
-  // padding: 0 !important;
-}
+// .vertical_th {
+//   // padding: 0 !important;
+// }
 
-.aspect_cell {
-  padding: 0 !important;
+// .aspect_cell {
+//   padding: 0 !important;
+//
+//   .selectable {
+//     cursor: pointer;
+//   }
+// }
 
-  .selectable {
-    cursor: pointer;
-  }
-}
+// .attr_inc_btn, .attr_dec_btn {
+//   width: 100%;
+// }
 
-.attr_inc_btn, .attr_dec_btn {
-  width: 100%;
-}
-
-.attr_start_counter {
-  width: 100%;
-  margin: 0 !important;
-}
+// .attr_start_counter {
+//   width: 100%;
+//   margin: 0 !important;
+// }
 
 // IT WOULD BE REALLY GOOD IF THE ATTRIBUTE SELECTION TABLE COULD GET VERTICAL HEADERS
 // BUT IT'S IMPOSSIBLE FOR SOME REASON AAAHHHHHH
@@ -110,12 +122,12 @@ input[type=radio][name=homelands] {
 // =============
 // CASTE
 
-.caste_card{
-  text-align: left;
-}
-.caste_menu{
-  height: 100%;
-}
+// .caste_card{
+//   text-align: left;
+// }
+// .caste_menu{
+//   height: 100%;
+// }
 
 // =============
 

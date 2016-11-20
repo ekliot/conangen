@@ -22,15 +22,23 @@
   box-sizing:         border-box;
 }
 
-.select.ui.dropdown{
-  padding: inherit !important;
-  height: inherit !important;
+#MainContainer {
+  padding-top: 5%;
 }
 
-#main-menu-items {
-  padding-left: 30%;
-  padding-right: 30%
+#MainFooter {
+  margin-top: 10%;
 }
+
+// .select.ui.dropdown{
+//   padding: inherit !important;
+//   height: inherit !important;
+// }
+
+// #main-menu-items {
+//   padding-left: 30%;
+//   padding-right: 30%
+// }
 
 // #main-container {
 //   display: -webkit-flex; /* for Safari & Chrome */
