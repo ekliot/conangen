@@ -5,86 +5,52 @@
 // =============
 // GENERAL
 
+// the element containing the accordion
 #ChargenLifepath {
   padding-top: 20px;
 }
 
+// the titles for each accordion chunk
 .lifepath_accordion.title {
   padding: 0 5%;
 }
 
-// #chargen_box {
-//   overflow: auto;
-//   max-height: 700px;
-// }
-
-// #chargen_container {
-//   min-width: 1200px;
-// }
-
-// .secondary.pointing.menu.tabs.creation {
-//   border-bottom: 0;
-//   padding: 0 10% !important;
-// }
-
-// .active.tab.creation {
-//   border: 0 !important;
-// }
-
-// .tab.creation {
-//   font-size: 400%;
-//   padding: .1em !important;
-// }
-
-// .char_create_seg {
-//   width: 100%;
-// }
-
 // =============
 // HOMELAND
 
+//
 #ChargenHomelandDropdown {
   width: 50%;
 }
 
-// .hl_card_details {
-//   padding: 0 !important;
-// }
-
-// .hl_radio_label {
-//   padding: 0 1em 0;
-// }
-
-// input[type=radio][name=homelands] {
-//   visibility: hidden;
-//   display: none;
-// }
-
-// input[type=radio]:checked + a.hl_card {
-//   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
-// }
-
 // =============
 // ASPECTS
 
+// the aspect dropdown button
 #ChargenAspectSelectionRow.dropdown.button {
   width: 50%;
 }
 
+// "Select your X aspect:" headers
 #ChargenAspectSelectionRow .header {
-  margin-right: 0.3em;
+  margin-right: 0.3em; // we want a little spacing b/w the span and dropdown
 }
 
-.aspect_initial_attr button {
-  padding: 0.3em !important;
-}
-
+// the attributes in the selected-aspect display
 .aspect_mand_attr, .aspect_opt_attr {
-  padding: 0 !important;
+  padding: 0 !important; // get rid of unnecessary spacing
+  // font-size: 1.3em; // we want the text to be reasonably sized
 }
 
-#ChargenAspectDisplay .segment {
-  // font-size: 1.3em;
+// the counters for starting attributes
+.aspect_initial_attr .attr_counter {
+  padding: 0.3em 0.75em; // resizes the segment so the whole counter (buttons included) isn't too big
+  margin: 0;
+}
+
+// the +/- buttons for starting attributes
+.aspect_initial_attr button {
+  padding: 0.3em !important; // resizes the buttons to not be shit
 }
 
 // .ui.centered.dividing.header.aspect {

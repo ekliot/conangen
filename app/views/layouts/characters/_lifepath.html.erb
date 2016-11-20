@@ -16,25 +16,25 @@
             <a class="right floated item">Preview Character</a>
         </div>
     </div>
+    <!-- <div id="ChargenPreview" class="ui top inline sidebar overlay"> -->
+      <!-- INFO -->
+        <%# <%= render "charPreivew" %>
+        <!-- http://semantic-ui.com/modules/sidebar.html#/examples
+            $('#charPreview')
+                .sidebar({
+                    context: $('.context.example .bottom.segment')
+                })
+                .sidebar('attach events', '#chargen .sticky.menu .item')
+            ;
+        -->
+        <!--
+            Prefacing the preview sheet:
+            "{NAME} the {NATURE} {ARCHETYPE}, of {HOMELAND}
+            Born under the stars of {ASPECT1} and {ASPECT2}, and educated {EDUCATION}
+            Once a {CASTE}, he/she {CASTE_STORY.ACTION}ed {CASTE_STORY}, becoming {TRAIT}"
+        -->
+    <!-- </div> -->
     <div id="ChargenLifepath">
-        <!-- <div id="ChargenPreview" class="ui top inline sidebar overlay"> -->
-          <!-- INFO -->
-            <%# <%= render "charPreivew" %>
-            <!-- http://semantic-ui.com/modules/sidebar.html#/examples
-                $('#charPreview')
-                    .sidebar({
-                        context: $('.context.example .bottom.segment')
-                    })
-                    .sidebar('attach events', '#chargen .sticky.menu .item')
-                ;
-            -->
-            <!--
-                Prefacing the preview sheet:
-                "{NAME} the {NATURE} {ARCHETYPE}, of {HOMELAND}
-                Born under the stars of {ASPECT1} and {ASPECT2}, and educated {EDUCATION}
-                Once a {CASTE}, he/she {CASTE_STORY.ACTION}ed {CASTE_STORY}, becoming {TRAIT}"
-            -->
-        <!-- </div> -->
         <div id="ChargenAccordion" class="ui fluid accordion">
             <!-- each accordian title has a "dice" and "lock" icon for rerolling -->
             <!-- <talent selection> looks like the following:

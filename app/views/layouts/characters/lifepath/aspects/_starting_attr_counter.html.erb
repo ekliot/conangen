@@ -8,15 +8,15 @@
 
         <div class="ui buttons">
 
-            <button class="ui icon red attr_decr button"   onclick="decrement_attr( <%= attr %> )">
+            <button class="ui icon red attr_dec button"   onclick="decrement_attr( <%= attr %> )">
                 <i class="ui minus icon"></i>
             </button>
 
-            <div class="ui basic segment" style="padding: 0.3em 0.75em; margin: 0">
+            <div class="ui basic attr_counter segment" style="padding: 0.3em 0.75em; margin: 0">
                 <%= init_attr %>
             </div>
 
-            <button class="ui icon green attr_incr button" onclick="increment_attr( <%= attr %> )">
+            <button class="ui icon green attr_inc button" onclick="increment_attr( <%= attr %> )">
                 <i class="ui plus icon"></i>
             </button>
 

@@ -32,7 +32,7 @@ class CharactersController < ApplicationController
       @educations     = Lifepath::Education.find_each
       @war_stories    = Lifepath::WarStory.find_each
 
-      render 'layouts/characters/_creation'
+      render 'layouts/characters/_lifepath'
     end
 
     def random
