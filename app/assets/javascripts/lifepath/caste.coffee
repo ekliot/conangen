@@ -3,8 +3,12 @@ $( window ).load ->
 
 @select_caste = ( ele ) ->
   sel_caste  = ele.getAttribute( "data-caste-name" )
-  sel_caste_story = ""
   console.log "CASTE #{sel_caste} selected"
+  caste_id = ele.getAttribute( "data-caste-id" )
+  first_story = document.getElementById( "castestory::#{caste_id}::1" )
+  console.log "castestory::#{caste_id}::1"
+  console.log first_story
+  @select_caste_story( document.getElementById( "castestory::#{caste_id}::1" ) )
 
 # @confirm_caste = () ->
 #   # fill form input with caste name

@@ -9,7 +9,7 @@
   padding-top: 20px;
 }
 
-.lifepath-accordion.title {
+.lifepath_accordion.title {
   padding: 0 5%;
 }
 
@@ -44,7 +44,7 @@
 // HOMELAND
 
 #ChargenHomelandDropdown {
-  min-width: 24em;
+  width: 50%;
 }
 
 // .hl_card_details {
@@ -66,6 +66,26 @@
 
 // =============
 // ASPECTS
+
+#ChargenAspectSelectionRow.dropdown.button {
+  width: 50%;
+}
+
+#ChargenAspectSelectionRow .header {
+  margin-right: 0.3em;
+}
+
+.aspect_initial_attr button {
+  padding: 0.3em !important;
+}
+
+.aspect_mand_attr, .aspect_opt_attr {
+  padding: 0 !important;
+}
+
+#ChargenAspectDisplay .segment {
+  // font-size: 1.3em;
+}
 
 // .ui.centered.dividing.header.aspect {
 //   padding-top: 3 !important;

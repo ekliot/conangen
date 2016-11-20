@@ -1,0 +1,38 @@
+<div class="ui stackable grid">
+
+    <div class="one column row">
+
+        <div class="column">
+            <div class="ui info message" id="aspects_ancient_message" style="display:none">
+                <div class="ui header">Ancestral Bloodline</div>
+                This is a message describing what the Ancestral Bloodline talent is, and why it is being added
+            </div>
+        </div>
+
+    </div>
+
+    <div class="two column top aligned row">
+
+        <div class="column">
+
+            <div class="ui header">
+                Starting attributes:
+            </div>
+
+            <% attributes = [ "agility", "awareness", "brawn", "coordination", "intelligence", "personality", "willpower" ] %>
+
+            <div class="ui internally celled grid">
+                <% attributes.each do |attr| %>
+                <%= render partial: "layouts/characters/lifepath/aspects/starting_attr_counter", locals: { attr: attr, init_attr: 7 } %> <!-- TODO: init_attr: @initial_attributes (from params) -->
+                <% end %>
+            </div>
+
+        </div>
+
+        <div class="column" style="overflow-x: scroll">
+            <%= render "layouts/characters/lifepath/aspects/attr_table" %>
+        </div>
+
+    </div>
+
+</div>

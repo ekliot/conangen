@@ -1,0 +1,26 @@
+<div class="ui two column middle aligned row">
+    <div class="ui right aligned column">
+        <span class="ui small header"><%= attr.titlecase %>:</span>
+    </div>
+
+
+    <div class="ui left aligned column aspect_initial_attr" id="AspectInitial_<%= attr[0..2] %>">
+
+        <div class="ui buttons">
+
+            <button class="ui icon red attr_decr button"   onclick="decrement_attr( <%= attr %> )">
+                <i class="ui minus icon"></i>
+            </button>
+
+            <div class="ui basic segment" style="padding: 0.3em 0.75em; margin: 0">
+                <%= init_attr %>
+            </div>
+
+            <button class="ui icon green attr_incr button" onclick="increment_attr( <%= attr %> )">
+                <i class="ui plus icon"></i>
+            </button>
+
+        </div>
+
+    </div>
+</div>

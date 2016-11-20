@@ -2,23 +2,35 @@ class CharactersController < ApplicationController
 
   # choose creation type, sources, and custom stuff
   def new
-    Rails.logger.debug { params }
+    Rails.logger.debug { params.inspect }
+
+    @sourcebooks = Sourcebook.find_each
 
     case params[:button]
+
     when 'lifepath'
       redirect_to lifepath_new_char_path
+
     when 'random'
-      redirect_to random_new_char_path
+      redirect_to   random_new_char_path
+
     end
   end
 
   # ===========
-  # new/:method
+  # characters/new/:method
 
     def lifepath
-      Rails.logger.debug { params }
+      Rails.logger.debug { params.inspect }
 
-      @homelands = Lifepath::Homeland.find_each
+      @homelands      = Lifepath::Homeland.find_each
+      @aspects        = Lifepath::Aspect.find_each
+      @castes         = Lifepath::Caste.find_each
+      @caste_stories  = Lifepath::CasteStory.find_each
+      @archetypes     = Lifepath::Archetype.find_each
+      @natures        = Lifepath::Nature.find_each
+      @educations     = Lifepath::Education.find_each
+      @war_stories    = Lifepath::WarStory.find_each
 
       render 'layouts/characters/_creation'
     end
