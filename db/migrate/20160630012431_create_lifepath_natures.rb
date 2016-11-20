@@ -3,7 +3,7 @@ class CreateLifepathNatures < ActiveRecord::Migration[5.0]
     create_table :lifepath_natures do |t|
       # fields
       t.string  :name
-      t.string  :attribute
+      t.string  :attr
       t.text    :description, null: true
 
       # serialize

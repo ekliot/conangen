@@ -5,7 +5,7 @@ class CreateLifepathAspects < ActiveRecord::Migration[5.0]
       t.string  :name
 
       # serialize
-      t.text    :attributes # as Hash { mandatory: [1, 2], optional: [1, 2] }
+      t.text    :attrs # as Hash { mandatory: [1, 2], optional: [1, 2] }
 
       # references
       t.belongs_to :sourcebook, index: true

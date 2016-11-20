@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113013941) do
+ActiveRecord::Schema.define(version: 20161114015357) do
+
+  create_table "character_skill_sets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string   "name",        default: ""
@@ -81,7 +86,7 @@ ActiveRecord::Schema.define(version: 20161113013941) do
 
   create_table "lifepath_aspects", force: :cascade do |t|
     t.string  "name"
-    t.text    "attributes"
+    t.text    "attrs"
     t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_aspects_on_name"
     t.index ["sourcebook_id"], name: "index_lifepath_aspects_on_sourcebook_id"
@@ -159,6 +164,10 @@ ActiveRecord::Schema.define(version: 20161113013941) do
   end
 
   create_table "lifepath_lifepaths", force: :cascade do |t|
+    t.integer "base_attr",    default: 7
+    t.integer "max_attr",     default: 14
+    t.integer "max_skill",    default: 5
+    t.text    "forbidden"
     t.integer "character_id"
     t.index ["character_id"], name: "index_lifepath_lifepaths_on_character_id"
   end
@@ -172,7 +181,7 @@ ActiveRecord::Schema.define(version: 20161113013941) do
 
   create_table "lifepath_natures", force: :cascade do |t|
     t.string  "name"
-    t.string  "attribute"
+    t.string  "attr"
     t.text    "description"
     t.text    "skills"
     t.integer "sourcebook_id"
@@ -214,6 +223,7 @@ ActiveRecord::Schema.define(version: 20161113013941) do
     t.text    "description"
     t.text    "pre_skills"
     t.text    "pre_talents"
+    t.text    "variants"
     t.integer "sourcebook_id"
     t.index ["name"], name: "index_talents_on_name"
     t.index ["skill"], name: "index_talents_on_skill"
