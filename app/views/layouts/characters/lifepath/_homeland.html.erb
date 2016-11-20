@@ -1,0 +1,61 @@
+<button id="ChargenAccordionHomelandTitle" class="ui lifepath-accordion title basic fluid labeled icon button">
+    <i class="ui fitted world icon"></i>
+    <span class="ui header">Homeland</span>
+
+  <!-- Homeland -->
+
+  <!-- somehow the following is floating right -->
+
+  <!-- <div class="ui basic icon right floated buttons">
+    <div class="ui compact button">
+      <i class="cube icon"></i>
+    </div>
+    <div class="ui compact button">
+      <i class="lock icon"></i>
+    </div>
+  </div> -->
+</button>
+
+<div id="ChargenAccordionHomelandContent" class="ui lifepath-accordion content">
+
+    <%# form_for ... %>
+
+    <div id="ChargenHomelandForm" class="ui form">
+        <div class="ui celled grid">
+
+            <div class="one column row">
+                <div class="ui center aligned column">
+                    <span class="ui header">Select a homeland:</span>
+                    <div id="ChargenHomelandDropdown" class="ui scrolling floating inline dropdown button">
+                        <input id="ChargenHomelandInput" name="selected_homeland" type="hidden">
+
+                        <div class="ui default text"></div>
+                        <div class="ui menu">
+                            <% @homelands.each do |home| %>
+                            <div class="ui item">
+                                <span class="ui description"><%= home.talent.name %>, <% home.languages[0] %></span>
+                                <span class="ui text"><%= home.name %></span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two column row">
+                <div id="ChargenHomelandTalent" class="ui center aligned column">
+                    <input id="ChargenHomelandInputTalent" name="selected_homeland_talent" type="hidden">
+                    <!-- something goes here for the talent name container -->
+                    <span class="ui header">Selected talent: </span>TALENT
+                </div>
+
+                <div id="ChargenHomelandLanguage" class="ui center aligned column">
+                    <input id="ChargenHomelandInputLanguage" name="selected_homeland_language" type="hidden">
+                    <!-- something goes here for the language container -->
+                    <span class="ui header">Selected language: </span>LANGUAGE
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

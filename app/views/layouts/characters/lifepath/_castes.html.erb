@@ -15,7 +15,8 @@
         <% castes.each do |caste| %>
           <a  class="ui item <%= if caste.id == 1 then "active " end %>tab caste_tab"
               data-tab="caste::<%=caste.id %>" data-caste-name="<%= caste.name %>"
-              id="caste::<%= caste.id %>" onclick="select_caste( this )">
+              data-caste-id="<%= caste.id %>" id="caste::<%= caste.id %>"
+              onclick="select_caste( this )">
             <%= caste.name %>
           </a>
         <% end %>
