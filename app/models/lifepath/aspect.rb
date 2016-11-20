@@ -2,6 +2,6 @@ class Lifepath::Aspect < ApplicationRecord
 
   belongs_to :sourcebook
 
-  serialize :attributes, Hash
+  serialize :attrs, Hash
 
 end
