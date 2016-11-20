@@ -17,3 +17,6 @@
 /tmp
 
 .ruby-version
+
+# ignore the generated docs
+/doc
