@@ -22,13 +22,13 @@
 
             <div class="ui internally celled grid">
                 <% attributes.each do |attr| %>
-                <%= render partial: "layouts/characters/lifepath/aspects/starting_attr_counter", locals: { attr: attr, init_attr: 7 } %> <!-- TODO: init_attr: @initial_attributes (from params) -->
+                <%= render partial: "layouts/characters/lifepath/aspect/starting_attr_counter", locals: { attr: attr, init_attr: 7 } %> <!-- TODO: init_attr: @initial_attributes (from params) -->
                 <% end %>
             </div>
         </div>
 
         <div class="column" style="overflow-x: scroll">
-            <%= render "layouts/characters/lifepath/aspects/attr_table" %>
+            <%= render "layouts/characters/lifepath/aspect/attr_table" %>
         </div>
 
     </div>

@@ -30,7 +30,7 @@
 
                     <div class="ui scrolling inline dropdown button">
                         <input name="selected_aspect1" type="hidden">
-                        <%= render "layouts/characters/lifepath/aspects/dropdown_contents" %>
+                        <%= render 'layouts/characters/lifepath/aspect/dropdown_contents' %>
                     </div>
                 </div>
 
@@ -41,20 +41,20 @@
 
                     <div class="ui scrolling inline dropdown button">
                         <input name="selected_aspect2" type="hidden">
-                        <%= render "layouts/characters/lifepath/aspects/dropdown_contents" %>
+                        <%= render 'layouts/characters/lifepath/aspect/dropdown_contents' %>
                     </div>
                 </div>
 
             </div>
 
             <div id="ChargenAspectDisplay" class="two column row">
-                <%= render partial: "layouts/characters/lifepath/aspects/display_aspect", locals: { number: 1 } %>
-                <%= render partial: "layouts/characters/lifepath/aspects/display_aspect", locals: { number: 2 } %>
+                <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 1 } %>
+                <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 2 } %>
             </div>
 
             <div id="ChargenAspectAttributes" class="one column row">
                 <div class="ui center aligned column">
-                    <%= render "layouts/characters/lifepath/aspects/attributes" %>
+                    <%= render 'layouts/characters/lifepath/aspect/attributes' %>
                 </div>
             </div>
 

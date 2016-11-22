@@ -1866,7 +1866,7 @@ caste_stories = {
       sourcebook_id: book_ids["Core"],
       description: "Whether by your own hand or the will of another, you were freed, alone in the world. You found others like yourself, and formed a band. Through scavenging, work, and even theft, you supported one another, hidden within a ruined building on the fringe of society. Then something brought it to an end. Who betrayed your band? What, or who, were the guards looking for? Why do your former friends mistrust you?" },
 
-    { name: "Hidden Far from Noble Site",
+    { name: "Hidden Far from Noble Sight",
       trait: "Fond Memories",
       caste_id: caste_ids["Escaped Serf/Slave"],
       sourcebook_id: book_ids["Core"],
