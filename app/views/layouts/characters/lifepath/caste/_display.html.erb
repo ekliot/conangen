@@ -1,0 +1,41 @@
+<div id="ChargenCasteDescription" class="ui center aligned column">
+    <div class="ui grid">
+
+        <div class="two column row">
+
+            <div class="right aligned column">
+                <span class="ui header">Caste skill:</span>
+            </div>
+
+            <div class="left aligned column">
+                <span><%= CharactersHelper.format_skill caste.skill %></span>
+            </div>
+
+        </div>
+
+        <div class="two column row">
+
+            <div class="right aligned column">
+                <span class="ui header">Social standing:</span>
+            </div>
+
+            <div class="left aligned column">
+                <span><%= caste.standing %></span>
+            </div>
+
+        </div>
+
+        <div class="two column row">
+
+            <div class="right aligned column">
+                <span class="ui header">Description:</span>
+            </div>
+
+            <div class="left aligned column">
+                <p><%= caste.description %></p>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div id="ChargenCasteStoryLanguage" class="ui center aligned column">
+    <div class="ui internally celled grid">
+
+        <!-- form tag -->
+
+        <div class="one column row">
+
+            <div class="center aligned column">
+                <span class="ui header">Select a story:</span>
+                <div id="ChargenCasteStoryDropdown" class="ui scrolling inline dropdown button">
+                    <input id="ChargenCasteStoryInput" name="selected_caste_story" type="hidden">
+
+                    <div class="ui default text">...</div>
+                    <div class="ui menu">
+                        <% @caste_stories.each do |story| %>
+                        <div class="ui item">
+                            <span class="ui text"><%= story.name %></span>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="one column row">
+
+            <div class="column">
+                <div class="ui grid">
+
+                    <div class="two column row">
+
+                        <div class="right aligned column">
+                            <span class="ui header">Story trait:</span>
+                        </div>
+
+                        <div class="left aligned column">
+                            <span><%= Lifepath::CasteStory.find_by( caste_id: caste.id ).trait %></span>
+                        </div>
+
+                    </div>
+
+                    <div class="two column row">
+
+                        <div class="right aligned column">
+                            <span class="ui header">Description:</span>
+                        </div>
+
+                        <div class="left aligned column">
+                            <span><%= Lifepath::CasteStory.find_by( caste_id: caste.id ).description %></span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
