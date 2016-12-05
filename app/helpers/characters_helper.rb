@@ -18,7 +18,7 @@ module CharactersHelper
   end
 
   def self.career_skills
-    @@skills
+    @@career_skills
   end
 
   def self.random_career_skill
@@ -36,4 +36,5 @@ module CharactersHelper
       skill_name.gsub( '_', ' ' ).capitalize!
     end
   end
+
 end
