@@ -2368,7 +2368,7 @@ natures = [
     attr: "awareness",
     sourcebook_id: book_ids["Core"],
     skills: {
-      mandatory: ["observarion", "stealth",   "thievery"],
+      mandatory: ["observation", "stealth",   "thievery"],
       elective:  ["acrobatics",  "athletics", "survival"]
     },
     description: "Information is power, and it is best to keep others in the dark when it comes to you. You have learned to move quietly, speak softly, and keep your true motives to yourself."
