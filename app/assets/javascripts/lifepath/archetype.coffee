@@ -1,5 +1,5 @@
-$( window ).load ->
-  @select_archetype( document.getElementById( "archetype::1" ) )
+# $( window ).load ->
+  # @select_archetype( document.getElementById( "archetype::1" ) )
 
 @select_archetype = ( ele ) ->
   sel_archetype.name          = ele.getAttribute( "data-arch-name" )

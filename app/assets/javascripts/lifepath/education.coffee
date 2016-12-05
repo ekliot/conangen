@@ -1,5 +1,5 @@
-$( window ).load ->
-  @select_edu( document.getElementById( "education::1" ) )
+# $( window ).load ->
+#   @select_edu( document.getElementById( "education::1" ) )
 
 @select_edu = ( ele ) ->
   sel_edu.name   = ele.getAttribute( "data-edu-name" )

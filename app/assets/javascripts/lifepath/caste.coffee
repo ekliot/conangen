@@ -1,5 +1,5 @@
-$( window ).load ->
-  @select_caste( document.getElementById( "caste::1" ) )
+# $( window ).load ->
+#   @select_caste( document.getElementById( "caste::1" ) )
 
 @select_caste = ( ele ) ->
   sel_caste  = ele.getAttribute( "data-caste-name" )

@@ -1,5 +1,5 @@
-$( window ).load ->
-  @select_aspect( document.getElementById( "aspect#{idx}::1" ) ) for idx in [1,2]
+# $( window ).load ->
+#   @select_aspect( document.getElementById( "aspect#{idx}::1" ) ) for idx in [1,2]
 
 ICON_RADIO  = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large radio icon" style="cursor: pointer"></i></div>'
 ICON_CIRCLE = '<div class="ui basic compact center aligned segment" style="cursor: pointer"><i class="ui large circle icon" style="cursor: pointer"></i></div>'

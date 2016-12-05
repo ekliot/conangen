@@ -1,5 +1,5 @@
-$( window ).load ->
-  @select_nature( document.getElementById( "nature::1" ) )
+# $( window ).load ->
+#   @select_nature( document.getElementById( "nature::1" ) )
 
 @select_nature = ( ele ) ->
   sel_nature.name   = ele.getAttribute( "data-nature-name" )

@@ -31,4 +31,4 @@ $(function() {
   $('.ui.sticky')
     .sticky()
   ;
-});
+} );

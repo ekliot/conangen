@@ -18,9 +18,9 @@
 // =============
 // HOMELAND
 
-//
+// the dropdown selection for the homeland
 #ChargenHomelandDropdown {
-  width: 50%;
+  min-width: 20em; // TODO this value may need to be adjusted
 }
 
 // =============
@@ -80,10 +80,6 @@
 //   padding-right: 0 !important;
 // }
 
-// .vertical_th {
-//   // padding: 0 !important;
-// }
-
 // .aspect_cell {
 //   padding: 0 !important;
 //
@@ -101,24 +97,27 @@
 //   margin: 0 !important;
 // }
 
-// IT WOULD BE REALLY GOOD IF THE ATTRIBUTE SELECTION TABLE COULD GET VERTICAL HEADERS
-// BUT IT'S IMPOSSIBLE FOR SOME REASON AAAHHHHHH
-// check https://css-tricks.com/rotated-table-column-headers/
-
 // =============
 // CASTE
 
-// .caste_card{
-//   text-align: left;
-// }
-// .caste_menu{
-//   height: 100%;
-// }
+// =============
+// ARCHETYPE
 
 // =============
+// NATURE
+
+// the dropdown selection for the nature
+#ChargenNatureDropdown {
+  min-width: 18em; // TODO this value may need to be adjusted
+}
 
 // =============
+// EDUCATION
+
+// the dropdown selection for the education
+#ChargenEducationDropdown {
+  min-width: 18em; // TODO this value may need to be adjusted
+}
 
 // =============
-
-// =============
+// WAR STORY
