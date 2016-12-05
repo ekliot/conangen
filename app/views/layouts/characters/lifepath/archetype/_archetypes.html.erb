@@ -1,0 +1,64 @@
+<button id="ChargenAccordionArchetypeTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
+    <!-- <i class="ui fitted user icon"></i> -->
+    <span class="ui header">Archetype</span>
+
+    <!-- TODO -->
+
+    <!-- <div class="ui basic icon right floated buttons">
+        <div class="ui compact button">
+            <i class="cube icon"></i>
+        </div>
+        <div class="ui compact button">
+            <i class="lock icon"></i>
+        </div>
+    </div> -->
+</button>
+
+<div id="ChargenAccordionArchetypeContent" class="ui lifepath_accordion content">
+
+    <!-- TODO where does equipment go? -->
+
+    <%# form_for ... %>
+
+    <div id="ChargenArchetypeForm" class="ui form">
+        <div class="ui celled stackable relaxed grid">
+
+            <div class="one column row">
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select an archetype:</span>
+                    <div id="ChargenArchetypeDropdown" class="ui scrolling inline dropdown button">
+                        <input id="ChargenArchetypeInput" name="selected_archetype" type="hidden">
+
+                        <!-- TODO center the selected text -->
+
+                        <div class="ui default text">...</div>
+                        <div class="ui menu">
+                            <% @archetypes.each do |archetype| %>
+                            <div class="ui item">
+                                <span class="ui text"><%= archetype.name %></span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <% archetype = Lifepath::Archetype.find(1 + Random.rand(10)) %>
+
+            <div class="two column row">
+                <%= render partial: "layouts/characters/lifepath/archetype/row_two", locals: { archetype: archetype } %>
+            </div>
+
+            <div class="two column row">
+                <%= render partial: "layouts/characters/lifepath/archetype/row_three", locals: { archetype: archetype } %>
+            </div>
+
+            <div class="two column row">
+                <%= render partial: "layouts/characters/lifepath/archetype/row_four", locals: { archetype: archetype } %>
+            </div>
+
+        </div>
+    </div>
+</div>

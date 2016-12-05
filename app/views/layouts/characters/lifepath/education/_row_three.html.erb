@@ -1,0 +1,23 @@
+<%#
+    locals: {
+        <Lifepath::Education> education
+    }
+%>
+
+<div id="ChargenEducationDescription" class="column">
+    <div class="ui centered header">
+        Description
+    </div>
+
+    <p class="<%# TODO %>">
+        <%= education.description %>
+    </p>
+</div>
+
+<div id="ChargenEducationTalents" class="column">
+    <div class="ui centered header">
+        Select one talent
+    </div>
+
+    <%= render partial: "layouts/characters/lifepath/talent_selection", locals: { div_id: "ChargenEducation", skills: [], pre_talents: [] } %> <!-- TODO what other locals? -->
+</div>

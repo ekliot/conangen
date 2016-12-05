@@ -1,0 +1,24 @@
+<%#
+    locals: {
+        <String> div_id
+        <Array> skills
+        <Array> pre_talents
+    }
+%>
+
+<div id="<%= div_id + "TalentSelection" %>">
+    <div id="<%= div_id + "TalentSelectionDropdown" %>" class="ui dropdown">
+        <!-- how are the talents grabbed here? -->
+    </div>
+    <div id="<%= div_id + "TalentSelectionButtons" %>" class="ui vertical buttons">
+        <!--
+            Here's how the talent button classes break down:
+                + Already posessed => secondary basic
+                + Available => primary basic
+                + Selected => positive basic
+                + Unavailable => basic
+            All buttons are labeled, with a `left pointing (basic?) label` that
+            writes, "[x/y]" where x=cur_rank and y=max_rank
+         -->
+    </div>
+</div>

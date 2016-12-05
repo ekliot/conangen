@@ -1,0 +1,17 @@
+<%#
+    locals: {
+        <Lifepath::Homeland> homeland
+    }
+%>
+
+<div id="ChargenHomelandTalent" class="ui center aligned column">
+    <input id="ChargenHomelandInputTalent" name="selected_homeland_talent" type="hidden">
+    <!-- something goes here for the talent name container -->
+    <span class="ui header">Selected talent: </span> <%= homeland.talent.name %>
+</div>
+
+<div id="ChargenHomelandLanguage" class="ui center aligned column">
+    <input id="ChargenHomelandInputLanguage" name="selected_homeland_language" type="hidden">
+    <!-- something goes here for the language container -->
+    <span class="ui header">Selected language: </span> <%= homeland.languages %>
+</div>

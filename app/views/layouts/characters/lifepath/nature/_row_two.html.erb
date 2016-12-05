@@ -1,0 +1,13 @@
+<%#
+    locals: {
+        <Lifepath::Nature> nature
+    }
+%>
+
+<div id="ChargenNatureMandatorySkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_mandatory", locals: { lifepath: "nature", selection: nature } %>
+</div>
+
+<div id="ChargenNatureElectiveSkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_elective", locals: { lifepath: "nature", selection: nature } %>
+</div>

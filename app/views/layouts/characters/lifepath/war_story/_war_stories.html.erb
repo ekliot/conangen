@@ -1,0 +1,60 @@
+<button id="ChargenAccordionWarStoryTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
+    <!-- <i class="ui fitted user icon"></i> -->
+    <span class="ui header">War Story</span>
+
+    <!-- TODO -->
+
+    <!-- <div class="ui basic icon left floated buttons">
+        <button class="ui compact button">
+            <i class="cube icon"></i>
+        </button>
+        <button class="ui compact button">
+            <i class="lock icon"></i>
+        </button>
+    </div> -->
+</button>
+
+<div id="ChargenAccordionWarStoryContent" class="ui lifepath_accordion content">
+
+    <!--
+        TODO where does attribute go? in the dropdown slelection description is
+        cute, but there should be an explicit place (especially to match the
+        Educations format)
+    -->
+
+    <%# form_for ... %>
+
+    <div id="ChargenWarStoryForm" class="ui form">
+        <div class="ui celled stackable relaxed grid">
+
+            <div id="ChargenWarStoryRowOne" class="one column row">
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select a war story:</span>
+                    <div id="ChargenWarStoryDropdown" class="ui scrolling inline dropdown button">
+                        <input id="ChargenWarStoryInput" name="selected_war_story" type="hidden">
+
+                        <!-- TODO center the selected text -->
+
+                        <div class="ui default text">...</div>
+                        <div class="ui menu">
+                            <% @war_stories.each do |story| %>
+                            <div class="ui item">
+                                <span class="ui text"><%= story.name %></span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <% war_story = Lifepath::WarStory.find(1 + Random.rand(10)) %>
+
+            <div id="ChargenWarStoryRowTwo" class="two column row">
+                <%= render partial: "layouts/characters/lifepath/war_story/row_two", locals: { war_story: war_story } %>
+            </div>
+
+        </div>
+    </div>
+</div>

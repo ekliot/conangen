@@ -1,0 +1,13 @@
+<%#
+    locals: {
+        <Lifepath::Archetype> archetype
+    }
+%>
+
+<div id="ChargenArchetypeCareerSkill" class="center aligned column">
+    <span class="ui header">Career skill:</span> <%= CharactersHelper.format_skill archetype.skills[:career] %>
+</div>
+
+<div id="ChargenArchetypeTalent" class="center aligned column">
+    <span class="ui header">Career talent:</span> <%= archetype.talent.name %>
+</div>
