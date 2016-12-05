@@ -20,3 +20,6 @@
 
 # ignore the generated docs
 /doc
+
+# ignore backup files
+*.bak
