@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   # You can have the root of your site routed with "root"
-  root                      "application#home"
-  get     'about'       =>  'application#about'
+  root            'application#home'
+  get  'about' => 'application#about'
 
   resources :characters, as: 'chars' do
     get 'lifepath', :on => :new
-    get 'random', :on => :new
+    get 'random',   :on => :new
+    get 'select_lifepath', :on => :new
   end
 
   get 'characters/export/:id', to: 'characters#export', as: 'export_char'

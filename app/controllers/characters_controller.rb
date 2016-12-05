@@ -7,13 +7,10 @@ class CharactersController < ApplicationController
     @sourcebooks = Sourcebook.find_each
 
     case params[:button]
-
     when 'lifepath'
       redirect_to lifepath_new_char_path
-
     when 'random'
       redirect_to   random_new_char_path
-
     end
   end
 
@@ -64,31 +61,20 @@ class CharactersController < ApplicationController
     # @char         = new Character( @lifepath, @talent_set, final_touches )
   end
 
-  def create_homeland
-  end
-
-  def create_aspect
-  end
-
-  def create_caste
-  end
-
-  def create_castestory
-  end
-
-  def create_archetype
-  end
-
-  def create_nature
-  end
-
-  def create_education
-  end
-
-  def create_warstory
-  end
-
-  def create_lifepath
+  def select_lifepath
+    Rails.logger.debug { params }
+    case params[:lifepath]
+    when 'homeland'
+      Rails.logger.debug { Lifepath::Homeland.find( params[:choice_id] ) }
+    when 'aspect1'
+    when 'aspect2'
+    when 'caste'
+    when 'caste_story'
+    when 'archetype'
+    when 'nature'
+    when 'education'
+    when 'war_story'
+    end
   end
 
   # show a character sheet for a given id
