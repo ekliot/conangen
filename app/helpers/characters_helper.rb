@@ -64,11 +64,6 @@ module CharactersHelper
     title
   end
 
-  def self.d20( seed )
-    die = Random.new( seed )
-    die
-  end
-
   def self.skills
     @@skills
   end
