@@ -1,16 +1,22 @@
+<%#
+    locals: {
+        <Lifepath::Homeland> pre_homeland
+        <Lifepath::Aspect> pre_aspect1
+        <Lifepath::Aspect> pre_aspect2
+        <Lifepath::Caste> pre_caste
+        <Lifepath::CasteStory> pre_caste_story
+        <Lifepath::Archetype> pre_archetype
+        <Lifepath::Nature> pre_nature
+        <Lifepath::Education> pre_education
+        <Lifepath::WarStory> pre_war_story
+    }
+%>
+
 <div id="Chargen">
     <div id="ChargenTitle" class="ui sticky">
         <div class="ui main menu">
-            <%# <%= render "charTitle" %>
+            <%= render layout: "layouts/characters/char_title", locals: { name: "", archetype: pre_archetype.name, homeland: pre_homeland.name } %>
 
-            <h2 class="header item">
-                <span id="CharTitle">
-                    <span id="CharIntroBlurb">Hither came</span>
-                    <span id="CharTitleName">Conan</span> the
-                    <span id="CharTitleNature">Barbarian</span>, of
-                    <span id="CharTitleHomeland">Cimmeria</span>
-                </span>
-            </h2>
                 <!-- {NAME} the <span id="charTitleNature"></span> <span id="charTitleArchetype"></span>, of <span id="charTitleHomeland"></span> | <preview button> -->
                 <!-- {NAME} is an input box with a {M/F/O} switch or dropdown -->
                 <!-- <preview button> opens the charPreivew sidebar (topbar?) -->
@@ -49,14 +55,20 @@
             <!-- accordian sections have a fade out effect, where the last selected
                 section is 100% opacity, and the next one is at 50%, then 25% or 0% (undecided)
             -->
-            <%= render "layouts/characters/lifepath/homeland/homelands" %> <!-- class="current" -->
+            <%=
+                render layout: "layouts/characters/lifepath/homeland/homelands",
+                locals: { pre_homeland: pre_homeland }
+            %> <!-- class="current" -->
                 <!--
                            <homeland dropdown>
                     <talent> | <language (selection)>
                     _________________________________
                         <picture> | <description>
                  -->
-            <%= render "layouts/characters/lifepath/aspect/aspects" %> <!-- class="next" -->
+            <%=
+                render layout: "layouts/characters/lifepath/aspect/aspects",
+                locals: { pre_aspects: [ pre_aspect1, pre_aspect2 ] }
+            %> <!-- class="next" -->
                 <!--
                     <$lock><aspect1 dropdown> | <$lock><aspect2 dropdown>
                     <aspect1 mandatory attrs> | <aspect2 mandatory attrs>
@@ -64,7 +76,10 @@
                     _____________________________________________________
                                       <attribute grid>
                  -->
-            <%= render "layouts/characters/lifepath/caste/castes" %> <!-- class="after_next" -->
+            <%=
+                render layout: "layouts/characters/lifepath/caste/castes",
+                locals: { pre_caste: pre_caste, pre_caste_story: pre_caste_story }
+            %> <!-- class="after_next" -->
               <!--
                       <caste dropdown>
                   ________________________
@@ -74,7 +89,10 @@
                     __________________________
                      <picture> | <story info>
                  -->
-            <%= render "layouts/characters/lifepath/archetype/archetypes" %>
+            <%=
+                render layout: "layouts/characters/lifepath/archetype/archetypes",
+                locals: { pre_archetype: pre_archetype }
+            %>
                 <!--
                                <$lock><archetype dropdown>
                     <span><Career skill></span> | <span><Talent></span>
@@ -83,7 +101,10 @@
                     _________________________________________________
                     <picture> | <description> | <equipment selection>
                  -->
-            <%= render "layouts/characters/lifepath/nature/natures" %>
+            <%=
+                render "layouts/characters/lifepath/nature/natures",
+                locals: { pre_nature: pre_nature }
+            %>
                 <!--
                                <$lock><nature dropdown>
                              <span><attribute bonus</span>
@@ -92,7 +113,10 @@
                     ______________________________________________
                     <picture> | <description> | <talent selection>
                  -->
-            <%= render "layouts/characters/lifepath/education/educations" %>
+            <%=
+                render "layouts/characters/lifepath/education/educations",
+                locals: { pre_education: pre_education }
+            %>
                 <!--
                               <$lock><education dropdown>
                                 <span>equipment</span>
@@ -101,7 +125,10 @@
                     ______________________________________________
                     <picture> | <description> | <talent selection>
                  -->
-            <%= render "layouts/characters/lifepath/war_story/war_stories" %>
+            <%=
+                render "layouts/characters/lifepath/war_story/war_stories",
+                locals: { pre_war_story: pre_war_story }
+            %>
             <%# <%= render "war_story" %>
                 <!--
                       <war_story dropdown>

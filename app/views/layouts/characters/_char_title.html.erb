@@ -1,0 +1,11 @@
+<%#
+    locals: {
+        <String> name
+        <String> archetype
+        <String> homeland
+    }
+%>
+
+<h2 class="header item">
+    <span id="CharTitle"><%= CharactersHelper.gen_title( name, archetype, homeland, true ) %></span>
+</h2>
