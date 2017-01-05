@@ -35,6 +35,21 @@ class CharactersController < ApplicationController
     def random
       Rails.logger.debug { params }
       # gen a character piece-by-piece
+
+      d20 = CharactersHelper.d20( 420 )
+
+      rolls = [
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1,
+        d20.rand( 20 ) + 1
+      ]
+
       # save the character
       # redirect to the character sheet
     end
