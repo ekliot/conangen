@@ -1,3 +1,9 @@
+<%#
+    locals: {
+        <Lifepath::Nature> @pre_nature
+    }
+%>
+
 <button id="ChargenAccordionNatureTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
     <!-- <i class="ui fitted user icon"></i> -->
     <span class="ui header">Nature</span>
@@ -27,7 +33,7 @@
     <div id="ChargenNatureForm" class="ui form">
         <div class="ui celled stackable relaxed grid">
 
-            <div class="one column row">
+            <div id="ChargenNatureRowOne" class="one column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">Select a nature:</span>
@@ -39,7 +45,7 @@
                         <div class="ui default text">...</div>
                         <div class="ui menu">
                             <% @natures.each do |nature| %>
-                            <div class="ui item">
+                            <div class="ui item" data-value="<%= nature.id %>">
                                 <span class="ui description">+1 <%= nature.attr.titlecase %></span>
                                 <span class="ui text"><%= nature.name %></span>
                             </div>
@@ -50,14 +56,20 @@
 
             </div>
 
-            <% nature = Lifepath::Nature.find(1 + Random.rand(10)) %>
+            <div id="ChargenNatureRowTwo" class="two column row">
 
-            <div class="two column row">
-                <%= render partial: "layouts/characters/lifepath/nature/row_two", locals: { nature: nature } %>
+                <% if !@pre_nature.nil? %>
+                <%= render partial: "layouts/characters/lifepath/nature/row_two", locals: { nature: @pre_nature } %>
+                <% end %>
+
             </div>
 
-            <div class="two column row">
-                <%= render partial: "layouts/characters/lifepath/nature/row_three", locals: { nature: nature } %>
+            <div id="ChargenNatureRowThree" class="two column row">
+
+                <% if !@pre_nature.nil? %>
+                <%= render partial: "layouts/characters/lifepath/nature/row_three", locals: { nature: @pre_nature } %>
+                <% end %>
+
             </div>
 
         </div>

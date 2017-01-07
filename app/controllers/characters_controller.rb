@@ -17,6 +17,27 @@ class CharactersController < ApplicationController
   # ===========
   # characters/new/:method
 
+    def random
+      Rails.logger.debug { params }
+      # gen a character piece-by-piece
+
+      # rolls = [
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1,
+      #   rand( 20 ) + 1
+      # ]
+
+      # show the results overview with choice to reorganize rolls
+
+      # redirect to lifepath with the randomly selected lifepath
+    end
+
     def lifepath
       Rails.logger.debug { params.inspect }
 
@@ -29,27 +50,83 @@ class CharactersController < ApplicationController
       @educations     = Lifepath::Education.find_each
       @war_stories    = Lifepath::WarStory.find_each
 
-      render 'layouts/characters/_lifepath'
+      @pre_homeland    = nil
+      @pre_aspect1     = nil
+      @pre_aspect2     = nil
+      @pre_caste       = nil
+      @pre_caste_story = nil
+      @pre_archetype   = nil
+      @pre_nature      = nil
+      @pre_education   = nil
+      @pre_war_story   = nil
+
+      render 'characters/new/lifepath'
     end
 
-    def random
-      Rails.logger.debug { params }
-      # gen a character piece-by-piece
+    def select_lifepath
+      Rails.logger.debug request.path_parameters
+      Rails.logger.debug request.query_parameters
+      Rails.logger.debug request.request_parameters
 
-      rolls = [
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1,
-        rand( 20 ) + 1
-      ]
+      @divs_to_change = {}
 
-      # save the character
-      # redirect to the character sheet
+      case params[:lifepath].downcase
+      when 'homeland'
+        @homeland = Lifepath::Homeland.find( params[:selection_id] )
+        @divs_to_change[:RowTwo] = render_to_string partial: "layouts/characters/lifepath/homeland/row_two", locals: { homeland: @homeland }, formats: [:html]
+
+      when 'aspect1'
+        @aspect = Lifepath::Aspect.find( params[:selection_id] )
+        # @divs_to_change[]
+
+      when 'aspect2'
+        @aspect = Lifepath::Aspect.find( params[:selection_id] )
+        # @divs_to_change[]
+
+      when 'caste'
+        @caste = Lifepath::Caste.find( params[:selection_id] )
+        @divs_to_change[:RowTwo] = render_to_string partial: 'layouts/characters/lifepath/caste/row_two', locals: { caste: @caste, caste_story: nil }
+
+      when 'castestory'
+        @caste_story = Lifepath::CasteStory.find( params[:selection_id] )
+        @divs_to_change[:RowTwo] = render_to_string partial: 'layouts/characters/lifepath/caste/story/row_two', locals: { caste_story: @caste_story }
+
+      when 'archetype'
+        @archetype = Lifepath::Archetype.find( params[:selection_id] )
+        @divs_to_change[:RowTwo]   = render_to_string partial: "layouts/characters/lifepath/archetype/row_two",   locals: { archetype: @archetype }, formats: [:html]
+        @divs_to_change[:RowThree] = render_to_string partial: "layouts/characters/lifepath/archetype/row_three", locals: { archetype: @archetype }, formats: [:html]
+        @divs_to_change[:RowFour]  = render_to_string partial: "layouts/characters/lifepath/archetype/row_four",  locals: { archetype: @archetype }, formats: [:html]
+
+      when 'nature'
+        @nature = Lifepath::Nature.find( params[:selection_id] )
+        @divs_to_change[:RowTwo]   = render_to_string partial: "layouts/characters/lifepath/nature/row_two",   locals: { nature: @nature }, formats: [:html]
+        @divs_to_change[:RowThree] = render_to_string partial: "layouts/characters/lifepath/nature/row_three", locals: { nature: @nature }, formats: [:html]
+
+      when 'education'
+        @education = Lifepath::Education.find( params[:selection_id] )
+        @divs_to_change[:RowTwo]   = render_to_string partial: "layouts/characters/lifepath/education/row_two",   locals: { education: @education }, formats: [:html]
+        @divs_to_change[:RowThree] = render_to_string partial: "layouts/characters/lifepath/education/row_three", locals: { education: @education }, formats: [:html]
+
+      when 'warstory'
+        @war_story = Lifepath::WarStory.find( params[:selection_id] )
+
+      end
+
+      respond_to do |format|
+        format.json {
+          render json: { divs: @divs_to_change }
+        }
+      end
+    end
+
+    def get_char_title
+      @title = CharactersHelper.gen_title( params.slice( :name, :archetype, :homeland ), params[:html] )
+
+      respond_to do |format|
+        format.json {
+          render json: { title: @title }
+        }
+      end
     end
 
   # ===========
@@ -72,22 +149,8 @@ class CharactersController < ApplicationController
     # @talent_set   = new TalentSet( @lifepath.get_talents )
     #
     # @char         = new Character( @lifepath, @talent_set, final_touches )
-  end
-
-  def select_lifepath
-    Rails.logger.debug { params }
-    case params[:lifepath]
-    when 'homeland'
-      Rails.logger.debug { Lifepath::Homeland.find( params[:choice_id] ) }
-    when 'aspect1'
-    when 'aspect2'
-    when 'caste'
-    when 'caste_story'
-    when 'archetype'
-    when 'nature'
-    when 'education'
-    when 'war_story'
-    end
+    #
+    # redirect to char sheet
   end
 
   # show a character sheet for a given id

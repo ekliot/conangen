@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get  'about' => 'application#about'
 
   resources :characters, as: 'chars' do
+    # TODO learn routing and DRY this up
     get 'lifepath', :on => :new
     get 'random',   :on => :new
     get 'select_lifepath', :on => :new
+    get 'get_char_title', :on => :new
   end
 
   get 'characters/export/:id', to: 'characters#export', as: 'export_char'

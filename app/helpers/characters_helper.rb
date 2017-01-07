@@ -15,51 +15,89 @@ module CharactersHelper
 
   # generates a title/intro for a character given their lifepath
   # can be formatted for HTML
+  #
+  # args:
+  #   char => Hash => containing :name, :archetype, :homeland
+  #   html => Bool => whether the title should be formatted for HTML
+  #
   # formatted as:
   #   all three args present:
-  #       "Hither came $name, the $archetype, of $homeland..."
+  #       "$name, the $archetype of $homeland"
   #   name is blank:
-  #       "Hither came a wanderer, a(n) $archetype, of $homeland..."
+  #       "a(n) $archetype of $homeland"
   #   archetype is blank:
-  #       "Hither came $name, of $homeland..."
+  #       "$name, of $homeland"
   #   homeland is blank:
-  #       "Hither came $name, the $archetype..."
+  #       "$name the $archetype"
   #   only name:
-  #       "Hither came $name..."
+  #       "$name"
   #   only archetype:
-  #       "Hither came a wanderer, a(n) $archetype..."
+  #       "a(n) $archetype"
   #   only homeland:
-  #       "Hither came a wanderer, of $homeland..."
+  #       "a wanderer, of $homeland"
   #   none:
-  #       "Hither came a wanderer..."
-  def self.gen_title( name, archetype, homeland, html )
-    title =  html ? '<span id="CharTitle">' : ''
+  #       "a wanderer"
+  def self.gen_title( char, html )
+    title = ( html ? '<span id="CharTitle">' : '' )
 
-    title << html ? '<span id="CharTitleIntro">Hither came</span>' : "Hither came"
+    # insert the name chunk
+    if !char[:name].blank?
 
-    if !name.blank?
-      title << html ? '<span id="CharTitleName"> #{name}</span>' : ' #{name}'
-    else
-      title << html ? '<span id="CharTitleName"> a wanderer</span>' : ' a wanderer'
+      title << ( html ? '<span id="CharTitleName">' : '' )
+      title << " #{char[:name]}"
+      title << ( html ? '</span>' : '' )
+
+    elsif char[:archetype].blank?
+
+      title << ( html ? '<span id="CharTitleName">' : '' )
+      title << ' a wanderer'
+      title << ( html ? '</span>' : '' )
+
     end
 
-    if !archetype.blank?
-      article = ''
+    # insert the archetype chunk
+    if !char[:archetype].blank?
 
-      if name.blank?
-        article = %w(a e i o u).include?( archetype[0].downcase ) ? 'an' : 'a'
+      article = ''
+      comma = ''
+
+      if char[:name].blank?
+        article = ( %w(a e i o u).include?( char[:archetype][0].downcase ) ? 'an' : 'a' )
       else
         article = 'the'
+        if !char[:homeland].blank?
+          comma = ','
+        end
       end
 
-      title << html ? ', <span id="CharTitleArchetype"> #{article} #{archetype}</span>': ', #{article} #{archetype}'
+      title << ( html ? '<span id="CharTitleArchetype">' : '' )
+      title << "#{comma} #{article} #{char[:archetype]}"
+      title << ( html ? '</span>' : '' )
+
     end
 
-    if !homeland.blank?
-      title << html ? ', <span id="CharTitleHomeland"> of #{homeland}</span>' : ', of #{homeland}'
+    # insert the homeland chunk
+    if !char[:homeland].blank?
+
+      # the exact name of these homelands in the book doesn't read well for the title
+      if char[:homeland].downcase == 'bossonian marches' ||
+         char[:homeland].downcase == 'border kingdom'
+        char[:homeland] = 'the ' + char[:homeland]
+      end
+
+      comma = ''
+
+      if char[:archetype].blank?
+        comma = ','
+      end
+
+      title << ( html ? '<span id="CharTitleHomeland">' : '' )
+      title << ", of #{char[:homeland]}"
+      title << ( html ? '</span>' : '' )
+
     end
 
-    title << '...'
+    title << ( html ? '</span>' : '' )
 
     title
   end

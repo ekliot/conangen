@@ -1,3 +1,9 @@
+<%#
+    locals: {
+        <Lifepath::Homeland> @pre_homeland
+    }
+%>
+
 <button id="ChargenAccordionHomelandTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
     <!-- <i class="ui fitted world icon"></i> -->
     <span class="ui header">Homeland</span>
@@ -21,7 +27,7 @@
     <div id="ChargenHomelandForm" class="ui form">
         <div class="ui celled stackable relaxed grid">
 
-            <div class="one column row">
+            <div id="ChargenHomelandRowOne" class="one column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">From whither do you come? </span>
@@ -31,7 +37,7 @@
                         <div class="ui default text">...</div>
                         <div class="ui menu">
                             <% @homelands.each do |home| %>
-                            <div class="ui item" data-value="<%= home.id %>">
+                            <div class="ui item" data-value="<%= home.id %>" data-text="<%= home.name %>">
                                 <span class="ui description"><%= home.talent.name %></span>
                                 <span class="ui text"><%= home.name %></span>
                             </div>
@@ -42,11 +48,11 @@
 
             </div>
 
-            <% homeland = Lifepath::Homeland.find( 1 + Random.rand(30) ) %>
+            <div id="ChargenHomelandRowTwo" class="two column row">
 
-            <div id="ChargenHomelandRowOne" class="two column row">
-
-                <%= render partial: "layouts/characters/lifepath/homeland/row_two", locals: { homeland: homeland } %>
+                <% if !@pre_homeland.nil? %>
+                <%= render partial: "layouts/characters/lifepath/homeland/row_two", locals: { homeland: @pre_homeland } %>
+                <% end %>
 
             </div>
 

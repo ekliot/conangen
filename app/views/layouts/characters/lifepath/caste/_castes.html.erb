@@ -21,7 +21,7 @@
     <div id="ChargenCasteForm" class="ui form">
         <div class="ui celled stackable relaxed grid">
 
-            <div class="one column row">
+            <div id="ChargenCasteRowOne" class="one column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">Select a caste:</span>
@@ -31,7 +31,7 @@
                         <div class="ui default text">...</div>
                         <div class="ui menu">
                             <% @castes.each do |caste| %>
-                            <div class="ui item">
+                            <div class="ui item" data-value="<%= caste.id %>">
                                 <span class="ui text"><%= caste.name %></span>
                             </div>
                             <% end %>
@@ -41,12 +41,11 @@
 
             </div>
 
-            <div class="two column row">
+            <div id="ChargenCasteRowTwo" class="two column row">
 
-                <% caste = Lifepath::Caste.find(1 + Random.rand(7)) %>
-
-                <%= render partial: 'layouts/characters/lifepath/caste/display', locals: { caste: caste } %>
-                <%= render partial: 'layouts/characters/lifepath/caste/caste_story', locals: { caste: caste } %>
+                <% if !@pre_caste.nil? %>
+                <%= render partial: 'layouts/characters/lifepath/caste/row_two', locals: { caste: @pre_caste, caste_story: @pre_caste_story } %>
+                <% end %>
 
             </div>
 

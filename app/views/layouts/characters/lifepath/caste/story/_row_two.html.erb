@@ -1,0 +1,35 @@
+<%#
+    locals: {
+        <Lifepath::CasteStory> caste_story
+    }
+%>
+
+<div class="column">
+    <div class="ui grid">
+
+        <div class="two column row">
+
+            <div class="right aligned column">
+                <span class="ui header">Story trait:</span>
+            </div>
+
+            <div class="left aligned column">
+                <span><%= caste_story.trait %></span>
+            </div>
+
+        </div>
+
+        <div class="two column row">
+
+            <div class="right aligned column">
+                <span class="ui header">Description:</span>
+            </div>
+
+            <div class="left aligned column">
+                <span><%= caste_story.description %></span>
+            </div>
+
+        </div>
+
+    </div>
+</div>

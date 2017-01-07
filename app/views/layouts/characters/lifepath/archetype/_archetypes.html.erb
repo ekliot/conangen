@@ -23,7 +23,7 @@
     <div id="ChargenArchetypeForm" class="ui form">
         <div class="ui celled stackable relaxed grid">
 
-            <div class="one column row">
+            <div id="ChargenArchetypeRowOne" class="one column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">Select an archetype:</span>
@@ -35,7 +35,7 @@
                         <div class="ui default text">...</div>
                         <div class="ui menu">
                             <% @archetypes.each do |archetype| %>
-                            <div class="ui item">
+                            <div class="ui item" data-value="<%= archetype.id %>" data-text="<%= archetype.name %>">
                                 <span class="ui text"><%= archetype.name %></span>
                             </div>
                             <% end %>
@@ -45,18 +45,28 @@
 
             </div>
 
-            <% archetype = Lifepath::Archetype.find(1 + Random.rand(10)) %>
+            <div id="ChargenArchetypeRowTwo" class="two column row">
 
-            <div class="two column row">
-                <%= render partial: "layouts/characters/lifepath/archetype/row_two", locals: { archetype: archetype } %>
+                <% if !@pre_archetype.nil? %>
+                <%= render partial: "layouts/characters/lifepath/archetype/row_two", locals: { archetype: @pre_archetype } %>
+                <% end %>
+
             </div>
 
-            <div class="two column row">
-                <%= render partial: "layouts/characters/lifepath/archetype/row_three", locals: { archetype: archetype } %>
+            <div id="ChargenArchetypeRowThree" class="two column row">
+
+                <% if !@pre_archetype.nil? %>
+                <%= render partial: "layouts/characters/lifepath/archetype/row_three", locals: { archetype: @pre_archetype } %>
+                <% end %>
+
             </div>
 
-            <div class="two column row">
-                <%= render partial: "layouts/characters/lifepath/archetype/row_four", locals: { archetype: archetype } %>
+            <div id="ChargenArchetypeRowFour" class="two column row">
+
+                <% if !@pre_archetype.nil? %>
+                <%= render partial: "layouts/characters/lifepath/archetype/row_four", locals: { archetype: @pre_archetype } %>
+                <% end %>
+
             </div>
 
         </div>

@@ -11,22 +11,66 @@ $(document).on "turbolinks:load", ->
   # @warstory_seg     = document.getElementById( "create_warstory" )
   # @finish_seg       = document.getElementById( "create_finish" )
 
+@update_char_title = ->
+  # TODO
+  # get the name
+
+  # get the homeland
+  sel_home  = $("#ChargenHomelandDropdown").dropdown( 'get value' )
+  # sel_home is undefined if a selection hasn't been made
+  homeland  = if sel_home then $("#ChargenHomelandDropdown").dropdown( 'get text', sel_home ) else ""
+
+  # get the archetype
+  sel_arch  = $("#ChargenArchetypeDropdown").dropdown( 'get value' )
+  # sel_arch is undefined if a selection hasn't been made
+  archetype = if sel_arch then $("#ChargenArchetypeDropdown").dropdown( 'get text', sel_arch ) else ""
+
+  $.ajax
+    url: "get_char_title"
+    dataType: "json"
+    data:
+      name: ""
+      archetype: archetype
+      homeland: homeland
+      html: true
+    success: (data, status, jqXHR) ->
+      $( "#CharTitle" ).html( "Hither came " + data.title + "..." )
+      return
+    error: () ->
+      console.log "errr"
+      return
+
+  return
+
 # lifepath => the name of the lifepath selection
 # id => the id of the choice
-@select_lifepath = ( lifepath, choice_id ) ->
-  console.log( "LOAD CHOICE for #{lifepath}, id##{choice_id}" )
+@select_lifepath = ( lifepath, selection_id ) ->
+  console.log( "LOAD CHOICE for #{lifepath}, id##{selection_id}" )
   # hit the server
   $.ajax
     url: "select_lifepath"
-    dataType: "script"
+    dataType: "json"
     data:
-      lifepath:  lifepath
-      choice_id: choice_id
+      lifepath: lifepath
+      selection_id: selection_id
     success: (data, status, jqXHR) ->
-      # do a thing
+      # perhaps, to be fancy, augment the straight injection with a slide in animation?
+      $.each data.divs, ( key, val ) ->
+        $( "#Chargen#{lifepath}#{key}" ).html( val )
+
+      # we need this check, or else the usual on-turbolinnks-load trigger is
+      # negated when the new caste stories dropdown is rendered
+      if lifepath == "Caste"
+        $('#ChargenCasteStoryDropdown').dropdown( {
+          onChange: ( caste_story_id, text, $object ) ->
+            select_lifepath 'CasteStory', caste_story_id
+            return
+        } )
+
       return
     error: (jqXHR, status, error) ->
       # do a thing
+      console.log "err"
       return
 
   return

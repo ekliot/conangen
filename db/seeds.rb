@@ -1578,7 +1578,7 @@ homelands = [
     talent_id: talent_ids["Sea Raider"],
     languages: ["Zingaran"] },
 
-  { name: "Khojara",
+  { name: "Khoraja",
     sourcebook_id: book_ids["Core"],
     talent_id: talent_ids["Cosmopolitan"],
     languages: ["Shemitish", "Kothic"] },

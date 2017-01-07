@@ -21,7 +21,7 @@
     <div id="ChargenAspectsForm" class="ui form">
         <div class="ui celled relaxed grid">
 
-            <div id="ChargenAspectSelectionRow" class="two column row">
+            <div id="ChargenAspectRowOne" class="two column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">Select your first aspect:</span>
@@ -47,13 +47,13 @@
 
             </div>
 
-            <div id="ChargenAspectDisplay" class="two column row">
+            <div id="ChargenAspectRowTwo" class="two column row">
                 <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 1 } %>
                 <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 2 } %>
             </div>
 
-            <div id="ChargenAspectAttributes" class="one column row">
-                <div class="ui center aligned column">
+            <div id="ChargenAspectRowThree" class="one column row">
+                <div id="ChargenAspectAttributes" class="ui center aligned column">
                     <%= render 'layouts/characters/lifepath/aspect/attributes' %>
                 </div>
             </div>

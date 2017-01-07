@@ -23,7 +23,7 @@
     <div id="ChargenEducationForm" class="ui form">
         <div class="ui celled stackable relaxed grid">
 
-            <div class="one column row">
+            <div id="ChargenEducationRowOne" class="one column row">
 
                 <div class="ui center aligned column">
                     <span class="ui header">Select an education:</span>
@@ -35,7 +35,7 @@
                         <div class="ui default text">...</div>
                         <div class="ui menu">
                             <% @educations.each do |education| %>
-                            <div class="ui item">
+                            <div class="ui item" data-value="<%= education.id %>">
                                 <span class="ui text"><%= education.name %></span>
                             </div>
                             <% end %>
@@ -45,14 +45,20 @@
 
             </div>
 
-            <% education = Lifepath::Education.find(1 + Random.rand(10)) %>
+            <div id="ChargenEducationRowTwo" class="two column row">
 
-            <div class="two column row">
+                <% if !@pre_education.nil?  %>
                 <%= render partial: "layouts/characters/lifepath/education/row_two", locals: { education: education } %>
+                <% end %>
+
             </div>
 
-            <div class="two column row">
+            <div id="ChargenEducationRowThree" class="two column row">
+
+                <% if !@pre_education.nil?  %>
                 <%= render partial: "layouts/characters/lifepath/education/row_three", locals: { education: education } %>
+                <% end %>
+
             </div>
 
         </div>

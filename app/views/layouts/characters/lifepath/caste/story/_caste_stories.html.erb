@@ -1,0 +1,42 @@
+<%#
+    locals: {
+        <Lifepath::Caste>      caste
+        <Lifepath::CasteStory> caste_story
+    }
+%>
+
+<div id="ChargenCasteStoryContent" class="ui center aligned column">
+    <div class="ui internally celled grid">
+
+        <!-- form tag -->
+
+        <div id="ChargenCasteStoryRowOne" class="one column row">
+
+            <div class="center aligned column">
+                <span class="ui header">Select a story:</span>
+                <div id="ChargenCasteStoryDropdown" class="ui scrolling inline dropdown button">
+                    <input id="ChargenCasteStoryInput" name="selected_caste_story" type="hidden">
+
+                    <div class="ui default text">...</div>
+                    <div class="ui menu">
+                        <% caste.caste_stories.each do |story| %>
+                        <div class="ui item" data-value="<%= story.id %>">
+                            <span class="ui text"><%= story.name %></span>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="ChargenCasteStoryRowTwo" class="one column row">
+
+            <% if !caste_story.nil? %>
+            <%= render partial: 'layouts/characters/lifepath/caste/story/row_two', locals: { caste_story: caste_story } %>
+            <% end %>
+
+        </div>
+
+    </div>
+</div>

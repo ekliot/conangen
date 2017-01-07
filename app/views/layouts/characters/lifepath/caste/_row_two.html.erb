@@ -1,0 +1,9 @@
+<%#
+    locals: {
+        <Lifepath::Caste>      caste
+        <Lifepath::CasteStory> caste_story
+    }
+%>
+
+<%= render partial: 'layouts/characters/lifepath/caste/display', locals: { caste: caste } %>
+<%= render partial: 'layouts/characters/lifepath/caste/story/caste_stories', locals: { caste: caste, caste_story: caste_story } %>
