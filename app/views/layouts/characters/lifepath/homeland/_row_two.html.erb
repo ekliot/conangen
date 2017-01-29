@@ -13,6 +13,13 @@
 <div id="ChargenHomelandLanguage" class="ui center aligned column">
     <input id="ChargenHomelandInputLanguage" name="selected_homeland_language" type="hidden">
     <!-- something goes here for the language container -->
-    <span class="ui header">Selected language: </span> ~Cimmerian~
-    <%# LANGUAGE RADIOS %>
+    <span class="ui header">Selected language: </span>
+    <div class="">
+        <% homeland.languages.each_with_index do |lang, i| %>
+        <div class="ui radio checkbox">
+            <input name="hl_lang" <%= if i == 0 then 'checked="checked"' end %> type="radio">
+            <label><%= lang %></label>
+        </div>
+        <% end %>
+    </div>
 </div>

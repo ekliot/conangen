@@ -102,6 +102,27 @@ module CharactersHelper
     title
   end
 
+  def self.validate_selection( lifepath, selections )
+    choice = Nil
+    case lifepath
+    when "Homeland"
+      # choice = HomelandChoice.new( selections.splice( :name, :language ) )
+    when "Aspect"
+      # choice = AspectChoice.new( selections.splice( :aspect1, :aspect2, :best, :worst, :mod1, :mod2, :opt1, :opt2 ) )
+    when "Caste"
+      # choice = CasteChoice.new( selections.splice( :caste ) )
+      # choice = CasteStoryChoice.new( selections.splice( :caste, :story ) )
+    when "Archetype"
+      # choice = ArchetypeChoice.new( selections.splice( :name, :opt1, :opt2, :equipment ) )
+    when "Nature"
+
+    when "Education"
+
+    when "WarStory"
+
+    end
+  end
+
   def self.skills
     @@skills
   end

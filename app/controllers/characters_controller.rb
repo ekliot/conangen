@@ -119,6 +119,18 @@ class CharactersController < ApplicationController
       end
     end
 
+    def confirm_lifepath
+
+      # params: which lifepath, and lifepath details
+
+      # validate lifepath
+      lifepath_params = CharactersHelper.validate_selection( params[:lifepath], params[:selection] )
+
+      respond_to do |format|
+        format.js { render layout: 'characters/lifepath/confirm_lifepath', locals: params[:lifepath] }
+      end
+    end
+
     def get_char_title
       @title = CharactersHelper.gen_title( params.slice( :name, :archetype, :homeland ), params[:html] )
 
