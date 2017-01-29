@@ -1,0 +1,13 @@
+<%#
+    locals: {
+        <Lifepath::Archetype> archetype
+    }
+%>
+
+<div id="ChargenArchetypeMandatorySkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_mandatory", locals: { lifepath: "archetype", selection: archetype } %>
+</div>
+
+<div id="ChargenArchetypeElectiveSkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_elective", locals: { lifepath: "archetype", selection: archetype } %>
+</div>

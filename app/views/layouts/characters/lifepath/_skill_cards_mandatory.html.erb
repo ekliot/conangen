@@ -1,0 +1,33 @@
+<%#
+    locals: {
+        <String> lifepath
+        <Lifepath::Element> selection
+    }
+%>
+
+<div class="ui centered header">
+    Mandatory skills
+    <div class="ui sub header">+1 expertise and focus to each listed skill</div>
+</div>
+
+<!--
+    TODO format the cards better, especially when animal handling (or another
+    long skill name) stretches the row height to gross proportions (maybe vertically
+    center the cards, or have the cards vertical instead of horizontal?)
+-->
+
+<div class="ui green stackable centered cards">
+
+    <% selection.skills[:mandatory].each do |skill| %>
+
+    <div class="ui card" data-skill="<%= skill %>">
+        <div class="content">
+            <div class="ui centered header">
+                <%= CharactersHelper.format_skill skill %>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+
+</div>

@@ -1,0 +1,54 @@
+<button id="ChargenAccordionCasteTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
+    <!-- <i class="ui fitted user icon"></i> -->
+    <span class="ui header">Caste</span>
+
+    <!-- TODO -->
+
+    <!-- <div class="ui basic icon right floated buttons">
+        <div class="ui compact button">
+            <i class="cube icon"></i>
+        </div>
+        <div class="ui compact button">
+            <i class="lock icon"></i>
+        </div>
+    </div> -->
+</button>
+
+<div id="ChargenAccordionCasteContent" class="ui lifepath_accordion content">
+
+    <%# form_for ... %>
+
+    <div id="ChargenCasteForm" class="ui form">
+        <div class="ui celled stackable relaxed grid">
+
+            <div id="ChargenCasteRowOne" class="one column row">
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select a caste:</span>
+                    <div id="ChargenCasteDropdown" class="ui scrolling inline dropdown button">
+                        <input id="ChargenCasteInput" name="selected_caste" type="hidden">
+
+                        <div class="ui default text">...</div>
+                        <div class="ui menu">
+                            <% @castes.each do |caste| %>
+                            <div class="ui item" data-value="<%= caste.id %>">
+                                <span class="ui text"><%= caste.name %></span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="ChargenCasteRowTwo" class="two column row">
+
+                <% if !@pre_caste.nil? %>
+                <%= render partial: 'layouts/characters/lifepath/caste/row_two', locals: { caste: @pre_caste, caste_story: @pre_caste_story } %>
+                <% end %>
+
+            </div>
+
+        </div>
+    </div>
+</div>

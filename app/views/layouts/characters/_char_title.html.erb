@@ -1,0 +1,14 @@
+<%#
+    locals: {
+        char: {
+            <String> name
+            <String> archetype
+            <String> homeland
+        }
+    }
+%>
+
+<h2 class="header item">
+    <% char_title = 'Hither came ' + CharactersHelper.gen_title( char, true ).html_safe + '...' %>
+    <span id="CharTitle"><%= char_title.html_safe %></span>
+</h2>

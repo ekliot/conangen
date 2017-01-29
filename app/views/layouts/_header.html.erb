@@ -1,16 +1,15 @@
-<div class="ui top main menu">
-  <div class="ui container" id="main-menu-items">
-    <!-- <%= link_to "ekliot", root_path, class: "ui header item" %> -->
-    <div class="ui menu">
-      <a href="#">
-        HOME
-      </a>
-      <a href="#">
-        ACCOUNT
-      </a>
-      <a href="#">
-        ABOUT
-      </a>
-    </div>
+<div class="ui menu" id="MainMenu">
+  <div class="ui container" id="MainMenuItems">
+    <%= link_to 'HOME', root_path, class: 'ui item' %>
+    <%= link_to 'CHARACTERS', chars_path, class: 'ui item' %>
+    <%= link_to 'ABOUT', about_path, class: 'ui item' %>
+
+    <%=
+       link_to_if( @current_user.nil?, 'LOGIN', { controller: "users", action: "login" }, { class: 'ui item' } ) do
+         link_to( @current_user.login, { controller: "users", action: "account" }, { class: 'ui item' } )
+       end
+    %>
+
+    <%= link_to 'ACCOUNT', account_path, class: 'ui item' %>
   </div>
 </div>

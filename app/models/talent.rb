@@ -6,5 +6,6 @@ class Talent < ApplicationRecord
 
   serialize :pre_talents
   serialize :pre_skills
+  serialize :variants
 
 end

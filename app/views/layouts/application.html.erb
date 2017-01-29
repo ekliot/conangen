@@ -5,6 +5,7 @@
     <title>TITLE</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%# include_gon %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -12,13 +13,20 @@
 
     <%= render 'layouts/header' %>
 
-    <div class="ui context attached main container">
+    <div id="MainContainer" class="ui container">
+
+      <% flash.each do |message_type, message| %>
+        <div class="ui <%= message_type %> message">
+          <i class="close icon"></i>
+          <%= message %>
+        </div>
+      <% end %>
 
       <%= yield %>
 
-    </div>
+      <%= render 'layouts/footer' %>
 
-    <%= render 'layouts/footer' %>
+    </div>
 
     <%= debug(params) if Rails.env.development? %>
 

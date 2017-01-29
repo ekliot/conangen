@@ -1,0 +1,48 @@
+<div id="chargen_container">
+  <div class="ui fitted secondary pointing ten item menu creation tabs" >
+    <a class="ui button">Back</a>
+    <a class="item active creation tab" data-tab="homeland">·</a>
+    <a class="item creation tab" data-tab="aspects">·</a>
+    <a class="item creation tab" data-tab="caste">·</a>
+    <a class="item creation tab" data-tab="archetype">·</a>
+    <a class="item creation tab" data-tab="nature">·</a>
+    <a class="item creation tab" data-tab="education">·</a>
+    <a class="item creation tab" data-tab="warstory">·</a>
+    <a class="item creation tab" data-tab="finish">·</a>
+    <a class="ui button">Next</a>
+  </div>
+
+  <div id="chargen_box" class="ui segment">
+    <div class="ui active tab char_create_seg" id="create_hl" data-tab="homeland">
+      <%= render "layouts/characters/lifepath/homelands" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_aspect" data-tab="aspects">
+      <%= render "layouts/characters/lifepath/aspects" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_caste" data-tab="caste">
+      <%= render "layouts/characters/lifepath/castes" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_arch" data-tab="archetype">
+      <%= render "layouts/characters/lifepath/archetypes" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_nature" data-tab="nature">
+      <%= render "layouts/characters/lifepath/natures" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_edu" data-tab="education">
+      <%= render "layouts/characters/lifepath/educations" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_warstory" data-tab="warstory">
+      <%= render "layouts/characters/lifepath/warstories" %>
+    </div>
+
+    <div class="ui tab char_create_seg" id="create_finish" data-tab="finish">
+      <%= render "layouts/characters/lifepath/finish" %>
+    </div>
+  </div>
+</div>

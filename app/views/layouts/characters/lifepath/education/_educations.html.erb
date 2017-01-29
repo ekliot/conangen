@@ -1,0 +1,66 @@
+<button id="ChargenAccordionEducationTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
+    <!-- <i class="ui fitted user icon"></i> -->
+    <span class="ui header">Education</span>
+
+    <!-- TODO -->
+
+    <!-- <div class="ui basic icon right floated buttons">
+        <div class="ui compact button">
+            <i class="cube icon"></i>
+        </div>
+        <div class="ui compact button">
+            <i class="lock icon"></i>
+        </div>
+    </div> -->
+</button>
+
+<div id="ChargenAccordionEducationContent" class="ui lifepath_accordion content">
+
+    <!-- TODO where does equipment go? -->
+
+    <%# form_for ... %>
+
+    <div id="ChargenEducationForm" class="ui form">
+        <div class="ui celled stackable relaxed grid">
+
+            <div id="ChargenEducationRowOne" class="one column row">
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select an education:</span>
+                    <div id="ChargenEducationDropdown" class="ui scrolling inline dropdown button">
+                        <input id="ChargenEducationInput" name="selected_education" type="hidden">
+
+                        <!-- TODO center the selected text -->
+
+                        <div class="ui default text">...</div>
+                        <div class="ui menu">
+                            <% @educations.each do |education| %>
+                            <div class="ui item" data-value="<%= education.id %>">
+                                <span class="ui text"><%= education.name %></span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="ChargenEducationRowTwo" class="two column row">
+
+                <% if !@pre_education.nil?  %>
+                <%= render partial: "layouts/characters/lifepath/education/row_two", locals: { education: education } %>
+                <% end %>
+
+            </div>
+
+            <div id="ChargenEducationRowThree" class="two column row">
+
+                <% if !@pre_education.nil?  %>
+                <%= render partial: "layouts/characters/lifepath/education/row_three", locals: { education: education } %>
+                <% end %>
+
+            </div>
+
+        </div>
+    </div>
+</div>

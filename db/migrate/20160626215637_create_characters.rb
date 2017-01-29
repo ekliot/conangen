@@ -1,4 +1,4 @@
-class CreateCharacters < ActiveRecord::Migration
+class CreateCharacters < ActiveRecord::Migration[5.0]
   def change
     create_table :characters do |t|
       t.string :name, default: ""
@@ -23,12 +23,11 @@ class CreateCharacters < ActiveRecord::Migration
       t.text :languages, default: ""
       t.text :attr_stats, default: ""
 
-      t.references :user
+      t.belongs_to :user, index: true
 
       t.timestamps null: false
     end
 
-    add_index :characters, :user_id
     add_index :characters, :created_at
     add_index :characters, :updated_at
     add_index :characters, :name

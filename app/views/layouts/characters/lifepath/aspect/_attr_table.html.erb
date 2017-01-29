@@ -1,0 +1,145 @@
+<!-- TODO lock icon -->
+
+<div class="ui header">Select mandatory and optional attributes:</div>
+
+<table class="ui divided unstackable collapsing definition table attribute_selection">
+    <thead>
+        <th></th>
+        <th>AGI</th>
+        <th>AWA</th>
+        <th>BRA</th>
+        <th>COO</th>
+        <th>INT</th>
+        <th>PER</th>
+        <th>WIL</th>
+    </thead>
+
+    <tr id="aspect_best_row">
+      <td class="ui right aligned aspect_row_header">BEST</th>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_agi_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_awa_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_bra_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_coo_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_int_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_per_best"></td>
+
+      <td class="ui center aligned aspect_cell aspect_best_sel" style="padding:0" id="aspect_wil_best"></td>
+    </tr>
+
+    <tr id="aspect_worst_row">
+      <td class="ui right aligned aspect_row_header">WORST</th>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_agi_worst"
+          onclick="select_worst( 'agility' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_awa_worst"
+          onclick="select_worst( 'awareness' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_bra_worst"
+          onclick="select_worst( 'brawn' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_coo_worst"
+          onclick="select_worst( 'coordination' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_int_worst"
+          onclick="select_worst( 'intelligence' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_per_worst"
+          onclick="select_worst( 'personality' )"></td>
+
+      <td class="ui center aligned aspect_cell aspect_worst_sel" style="padding:0" id="aspect_wil_worst"
+          onclick="select_worst( 'willpower' )"></td>
+    </tr>
+
+    <tr id="aspect_opt1_row">
+        <td class="ui right aligned aspect_row_header">OPTIONAL 1</th>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_agi_opt1"
+            onclick="select_opt1( 'agility' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_awa_opt1"
+            onclick="select_opt1( 'awareness' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_bra_opt1"
+            onclick="select_opt1( 'brawn' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_coo_opt1"
+            onclick="select_opt1( 'coordination' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_int_opt1"
+            onclick="select_opt1( 'intelligence' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_per_opt1"
+            onclick="select_opt1( 'personality' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt1_sel" style="padding:0" id="aspect_wil_opt1"
+            onclick="select_opt1( 'willpower' )"></td>
+    </tr>
+
+    <tr id="aspect_opt2_row">
+        <td class="ui right aligned aspect_row_header">OPTIONAL 2</th>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_agi_opt2"
+            onclick="select_opt2( 'agility' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_awa_opt2"
+            onclick="select_opt2( 'awareness' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_bra_opt2"
+            onclick="select_opt2( 'brawn' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_coo_opt2"
+            onclick="select_opt2( 'coordination' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_int_opt2"
+            onclick="select_opt2( 'intelligence' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_per_opt2"
+            onclick="select_opt2( 'personality' )"></td>
+
+        <td class="ui center aligned aspect_cell aspect_opt2_sel" style="padding:0" id="aspect_wil_opt2"
+            onclick="select_opt2( 'willpower' )"></td>
+    </tr>
+
+    <tr id="aspect_bonus_row">
+        <td class="ui right aligned aspect_row_header">BONUS</th>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_agi_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_awa_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_bra_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_coo_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_int_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_per_bon">+0</td>
+
+        <td class="ui center aligned aspect_cell attr_bon_sum" style="padding:0" id="attr_wil_bon">+0</td>
+    </tr>
+
+    <tr id="aspect_total_row">
+        <td class="ui right aligned aspect_row_header">TOTAL</th>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_agi_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_awa_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_bra_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_coo_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_int_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_per_tot">7</td>
+
+        <td class="ui center aligned aspect_cell attr_tot" style="padding:0" id="attr_wil_tot">7</td>
+    </tr>
+</table>

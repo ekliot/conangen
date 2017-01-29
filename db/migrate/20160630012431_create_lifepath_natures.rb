@@ -1,16 +1,17 @@
-class CreateLifepathNatures < ActiveRecord::Migration
+class CreateLifepathNatures < ActiveRecord::Migration[5.0]
   def change
     create_table :lifepath_natures do |t|
-      t.string :name
-      t.string :attr
-      t.string :skill_mandatory1
-      t.string :skill_mandatory2
-      t.string :skill_mandatory3
-      t.string :skill_elective1
-      t.string :skill_elective2
-      t.string :skill_elective3
+      # fields
+      t.string  :name
+      t.string  :attr
+      t.text    :description, null: true
 
-      t.text :description
+      # serialize
+      t.text    :skills # as Hash { mandatory: [String, String, String], elective: [String, String, String] }
+
+      # references
+      t.belongs_to :sourcebook, index: true
+      # there is no `belongs_to :talent` here, as that is selected by the user in NatureSelection
     end
 
     add_index :lifepath_natures, :name

@@ -1,0 +1,149 @@
+<%#
+    locals: {
+        <Lifepath::Homeland> pre_homeland
+        <Lifepath::Aspect> pre_aspect1
+        <Lifepath::Aspect> pre_aspect2
+        <Lifepath::Caste> pre_caste
+        <Lifepath::CasteStory> pre_caste_story
+        <Lifepath::Archetype> pre_archetype
+        <Lifepath::Nature> pre_nature
+        <Lifepath::Education> pre_education
+        <Lifepath::WarStory> pre_war_story
+    }
+%>
+
+<div id="Chargen">
+    <div id="ChargenTitle" class="ui sticky">
+        <div class="ui main menu">
+            <%= render partial: "layouts/characters/char_title",
+                locals: { char: {
+                    name: "",
+                    archetype: @pre_archetype.nil? ? "" : @pre_archetype.name,
+                    homeland:  @pre_homeland.nil?  ? "" : @pre_homeland.name
+                } }
+            %>
+
+                <!-- {NAME} the <span id="charTitleNature"></span> <span id="charTitleArchetype"></span>, of <span id="charTitleHomeland"></span> | <preview button> -->
+                <!-- {NAME} is an input box with a {M/F/O} switch or dropdown -->
+                <!-- <preview button> opens the charPreivew sidebar (topbar?) -->
+            <a class="right floated item">Preview Character</a>
+        </div>
+    </div>
+    <!-- <div id="ChargenPreview" class="ui top inline sidebar overlay"> -->
+      <!-- INFO -->
+        <%# <%= render "charPreivew" %>
+        <!-- http://semantic-ui.com/modules/sidebar.html#/examples
+            $('#charPreview')
+                .sidebar({
+                    context: $('.context.example .bottom.segment')
+                })
+                .sidebar('attach events', '#chargen .sticky.menu .item')
+            ;
+        -->
+        <!--
+            Prefacing the preview sheet:
+            "{NAME} the {NATURE} {ARCHETYPE}, of {HOMELAND}
+            Born under the stars of {ASPECT1} and {ASPECT2}, and educated {EDUCATION}
+            Once a {CASTE}, he/she {CASTE_STORY.ACTION}ed {CASTE_STORY}, becoming {TRAIT}"
+        -->
+    <!-- </div> -->
+    <div id="ChargenLifepath">
+        <div id="ChargenAccordion" class="ui fluid accordion">
+            <!-- each accordian title has a "dice" and "lock" icon for rerolling -->
+            <!-- <talent selection> looks like the following:
+                    <dropdown of available skills to choose from>
+                    <vertical list of buttons of talent names>
+                        <<already possessed talents are marked and disabled>>
+                        <<talents with ranks have a [Y/X] label at the end>>
+                        <<talents with unmet reqs are marked and disabled>>
+                        <<talents have popups on hover with a talent description and prereqs>>
+             -->
+            <!-- accordian sections have a fade out effect, where the last selected
+                section is 100% opacity, and the next one is at 50%, then 25% or 0% (undecided)
+            -->
+            <%= render partial: "layouts/characters/lifepath/homeland/homelands" %> <!-- class="current" -->
+                <!--
+                           <homeland dropdown>
+                    <talent> | <language (selection)>
+                    _________________________________
+                        <picture> | <description>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/aspect/aspects" %> <!-- class="next" -->
+                <!--
+                    <$lock><aspect1 dropdown> | <$lock><aspect2 dropdown>
+                    <aspect1 mandatory attrs> | <aspect2 mandatory attrs>
+                     <aspect1 elective attrs> | <aspect2 elective attrs>
+                    _____________________________________________________
+                                      <attribute grid>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/caste/castes" %> <!-- class="after_next" -->
+              <!--
+                      <caste dropdown>
+                  ________________________
+                  <picture> | <caste info>
+                         <story dropdown>
+                    <span><story trait></span>
+                    __________________________
+                     <picture> | <story info>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/archetype/archetypes" %>
+                <!--
+                               <$lock><archetype dropdown>
+                    <span><Career skill></span> | <span><Talent></span>
+                        <span><mandatory skills (cards?)></span>
+                      <$lock><span><elective skills (cards?)></span>
+                    _________________________________________________
+                    <picture> | <description> | <equipment selection>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/nature/natures" %>
+                <!--
+                               <$lock><nature dropdown>
+                             <span><attribute bonus</span>
+                       <span><mandatory skills (cards?)></span>
+                    <$lock><span><elective skills (cards?)></span>
+                    ______________________________________________
+                    <picture> | <description> | <talent selection>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/education/educations" %>
+                <!--
+                              <$lock><education dropdown>
+                                <span>equipment</span>
+                        <span><mandatory skills (cards?)></span>
+                    <$lock><span><elective skills (cards?)></span>
+                    ______________________________________________
+                    <picture> | <description> | <talent selection>
+                 -->
+            <%= render partial: "layouts/characters/lifepath/war_story/war_stories" %>
+            <%# <%= render "war_story" %>
+                <!--
+                      <war_story dropdown>
+                        <skill bonuses>
+                    _________________________
+                    <picture> | <description>
+                 -->
+            <%# <%= render "finishing_touches" %>
+                <!--
+                    <$lock><attribute bar>
+                    <$lock><skill grid with bonus pips and legendary selection>
+                    <$lock><talent selection>
+                 -->
+            <%# <%= render "fortune_spend" %>
+                <!--
+                                  <fortune point spend switch>
+                    ___________________________________________________________
+                    <attr column> | <skill bonus dropdown> | <talent selection>
+                 -->
+            <%# <%= render "sorcery" %>
+                <!--
+                    who the fuck knows
+                 -->
+            <%# <%= render "personal" %>
+                <!--
+                        <belongings table> | <garments table>
+                            <weapon table> | <provenance table>
+                    ___________________________________________________
+                     <personality box> | <age input> | <appearance box>
+                 -->
+        </div>
+    </div>
+</div>

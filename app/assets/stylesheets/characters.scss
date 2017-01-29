@@ -1,3 +1,123 @@
 // Place all the styles related to the characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// =============
+// GENERAL
+
+// the element containing the accordion
+#ChargenLifepath {
+  padding-top: 20px;
+}
+
+// the titles for each accordion chunk
+.lifepath_accordion.title {
+  padding: 0 5%;
+}
+
+// =============
+// HOMELAND
+
+// the dropdown selection for the homeland
+#ChargenHomelandDropdown {
+  min-width: 20em; // TODO this value may need to be adjusted
+}
+
+// =============
+// ASPECTS
+
+// the aspect dropdown button
+#ChargenAspectSelectionRow.dropdown.button {
+  width: 50%;
+}
+
+// "Select your X aspect:" headers
+#ChargenAspectSelectionRow .header {
+  margin-right: 0.3em; // we want a little spacing b/w the span and dropdown
+}
+
+// the attributes in the selected-aspect display
+.aspect_mand_attr, .aspect_opt_attr {
+  padding: 0 !important; // get rid of unnecessary spacing
+  // font-size: 1.3em; // we want the text to be reasonably sized
+}
+
+// the counters for starting attributes
+.aspect_initial_attr .attr_counter {
+  padding: 0.3em 0.75em; // resizes the segment so the whole counter (buttons included) isn't too big
+  margin: 0;
+}
+
+// the +/- buttons for starting attributes
+.aspect_initial_attr button {
+  padding: 0.3em !important; // resizes the buttons to not be shit
+}
+
+// .ui.centered.dividing.header.aspect {
+//   padding-top: 3 !important;
+//   padding-bottom: 6 !important;
+// }
+
+// #aspect_menu_second {
+//   padding-left: 0 !important;
+// }
+
+// .aspect_mand_attr {
+//   padding-left: 1em;
+// }
+
+// .aspect_opt_attr {
+//   padding-left: 1em; // this doesn't work for some reason?
+// }
+
+// .attr_start_counter {
+//   // padding: .5em !important;
+//   // margin: 0 !important;
+// }
+
+// .aspect_mand_attr, .aspect_opt_attr {
+//   padding-left: 0 !important;
+//   padding-right: 0 !important;
+// }
+
+// .aspect_cell {
+//   padding: 0 !important;
+//
+//   .selectable {
+//     cursor: pointer;
+//   }
+// }
+
+// .attr_inc_btn, .attr_dec_btn {
+//   width: 100%;
+// }
+
+// .attr_start_counter {
+//   width: 100%;
+//   margin: 0 !important;
+// }
+
+// =============
+// CASTE
+
+// =============
+// ARCHETYPE
+
+// =============
+// NATURE
+
+// the dropdown selection for the nature
+#ChargenNatureDropdown {
+  min-width: 18em; // TODO this value may need to be adjusted
+}
+
+// =============
+// EDUCATION
+
+// the dropdown selection for the education
+#ChargenEducationDropdown {
+  min-width: 18em; // TODO this value may need to be adjusted
+}
+
+// =============
+// WAR STORY

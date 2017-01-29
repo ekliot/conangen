@@ -1,0 +1,63 @@
+<button id="ChargenAccordionAspectsTitle" class="ui basic fluid labeled icon lifepath_accordion title button">
+    <!-- <i class="ui fitted key icon"></i> -->
+    <span class="ui header">Aspects</span>
+
+    <!-- TODO -->
+
+    <!-- <div class="ui basic icon right floated buttons">
+        <div class="ui compact button">
+            <i class="cube icon"></i>
+        </div>
+        <div class="ui compact button">
+            <i class="lock icon"></i>
+        </div>
+    </div> -->
+</button>
+
+<div id="ChargenAccordionAspectsContent" class="ui lifepath_accordion content">
+
+    <%# form_for ... %>
+
+    <div id="ChargenAspectsForm" class="ui form">
+        <div class="ui celled relaxed grid">
+
+            <div id="ChargenAspectRowOne" class="two column row">
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select your first aspect:</span>
+
+                    <!-- TODO lock icon -->
+
+                    <div class="ui scrolling inline dropdown button">
+                        <input name="selected_aspect1" type="hidden">
+                        <%= render 'layouts/characters/lifepath/aspect/dropdown_contents' %>
+                    </div>
+                </div>
+
+                <div class="ui center aligned column">
+                    <span class="ui header">Select your second aspect:</span>
+
+                    <!-- TODO lock icon -->
+
+                    <div class="ui scrolling inline dropdown button">
+                        <input name="selected_aspect2" type="hidden">
+                        <%= render 'layouts/characters/lifepath/aspect/dropdown_contents' %>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="ChargenAspectRowTwo" class="two column row">
+                <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 1 } %>
+                <%= render partial: 'layouts/characters/lifepath/aspect/display', locals: { number: 2 } %>
+            </div>
+
+            <div id="ChargenAspectRowThree" class="one column row">
+                <div id="ChargenAspectAttributes" class="ui center aligned column">
+                    <%= render 'layouts/characters/lifepath/aspect/attributes' %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

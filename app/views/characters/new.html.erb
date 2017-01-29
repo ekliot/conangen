@@ -1,0 +1,51 @@
+<%# NOTIFY :: CREATED CHARACTERS ARE TEMPORARY, LOGIN TO BE ABLE TO SAVE CREATED CHARACTERS %>
+
+<%= form_tag new_char_path, method: :get, class: 'ui form' do %>
+    <h1 class="ui centered header">Your life is yet unwritten, by what path shall it be decided?<h1>
+    <div class="ui massive fluid two buttons newchar">
+        <%= button_tag \
+          'My life is my own, I shall decide!',
+          type: 'submit',
+          value: 'lifepath',
+          class: 'ui yellow button'
+        %>
+
+        <div class="or"></div>
+
+        <%= button_tag \
+          'By Crom, let Fate decide!',
+          type: 'submit',
+          value: 'random',
+          class: 'ui blue button'
+        %>
+    </div>
+
+    <br></br>
+
+    <div class="ui styled fluid accordion field">
+        <div class="ui title">
+            <i class="ui icon dropdown"></i>
+            Select additional source books
+        </div>
+        <div class="ui content">
+            <!-- TODO -->
+            <% @sourcebooks.each do |book| %>
+            <%= check_box_tag book.title, class: 'ui checkbox' %>
+            <%= label_tag     book.title %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="ui styled fluid accordion field">
+        <div class="ui title">
+            <i class="ui icon dropdown"></i>
+            Select custom creation parameters
+        </div>
+        <div class="ui content">
+            <!-- TODO -->
+            <%# <% CharactersHelper.custom_params.each do |opt| %>
+            <%# <%= opt.form_field %>
+            <%# <% end %>
+        </div>
+    </div>
+<% end %>

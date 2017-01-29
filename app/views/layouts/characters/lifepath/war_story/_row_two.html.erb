@@ -1,0 +1,13 @@
+<%#
+    locals: {
+        <Lifepath::WarStory> war_story
+    }
+%>
+
+<div class="center aligned column">
+    <span class="ui header">First skill bonus:</span> <%= CharactersHelper.format_skill war_story.skills[0] %>
+</div>
+
+<div class="center aligned column">
+    <span class="ui header">Second skill bonus:</span> <%= CharactersHelper.format_skill war_story.skills[1] %>
+</div>

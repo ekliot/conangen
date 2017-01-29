@@ -22,10 +22,33 @@
   box-sizing:         border-box;
 }
 
-#main-menu-items {
-  padding-left: 30%;
-  padding-right: 30%
+#MainContainer {
+  padding-top: 5%;
 }
+
+#MainFooter {
+  margin-top: 10%;
+}
+
+// .select.ui.dropdown{
+//   padding: inherit !important;
+//   height: inherit !important;
+// }
+
+// #main-menu-items {
+//   padding-left: 30%;
+//   padding-right: 30%
+// }
+
+// #main-container {
+//   display: -webkit-flex; /* for Safari & Chrome */
+//   display: flex;
+//   -webkit-flex-direction: column;
+//   flex-direction: column;
+//   -webkit-align-items: center;
+//   align-items: center;
+//   justify-content: flex-start;
+// }
 
 /* miscellaneous */
 

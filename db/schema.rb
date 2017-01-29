@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704170559) do
+ActiveRecord::Schema.define(version: 20161114015357) do
+
+  create_table "character_skill_sets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string   "name",        default: ""
@@ -60,29 +65,38 @@ ActiveRecord::Schema.define(version: 20160704170559) do
     t.index ["type"], name: "index_equipment_weapons_on_type"
   end
 
+  create_table "lifepath_archetype_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "archetype_id"
+    t.index ["archetype_id"], name: "index_lifepath_archetype_choices_on_archetype_id"
+    t.index ["lifepath_id"], name: "index_lifepath_archetype_choices_on_lifepath_id"
+  end
+
   create_table "lifepath_archetypes", force: :cascade do |t|
     t.string  "name"
-    t.string  "skill_career"
-    t.string  "skill_mandatory1"
-    t.string  "skill_mandatory2"
-    t.string  "skill_mandatory3"
-    t.string  "skill_mandatory4"
-    t.string  "skill_elective1"
-    t.string  "skill_elective2"
-    t.string  "skill_elective3"
-    t.text    "equipment"
     t.text    "description"
+    t.text    "skills"
+    t.text    "equipment"
     t.integer "talent_id"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_archetypes_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_archetypes_on_sourcebook_id"
+    t.index ["talent_id"], name: "index_lifepath_archetypes_on_talent_id"
   end
 
   create_table "lifepath_aspects", force: :cascade do |t|
-    t.string "name"
-    t.string "mandatory_attribute1"
-    t.string "mandatory_attribute2"
-    t.string "optional_attribute1"
-    t.string "optional_attribute2"
+    t.string  "name"
+    t.text    "attrs"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_aspects_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_aspects_on_sourcebook_id"
+  end
+
+  create_table "lifepath_caste_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "caste_id"
+    t.index ["caste_id"], name: "index_lifepath_caste_choices_on_caste_id"
+    t.index ["lifepath_id"], name: "index_lifepath_caste_choices_on_lifepath_id"
   end
 
   create_table "lifepath_caste_stories", force: :cascade do |t|
@@ -90,78 +104,109 @@ ActiveRecord::Schema.define(version: 20160704170559) do
     t.text    "description"
     t.string  "trait"
     t.integer "caste_id"
+    t.integer "sourcebook_id"
     t.index ["caste_id"], name: "index_lifepath_caste_stories_on_caste_id"
     t.index ["name"], name: "index_lifepath_caste_stories_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_caste_stories_on_sourcebook_id"
+  end
+
+  create_table "lifepath_caste_story_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "caste_story_id"
+    t.index ["caste_story_id"], name: "index_lifepath_caste_story_choices_on_caste_story_id"
+    t.index ["lifepath_id"], name: "index_lifepath_caste_story_choices_on_lifepath_id"
   end
 
   create_table "lifepath_castes", force: :cascade do |t|
     t.string  "name"
     t.string  "skill"
-    t.integer "social_standing"
+    t.integer "standing"
     t.text    "description"
     t.text    "talents"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_castes_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_castes_on_sourcebook_id"
+  end
+
+  create_table "lifepath_education_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "education_id"
+    t.index ["education_id"], name: "index_lifepath_education_choices_on_education_id"
+    t.index ["lifepath_id"], name: "index_lifepath_education_choices_on_lifepath_id"
   end
 
   create_table "lifepath_educations", force: :cascade do |t|
-    t.string "name"
-    t.string "skill_mandatory1"
-    t.string "skill_mandatory2"
-    t.string "skill_mandatory3"
-    t.string "skill_elective1"
-    t.string "skill_elective2"
-    t.string "skill_elective3"
-    t.text   "equipment"
-    t.text   "description"
+    t.string  "name"
+    t.text    "description"
+    t.text    "skills"
+    t.text    "equipment"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_educations_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_educations_on_sourcebook_id"
+  end
+
+  create_table "lifepath_homeland_choices", force: :cascade do |t|
+    t.string  "language"
+    t.integer "lifepath_id"
+    t.integer "homeland_id"
+    t.index ["homeland_id"], name: "index_lifepath_homeland_choices_on_homeland_id"
+    t.index ["lifepath_id"], name: "index_lifepath_homeland_choices_on_lifepath_id"
   end
 
   create_table "lifepath_homelands", force: :cascade do |t|
     t.string  "name"
-    t.string  "language"
+    t.text    "languages"
     t.integer "talent_id"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_homelands_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_homelands_on_sourcebook_id"
+    t.index ["talent_id"], name: "index_lifepath_homelands_on_talent_id"
+  end
+
+  create_table "lifepath_lifepaths", force: :cascade do |t|
+    t.integer "base_attr",    default: 7
+    t.integer "max_attr",     default: 14
+    t.integer "max_skill",    default: 5
+    t.text    "forbidden"
+    t.integer "character_id"
+    t.index ["character_id"], name: "index_lifepath_lifepaths_on_character_id"
+  end
+
+  create_table "lifepath_nature_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "nature_id"
+    t.index ["lifepath_id"], name: "index_lifepath_nature_choices_on_lifepath_id"
+    t.index ["nature_id"], name: "index_lifepath_nature_choices_on_nature_id"
   end
 
   create_table "lifepath_natures", force: :cascade do |t|
-    t.string "name"
-    t.string "attr"
-    t.string "skill_mandatory1"
-    t.string "skill_mandatory2"
-    t.string "skill_mandatory3"
-    t.string "skill_elective1"
-    t.string "skill_elective2"
-    t.string "skill_elective3"
-    t.text   "description"
+    t.string  "name"
+    t.string  "attr"
+    t.text    "description"
+    t.text    "skills"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_natures_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_natures_on_sourcebook_id"
   end
 
   create_table "lifepath_war_stories", force: :cascade do |t|
-    t.string "name"
-    t.string "skill1"
-    t.string "skill2"
+    t.string  "name"
+    t.text    "skills"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_lifepath_war_stories_on_name"
+    t.index ["sourcebook_id"], name: "index_lifepath_war_stories_on_sourcebook_id"
   end
 
-  create_table "lifepaths", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "mod_agility"
-    t.integer  "mod_awareness"
-    t.integer  "mod_brawn"
-    t.integer  "mod_coordination"
-    t.integer  "mod_intelligence"
-    t.integer  "mod_personality"
-    t.integer  "mod_willpower"
-    t.integer  "character_id"
-    t.integer  "homeland_id"
-    t.integer  "caste_id"
-    t.integer  "story_caste_id"
-    t.integer  "archetype_id"
-    t.integer  "nature_id"
-    t.integer  "education_id"
-    t.integer  "story_war_id"
-    t.index ["character_id"], name: "index_lifepaths_on_character_id"
+  create_table "lifepath_war_story_choices", force: :cascade do |t|
+    t.integer "lifepath_id"
+    t.integer "war_story_id"
+    t.index ["lifepath_id"], name: "index_lifepath_war_story_choices_on_lifepath_id"
+    t.index ["war_story_id"], name: "index_lifepath_war_story_choices_on_war_story_id"
+  end
+
+  create_table "sourcebooks", force: :cascade do |t|
+    t.string "title"
+    t.index ["title"], name: "index_sourcebooks_on_title"
   end
 
   create_table "talent_sets", force: :cascade do |t|
@@ -174,12 +219,15 @@ ActiveRecord::Schema.define(version: 20160704170559) do
   create_table "talents", force: :cascade do |t|
     t.string  "name"
     t.string  "skill"
-    t.integer "max_ranks",   default: 1
+    t.integer "max_ranks",     default: 1
     t.text    "description"
     t.text    "pre_skills"
     t.text    "pre_talents"
+    t.text    "variants"
+    t.integer "sourcebook_id"
     t.index ["name"], name: "index_talents_on_name"
     t.index ["skill"], name: "index_talents_on_skill"
+    t.index ["sourcebook_id"], name: "index_talents_on_sourcebook_id"
   end
 
   create_table "users", force: :cascade do |t|

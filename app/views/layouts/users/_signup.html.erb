@@ -1,27 +1,29 @@
-<h1>Sign up</h1>
+<h1 class="ui header">State your name and origin, traveler!</h1>
 
 <div class="ui container">
-    <%= form_for( @user, html: { class: 'ui form' } ) do |f| %>
+    <%= form_for( @user, url: signup_path, html: { class: 'ui form' } ) do |f| %>
+
+      <%= render 'shared/error_messages' %>
 
       <h4 class="ui dividing header">User Information</h4>
 
       <div class="two fields">
-        <div class="required field">
-          <%= f.text_field :name, placeholder: 'Username' %>
+        <div class="required field <%= "error" if @user.errors[:name].any? %>">
+          <%= f.text_field :name, placeholder: 'Username', class: 'form-control' %>
         </div>
-        <div class="field">
-          <%= f.email_field :email, placeholder: 'Email' %>
+        <div class="required field <%= "error" if @user.errors[:email].any? %>">
+          <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
       </div>
 
       <h4 class="ui dividing header">Password</h4>
 
       <div class="two fields">
-        <div class="field">
-          <%= f.password_field :password, placeholder: 'Password' %>
+        <div class="required field <%= "error" if @user.errors[:password].any? %>">
+          <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
         </div>
-        <div class="field">
-          <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %>
+        <div class="required field <%= "error" if @user.errors[:password_confirmation].any? || @user.errors[:password].any? %>">
+          <%= f.password_field :password_confirmation, placeholder: 'Confirm password', class: 'form-control' %>
         </div>
       </div>
 

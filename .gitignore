@@ -15,4 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+
 .ruby-version
+
+# ignore the generated docs
+/doc
+
+# ignore backup files
+*.bak

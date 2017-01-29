@@ -1,0 +1,13 @@
+<%#
+    locals: {
+        <Lifepath::Education> education
+    }
+%>
+
+<div id="ChargenEducationMandatorySkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_mandatory", locals: { lifepath: "education", selection: education } %>
+</div>
+
+<div id="ChargenEducationElectiveSkills" class="center aligned column">
+    <%= render partial: "layouts/characters/lifepath/skill_cards_elective", locals: { lifepath: "education", selection: education } %>
+</div>
