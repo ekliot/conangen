@@ -16,12 +16,12 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.text :background, default: ""
       t.text :personality, default: ""
 
-      t.text :soak, default: ""
-      t.text :health, default: ""
-      t.text :damage, default: ""
-      t.text :skills, default: ""
-      t.text :languages, default: ""
-      t.text :attr_stats, default: ""
+      t.text :soak, default: ""         # { courage: Int, armor: { head: Int, arm_left: Int, arm_right: Int, torso: Int, leg_left: Int, leg_right: Int, qualities: String } }
+      t.text :health, default: ""       # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
+      t.text :damage, default: ""       # { melee: Int, ranged: Int, presence: Int }
+      t.text :skills, default: ""       # { acrobatics: { exp: Int, foc: Int }, ... , warfare: { exp: Int, foc: Int } }
+      t.text :languages, default: ""    # [ "Cimmerian", "Hyrkanian", ... "Aquilonian" ]
+      t.text :attr_stats, default: ""   # { agility: Int, awareness: Int, brawn: Int, coordination: Int, intelligence: Int, personality: Int, willpower: Int }
 
       t.belongs_to :user, index: true
 

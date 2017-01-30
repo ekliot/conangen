@@ -11,12 +11,12 @@ class Character < ApplicationRecord
   # =============
   # SERIALIZATION
 
-  serialize :soak, Hash
-  serialize :health, Hash
-  serialize :damage, Hash
-  serialize :skills, Hash
-  serialize :attr_stats, Hash
-  serialize :languages, Array
+  serialize :soak, Hash       # { courage: Int, armor: { head: Int, arm_left: Int, arm_right: Int, torso: Int, leg_left: Int, leg_right: Int, qualities: String } }
+  serialize :health, Hash     # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
+  serialize :damage, Hash     # { melee: Int, ranged: Int, presence: Int }
+  serialize :skills, Hash     # { acrobatics: { exp: Int, foc: Int }, ... , warfare: { exp: Int, foc: Int } }
+  serialize :attr_stats, Hash # { agility: Int, awareness: Int, brawn: Int, coordination: Int, intelligence: Int, personality: Int, willpower: Int }
+  serialize :languages, Array # [ "Cimmerian", "Hyrkanian", ... "Aquilonian" ]
 
   # =============
   # VALIDATION
@@ -26,14 +26,14 @@ class Character < ApplicationRecord
   end
 
   validates :name, presence: true, format: {  with: /\A[a-zA-Z\-']+\z/,
-                                              message: "only allows letters, apostrephes, and hyphens" }
+                                              message: "only allows letters, apostrophes, and hyphens" }
   validates :trait, presence: true
   validates :age, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :standing, presence: true
   validates :gold, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
-  # validates :exp_total, minimum: 0
-  # validates :exp_spent, maximum: :exp_total
+  validates :exp_total, minimum: 0
+  validates :exp_spent, maximum: :exp_total
 
   # =============
   # CALLBACKS
@@ -59,12 +59,12 @@ class Character < ApplicationRecord
       ranged:           { exp: 0, foc: 0 },
       resistance:       { exp: 0, foc: 0 },
       sailing:          { exp: 0, foc: 0 },
-      siegecraft:       { exp: 0, foc: 0 },
       society:          { exp: 0, foc: 0 },
       sorcery:          { exp: 0, foc: 0 },
       stealth:          { exp: 0, foc: 0 },
       survival:         { exp: 0, foc: 0 },
       thievery:         { exp: 0, foc: 0 },
+      warfare:          { exp: 0, foc: 0 },
     }
 
     base_attr = {
@@ -142,13 +142,13 @@ class NewCharValidator < ActiveModel::Validator
       foc = skills[:foc]
 
       if foc != exp
-        @char.errors[:skills] << ( skill + "'s expertise and focus must be equal" )
+        @char.errors[:skills] << ( skill + "'s expertise and focus must be equal for a new character" )
       else
         if foc > 5
           @char.errors[:skills] << "A skill cannot have a bonus greater than 5"
         end
 
-        if foc >= 3
+        if foc > 3
           over_3_count.next
         end
       end
