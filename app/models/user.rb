@@ -17,6 +17,7 @@ class User < ApplicationRecord
                         format: { with: VALID_PASSW_REGEX,
                                   message: "must have one uppercase, one lowercase, one digit, and may contain most basic special characters" },
                         presence: true
+                        
 
   has_many :characters
 end
