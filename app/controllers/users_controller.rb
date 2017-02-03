@@ -1,40 +1,17 @@
 class UsersController < ApplicationController
-  include UsersHelper
+  
   def new
-    @user = User.new
-    p 'new'
+   @user = User.new
+   p 'new'
   end
 
   def account
-    if session[:user]
-      @user = User.find_by(id: session[:user])
-    else
-      redirect_to '/login'
-    end
-  end
-
-  def session_create
-    user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      p "found"
-      redirect_to '/account'
-    else
-      flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
-      @user = User.new
-      render 'login'
-    end
-  end
-
-  def session_delete
-    session[:user] = nil
-    redirect_to root_url
-
-  end
-
-  def login
-    @user = User.new
-    p 'new1'
+   if session[:user]
+     @user = User.find_by(id: session[:user])
+   else
+     flash[:notice] = 'Please Sign In'
+     redirect_to '/login'
+   end
   end
 
 
