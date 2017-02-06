@@ -3,14 +3,12 @@ class SessionController < ApplicationController
 
   def login
     @user = User.new
-    p 'new1'
   end
 
   def session_create
-    user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_by( email: params[:session][:email] )
+    if user && user.authenticate( params[:session][:password] )
       log_in user
-      p "found"
       redirect_to '/account'
     else
       flash.now[:danger] = 'Invalid email/password combination'
