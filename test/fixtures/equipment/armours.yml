@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  head: false
+  torso: false
+  arm_left: false
+  arm_right: false
+  leg_left: false
+  leg_right: false
+  qualities: MyString
+  soak: 1
+  type: 
+  availability: 1
+  cost: 1
+  encumbrance: 1
+
+two:
+  name: MyString
+  head: false
+  torso: false
+  arm_left: false
+  arm_right: false
+  leg_left: false
+  leg_right: false
+  qualities: MyString
+  soak: 1
+  type: 
+  availability: 1
+  cost: 1
+  encumbrance: 1

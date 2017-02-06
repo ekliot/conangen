@@ -5,16 +5,16 @@ class Character < ApplicationRecord
 
   belongs_to :user
 
-  has_one :lifepath, dependent: :destroy, inverse_of: :lifepath
-  has_one :talent_set, dependent: :destroy, validate: true, inverse_of: :talent_set
+  has_one :lifepath,   dependent: :destroy, inverse_of: :lifepath
+  has_one :talent_set, dependent: :destroy, inverse_of: :talent_set, validate: true
+  has_one :skill_set,  dependent: :destroy, inverse_of: :skill_set, validate: true
 
   # =============
   # SERIALIZATION
 
-  serialize :soak, Hash       # { courage: Int, armor: { head: Int, arm_left: Int, arm_right: Int, torso: Int, leg_left: Int, leg_right: Int, qualities: String } }
-  serialize :health, Hash     # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
-  serialize :damage, Hash     # { melee: Int, ranged: Int, presence: Int }
-  serialize :skills, Hash     # { acrobatics: { exp: Int, foc: Int }, ... , warfare: { exp: Int, foc: Int } }
+  serialize :soak,       Hash # { courage: Int, armor: { head: Int, arm_left: Int, arm_right: Int, torso: Int, leg_left: Int, leg_right: Int, qualities: String } }
+  serialize :health,     Hash # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
+  serialize :damage,     Hash # { melee: Int, ranged: Int, presence: Int }
   serialize :attr_stats, Hash # { agility: Int, awareness: Int, brawn: Int, coordination: Int, intelligence: Int, personality: Int, willpower: Int }
   serialize :languages, Array # [ "Cimmerian", "Hyrkanian", ... "Aquilonian" ]
 
@@ -25,12 +25,12 @@ class Character < ApplicationRecord
     NewCharValidator.new( character ).validate
   end
 
-  validates :name, presence: true, format: {  with: /\A[a-zA-Z\-']+\z/,
-                                              message: "only allows letters, apostrophes, and hyphens" }
-  validates :trait, presence: true
-  validates :age, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :name,     presence: true, format: {  with: /\A[a-zA-Z\-']+\z/,
+                                                  message: "only allows letters, apostrophes, and hyphens" }
+  validates :trait,    presence: true
+  validates :age,      presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :standing, presence: true
-  validates :gold, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :gold,     presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   validates :exp_total, minimum: 0
   validates :exp_spent, maximum: :exp_total

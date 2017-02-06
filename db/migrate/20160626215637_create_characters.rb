@@ -1,6 +1,7 @@
 class CreateCharacters < ActiveRecord::Migration[5.0]
   def change
     create_table :characters do |t|
+      # attributes
       t.string :name, default: ""
       t.integer :age
       t.string :gender, default: ""
@@ -16,6 +17,7 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.text :background, default: ""
       t.text :personality, default: ""
 
+      # serialize
       t.text :soak, default: ""         # { courage: Int, armor: { head: Int, arm_left: Int, arm_right: Int, torso: Int, leg_left: Int, leg_right: Int, qualities: String } }
       t.text :health, default: ""       # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
       t.text :damage, default: ""       # { melee: Int, ranged: Int, presence: Int }
@@ -23,6 +25,7 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.text :languages, default: ""    # [ "Cimmerian", "Hyrkanian", ... "Aquilonian" ]
       t.text :attr_stats, default: ""   # { agility: Int, awareness: Int, brawn: Int, coordination: Int, intelligence: Int, personality: Int, willpower: Int }
 
+      # relations
       t.belongs_to :user, index: true
 
       t.timestamps null: false

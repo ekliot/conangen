@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  best: MyString
+  worst: MyString
+  opt1: MyString
+  opt2: MyString
+  aspect1: one
+  aspect2: one
+
+two:
+  best: MyString
+  worst: MyString
+  opt1: MyString
+  opt2: MyString
+  aspect1: two
+  aspect2: two
