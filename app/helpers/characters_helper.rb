@@ -1,16 +1,58 @@
 module CharactersHelper
 
   @@skills = [
-    :acrobatics,  :alchemy, :animal_handling, :athletics,   :command,
-    :counsel,     :craft,   :discipline,      :healing,     :insight,
-    :linguistics, :lore,    :melee,           :observation, :parry,
-    :persuade,    :ranged,  :resistance,      :sailing,     :society,
-    :sorcery,     :stealth, :survival,        :thievery,    :warfare
+    "acrobatics",   "alchemy",        "animal handling",  "athletics",    "command",
+    "counsel",      "craft",          "discipline",       "healing",      "insight",
+    "linguistics",  "lore",           "melee",            "observation",  "parry",
+    "persuade",     "ranged weapons", "resistance",       "sailing",      "society",
+    "sorcery",      "stealth",        "survival",         "thievery",     "warfare",
   ]
 
+  @@skills_by_attr = {
+    agility: [
+      "acrobatics",
+      "melee",
+      "stealth"
+    ],
+    awareness: [
+      "insight",
+      "observation",
+      "survival",
+      "thievery"
+    ],
+    brawn: [
+      "athletics",
+      "resistance"
+    ],
+    coordination: [
+      "parry",
+      "ranged weapons",
+      "sailing"
+    ],
+    intelligence: [
+      "alchemy",
+      "craft",
+      "healing",
+      "linguistics",
+      "lore",
+      "warfare"
+    ],
+    personality: [
+      "animal handling",
+      "command",
+      "counsel",
+      "persuade",
+      "society"
+    ],
+    willpower: [
+      "discipline",
+      "sorcery"
+    ]
+  }
+
   @@career_skills = [
-    :acrobatics,  :animal_handling, :athletics, :counsel, :lore,
-    :melee,       :observation,     :persuade,  :ranged,  :society
+    "acrobatics", "animal handling", "athletics", "counsel", "lore",
+    "melee", "observation", "persuade", "ranged weapons", "society"
   ]
 
   # generates a title/intro for a character given their lifepath
@@ -125,6 +167,10 @@ module CharactersHelper
 
   def self.skills
     @@skills
+  end
+
+  def self.skills_by_attr
+    @@skills_by_attr
   end
 
   def self.career_skills

@@ -6,8 +6,18 @@ class Character < ApplicationRecord
   belongs_to :user
 
   has_one :lifepath,   dependent: :destroy, inverse_of: :lifepath
+
+  # talent relations
   has_one :talent_set, dependent: :destroy, inverse_of: :talent_set, validate: true
+  # has_many :talent_buys, dependent: :destroy, :through => :talent_set
+  # has_many :talents, dependent: :destroy, :through => :talent_buys
+
+  # skill relations
   has_one :skill_set,  dependent: :destroy, inverse_of: :skill_set, validate: true
+
+  # language relations
+  has_many :can_speaks, as: :speaker, dependent: :destroy
+  has_many :languages, :through => :can_speaks
 
   # =============
   # SERIALIZATION
@@ -16,7 +26,6 @@ class Character < ApplicationRecord
   serialize :health,     Hash # { stress: { max: { vigor: Int, resolve: Int }, current: { vigor: Int, resolve: Int } }, harm: { wounds: Int, trauma: Int } }
   serialize :damage,     Hash # { melee: Int, ranged: Int, presence: Int }
   serialize :attr_stats, Hash # { agility: Int, awareness: Int, brawn: Int, coordination: Int, intelligence: Int, personality: Int, willpower: Int }
-  serialize :languages, Array # [ "Cimmerian", "Hyrkanian", ... "Aquilonian" ]
 
   # =============
   # VALIDATION

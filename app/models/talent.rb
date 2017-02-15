@@ -1,11 +1,9 @@
-# PREREQ FORMATS:
-#   skills  :: "skill exp foc;...;ski­ll exp foc"  << AND >>
-#   talents :: "talen­t rank;...;tal­ent rank"      << OR  >> (except 'Smell Out Sorcery', 'Ear of the King')
-
 class Talent < ApplicationRecord
 
-  serialize :pre_talents
-  serialize :pre_skills
-  serialize :variants
+  belongs_to :skill
+
+  serialize :pre_talents # as Hash { mandatory: { talent: rank }, optional: { talent: rank, talent: rank } }
+  serialize :pre_skills  # as Hash { skill: { exp: min, foc: min } }
+  serialize :variants    # as Array [ String...String ]
 
 end

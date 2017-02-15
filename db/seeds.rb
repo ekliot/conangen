@@ -7,8 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 book_ids = {}
+skill_ids = {}
 talent_ids = {}
 caste_ids = {}
+language_ids = {}
 
 # ===========
 # SOURCEBOOKS
@@ -22,6 +24,60 @@ sourcebooks.each do |book|
   b.save
 
   book_ids[book[:title]] = b.id
+end
+
+# =====
+# SKILLS
+
+attributes = {
+  agility: [
+    "acrobatics",
+    "melee",
+    "stealth"
+  ],
+  awareness: [
+    "insight",
+    "observation",
+    "survival",
+    "thievery"
+  ],
+  brawn: [
+    "athletics",
+    "resistance"
+  ],
+  coordination: [
+    "parry",
+    "ranged weapons",
+    "sailing"
+  ],
+  intelligence: [
+    "alchemy",
+    "craft",
+    "healing",
+    "linguistics",
+    "lore",
+    "warfare"
+  ],
+  personality: [
+    "animal handling",
+    "command",
+    "counsel",
+    "persuade",
+    "society"
+  ],
+  willpower: [
+    "discipline",
+    "sorcery"
+  ]
+}
+
+attributes.each do |att, skills|
+  skills.each do |skill|
+    s = Skill.create( parent_attr: att, name: skill )
+    s.save
+
+    skill_ids[skill] = s.id
+  end
 end
 
 # =======
@@ -105,10 +161,10 @@ talents = {
     }
   ],
 
-  animal_handling: [
+  "animal handling" => [
     { name: "Animal Healer",
       sourcebook_id: book_ids["Core"],
-      pre_skills:  { animal_handling: { exp: 2, foc: 0 } },
+      pre_skills:  { "animal handling" => { exp: 2, foc: 0 } },
       pre_talents: { mandatory: { "Faithful Companions" => 1 } },
       description: "Any time you are called upon to make a Healing test upon an animal, you may instead substitute your Animal Handling skill. You may also substitute your Animal Handling skill for Healing tests upon humans, but you must increase the Difficulty of any such tests by one step."
     },
@@ -116,7 +172,7 @@ talents = {
     { name: "Born in the Saddle",
       sourcebook_id: book_ids["Core"],
       max_ranks: 3,
-      pre_skills:  { animal_handling: { exp: 2, foc: 0 } },
+      pre_skills:  { "animal handling" => { exp: 2, foc: 0 } },
       pre_talents: {},
       description: "You have spent a lifetime in the company of animals and can recognize personality quirks and identify potential sources of distress. On any Animal Handling test where you generate at least one success, you may immediately roll a number of bonus d20s equal to your ranks of Born in the Saddle, up to the normal maximum of three bonus d20s. Any successes generated on these additional dice are added to the initial success total, and Complications on these additional dice may be ignored.",
     },
@@ -152,7 +208,7 @@ talents = {
 
     { name: "Voice of Jhebbal Sag",
       sourcebook_id: book_ids["Core"],
-      pre_skills:  { animal_handling: { exp: 2, foc: 0 } },
+      pre_skills:  { "animal handling" => { exp: 2, foc: 0 } },
       pre_talents: { mandatory: { "Eyes in the Forest" => 1 } },
       description: "Wild or tamed matters not to you: all animals are kin and to be afforded due respect. Any time you attempt to direct an animal to take an action that goes against its instinct or training — including instances when the animal is in service of another — you can pay 1 Doom to reduce the Difficulty of the test by one step. Additionally, if Momentum is spent to obtain information using an Animal Handling test (based on interpreting an animal’s behavior) you get additional questions equal to your Animal Handling Focus. While this is not actual speech, the connection with the animal is uncanny."
     }
@@ -818,10 +874,10 @@ talents = {
     }
   ],
 
-  ranged: [
+  "ranged weapons" => [
     { name: "Accurate",
       sourcebook_id: book_ids["Core"],
-      pre_skills:  { ranged: { exp: 1, foc: 0 } },
+      pre_skills:  { "ranged weapons" => { exp: 1, foc: 0 } },
       pre_talents: {},
       description: "When making an attack with a ranged weapon, you may re-roll a number of damage dice equal to the number of Ranged Weapon talents (and ranks in those talents) you have acquired. You must accept the result of these re-rolls."
     },
@@ -850,7 +906,7 @@ talents = {
 
     { name: "Quick Release",
       sourcebook_id: book_ids["Core"],
-      pre_skills:  { ranged: { exp: 2, foc: 0 } },
+      pre_skills:  { "ranged weapons" => { exp: 2, foc: 0 } },
       pre_talents: { mandatory: { "Accurate" => 1 } },
       description: "You are able to ready a shot almost as soon as you’ve loosed the previous one. When using a ranged weapon with the Volley quality, you may spend a Minor Action to increase your rate of attack, allowing you to spend two Loads, gaining a bonus d20 and +1[CD] damage for each Load spent."
     },
@@ -865,7 +921,7 @@ talents = {
     { name: "Trick Shot",
       sourcebook_id: book_ids["Core"],
       max_ranks: 3,
-      pre_skills:  { ranged: { exp: 0, foc: 3 } },
+      pre_skills:  { "ranged weapons" => { exp: 0, foc: 3 } },
       pre_talents: { mandatory: { "Shoot for the Horizon" => 1 } },
       description: "You are an extremely precise shot. You gain bonus Momentum on ranged attacks equal to your rank in this talent, though these may not be used to increase the attack’s damage and may not be saved in the group pool."
     }
@@ -1474,13 +1530,96 @@ talents = {
 
 }
 
-talents.each do |skill, skills|
-  skills.each do |talent|
+talents.each do |skill, tree|
+  tree.each do |talent|
     t = Talent.create( talent )
-    t.skill = skill
+
+    # some of the "skill trees" are homeland, caste, etc. that don't have an associated Skill model
+    if skill_ids.has_key? skill.to_s
+      t.skill_id = skill_ids[skill.to_s]
+    end
+
+    # set the skill tree (which includes "homeland", "caste", "fortune", and "other")
+    t.tree = skill
+
     t.save
 
+    pp t
+
     talent_ids[t.name] = t.id
+  end
+end
+
+# =========
+# LANGUAGES
+
+languages = {
+  "Middle Kingdom" => [
+    "Aquilonian",
+    "Corinthian",
+    "Nemedian",
+    "Ophirean",
+    "Zingaran",
+  ],
+
+  "Borian" => [
+    "Brythunian",
+    "Hyperborean",
+    "Nordheimer",
+  ],
+
+  "Zhemrian" => [
+    "Argossean",
+    "Kothic",
+    "Shemitish",
+    "Zamorian",
+    "Zhemri",
+  ],
+
+  "Southern" => [
+    "Darfari",
+    "Keshani",
+    "Kushite",
+    "Punt",
+    "Zembabwein",
+  ],
+
+  "Ancient" => [
+    "Acheronian",
+    "Ancient Stygian",
+  ],
+
+  "Thurian" => [
+    "Atlantean",
+    "Ligurean",
+    "Lemurian",
+    "Valusian",
+  ],
+
+  "Regional" => [
+    "Himelian",
+    "Kambujan",
+    "Vilayet argot",
+    "Zuagir",
+  ],
+
+  "Ungrouped" => [
+    "Cimmerian",
+    "Hyrkanian",
+    "Iranistani",
+    "Khitan",
+    "Pictish",
+    "Stygian",
+    "Turanian",
+    "Vendhyan",
+  ],
+}
+
+languages.each do |group, langs|
+  langs.each do |lang|
+    l = Language.create( name: lang, group: group )
+
+    language_ids[lang] = l.id
   end
 end
 
@@ -1541,17 +1680,17 @@ homelands = [
   { name: "Ophir",
     sourcebook_id: book_ids["Core"],
     talent_id: talent_ids["Gilded"],
-    languages: ["Ophirian"] },
+    languages: ["Ophirean"] },
 
   { name: "Brythunia",
     sourcebook_id: book_ids["Core"],
     talent_id: talent_ids["Cosmopolitan"],
-    languages: ["Byrthunian"] },
+    languages: ["Brythunian"] },
 
   { name: "Argos",
     sourcebook_id: book_ids["Core"],
     talent_id: talent_ids["Sea Raider"],
-    languages: ["Argosian"] },
+    languages: ["Argossean"] },
 
   { name: "Zamora",
     sourcebook_id: book_ids["Core"],
@@ -1650,7 +1789,18 @@ homelands = [
 ]
 
 homelands.each do |homeland|
-  Lifepath::Homeland.create( homeland )
+  h = Lifepath::Homeland.create( homeland.except :languages )
+
+  # add a Speaker relation between this homeland and its language
+  homeland[:languages].each do |lang|
+    if language_ids.has_key? lang
+      l = Language.find language_ids[lang]
+    else
+      l = Language.create( name: lang, group: "Undefined" )
+    end
+
+    CanSpeak.create( speaker: h, language: l )
+  end
 end
 
 # =======
@@ -1748,63 +1898,63 @@ end
 castes = [
   { name: "Crafter",
     sourcebook_id: book_ids["Core"],
-    skill: "craft", standing: 1,
+    skill_id: skill_ids["craft"], standing: 1,
     talents: [talent_ids["Subject"], talent_ids["Tradesman"]],
     description: "There is an honesty in the way hammer hits metal, or how the awl bites into the wood. You’ve learned to trust in the objects you make, far more than those who might use them. When war-drums beckon, your purse swells with gold, and in peace-time it is sometimes difficult to make ends meet. Perhaps it’s time you packed up your tools and went looking for a new war."
   },
 
   { name: "Escaped Serf/Slave",
     sourcebook_id: book_ids["Core"],
-    skill: "survival", standing: 0,
+    skill_id: skill_ids["survival"], standing: 0,
     talents: [talent_ids["Embittered"], talent_ids["Vagabond"]],
     description: "Whether from an open field or within the confines of the deepest mine, you were caught and forced into labor, a fate you despised. One day an opportunity presented itself, and you set yourself free. Now you look back only to see if your former masters are searching for you."
   },
 
   { name: "Farmer",
     sourcebook_id: book_ids["Core"],
-    skill: "animal_handling", standing: 1,
+    skill_id: skill_ids["animal handling"], standing: 1,
     talents: [talent_ids["Homesteader"], talent_ids["Subject"]],
     description: "Born to the field, you learned your parents’ lessons well. One day, though, the time came when you had to face the open road. Perhaps your farm was razed to the ground, or suffered blight, or you simply sought a life other than that of a farmer. Whether your memory is filled with regrets or swimming with excitement, you feel a connection to the soil and to those who work to reap its bounty."
   },
 
   { name: "Herder",
     sourcebook_id: book_ids["Core"],
-    skill: "animal_handling", standing: 1,
+    skill_id: skill_ids["animal handling"], standing: 1,
     talents: [talent_ids["Sentry"], talent_ids["Subject"]],
     description: "There are wolves at the edge of every land. Some walk on four feet, others on two. Regardless of where these predators come from, they inevitably seek to steal from your flock. It is up to you to stop them. Even though you’ve taken to a different life and your original flock is long gone, this basic fact hasn’t changed, and you remain ever-vigilant."
   },
 
   { name: "Merchant",
     sourcebook_id: book_ids["Core"],
-    skill: "persuade", standing: 1,
+    skill_id: skill_ids["persuade"], standing: 1,
     talents: [talent_ids["Tradesman"], talent_ids["Vagabond"]],
     description: "In vast families joined by convention and marriage there is little room for the youngest child to thrive. Still, whether you managed your uncle’s stalls, sold jewels found by thieves in the Maul, or supervised caravans between mighty cities, you know there is profit in providing the rare to the wealthy. Perhaps in this there is room enough for you to make your mark."
   },
 
   { name: "Outcast",
     sourcebook_id: book_ids["Core"],
-    skill: "thievery", standing: 0,
+    skill_id: skill_ids["thievery"], standing: 0,
     talents: [talent_ids["Embittered"], talent_ids["Survivor"]],
     description: "Met with disgusted eyes from even the slaves, outcasts are the beggars and petty thieves that skulk in alleys, sifting through rubbish for something to sell. While each nation treats outcasts differently, none treat them well, and you are used to hostility, or indifference at best, wherever you go."
   },
 
   { name: "Petty Nobility",
     sourcebook_id: book_ids["Core"],
-    skill: "command", standing: 2,
+    skill_id: skill_ids["command"], standing: 2,
     talents: [talent_ids["Sheltered"], talent_ids["Subject"]],
     description: "Your family has little need for you, as you were born far outside the line of succession. Your father sent you away; his parting words telling you to “find your own sort of glory, or fail and be forgotten” are seared into your mind. You have unlimited opportunities to find your own way, but you may find trouble should your family’s enemies learn of your forays."
   },
 
   { name: "Priesthood",
     sourcebook_id: book_ids["Core"],
-    skill: "lore", standing: 2,
+    skill_id: skill_ids["lore"], standing: 2,
     talents: [talent_ids["Priest"], talent_ids["Subject"]],
     description: "The gods are real and active in the world around you, a fact you know for certain. They require sacrifice and dedication, and are not as merciful as we would hope. Whether your worship is from love, fear, ambition, or tradition, you have the certainty needed to navigate their most complicated rites and to ensure they do not inflict curses upon those you would protect."
   },
 
   { name: "Warrior",
     sourcebook_id: book_ids["Core"],
-    skill: "parry", standing: 1,
+    skill_id: skill_ids["parry"], standing: 1,
     talents: [talent_ids["Sentry"], talent_ids["Subject"]],
     description: "One of your parents fought and died in battle. Your grandparent died guarding a city wall, having seen nothing more than the occasional tavern brawl. There was never a choice as to whether you’d pick up the blade as a calling, only the question as to how you’d turn profit from it."
   }
@@ -2180,8 +2330,8 @@ archetypes = [
     talent_id:     talent_ids["Accurate"],
     description:   "Whether trained alongside the legendary Bossonian archers, within one of the militaries of the great middle kingdoms, or even skilled in Hyrkanian horse archery, you are now a practiced archer, capable of sending iron-tipped shafts across great distances with accuracy.",
     skills: {
-      career:     "ranged",
-      mandatory: ["animal_handling", "observation", "stealth", "survival"],
+      career:     "ranged weapons",
+      mandatory: ["animal handling", "observation", "stealth", "survival"],
       elective:  ["acrobatics",      "athletics",   "melee"],
     },
     equipment: {}
@@ -2193,7 +2343,7 @@ archetypes = [
     description:   "You hail from one of the untamed lands bordering civilization, whether to the far north, the east, the south, or some other uncharted territory. Your ways are as strange to civilized folk as their customs are inscrutable to you.",
     skills: {
       career:     "melee",
-      mandatory: ["acrobatics", "animal_handling", "athletics", "survival"],
+      mandatory: ["acrobatics", "animal handling", "athletics", "survival"],
       elective:  ["healing",    "parry",           "stealth"],
     },
     equipment: {}
@@ -2205,8 +2355,8 @@ archetypes = [
     description:   "Whether drafted into the militia as a youth or adult, or voluntarily signing on for military service, you have become a sell-sword, a paid soldier, loyal only to the hand that holds the strings to the coin-purse. You travel the Hyborian kingdoms in search of work, sometimes even fighting against your former masters.",
     skills: {
       career:     "athletics",
-      mandatory: ["acrobatics",      "melee",   "parry", "ranged"],
-      elective:  ["animal_handling", "healing", "stealth"],
+      mandatory: ["acrobatics",      "melee",   "parry", "ranged weapons"],
+      elective:  ["animal handling", "healing", "stealth"],
     },
     equipment: {}
   },
@@ -2217,8 +2367,8 @@ archetypes = [
     description:   "You may be a knighted noble from one of the civilized Hyborian kingdoms such as Aquilonia, Nemedia, Zingara, Brythunia, or elsewhere. Whether you hold to a code of chivalry or are merely a well-trained and equipped warrior, you fight primarily for yourself and for causes you choose.",
     skills: {
       career:     "society",
-      mandatory: ["acrobatics", "animal_handling", "parry", "resistance"],
-      elective:  ["melee",      "persuade",        "ranged"],
+      mandatory: ["acrobatics", "animal handling", "parry", "resistance"],
+      elective:  ["melee",      "persuade",        "ranged weapons"],
     },
     equipment: {}
   },
@@ -2228,9 +2378,9 @@ archetypes = [
     talent_id:     talent_ids["Born in the Saddle"],
     description:   "To the east and south, the Hyborian kingdoms are surrounded by deserts, steppes, tundra, and wastelands — inhospitable to civilized folk but home to you and your people. You know how to survive in these places, to find food and water and to make shelter, and to navigate to safety. Life is hard in your homeland, perhaps the reason you left.",
     skills: {
-      career:     "animal_handling",
+      career:     "animal handling",
       mandatory: ["acrobatics", "athletics", "parry", "survival"],
-      elective:  ["melee",      "ranged",    "stealth"],
+      elective:  ["melee",      "ranged weapons",    "stealth"],
     },
     equipment: {}
   },
@@ -2265,7 +2415,7 @@ archetypes = [
     description:   "You have explored the breadth of history and human knowledge from the vantage point of a chair, spending hours poring over thick tomes of lore. Your interest may be specific to a particular field of study, or you may have broad expertise in a variety of subjects. Despite your inclination towards scholarship, you have ventured into the world outside your studies, to experience the world firsthand.",
     skills: {
       career:     "lore",
-      mandatory: ["animal_handling", "linguistics", "persuade", "society"],
+      mandatory: ["animal handling", "linguistics", "persuade", "society"],
       elective:  ["alchemy",         "healing",     "sorcery"],
     },
     equipment: {}
@@ -2290,7 +2440,7 @@ archetypes = [
     skills: {
       career:     "persuade",
       mandatory: ["alchemy",         "counsel", "healing", "lore"],
-      elective:  ["animal_handling", "sorcery", "thievery"],
+      elective:  ["animal handling", "sorcery", "thievery"],
     },
     equipment: {}
   }
@@ -2309,7 +2459,7 @@ natures = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["lore",            "parry",     "stealth"],
-      elective:  ["animal_handling", "athletics", "sailing"]
+      elective:  ["animal handling", "athletics", "sailing"]
     },
     description: "You do your best to avoid trouble, whether through innate self-preservation or from hard-learned experience."
   },
@@ -2338,7 +2488,7 @@ natures = [
     attr: "intelligence",
     sourcebook_id: book_ids["Core"],
     skills: {
-      mandatory: ["animal_handling", "craft",   "lore"],
+      mandatory: ["animal handling", "craft",   "lore"],
       elective:  ["counsel",         "healing", "observation"]
     },
     description: "You enjoy the path of knowledge, as it opens many doors for you and assists in your understanding of the world around you."
@@ -2349,7 +2499,7 @@ natures = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["discipline", "craft",           "healing"],
-      elective:  ["alchemy",    "animal_handling", "observation"]
+      elective:  ["alchemy",    "animal handling", "observation"]
     },
     description: "You have an eye towards the pragmatic, always seeking the most efficient or reasonable means of achieving your goals."
   },
@@ -2389,7 +2539,7 @@ natures = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["counsel",         "healing",    "persuade"],
-      elective:  ["animal_handling", "discipline", "resistance"]
+      elective:  ["animal handling", "discipline", "resistance"]
     },
     description: "In the end, all we have is each other. You have learned that the greatest bonds are those between allies, family, and friends, and thus you do all you can to assist those around you."
   },
@@ -2398,7 +2548,7 @@ natures = [
     attr: "brawn",
     sourcebook_id: book_ids["Core"],
     skills: {
-      mandatory: ["melee",      "ranged",     "resistance"],
+      mandatory: ["melee",      "ranged weapons",     "resistance"],
       elective:  ["acrobatics", "discipline", "parry"]
     },
     description: "For each action there must be an equal and final reaction, a retribution to those who have done you wrong. You do not forgive slights against you and yours easily, and make sure to strike back with finality."
@@ -2417,7 +2567,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["discipline",      "lore",    "stealth"],
-      elective:  ["animal_handling", "sailing", "survival"]
+      elective:  ["animal handling", "sailing", "survival"]
     },
     equipment: {
       mandatory: {
@@ -2431,7 +2581,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["lore",            "career", "random"],
-      elective:  ["animal_handling", "craft",  "sailing"]
+      elective:  ["animal handling", "craft",  "sailing"]
     },
     equipment: {
       mandatory: {
@@ -2445,7 +2595,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["acrobatics", "healing", "survival"],
-      elective:  ["melee",      "parry",   "ranged"]
+      elective:  ["melee",      "parry",   "ranged weapons"]
     },
     equipment: {
       choices: [
@@ -2480,7 +2630,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["discipline",      "lore",        "random_career"],
-      elective:  ["animal_handling", "observation", "parry"]
+      elective:  ["animal handling", "observation", "parry"]
     },
     equipment: {
       mandatory: {
@@ -2494,7 +2644,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["discipline",      "resistance", "career"],
-      elective:  ["animal_handling", "society",    "survival"]
+      elective:  ["animal handling", "society",    "survival"]
     },
     equipment: {
       mandatory: {
@@ -2527,7 +2677,7 @@ educations = [
   { name:         "Traditional",
     sourcebook_id: book_ids["Core"],
     skills: {
-      mandatory: ["animal_handling", "craft", "career"],
+      mandatory: ["animal handling", "craft", "career"],
       elective:  ["melee",           "parry", "random_career"]
     },
     equipment: {
@@ -2544,7 +2694,7 @@ educations = [
     sourcebook_id: book_ids["Core"],
     skills: {
       mandatory: ["lore",            "resistance", "career"],
-      elective:  ["animal_handling", "society",    "survival"]
+      elective:  ["animal handling", "society",    "survival"]
     },
     equipment: {
       mandatory: {
@@ -2565,7 +2715,7 @@ end
 war_stories = [
   { name: "Defeated a Savage Beast",
     sourcebook_id: book_ids["Core"],
-    skills: ["animal_handling", "melee"]
+    skills: ["animal handling", "melee"]
   },
 
   { name: "Dispossessed",
