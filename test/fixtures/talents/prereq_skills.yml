@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mandatory: false
+  min_exp: 
+  min_foc: 
+
+two:
+  mandatory: false
+  min_exp: 
+  min_foc: 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  xp_spent: 1
+  source: MyString
+  variant: MyString
+
+two:
+  xp_spent: 1
+  source: MyString
+  variant: MyString

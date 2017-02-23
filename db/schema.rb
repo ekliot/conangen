@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215190318) do
+ActiveRecord::Schema.define(version: 20170222134037) do
 
   create_table "can_speaks", force: :cascade do |t|
     t.string  "speaker_type"
@@ -20,37 +20,28 @@ ActiveRecord::Schema.define(version: 20170215190318) do
     t.index ["speaker_type", "speaker_id"], name: "index_can_speaks_on_speaker_type_and_speaker_id"
   end
 
-  create_table "character_skill_sets", force: :cascade do |t|
-    t.integer  "acrobatics_exp"
-    t.integer  "acrobatics_foc"
-    t.integer  "warfare_exp"
-    t.integer  "warfare_foc"
-    t.integer  "character_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["character_id"], name: "index_character_skill_sets_on_character_id"
-  end
-
   create_table "characters", force: :cascade do |t|
     t.string   "name",        default: ""
     t.integer  "age"
     t.string   "gender",      default: ""
     t.text     "appearance",  default: ""
     t.string   "trait",       default: ""
+    t.integer  "standing"
     t.integer  "exp_total",   default: 0
     t.integer  "exp_spent",   default: 0
+    t.integer  "attr_agi",    default: 7
+    t.integer  "attr_awa",    default: 7
+    t.integer  "attr_bra",    default: 7
+    t.integer  "attr_coo",    default: 7
+    t.integer  "attr_int",    default: 7
+    t.integer  "attr_per",    default: 7
+    t.integer  "attr_wil",    default: 7
     t.integer  "fortune_max", default: 3
-    t.integer  "gold"
     t.integer  "renown",      default: 0
-    t.integer  "standing"
+    t.integer  "gold"
     t.text     "contacts",    default: ""
     t.text     "background",  default: ""
     t.text     "personality", default: ""
-    t.text     "soak",        default: ""
-    t.text     "health",      default: ""
-    t.text     "damage",      default: ""
-    t.text     "skills",      default: ""
-    t.text     "attr_stats",  default: ""
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -257,6 +248,14 @@ ActiveRecord::Schema.define(version: 20170215190318) do
     t.index ["war_story_id"], name: "index_lifepath_war_story_choices_on_war_story_id"
   end
 
+  create_table "skill_sets", force: :cascade do |t|
+    t.text     "skills"
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["character_id"], name: "index_skill_sets_on_character_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.string "parent_attr"
@@ -267,27 +266,54 @@ ActiveRecord::Schema.define(version: 20170215190318) do
     t.index ["title"], name: "index_sourcebooks_on_title"
   end
 
-  create_table "talent_sets", force: :cascade do |t|
+  create_table "talents_prereq_skills", force: :cascade do |t|
+    t.integer "min_exp"
+    t.integer "min_foc"
+    t.integer "requirer_id"
+    t.integer "required_id"
+    t.index ["required_id"], name: "index_talents_prereq_skills_on_required_id"
+    t.index ["requirer_id"], name: "index_talents_prereq_skills_on_requirer_id"
+  end
+
+  create_table "talents_prereq_talents", force: :cascade do |t|
+    t.boolean "mandatory"
+    t.integer "min_rank"
+    t.integer "required_id"
+    t.integer "requirer_id"
+    t.index ["required_id"], name: "index_talents_prereq_talents_on_required_id"
+    t.index ["requirer_id"], name: "index_talents_prereq_talents_on_requirer_id"
+  end
+
+  create_table "talents_talent_buys", force: :cascade do |t|
+    t.integer  "xp_spent"
+    t.string   "source"
+    t.string   "variant"
+    t.integer  "talent_id"
+    t.integer  "talent_set_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["talent_set_id"], name: "index_talents_talent_buys_on_talent_set_id"
+  end
+
+  create_table "talents_talent_sets", force: :cascade do |t|
     t.integer  "character_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["character_id"], name: "index_talent_sets_on_character_id"
+    t.index ["character_id"], name: "index_talents_talent_sets_on_character_id"
   end
 
-  create_table "talents", force: :cascade do |t|
+  create_table "talents_talents", force: :cascade do |t|
     t.string  "name"
     t.string  "tree"
     t.integer "max_ranks",     default: 1
     t.text    "description"
-    t.text    "pre_skills"
-    t.text    "pre_talents"
     t.text    "variants"
     t.integer "skill_id"
     t.integer "sourcebook_id"
-    t.index ["name"], name: "index_talents_on_name"
-    t.index ["skill_id"], name: "index_talents_on_skill_id"
-    t.index ["sourcebook_id"], name: "index_talents_on_sourcebook_id"
-    t.index ["tree"], name: "index_talents_on_tree"
+    t.index ["name"], name: "index_talents_talents_on_name"
+    t.index ["skill_id"], name: "index_talents_talents_on_skill_id"
+    t.index ["sourcebook_id"], name: "index_talents_talents_on_sourcebook_id"
+    t.index ["tree"], name: "index_talents_talents_on_tree"
   end
 
   create_table "users", force: :cascade do |t|

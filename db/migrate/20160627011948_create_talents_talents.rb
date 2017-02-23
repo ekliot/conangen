@@ -1,6 +1,6 @@
-class CreateTalents < ActiveRecord::Migration[5.0]
+class CreateTalentsTalents < ActiveRecord::Migration[5.0]
   def change
-    create_table :talents do |t|
+    create_table :talents_talents do |t|
       # fields
       t.string  :name
       t.string  :tree
@@ -8,15 +8,13 @@ class CreateTalents < ActiveRecord::Migration[5.0]
       t.text    :description, null: true
 
       # serialize
-      t.text :pre_skills            # as Hash { skill: { exp: min, foc: min } }
-      t.text :pre_talents           # as Hash { mandatory: { talent: rank }, optional: { talent: rank } }
       t.text :variants, null: true  # as Array [ String...String ]
 
       t.belongs_to :skill, index: true, null: true
       t.belongs_to :sourcebook, index: true
     end
 
-    add_index :talents, :name
-    add_index :talents, :tree
+    add_index :talents_talents, :name
+    add_index :talents_talents, :tree
   end
 end
