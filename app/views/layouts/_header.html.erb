@@ -5,7 +5,7 @@
     <%= link_to 'ABOUT', about_path, class: 'ui item' %>
 
     <%=
-       link_to_if( @current_user.nil?, 'LOGIN', { controller: "users", action: "login" }, { class: 'ui item' } ) do
+       link_to_if( @current_user.nil?, 'LOGIN', { controller: "session", action: "login" }, { class: 'ui item' } ) do
          link_to( @current_user.login, { controller: "users", action: "account" }, { class: 'ui item' } )
        end
     %>

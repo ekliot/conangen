@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   #   resources :characters
   # end
 
-  get     'login'       =>  'users#login'
+  get     'login'       =>  'session#login'
+  post    'login'       =>  'session#session_create'
+  delete  'logout'      =>  'session#session_delete'
   get     'signup'      =>  'users#new'
   post    'signup'      =>  'users#create'
   get     'account'     =>  'users#account'

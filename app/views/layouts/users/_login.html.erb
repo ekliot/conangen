@@ -1,7 +1,7 @@
 <h1>Whosoever approaches, present your papers and writ of passage!</h1>
 
 <div class="ui container">
-    <%= form_for( @user, url: login_path, html: { class: 'ui form' } ) do |f| %>
+    <%= form_for( :session, url: login_path, html: { class: 'ui form' } ) do |f| %>
 
       <%= render 'shared/error_messages' %>
 
