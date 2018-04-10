@@ -1,0 +1,123 @@
++ model SourceBook
+    - str name
+
++ model Spell
+
++ model SpellBook
+
++ model Character
+    * Has one Lifepath
+    * Has one Progression
+
+@ module Lifepath::
+    + model Lifepath
+        * Belongs to Character
+        * Belongs to HomelandSelection
+        * Belongs to AspectSelection
+        * Belongs to AspectSelection
+        * Belongs to CasteSelection
+        * Belongs to CasteStorySelection
+        * Belongs to ArchetypeSelection
+        * Belongs to NatureSelection
+        * Belongs to EducationSelection
+        * Belongs to WarStorySelection
+        * Belongs to FinishingTouches
+        - int base_attr
+        - int max_attr
+        - int max_skill
+        - bool sorcery
+        - txt forbidden (serialized hash of LifepathComponent->Array<ComponentTitle>)
+        - txt skills (serialized hash of SkillName->Ranks)
+        - int renown
+        - int gold
+        - int standing
+
+    + model Homeland
+        * Belongs to Talent
+        * Belongs to SourceBook
+    + model HomelandSelection
+        * Belongs to Homeland
+
+    + model Aspect
+        * Belongs to SourceBook
+    + model AspectSelection
+        * Belongs to Aspect
+
+    + model Caste
+        * Belongs to Talent
+        * Belongs to Talent
+        * Belongs to SourceBook
+        * Has many CasteStory
+    + model CasteSelection
+        * Belongs to Caste
+
+    + model CasteStory
+        * Belongs to a Caste
+        * Belongs to SourceBook
+    + model CasteStorySelection
+        * Belongs to CasteStory
+
+    + model Archetype
+        * Belongs to Talent
+        * Belongs to SourceBook
+    + model ArchetypeSelection
+        * Belongs to Archetype
+
+    + model Nature
+        * Belongs to SourceBook
+    + model NatureSelection
+        * Belongs to Nature
+        * Belongs to Talent
+
+    + model Education
+        * Belongs to SourceBook
+    + model EducationSelection
+        * Belongs to Nature
+        * Belongs to Talent
+
+    + model WarStory
+        * Belongs to SourceBook
+        - str name
+        - str skill1
+        - str skill2
+    + model WarStorySelection
+        * Belongs to WarStory
+        - txt description
+
+    + model Personal
+        - int age
+        - str name
+        - str gender
+        - txt languages (serialize array of strings)
+        - txt personality
+        - txt background
+    + model SorcerySeed
+    + model FinishingTouches
+        * Belongs to Talent (free talent)
+        * Belongs to Talent (fortune spend)
+        * Belongs to SorcerySeed
+        * Belongs to Personal
+        - bool fortune_spend
+        - int starting_xp
+        # how do we do the belongings/garments/weapon table?
+
++ model Talent
+    * Belongs to SourceBook
+    - int base_cost
+    - int max_rank
+    - str name
+    - txt description
+    - txt pre_skills (serialized hash of SkillName->[expertise, focus])
+    - txt pre_talents (serialized hash of TalentName->RanksReq)
+
++ model TalentBuy
+    * Belongs to Talent
+    * Belongs to TalentSet
+    - int bought_rank
+    - int bought_for
+    - str bought_from
+
++ model TalentSet
+    * Has many TalentBuy
+
++ model Progression
