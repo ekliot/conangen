@@ -2,20 +2,21 @@ class Lifepath::Nature < ApplicationRecord
 
   belongs_to :sourcebook
 
-  serialize :skills, Hash
+  serialize :skills_mand, Array
+  serialize :skills_elec, Array
 
-  # gets a map of skill->[talents] for a given nature
+  # TODO gets a map of skill->[talents] for a given nature
   def get_talents
 
-    skills =  [ self.skill_mandatory1,  self.skill_mandatory2, self.skill_mandatory3,
-                self.skill_elective1,   self.skill_elective2,  self.skill_elective3 ]
+    # skills =  [ self.skill_mandatory1,  self.skill_mandatory2, self.skill_mandatory3,
+    #             self.skill_elective1,   self.skill_elective2,  self.skill_elective3 ]
 
     talents = {}
 
-    skills.each do |skill|
-      # TODO CHECK FOR RANDOM/CAREER SKILL
-      talents[skill] = Talent.where( skill: skill ).find_each
-    end
+    # skills.each do |skill|
+    #   # TODO CHECK FOR RANDOM/CAREER SKILL
+    #   talents[skill] = Talent.where( skill: skill ).find_each
+    # end
 
     talents
 

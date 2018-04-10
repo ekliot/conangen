@@ -16,7 +16,11 @@ language_ids = {}
 # SOURCEBOOKS
 
 sourcebooks = [
-  { title: "Core" }
+  { title: "Core" },
+  { title: "Conan the Thief" },
+  { title: "Conan the Barbarian" },
+  { title: "Book of Skelos" },
+  { title: "Conan the Mercenary" },
 ]
 
 sourcebooks.each do |book|

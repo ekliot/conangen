@@ -8,8 +8,8 @@ class Character < ApplicationRecord
 
   # talent relations
   has_one :talent_set, dependent: :destroy, inverse_of: :talent_set, validate: true
-  # has_many :talent_buys, dependent: :destroy, :through => :talent_set
-  # has_many :talents, dependent: :destroy, :through => :talent_buys
+  has_many :talent_buys, dependent: :destroy, :through => :talent_set
+  has_many :talents, :through => :talent_buys
 
   # skill relations
   has_one :skill_set, dependent: :destroy, inverse_of: :skill_set, validate: true

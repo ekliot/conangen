@@ -6,7 +6,9 @@ class CreateLifepathEducations < ActiveRecord::Migration[5.0]
       t.text    :description, null: true
 
       # serialize
-      t.text    :skills # as Hash { mandatory: [String, String, String], elective: [String, String, String] }
+      t.text    :skills_mand # as Array [String, String, String]
+      t.text    :skills_elec # as Array [String, String, String]
+
       t.text    :equipment # as Hash { TODO }
 
       # references

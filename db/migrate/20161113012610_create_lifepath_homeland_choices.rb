@@ -2,6 +2,7 @@ class CreateLifepathHomelandChoices < ActiveRecord::Migration[5.0]
   def change
     create_table :lifepath_homeland_choices do |t|
       # fields
+      # TODO change this to use Languages
       t.string      :language
 
       # references

@@ -1,11 +1,24 @@
 Conan RPG Character Generator
 ===
 
-A Rails webapp to create, save, and export characters for the upcoming Conan RPG by Mophidius Entertainment
+A Rails webapp to create, save, and export characters for the Conan RPG by Mophidius Entertainment
+
+No longer deployed, code held here for posterity.
 
 - - - - -
 
-Features
+Post-Mortem
+---
+
+This project was an excellent learning experience, and provided the foundation for a journey in full-stack development.
+
+Perhaps I'll get back to this, however there is not much incentive here. For everything I learnt, what I learnt most of all are my limits, and that back-end development just doesn't have that *je ne sais quoi* for me that front-end development does. Ultimately, in hindsight this was an overly-ambitious foray into full-stack web development, especially for my first.
+
+Coming away from this, I'm able to take what went well (designing an intuitive interface to guide uninitiated players through a relatively complex RPG character creation system), and grow from what went poorly (trying swallowing an elephant in one bite by designing a relational database with a complexity to match its domain). This experience provided context for the things I learnt in future database management classes, and planted a seed for future interface design and development. What more could I ask for?
+
+- - - - -
+
+Planned Features
 ===
 Baseline
 ---
@@ -24,62 +37,3 @@ Future
    - Misc
   - Update a character sheet values
   - Level up a character
-
-- - - - -
-
-TODO
-===
-
-Items are preceded by a **[number]** out of 10 that indicates severity of expected work
-
-  - Database modeling
-    - Update database with full-release information/errata
-    - Remodel character lifepaths to use models from a different tables, i.e. "selected_aspects", "selected archetype", etc. to account for choices within lifepaths (alternative is to have choices be modeled in the character db entry, but this could get messy)
-  - Views
-    - General
-      - **[5]** Get a custom font working
-      - **[8]** Design and implement a custom theme
-    - Home
-      - **[6]** Design, implement
-    - About
-      - **[5]** Design, implement
-    - Account
-      - **[7]** Design, implement
-    - Characters
-      - Index
-      - Random Generation
-        - **[8]** Pipeline for "Click" -> Finish
-      - Creation
-        - General
-          - **[10]** Get the chargen-app-box-thing to be responsively designed and well-fitted
-          - **[7]** Scripting for back/next tabbing
-        - Homeland
-          - **[4]** Make cards more pleasant
-          - **[4]** Choose an alternative selection method than cards? Table?
-        - Aspects
-          - **[6]** Reformat the box layout to not scroll the header
-          - **[5]** Fix total attrs for former mand attrs resetting to 0 after switching aspects
-          - **[9]** Make the table more pleasing to look at
-        - Caste
-          - Nil
-        - Archetype
-          - **[7]** Implement equipment selection (tbd after equipment db is implemmented)
-          - **[3]** Make the subheaders more pronounced
-        - Nature
-          - **[8]** Make talent selection work, dynamic, and sensible
-          - **[3]** Make the subheaders more pronounced
-        - Education
-          - **[8]** Make talent selection work, dynamic, and sensible
-          - **[3]** Make the subheaders more pronounced
-        - War Story
-          - **[4]** Perhaps figure out a design that is more intuitive and fits into the aesthetic
-        - Finishing touches
-          - **[?]** Design, implement
-  - Controllers
-    - Characters
-      - **[4]** Random tables for lifepaths
-  - Account management
-    - Authentication
-    - Sessions
-    - Change password
-    - Delete account

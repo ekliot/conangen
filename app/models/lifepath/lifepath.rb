@@ -6,6 +6,8 @@ class Lifepath::Lifepath < ApplicationRecord
   has_one :homeland,    through: :homeland_choice
 
   # TODO aspects?
+  # has_one  :aspects_choice
+  # has_many :aspects,    through: :aspects_choice
 
   has_one :caste_choice
   has_one :caste,       through: :caste_choice
